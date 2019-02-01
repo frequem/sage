@@ -1,7 +1,7 @@
-#include <sage/Application.h>
-#include <sage/config.h>
-#include <sage/macros.h>
-#include <sage/Scene.h>
+#include "Application.h"
+#include "config.h"
+#include "macros.h"
+#include "Scene.h"
 
 using namespace sage;
 
@@ -31,11 +31,15 @@ Application::Application(const std::string& title, int width, int height){
 	
 	//sdl ttf
 	ASSERT(TTF_Init() == 0, "Failed to initialize SDL_ttf: %s", TTF_GetError());
+	//sdl mixer
+	ASSERT(Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == 0, "Failed to initialize SDL2_mixer: %s", Mix_GetError());
 	
 	this->fileCache = new FileCache();
 	this->imageCache = new ImageCache(this->fileCache);
 	this->fontCache = new FontCache(this->fileCache);
 	this->shaderCache = new ShaderCache(this->fileCache);
+	this->audioCache = new AudioCache(this->fileCache);
+	this->audioManager = new AudioManager(this->audioCache);
 	
 	this->lastUpdate = SDL_GetTicks();
 }
@@ -117,6 +121,14 @@ ShaderCache* Application::getShaderCache(){
 	return this->shaderCache;
 }
 
+AudioCache* Application::getAudioCache(){
+	return this->audioCache;
+}
+
+AudioManager* Application::getAudioManager(){
+	return this->audioManager;
+}
+
 Application::~Application(){
 	LOG("sage::Application Destructor");
 	while(!this->scenes.empty()){
@@ -126,7 +138,11 @@ Application::~Application(){
 	delete this->imageCache;
 	delete this->fontCache;
 	delete this->shaderCache;
+	delete this->audioCache;
+	delete this->audioManager;
 	delete this->fileCache;
+	
+	Mix_CloseAudio();
 	
 	TTF_Quit();
 	

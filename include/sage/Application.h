@@ -1,15 +1,18 @@
 #ifndef _SAGE_APPLICATION_H
 #define _SAGE_APPLICATION_H
 
-#include <sage/FileCache.h>
-#include <sage/ImageCache.h>
-#include <sage/ShaderCache.h>
-#include <sage/FontCache.h>
+#include "FileCache.h"
+#include "ImageCache.h"
+#include "ShaderCache.h"
+#include "FontCache.h"
+#include "AudioCache.h"
+#include "AudioManager.h"
 
 #include <stack>
 #include <SDL2/SDL.h>
 #include "ogl.h"
-#include <SDL_ttf/SDL_ttf.h> 
+#include <SDL2/SDL_ttf.h> 
+#include <SDL_mixer.h> 
 #include <glm/glm.hpp>
 #include <string>
 
@@ -32,6 +35,9 @@ namespace sage{
 		ImageCache* getImageCache();
 		FontCache* getFontCache();
 		ShaderCache* getShaderCache();
+		AudioCache* getAudioCache();
+		
+		AudioManager* getAudioManager();
 		
 		void run();
 		~Application();
@@ -43,6 +49,9 @@ namespace sage{
 		ImageCache* imageCache;
 		ShaderCache* shaderCache;
 		FontCache* fontCache;
+		AudioCache* audioCache;
+		
+		AudioManager* audioManager;
 		
 		bool isRunning = false;
 		SDL_Event sdlEvent;

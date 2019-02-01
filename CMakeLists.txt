@@ -10,12 +10,14 @@ HunterGate(
 project(sage C CXX)
 
 hunter_add_package(SDL2)
+hunter_add_package(SDL_mixer)
 hunter_add_package(SDL_ttf)
 hunter_add_package(glew)
 hunter_add_package(glm)
 hunter_add_package(soil)
 
 find_package(SDL2 CONFIG REQUIRED)
+find_package(SDL_mixer CONFIG REQUIRED)
 find_package(SDL_ttf CONFIG REQUIRED)
 find_package(glew CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
@@ -26,6 +28,7 @@ file(GLOB_RECURSE HEADERS "include/${PROJECT_NAME}/*.h")
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC SDL2::SDL2main SDL2::SDL2)
+target_link_libraries(${PROJECT_NAME} PUBLIC SDL_mixer::SDL_mixer)
 target_link_libraries(${PROJECT_NAME} PUBLIC SDL_ttf::SDL_ttf)
 target_link_libraries(${PROJECT_NAME} PUBLIC glew::glew)
 target_link_libraries(${PROJECT_NAME} PUBLIC glm)
