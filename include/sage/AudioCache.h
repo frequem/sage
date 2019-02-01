@@ -11,7 +11,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
 #include <SDL_ttf/SDL_ttf.h> 
-#include <SDL_mixer/SDL_mixer.h> 
+#include <SDL2/SDL_mixer.h> 
 #include <GL/glu.h>
 #include <glm/glm.hpp>
 
