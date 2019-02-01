@@ -5,7 +5,7 @@
 
 #include <string>
 #include <set>
-#include <SDL2/SDL_mixer.h> 
+#include <SDL_mixer/SDL_mixer.h> 
 /*#include <map>
 #include <mutex>
 #include <thread>

@@ -11,8 +11,8 @@
 #include <stack>
 #include <SDL2/SDL.h>
 #include "ogl.h"
-#include <SDL2/SDL_ttf.h> 
-#include <SDL_mixer.h> 
+#include <SDL_ttf/SDL_ttf.h> 
+#include <SDL_mixer/SDL_mixer.h> 
 #include <glm/glm.hpp>
 #include <string>
 
