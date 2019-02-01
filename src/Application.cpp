@@ -1,7 +1,7 @@
-#include "Application.h"
-#include "config.h"
-#include "macros.h"
-#include "Scene.h"
+#include "sage/Application.h"
+#include "sage/config.h"
+#include "sage/macros.h"
+#include "sage/Scene.h"
 
 using namespace sage;
 

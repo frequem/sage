@@ -1,7 +1,7 @@
 #ifndef _SAGE_AUDIOCACHE_H
 #define _SAGE_AUDIOCACHE_H
 
-#include "FileCache.h"
+#include "sage/FileCache.h"
 
 #include <map>
 #include <string>

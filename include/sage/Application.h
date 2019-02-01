@@ -1,12 +1,12 @@
 #ifndef _SAGE_APPLICATION_H
 #define _SAGE_APPLICATION_H
 
-#include "FileCache.h"
-#include "ImageCache.h"
-#include "ShaderCache.h"
-#include "FontCache.h"
-#include "AudioCache.h"
-#include "AudioManager.h"
+#include "sage/FileCache.h"
+#include "sage/ImageCache.h"
+#include "sage/ShaderCache.h"
+#include "sage/FontCache.h"
+#include "sage/AudioCache.h"
+#include "sage/AudioManager.h"
 
 #include <stack>
 #include <SDL2/SDL.h>

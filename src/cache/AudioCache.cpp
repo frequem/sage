@@ -1,5 +1,5 @@
-#include "AudioCache.h"
-#include "macros.h"
+#include "sage/AudioCache.h"
+#include "sage/macros.h"
 
 using namespace sage;
 
