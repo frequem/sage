@@ -1,7 +1,9 @@
 include("${CMAKE_CURRENT_LIST_DIR}/sageTargets.cmake")
 
-find_dependency(SDL2 CONFIG REQUIRED)
-find_dependency(SDL_ttf CONFIG REQUIRED)
-find_dependency(glew CONFIG REQUIRED)
-find_dependency(glm CONFIG REQUIRED)
-find_dependency(soil CONFIG REQUIRED)
+include(CMakeFindDependencyMacro)
+
+find_package(SDL2 CONFIG REQUIRED)
+find_package(SDL_ttf CONFIG REQUIRED)
+find_package(glew CONFIG REQUIRED)
+find_package(glm CONFIG REQUIRED)
+find_package(soil CONFIG REQUIRED)
