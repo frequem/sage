@@ -10,7 +10,7 @@ Application::Application() : Application("sage Application"){}
 Application::Application(const std::string& title) : Application(title, 840, 630){}
 
 Application::Application(const std::string& title, int width, int height){
-	ASSERT(SDL_Init(SDL_INIT_VIDEO) == 0, "Failed to initialize SDL: %s", SDL_GetError());
+	ASSERT(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) == 0, "Failed to initialize SDL: %s", SDL_GetError());
 	
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
