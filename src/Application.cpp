@@ -33,7 +33,7 @@ Application::Application(const std::string& title, int width, int height){
 	ASSERT(TTF_Init() == 0, "Failed to initialize SDL_ttf: %s", TTF_GetError());
 	//sdl mixer
 	int flags = MIX_INIT_MP3;
-	ASSERT(Mix_Init(flags)&flags != flags, "Couldn't initialize mp3 loader.", Mix_GetError());
+	ASSERT(Mix_Init(flags)&flags == flags, "Couldn't initialize mp3 loader.", Mix_GetError());
 	ASSERT(Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == 0, "Failed to initialize SDL2_mixer: %s", Mix_GetError());
 	
 	this->fileCache = new FileCache();
