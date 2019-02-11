@@ -1,7 +1,7 @@
 #ifndef _SAGE_SHADERCACHE_H
 #define _SAGE_SHADERCACHE_H
 
-#include <sage/FileCache.h>
+#include <sage/cache/FileCache.h>
 
 #include <map>
 #include <string>
@@ -10,7 +10,7 @@
 #include <vector>
 #include <utility>
 #include <SDL2/SDL.h>
-#include <sage/ogl.h>
+#include <sage/util/ogl.h>
 #include <glm/glm.hpp>
 
 namespace sage{
@@ -19,6 +19,7 @@ namespace sage{
 	public:
 		ShaderCache(FileCache*);
 		void load(const std::string&);
+		void unload(const std::string&);
 		GLuint get(const std::string&);
 		~ShaderCache();
 	private:

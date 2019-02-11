@@ -1,11 +1,11 @@
 #ifndef _SAGE_SPRITE_H
 #define _SAGE_SPRITE_H
 
-#include <sage/Node.h>
+#include <sage/view/Node.h>
 
 #include <string>
 #include <SDL2/SDL.h>
-#include <sage/ogl.h>
+#include <sage/util/ogl.h>
 #include <SOIL/SOIL.h>
 
 namespace sage{

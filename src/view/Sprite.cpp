@@ -1,5 +1,5 @@
-#include <sage/Sprite.h>
-#include <sage/macros.h>
+#include <sage/view/Sprite.h>
+#include <sage/util/macros.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>

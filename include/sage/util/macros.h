@@ -1,7 +1,7 @@
 #ifndef _SAGE_MACROS_H
 #define _SAGE_MACROS_H
 
-#include <sage/config.h>
+#include <sage/util/config.h>
 #include <cstring>
 #include <cstdlib>
 

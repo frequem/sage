@@ -1,11 +1,11 @@
 #ifndef _SAGE_TEXTNODE_H
 #define _SAGE_TEXTNODE_H
 
-#include <sage/Node.h>
+#include <sage/view/Node.h>
 #include <string>
 
 #include <SDL2/SDL.h>
-#include <sage/ogl.h>
+#include <sage/util/ogl.h>
 #include <SDL_ttf/SDL_ttf.h> 
 #include <glm/glm.hpp>
 

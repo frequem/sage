@@ -7,7 +7,6 @@
 	#include <SDL2/SDL_opengles2.h>
 #else
 	#include <GL/glew.h>
-	#include <GL/glu.h>
 	#include <SDL2/SDL_opengl.h>
 #endif //__ANDROID__
 

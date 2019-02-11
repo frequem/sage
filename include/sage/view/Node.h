@@ -1,7 +1,7 @@
 #ifndef _SAGE_NODE_H
 #define _SAGE_NODE_H
 
-#include <sage/Application.h>
+#include <sage/view/Application.h>
 #include <vector>
 #include <glm/glm.hpp>
 

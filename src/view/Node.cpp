@@ -1,6 +1,6 @@
-#include <sage/Node.h>
-#include <sage/Scene.h>
-#include <sage/macros.h>
+#include <sage/view/Node.h>
+#include <sage/view/Scene.h>
+#include <sage/util/macros.h>
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/matrix_transform_2d.hpp>
 

@@ -1,10 +1,10 @@
 #ifndef _SAGE_SCENE_H
 #define _SAGE_SCENE_H
 
-#include <sage/Node.h>
+#include <sage/view/Node.h>
 
 #include <SDL2/SDL.h>
-#include <sage/ogl.h>
+#include <sage/util/ogl.h>
 #include <glm/glm.hpp>
 
 namespace sage{
