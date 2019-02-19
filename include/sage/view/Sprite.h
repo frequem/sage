@@ -14,11 +14,11 @@ namespace sage{
 		Sprite(const std::string&);
 		void render() override;
 		void update(float) override;
-		void init() override;
+		
+		glm::vec2 getSize() override;
+		
 		~Sprite();
 	private:
-		GLuint texture;
-		glm::vec2 size;
 		std::string textureFile;
 	};
 }

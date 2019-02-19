@@ -19,6 +19,8 @@ namespace sage{
 		void update(float) override;
 		void init() override;
 		
+		glm::vec2 getSize() override;
+		
 		void setText(const std::string& text);
 		void setColor(SDL_Color color);
 		~TextNode();

@@ -17,10 +17,15 @@ namespace sage{
 		Scene* getScene() override;
 		void setApplication(Application*);
 		Application* getApplication() override;
+		
+		glm::vec2 getSize() override;
+		
 		~Scene();
 	protected:
-		glm::vec2 absPoint(glm::vec2) override;
 		Application* application;
+		
+		glm::vec2 absPoint(glm::vec2) override;
+		int getDepth() override;
 	};
 }
 #endif // _SAGE_SCENE_H

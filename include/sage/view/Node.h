@@ -50,6 +50,12 @@ namespace sage{
 		void setZIndex(int);
 		int getZIndex() const;
 		
+		virtual glm::vec2 getSize() = 0;
+		float getWidth();
+		float getHeight();
+				
+		std::vector<glm::vec2> getAbsPoints();
+		
 		virtual ~Node();
 	protected:	
 		Node* getParentNode() const;
@@ -57,6 +63,8 @@ namespace sage{
 		
 		void sortChildren();
 		virtual glm::vec2 absPoint(glm::vec2);
+		
+		virtual int getDepth();
 	
 		bool initialized = false;
 		Node* parentNode = nullptr;

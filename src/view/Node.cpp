@@ -157,13 +157,12 @@ void Node::setZIndex(int z){
 	}
 }
 
-int Node::getZIndex() const{
-	return this->z_index;
-}
+int Node::getZIndex() const{ return this->z_index; }
 
-void Node::sortChildren(){
-	std::sort(this->childNodes.begin(), this->childNodes.end(), NodePtrZCompare());
-}
+void Node::sortChildren(){ std::sort(this->childNodes.begin(), this->childNodes.end(), NodePtrZCompare()); }
+
+float Node::getWidth(){ return this->getSize().x; }
+float Node::getHeight(){ return this->getSize().y; }
 
 glm::vec2 Node::absPoint(glm::vec2 point){
 	glm::mat3 model = glm::mat3(1);
@@ -175,7 +174,19 @@ glm::vec2 Node::absPoint(glm::vec2 point){
 	return this->parentNode->absPoint(glm::vec2(model*glm::vec3(point, 1)));
 }
 
+std::vector<glm::vec2> Node::getAbsPoints(){
+	glm::vec2 size = this->getSize();
+	
+	std::vector<glm::vec2> temp;
+	temp.push_back(this->absPoint(size*(glm::vec2(0, 0)-this->anchor)));
+	temp.push_back(this->absPoint(size*(glm::vec2(1, 0)-this->anchor)));
+	temp.push_back(this->absPoint(size*(glm::vec2(0, 1)-this->anchor)));
+	temp.push_back(this->absPoint(size*(glm::vec2(1, 1)-this->anchor)));
+	
+	return temp;
+}
 
+int Node::getDepth(){ return this->getParentNode()->getDepth()+1; }
 
 Node::~Node(){
 	for(Node* n : this->childNodes){

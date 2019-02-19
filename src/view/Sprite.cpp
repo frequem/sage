@@ -10,66 +10,63 @@ Sprite::Sprite(const std::string& textureFile) : Node(){
 	this->textureFile = textureFile;
 }
 
-void Sprite::init(){
-	auto ic = this->getApplication()->getImageCache();
-	
-	this->texture = ic->getTexture(this->textureFile);
-	this->size = ic->getSize(this->textureFile);
-	
-	Node::init();
-}
-
 void Sprite::render(){
+	
+	glEnable(GL_STENCIL_TEST);
+	glStencilFunc(GL_EQUAL, this->getDepth()-1, ~0);
+	glStencilOp(GL_KEEP, GL_INCR, GL_INCR);
+	
     GLuint p = this->getApplication()->getShaderCache()->get("textured2d");
-    
     glUseProgram(p);
-    
-    GLint projection = glGetUniformLocation(p, "projection");
-    GLint modelview = glGetUniformLocation(p, "modelview");
-    
-	GLint tex = glGetUniformLocation(p, "tex");
-	GLint texCoord = glGetAttribLocation(p, "texCoord");
-	GLint position = glGetAttribLocation(p, "position");
-	
+    	
 	glm::vec2 windowSize = this->getApplication()->getWindowSize();
-	glm::mat4 mProjection = glm::ortho(0.f, windowSize.x, 0.f, windowSize.y, 0.f, 1.f);
-	glm::mat4 mModelView = glm::mat4(1.f);
-	
-	glUniformMatrix4fv(projection, 1, GL_FALSE, glm::value_ptr(mProjection));
-	glUniformMatrix4fv(modelview, 1, GL_FALSE, glm::value_ptr(mModelView));
+	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
 	
 	glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, this->texture);
-    glUniform1i(tex, 0);
+    glBindTexture(GL_TEXTURE_2D, this->getApplication()->getImageCache()->getTexture(this->textureFile));
+    glUniform1i(glGetUniformLocation(p, "tex"), 0);
 		
-	glm::vec2 d[] = {
-		this->absPoint(this->size*(glm::vec2(0, 0)-this->anchor)), 	glm::vec2(0,1),
-		this->absPoint(this->size*(glm::vec2(1, 0)-this->anchor)), 	glm::vec2(1,1),
-		this->absPoint(this->size*(glm::vec2(0, 1)-this->anchor)), 	glm::vec2(0,0),
-		this->absPoint(this->size*(glm::vec2(1, 1)-this->anchor)),  glm::vec2(1,0)
-	};
+	std::vector<glm::vec2> points = this->getAbsPoints();
+	GLint position = glGetAttribLocation(p, "position");
+	glEnableVertexAttribArray(position);
+	glVertexAttribPointer(position, 2, GL_FLOAT, GL_FALSE, 0, points.data());
 	
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
-	glEnableVertexAttribArray(position);
-	glEnableVertexAttribArray(texCoord);
-	
-	glVertexAttribPointer(position, 2, GL_FLOAT, GL_FALSE, 2*sizeof(d[0]), glm::value_ptr(d[0]));
-	glVertexAttribPointer(texCoord, 2, GL_FLOAT, GL_FALSE, 2*sizeof(d[0]), glm::value_ptr(d[1]));
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	
-	glDisableVertexAttribArray(position);
-	glDisableVertexAttribArray(texCoord);
-	
 	glDisable(GL_BLEND);
 	glUseProgram(0);
 	
+	glDisableVertexAttribArray(position);
+	
 	Node::render();
+	
+	glStencilFunc(GL_EQUAL, this->getDepth(), ~0);
+	glStencilOp(GL_KEEP, GL_DECR, GL_DECR);
+	
+    p = this->getApplication()->getShaderCache()->get("stencil2d");
+    glUseProgram(p);
+    
+	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
+	
+	position = glGetAttribLocation(p, "position");
+	glEnableVertexAttribArray(position);
+	glVertexAttribPointer(position, 2, GL_FLOAT, GL_FALSE, 0, points.data());
+	
+	glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+	glUseProgram(0);
+	
+	glDisableVertexAttribArray(position);
 }
 
 void Sprite::update(float delta){
 	Node::update(delta);
+}
+
+glm::vec2 Sprite::getSize(){
+	return this->getApplication()->getImageCache()->getSize(this->textureFile);
 }
 
 Sprite::~Sprite(){
