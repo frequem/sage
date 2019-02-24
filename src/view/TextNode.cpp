@@ -7,76 +7,19 @@
 using namespace sage;
 
 TextNode::TextNode(const std::string& font, int ptsize) : 
-	TextNode(font, ptsize, ""){
-}
+	TextNode(font, ptsize, ""){}
 
 TextNode::TextNode(const std::string& font, int ptsize, const std::string& text) : 
-	TextNode(font, ptsize, text, {255, 255, 255, 0}){	
-}
+	TextNode(font, ptsize, text, {255, 255, 255, 0}){}
 
 TextNode::TextNode(const std::string& font, int ptsize, const std::string& text, SDL_Color color) : 
-	Node(), fontFile(font), ptsize(ptsize), text(text), color(color){
+	TexturedNode(), fontFile(font), ptsize(ptsize), text(text), color(color){
 	glGenTextures(1, &this->texture);
 }
 
 void TextNode::init(){
 	this->rebuild();
-}
-
-void TextNode::render(){
-	
-	glEnable(GL_STENCIL_TEST);
-	glStencilFunc(GL_EQUAL, this->getDepth()-1, ~0);
-	glStencilOp(GL_KEEP, GL_INCR, GL_INCR);
-	
-    GLuint p = this->getApplication()->getShaderCache()->get("textured2d");
-    glUseProgram(p);
-    	
-	glm::vec2 windowSize = this->getApplication()->getWindowSize();
-	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
-	
-	glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, this->texture);
-    glUniform1i(glGetUniformLocation(p, "tex"), 0);
-		
-	std::vector<glm::vec2> points = this->getAbsPoints();
-	GLint position = glGetAttribLocation(p, "position");
-	glEnableVertexAttribArray(position);
-	glVertexAttribPointer(position, 2, GL_FLOAT, GL_FALSE, 0, points.data());
-	
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	glDisable(GL_BLEND);
-	glUseProgram(0);
-	
-	glDisableVertexAttribArray(position);
-	
-	Node::render(); //render children
-	
-	//undo stencil
-	glStencilFunc(GL_EQUAL, this->getDepth(), ~0);
-	glStencilOp(GL_KEEP, GL_DECR, GL_DECR);
-	
-    p = this->getApplication()->getShaderCache()->get("stencil2d");
-    glUseProgram(p);
-    
-	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
-	
-	position = glGetAttribLocation(p, "position");
-	glEnableVertexAttribArray(position);
-	glVertexAttribPointer(position, 2, GL_FLOAT, GL_FALSE, 0, points.data());
-	
-	glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
-	glUseProgram(0);
-	
-	glDisableVertexAttribArray(position);
-}
-
-void TextNode::update(float delta){
-	Node::update(delta);
+	Node::init();
 }
 
 void TextNode::rebuild(){
@@ -102,6 +45,8 @@ void TextNode::setColor(SDL_Color color){
 }
 
 glm::vec2 TextNode::getSize(){ return glm::vec2(this->surface->w, this->surface->h); }
+
+GLuint TextNode::getTexture(){ return this->texture; }
 
 TextNode::~TextNode(){
 	glDeleteTextures(1, &this->texture);

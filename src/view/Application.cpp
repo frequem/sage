@@ -29,6 +29,8 @@ Application::Application(const std::string& title, int width, int height){
 	
 	ASSERT(SDL_GL_SetSwapInterval(1) == 0, "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError());
 	
+	glEnable(GL_STENCIL_TEST);
+	
 	//sdl ttf
 	ASSERT(TTF_Init() == 0, "Failed to initialize SDL_ttf: %s", TTF_GetError());
 	
