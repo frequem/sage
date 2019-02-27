@@ -1,5 +1,5 @@
-#include "sage/AudioManager.h"
-#include "sage/macros.h"
+#include <sage/util/AudioManager.h>
+#include <sage/util/macros.h>
 
 #include <climits>
 

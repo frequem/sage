@@ -1,56 +1,69 @@
-#include "sage/AudioCache.h"
-#include "sage/macros.h"
+#include <sage/cache/AudioCache.h>
+#include <sage/util/macros.h>
 
 using namespace sage;
 
-AudioCache::AudioCache(FileCache* fileCache){
+AudioCache::AudioCache(FileCache* fileCache, ThreadManager* tm){
 	this->fileCache = fileCache;
+	this->threadManager = tm;
 }
 
 void AudioCache::load_func(const std::string& fn){
-	this->chunkMutex.lock();
 	SDL_RWops* rwops = SDL_RWFromMem((void*)this->fileCache->get(fn), this->fileCache->size(fn));
-	this->chunks[fn] = Mix_LoadWAV_RW(rwops, 0);
-	this->chunkMutex.unlock();
+	{
+		std::lock_guard<std::mutex> guard(this->mtx);
+		
+		if(this->chunks.find(fn) == this->chunks.end()){//unload has been called, don't load 
+			LOG("sage::AudioCache: '%s' has been unloaded before loading could start.", fn.c_str());
+			return;
+		}else if(this->chunks[fn] != nullptr){
+			LOG("sage::AudioCache: '%s' has been unloaded, then loaded again before first loading could start.", fn.c_str());
+			return;
+		}
+		
+		this->chunks[fn] = Mix_LoadWAV_RW(rwops, 0);
+	}
+	this->cv.notify_all();
 }
 
 void AudioCache::load(const std::string& fn){
-	if(this->threads.find(fn) != this->threads.end()){
+	std::lock_guard<std::mutex> guard(this->mtx);
+	if(this->chunks.find(fn) != this->chunks.end()){
 		return;
-	}else{
-		this->threads[fn] = std::thread();
 	}
 	
-	this->threads[fn] = std::thread(&AudioCache::load_func, this, fn);
+	this->chunks[fn] = nullptr;
+	this->threadManager->run(&AudioCache::load_func, this, fn);
 }
 
+void AudioCache::unload(const std::string& fn){
+	std::lock_guard<std::mutex> guard(this->mtx);
+	
+	if(this->chunks.find(fn) == this->chunks.end()){
+		return;
+	}
+	
+	if(this->chunks[fn] != nullptr){
+		Mix_FreeChunk(this->chunks[fn]);
+	}
+	
+	this->chunks.erase(fn);
+	
+	this->fileCache->unload(fn);
+}
 
 Mix_Chunk* AudioCache::get(const std::string& fn){
 	this->load(fn);
 	
-	if(this->threads[fn].joinable()){
-		this->threads[fn].join();
-	}
+	std::unique_lock<std::mutex> lock(this->mtx);
+	while(this->chunks.find(fn) != this->chunks.end() && this->chunks[fn] == nullptr)
+		this->cv.wait(lock);
 	
-	this->chunkMutex.lock();
-	Mix_Chunk* chunk = this->chunks[fn];
-	this->chunkMutex.unlock();
-	
-	return chunk;
+	return this->chunks[fn];
 }
 
 AudioCache::~AudioCache(){
-	for(std::map<const std::string, std::thread>::iterator i = this->threads.begin(); i!=this->threads.end(); i++){
-		std::thread& t = i->second;//std::get<std::thread>(*i);
-		if(t.joinable()){
-			t.join();
-		}
+	while(!this->chunks.empty()){
+		this->unload(this->chunks.begin()->first);
 	}
-	
-	this->chunkMutex.lock();
-	for(std::map<const std::string, Mix_Chunk*>::iterator i = this->chunks.begin(); i!=this->chunks.end(); i++){
-		Mix_Chunk* chunk = i->second;//std::get<Mix_Chunk*>(*i);
-		Mix_FreeChunk(chunk);
-	}
-	this->chunkMutex.unlock();
 }

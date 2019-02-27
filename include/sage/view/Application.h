@@ -6,7 +6,7 @@
 #include <sage/cache/ShaderCache.h>
 #include <sage/cache/FontCache.h>
 #include <sage/cache/AudioCache.h>
-#include <sage/view/AudioManager.h>
+#include <sage/util/AudioManager.h>
 
 #include <stack>
 #include <SDL2/SDL.h>

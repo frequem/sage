@@ -1,7 +1,7 @@
 #ifndef _SAGE_AUDIOMANAGER_H
 #define _SAGE_AUDIOMANAGER_H
 
-#include "sage/AudioCache.h"
+#include <sage/cache/AudioCache.h>
 
 #include <string>
 #include <set>

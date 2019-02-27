@@ -43,7 +43,7 @@ Application::Application(const std::string& title, int width, int height){
 	this->imageCache = new ImageCache(this->fileCache, this->threadManager);
 	this->fontCache = new FontCache(this->fileCache, this->threadManager);
 	this->shaderCache = new ShaderCache(this->fileCache);
-	this->audioCache = new AudioCache(this->fileCache);
+	this->audioCache = new AudioCache(this->fileCache, this->threadManager);
 	this->audioManager = new AudioManager(this->audioCache);
 	
 	this->lastUpdate = SDL_GetTicks();
