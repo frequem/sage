@@ -1,10 +1,10 @@
 #ifndef _SAGE_SCENE_H
 #define _SAGE_SCENE_H
 
-#include <sage/Node.h>
+#include <sage/view/Node.h>
 
 #include <SDL2/SDL.h>
-#include <sage/ogl.h>
+#include <sage/util/ogl.h>
 #include <glm/glm.hpp>
 
 namespace sage{
@@ -17,10 +17,15 @@ namespace sage{
 		Scene* getScene() override;
 		void setApplication(Application*);
 		Application* getApplication() override;
+		
+		glm::vec2 getSize() override;
+		
 		~Scene();
 	protected:
-		glm::vec2 absPoint(glm::vec2) override;
 		Application* application;
+		
+		glm::vec2 absPoint(glm::vec2) override;
+		int getDepth() override;
 	};
 }
 #endif // _SAGE_SCENE_H

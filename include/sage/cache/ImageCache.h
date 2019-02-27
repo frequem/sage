@@ -1,51 +1,44 @@
 #ifndef _SAGE_IMAGECACHE_H
 #define _SAGE_IMAGECACHE_H
 
-#include <sage/FileCache.h>
+#include <sage/util/ThreadManager.h>
+#include <sage/cache/FileCache.h>
 
 #include <map>
 #include <string>
 #include <mutex>
-#include <thread>
-#include <vector>
+#include <condition_variable>
+#include <optional>
 #include <utility>
+#include <variant>
+
 #include <SDL2/SDL.h>
-#include "ogl.h"
+#include <sage/util/ogl.h>
 #include <glm/glm.hpp>
 #include <SOIL/SOIL.h>
 
 namespace sage{
 	class ImageCache{
-		
-		struct Texture{
-			Texture(){}
-			GLuint tid;
-			glm::vec2 size;
-			int index;
-		};
-		
 	public:
-		ImageCache(FileCache*);
+		ImageCache(FileCache*, ThreadManager*);
 		void load(const std::string&);
-		void createTexture(const std::string&);
+		void unload(const std::string&);
 		
 		GLuint getTexture(const std::string&);
 		glm::vec2 getSize(const std::string&);
 		float getWidth(const std::string&);
 		float getHeight(const std::string&);
+		
 		~ImageCache();
 	private:
-		void waitfor(const std::string&);
 		void load_func(const std::string&);
 		
+		ThreadManager* threadManager;
 		FileCache* fileCache;
-		std::map<const std::string, std::thread> threads;
-		
-		std::mutex imageMutex;
-		std::vector<unsigned char*> image_data;
-		
-		std::mutex textureMutex;
-		std::map<const std::string, Texture> textures;
+				
+		std::mutex mtx;
+		std::condition_variable cv;
+		std::map<const std::string, std::optional<std::pair<glm::vec2, std::variant<GLuint, unsigned char*>>>> textures;
 	};
 }
 

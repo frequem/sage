@@ -1,10 +1,11 @@
-#include <sage/ImageCache.h>
-#include <sage/macros.h>
+#include <sage/cache/ImageCache.h>
+#include <sage/util/macros.h>
 
 using namespace sage;
 
-ImageCache::ImageCache(FileCache* fileCache){
+ImageCache::ImageCache(FileCache* fileCache, ThreadManager* tm){
 	this->fileCache = fileCache;
+	this->threadManager = tm;
 }
 
 void ImageCache::load_func(const std::string& fn){
@@ -20,78 +21,94 @@ void ImageCache::load_func(const std::string& fn){
 	
 	ASSERT(data != nullptr, "SOIL loading error: '%s'\n", SOIL_last_result());
 	
-	this->imageMutex.lock();
-	int index = this->image_data.size();
-	this->image_data.push_back(data);
-	this->imageMutex.unlock();
-	
-	this->textureMutex.lock();
-	Texture& t = this->textures[fn] = Texture();
-	t.size.x = w;
-	t.size.y = h;
-	t.index = index;
-	this->textureMutex.unlock();
+	{
+		std::lock_guard<std::mutex> guard(this->mtx);
+		
+		if(this->textures.find(fn) == this->textures.end()){//unload has been called, don't load 
+			LOG("sage::ImageCache: '%s' has been unloaded before loading could start.", fn.c_str());
+			SOIL_free_image_data(data);
+			return;
+		}else if(this->textures[fn].has_value()){
+			LOG("sage::ImageCache: '%s' has been unloaded, then loaded again before first loading could start.", fn.c_str());
+			SOIL_free_image_data(data);
+			return;
+		}
+			
+		this->textures[fn] = {glm::vec2(w, h), data};
+	}
+	this->cv.notify_all();
 }
 
 void ImageCache::load(const std::string& fn){
-	if(this->threads.find(fn) != this->threads.end()){
+	std::lock_guard<std::mutex> guard(this->mtx);
+	
+	if(this->textures.find(fn) != this->textures.end()){
 		return;
 	}
 	
-	this->threads[fn] = std::thread(&ImageCache::load_func, this, fn);
+	this->textures[fn] = std::nullopt;
+	this->threadManager->run(&ImageCache::load_func, this, fn);
 }
 
-void ImageCache::waitfor(const std::string& fn){
-	this->load(fn);
+void ImageCache::unload(const std::string& fn){
+	std::lock_guard<std::mutex> guard(this->mtx);
 	
-	if(this->threads[fn].joinable()){ //image still loading?
-		this->threads[fn].join();
+	if(this->textures.find(fn) == this->textures.end()){
+		return;
 	}
-}
-
-void ImageCache::createTexture(const std::string& fn){
-	this->waitfor(fn);
 	
-	this->textureMutex.lock();
-	Texture& t = this->textures[fn];
-	
-	if(t.index >= 0){
-		this->imageMutex.lock();
-		unsigned char* image = this->image_data[t.index];
-		
-		glGenTextures(1, &t.tid);
-		glBindTexture(GL_TEXTURE_2D, t.tid);
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, t.size.x, t.size.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
-		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-		
-		SOIL_free_image_data(image);
-		
-		this->imageMutex.unlock();
-		
-		t.index = -1;
+	if(this->textures[fn].has_value()){
+		if(std::holds_alternative<unsigned char*>(this->textures[fn]->second))
+			SOIL_free_image_data(std::get<unsigned char*>(this->textures[fn]->second));
+		else
+			glDeleteTextures(1, &std::get<GLuint>(this->textures[fn]->second));
 	}
-	this->textureMutex.unlock();
+	
+	this->textures.erase(fn);
+	
+	this->fileCache->unload(fn);
 }
 
 GLuint ImageCache::getTexture(const std::string& fn){
-	this->createTexture(fn);
+	this->load(fn);
 	
-	this->textureMutex.lock();
-	GLuint tid = this->textures[fn].tid;
-	this->textureMutex.unlock();
+	std::unique_lock<std::mutex> lock(this->mtx);
+	while(this->textures.find(fn) != this->textures.end() && !this->textures[fn].has_value())
+		this->cv.wait(lock);
 	
-	return tid;
+	if(!this->textures[fn].has_value()) //should not be possible because load was called earlier
+		return 0;
+		
+	if(std::holds_alternative<unsigned char*>(this->textures[fn]->second)){
+		unsigned char* image_data = std::get<unsigned char*>(this->textures[fn]->second);
+		GLuint tid;
+		glGenTextures(1, &tid);
+		glBindTexture(GL_TEXTURE_2D, tid);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,
+			this->textures[fn]->first.x,
+			this->textures[fn]->first.y,
+			0, GL_RGBA, GL_UNSIGNED_BYTE,
+			image_data
+		);
+		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+		
+		SOIL_free_image_data(image_data);
+		
+		this->textures[fn]->second = tid;
+	}
+		
+	return std::get<GLuint>(this->textures[fn]->second);
 }
 
 glm::vec2 ImageCache::getSize(const std::string& fn){
-	this->waitfor(fn);
+	this->load(fn);
 	
-	this->textureMutex.lock();
-	glm::vec2 size = this->textures[fn].size;
-	this->textureMutex.unlock();
-	
-	return size;
+	std::unique_lock<std::mutex> lock(this->mtx);
+	while(this->textures.find(fn) != this->textures.end() && !this->textures[fn].has_value())
+		this->cv.wait(lock);
+		
+	return this->textures[fn]->first;
 }
 
 float ImageCache::getWidth(const std::string& fn){
@@ -103,23 +120,7 @@ float ImageCache::getHeight(const std::string& fn){
 }
 
 ImageCache::~ImageCache(){
-	for(std::map<const std::string, std::thread>::iterator i=this->threads.begin(); i!=this->threads.end(); i++){
-		std::thread& t = i->second;//std::get<std::thread>(*i);
-		if(t.joinable()){
-			t.join();
-		}
+	while(!this->textures.empty()){
+		this->unload(this->textures.begin()->first);
 	}
-	
-	this->textureMutex.lock();
-	for(std::map<const std::string, Texture>::iterator i=this->textures.begin(); i!=this->textures.end(); i++){
-		Texture& t = i->second;//std::get<Texture>(*i);
-		if(t.index >= 0){
-			this->imageMutex.lock();
-			SOIL_free_image_data(this->image_data[t.index]);
-			this->imageMutex.unlock();
-		}else{
-			glDeleteTextures(1, &t.tid);
-		}
-	}
-	this->textureMutex.unlock();
 }

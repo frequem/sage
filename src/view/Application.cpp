@@ -1,7 +1,7 @@
-#include "sage/Application.h"
-#include "sage/config.h"
-#include "sage/macros.h"
-#include "sage/Scene.h"
+#include <sage/view/Application.h>
+#include <sage/util/config.h>
+#include <sage/util/macros.h>
+#include <sage/view/Scene.h>
 
 using namespace sage;
 
@@ -29,6 +29,8 @@ Application::Application(const std::string& title, int width, int height){
 	
 	ASSERT(SDL_GL_SetSwapInterval(1) == 0, "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError());
 	
+	glEnable(GL_STENCIL_TEST);
+	
 	//sdl ttf
 	ASSERT(TTF_Init() == 0, "Failed to initialize SDL_ttf: %s", TTF_GetError());
 	//sdl mixer
@@ -36,9 +38,10 @@ Application::Application(const std::string& title, int width, int height){
 	//ASSERT((Mix_Init(flags)&flags) == flags, "Could not initialize mp3 loader: %s", Mix_GetError());
 	ASSERT(Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == 0, "Failed to initialize SDL2_mixer: %s", Mix_GetError());
 	
-	this->fileCache = new FileCache();
-	this->imageCache = new ImageCache(this->fileCache);
-	this->fontCache = new FontCache(this->fileCache);
+	this->threadManager = new ThreadManager(MAX_THREAD_COUNT);
+	this->fileCache = new FileCache(this->threadManager);
+	this->imageCache = new ImageCache(this->fileCache, this->threadManager);
+	this->fontCache = new FontCache(this->fileCache, this->threadManager);
 	this->shaderCache = new ShaderCache(this->fileCache);
 	this->audioCache = new AudioCache(this->fileCache);
 	this->audioManager = new AudioManager(this->audioCache);
@@ -111,17 +114,17 @@ float Application::getWindowHeight(){
 	return this->getWindowSize().y;
 }
 
-ImageCache* Application::getImageCache(){
-	return this->imageCache;
+void Application::setWindowSize(glm::vec2 size){
+	SDL_SetWindowSize(this->sdlWindow, size.x, size.y);
 }
 
-FontCache* Application::getFontCache(){
-	return this->fontCache;
-}
+FileCache* Application::getFileCache(){ return this->fileCache; }
 
-ShaderCache* Application::getShaderCache(){
-	return this->shaderCache;
-}
+ImageCache* Application::getImageCache(){ return this->imageCache; }
+
+FontCache* Application::getFontCache(){ return this->fontCache; }
+
+ShaderCache* Application::getShaderCache(){ return this->shaderCache; }
 
 AudioCache* Application::getAudioCache(){
 	return this->audioCache;
@@ -143,6 +146,7 @@ Application::~Application(){
 	delete this->audioCache;
 	delete this->audioManager;
 	delete this->fileCache;
+	delete this->threadManager;
 	
 	Mix_CloseAudio();
 	

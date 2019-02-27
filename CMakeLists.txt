@@ -24,8 +24,11 @@ find_package(glew CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 find_package(soil CONFIG REQUIRED)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-file(GLOB_RECURSE HEADERS "include/${PROJECT_NAME}/*.h")
+file(GLOB_RECURSE HEADERS "include/${PROJECT_NAME}/*.*")
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC SDL2::SDL2main SDL2::SDL2)
@@ -48,8 +51,8 @@ install(
 )
 
 install(
-	FILES ${HEADERS}
-	DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}"
+	DIRECTORY "include/${PROJECT_NAME}"
+	DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
 )
 
 include(CMakePackageConfigHelpers)

@@ -1,6 +1,6 @@
-#include <sage/Scene.h>
-#include <sage/Application.h>
-#include <sage/macros.h>
+#include <sage/view/Scene.h>
+#include <sage/view/Application.h>
+#include <sage/util/macros.h>
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/matrix_transform_2d.hpp>
 
@@ -10,8 +10,9 @@ Scene::Scene(){
 }
 
 void Scene::render(){
-	glClear(GL_COLOR_BUFFER_BIT);
-	
+	//glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+	glClearStencil(0);
+	glClear(GL_COLOR_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
 	Node::render();
 }
 
@@ -37,6 +38,10 @@ glm::vec2 Scene::absPoint(glm::vec2 point){
 	
 	return glm::vec2(model*glm::vec3(point, 1));
 }
+
+glm::vec2 Scene::getSize(){ return getApplication()->getWindowSize(); }
+
+int Scene::getDepth(){ return 0; }
 
 Scene::~Scene(){
 }

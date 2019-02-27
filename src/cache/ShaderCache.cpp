@@ -1,6 +1,6 @@
-#include <sage/ShaderCache.h>
-#include <sage/config.h>
-#include <sage/macros.h>
+#include <sage/cache/ShaderCache.h>
+#include <sage/util/config.h>
+#include <sage/util/macros.h>
 
 using namespace sage;
 
@@ -11,6 +11,17 @@ ShaderCache::ShaderCache(FileCache* fileCache){
 void ShaderCache::load(const std::string& shaderName){
 	this->fileCache->load(shaderName + SHADER_VERTEX_POSTFIX);
 	this->fileCache->load(shaderName + SHADER_FRAGMENT_POSTFIX);
+}
+
+void ShaderCache::unload(const std::string& shaderName){
+	if(this->shaders.find(shaderName) != this->shaders.end()){
+		std::map<const std::string, GLuint>::iterator i = this->shaders.find(shaderName);
+		GLuint pid = i->second;
+		glDeleteProgram(pid);
+		this->shaders.erase(i);
+	}
+	this->fileCache->unload(shaderName + SHADER_VERTEX_POSTFIX);
+	this->fileCache->unload(shaderName + SHADER_FRAGMENT_POSTFIX);
 }
 
 GLuint ShaderCache::createShader(const std::string& fn, GLenum shaderType){
