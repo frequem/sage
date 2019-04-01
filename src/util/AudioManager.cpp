@@ -21,7 +21,9 @@ void AudioManager::play(const std::string& soundFile){
 }
 
 void AudioManager::playOnChannel(const std::string& soundFile, int channel){
-	Mix_PlayChannel(channel, audioCache->get(soundFile), 0);
+	int size = soundFile.size();
+	if(size > 4 && soundFile.substr(size-4).compare(".wav") == 0)
+		Mix_PlayChannel(channel, audioCache->get(soundFile), 0);
 }
 
 void AudioManager::reserveChannel(int channel){
