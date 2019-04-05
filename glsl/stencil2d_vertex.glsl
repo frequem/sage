@@ -1,4 +1,4 @@
-#version 130
+#version 100
 
 uniform vec2 windowSize;
 
