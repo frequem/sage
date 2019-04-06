@@ -5,11 +5,13 @@ include("cmake/Hunter/HunterGate.cmake")
 HunterGate(
     URL "https://github.com/ruslo/hunter/archive/v0.23.94.tar.gz"
     SHA1 "3f4c104df81f1c4a627f4b0ea9f3306de1b0b54b"
+    LOCAL
 )
 
 project(sage C CXX)
 
 hunter_add_package(SDL2)
+hunter_add_package(SDL_mixer)
 hunter_add_package(SDL_ttf)
 if(NOT ANDROID)
 	hunter_add_package(glew)
@@ -18,6 +20,7 @@ hunter_add_package(glm)
 hunter_add_package(soil)
 
 find_package(SDL2 CONFIG REQUIRED)
+find_package(SDL_mixer CONFIG REQUIRED)
 find_package(SDL_ttf CONFIG REQUIRED)
 if(NOT ANDROID)
 	find_package(glew CONFIG REQUIRED)
@@ -33,6 +36,7 @@ file(GLOB_RECURSE HEADERS "include/${PROJECT_NAME}/*.*")
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC SDL2::SDL2main SDL2::SDL2)
+target_link_libraries(${PROJECT_NAME} PUBLIC SDL_mixer::SDL_mixer)
 target_link_libraries(${PROJECT_NAME} PUBLIC SDL_ttf::SDL_ttf)
 if(NOT ANDROID)
 	target_link_libraries(${PROJECT_NAME} PUBLIC glew::glew)

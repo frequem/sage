@@ -10,7 +10,7 @@ Application::Application() : Application("sage Application"){}
 Application::Application(const std::string& title) : Application(title, 960, 540){}
 
 Application::Application(const std::string& title, int width, int height){
-	ASSERT(SDL_Init(SDL_INIT_VIDEO) == 0, "Failed to initialize SDL: %s", SDL_GetError());
+	ASSERT(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) == 0, "Failed to initialize SDL: %s", SDL_GetError());
 	
 	#ifdef __ANDROID__
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
@@ -39,12 +39,18 @@ Application::Application(const std::string& title, int width, int height){
 	
 	//sdl ttf
 	ASSERT(TTF_Init() == 0, "Failed to initialize SDL_ttf: %s", TTF_GetError());
+	//sdl mixer
+	//int flags = MIX_INIT_MP3;
+	//ASSERT((Mix_Init(flags)&flags) == flags, "Could not initialize mp3 loader: %s", Mix_GetError());
+	ASSERT(Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == 0, "Failed to initialize SDL2_mixer: %s", Mix_GetError());
 	
 	this->threadManager = new ThreadManager(MAX_THREAD_COUNT);
 	this->fileCache = new FileCache(this->threadManager);
 	this->imageCache = new ImageCache(this->fileCache, this->threadManager);
 	this->fontCache = new FontCache(this->fileCache, this->threadManager);
 	this->shaderCache = new ShaderCache(this->fileCache);
+	this->audioCache = new AudioCache(this->fileCache, this->threadManager);
+	this->audioManager = new AudioManager(this->audioCache);
 	
 	this->lastUpdate = SDL_GetTicks();
 }
@@ -142,6 +148,14 @@ FontCache* Application::getFontCache(){ return this->fontCache; }
 
 ShaderCache* Application::getShaderCache(){ return this->shaderCache; }
 
+AudioCache* Application::getAudioCache(){
+	return this->audioCache;
+}
+
+AudioManager* Application::getAudioManager(){
+	return this->audioManager;
+}
+
 Application::~Application(){
 	LOG("sage::Application Destructor");
 	while(!this->scenes.empty()){
@@ -151,8 +165,12 @@ Application::~Application(){
 	delete this->imageCache;
 	delete this->fontCache;
 	delete this->shaderCache;
+	delete this->audioCache;
+	delete this->audioManager;
 	delete this->fileCache;
 	delete this->threadManager;
+	
+	Mix_CloseAudio();
 	
 	TTF_Quit();
 	
