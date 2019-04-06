@@ -11,10 +11,18 @@ namespace sage{
 	class AudioManager{
 	public:
 		AudioManager(AudioCache*);
+		void play(const std::string&, int);
+		void playOnChannel(const std::string&, int, int);
 		void play(const std::string&);
 		void playOnChannel(const std::string&, int);
+		
 		void reserveChannel(int);
 		void unreserveChannel(int);
+		
+		void pauseAll();
+		void pause(int);
+		void resumeAll();
+		void resume(int);
 		
 		~AudioManager();
 	private:
