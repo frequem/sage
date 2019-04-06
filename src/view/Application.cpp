@@ -72,8 +72,23 @@ void Application::popScene(){
 
 void Application::handleEvents(){
 	while(SDL_PollEvent(&sdlEvent) != 0){
-		if(sdlEvent.type == SDL_QUIT){
-			this->isRunning = false;
+		switch(sdlEvent.type){
+			case SDL_WINDOWEVENT:
+				switch(sdlEvent.window.event){
+					case SDL_WINDOWEVENT_FOCUS_LOST:
+					case SDL_WINDOWEVENT_MINIMIZED:
+						this->isPaused = true;
+						break;
+					case SDL_WINDOWEVENT_FOCUS_GAINED:
+					case SDL_WINDOWEVENT_RESTORED:
+						this->isPaused = false;
+						this->lastUpdate = SDL_GetTicks();
+						break;
+				}
+				break;
+			case SDL_QUIT:
+				this->isRunning = false;
+				break;
 		}
 	}
 }
@@ -84,18 +99,19 @@ void Application::run(){
 	this->isRunning = true;
 	
 	while(this->isRunning){
-		uint32_t time = SDL_GetTicks();
-		uint32_t diff = time - lastUpdate;
-		float diff_f = diff / 1000.0f;
-		
-		this->getScene()->update(diff_f);
-		this->getScene()->render();
-		SDL_GL_SwapWindow(this->sdlWindow);
-		
-		lastUpdate = time;
+		if(!this->isPaused){
+			uint32_t time = SDL_GetTicks();
+			uint32_t diff = time - this->lastUpdate;
+			float diff_f = diff / 1000.0f;
+			
+			this->getScene()->update(diff_f);
+			this->getScene()->render();
+			SDL_GL_SwapWindow(this->sdlWindow);
+			
+			this->lastUpdate = time;
+		}
 		
 		SDL_Delay(1000/FPS);
-		
 		this->handleEvents();
 	}
 }

@@ -51,6 +51,7 @@ namespace sage{
 		FontCache* fontCache;
 		
 		bool isRunning = false;
+		bool isPaused = false;
 		SDL_Event sdlEvent;
 		void handleEvents();
 		
