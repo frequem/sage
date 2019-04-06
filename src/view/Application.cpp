@@ -84,10 +84,12 @@ void Application::handleEvents(){
 					case SDL_WINDOWEVENT_FOCUS_LOST:
 					case SDL_WINDOWEVENT_MINIMIZED:
 						this->isPaused = true;
+						this->getAudioManager()->pauseAll();
 						break;
 					case SDL_WINDOWEVENT_FOCUS_GAINED:
 					case SDL_WINDOWEVENT_RESTORED:
 						this->isPaused = false;
+						this->getAudioManager()->resumeAll();
 						this->lastUpdate = SDL_GetTicks();
 						break;
 				}
