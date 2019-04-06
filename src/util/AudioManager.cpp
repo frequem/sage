@@ -11,9 +11,7 @@ AudioManager::AudioManager(AudioCache* audioCache){
 
 void AudioManager::play(const std::string& soundFile){
 	int ch = 0;
-	while(true){
-		if(!Mix_Playing(ch) && this->reservedChannels.find(ch) == this->reservedChannels.end())
-			break;
+	while(Mix_Playing(ch) || this->reservedChannels.find(ch) != this->reservedChannels.end()){
 		ch++;
 	}
 	
@@ -21,9 +19,10 @@ void AudioManager::play(const std::string& soundFile){
 }
 
 void AudioManager::playOnChannel(const std::string& soundFile, int channel){
-	int size = soundFile.size();
-	if(size > 4 && soundFile.substr(size-4).compare(".wav") == 0)
-		Mix_PlayChannel(channel, audioCache->get(soundFile), 0);
+	if(Mix_AllocateChannels(-1) <= channel){
+		Mix_AllocateChannels(channel+1);
+	}
+	Mix_PlayChannel(channel, audioCache->get(soundFile), 0);
 }
 
 void AudioManager::reserveChannel(int channel){
