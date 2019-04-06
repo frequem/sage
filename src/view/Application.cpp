@@ -7,24 +7,30 @@ using namespace sage;
 
 Application::Application() : Application("sage Application"){}
 
-Application::Application(const std::string& title) : Application(title, 840, 630){}
+Application::Application(const std::string& title) : Application(title, 960, 540){}
 
 Application::Application(const std::string& title, int width, int height){
 	ASSERT(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) == 0, "Failed to initialize SDL: %s", SDL_GetError());
 	
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	#ifdef __ANDROID__
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
+		this->sdlWindow = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN | SDL_WINDOW_FULLSCREEN_DESKTOP);
+	#else
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
+		this->sdlWindow = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
+	#endif
 	
-	this->sdlWindow = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 	ASSERT(this->sdlWindow != NULL, "Window could not be created! SDL Error: %s", SDL_GetError() );
 	
 	this->glContext = SDL_GL_CreateContext(this->sdlWindow);
 	ASSERT(this->glContext != NULL, "OpenGL context could not be created! SDL Error: %s", SDL_GetError() );
 	
 	#ifndef __ANDROID__
-	GLenum glewError = glewInit();
-	ASSERT(glewError == GLEW_OK, "Error initializing GLEW! %s\n", glewGetErrorString(glewError));
+		GLenum glewError = glewInit();
+		ASSERT(glewError == GLEW_OK, "Error initializing GLEW! %s\n", glewGetErrorString(glewError));
 	#endif //__ANDROID__
 	
 	ASSERT(SDL_GL_SetSwapInterval(1) == 0, "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError());
@@ -72,8 +78,23 @@ void Application::popScene(){
 
 void Application::handleEvents(){
 	while(SDL_PollEvent(&sdlEvent) != 0){
-		if(sdlEvent.type == SDL_QUIT){
-			this->isRunning = false;
+		switch(sdlEvent.type){
+			case SDL_WINDOWEVENT:
+				switch(sdlEvent.window.event){
+					case SDL_WINDOWEVENT_FOCUS_LOST:
+					case SDL_WINDOWEVENT_MINIMIZED:
+						this->isPaused = true;
+						break;
+					case SDL_WINDOWEVENT_FOCUS_GAINED:
+					case SDL_WINDOWEVENT_RESTORED:
+						this->isPaused = false;
+						this->lastUpdate = SDL_GetTicks();
+						break;
+				}
+				break;
+			case SDL_QUIT:
+				this->isRunning = false;
+				break;
 		}
 	}
 }
@@ -84,18 +105,19 @@ void Application::run(){
 	this->isRunning = true;
 	
 	while(this->isRunning){
-		uint32_t time = SDL_GetTicks();
-		uint32_t diff = time - lastUpdate;
-		float diff_f = diff / 1000.0f;
-		
-		this->getScene()->update(diff_f);
-		this->getScene()->render();
-		SDL_GL_SwapWindow(this->sdlWindow);
-		
-		lastUpdate = time;
+		if(!this->isPaused){
+			uint32_t time = SDL_GetTicks();
+			uint32_t diff = time - this->lastUpdate;
+			float diff_f = diff / 1000.0f;
+			
+			this->getScene()->update(diff_f);
+			this->getScene()->render();
+			SDL_GL_SwapWindow(this->sdlWindow);
+			
+			this->lastUpdate = time;
+		}
 		
 		SDL_Delay(1000/FPS);
-		
 		this->handleEvents();
 	}
 }

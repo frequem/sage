@@ -1,5 +1,6 @@
-#version 130
-
+#version 100
+precision highp float;
+        
 uniform sampler2D tex;
 
 varying vec2 vTexCoord;

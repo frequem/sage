@@ -60,6 +60,7 @@ namespace sage{
 		AudioManager* audioManager;
 		
 		bool isRunning = false;
+		bool isPaused = false;
 		SDL_Event sdlEvent;
 		void handleEvents();
 		

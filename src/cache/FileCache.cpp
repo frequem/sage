@@ -7,15 +7,37 @@ using namespace sage;
 
 FileCache::FileCache(ThreadManager* tm){
 	this->threadManager = tm;
+	
+	#ifdef __ANDROID__
+		this->android_jnienv = (JNIEnv*)SDL_AndroidGetJNIEnv();
+		jobject activity = (jobject)SDL_AndroidGetActivity();
+		
+		jclass activity_class = this->android_jnienv->GetObjectClass(activity);
+		jmethodID activity_class_getAssets = this->android_jnienv->GetMethodID(activity_class, "getAssets", "()Landroid/content/res/AssetManager;");
+		
+		jobject asset_manager = this->android_jnienv->CallObjectMethod(activity, activity_class_getAssets); // activity.getAssets();
+		this->glob_android_amgr = this->android_jnienv->NewGlobalRef(asset_manager);
+		
+		this->android_jnienv->DeleteLocalRef(activity);
+		this->android_jnienv->DeleteLocalRef(activity_class);
+		
+		this->android_amgr = AAssetManager_fromJava(this->android_jnienv, this->glob_android_amgr);
+	#endif
 }
 
 void FileCache::load_func(const std::string& fn){
-	std::ifstream file(fn, std::ios::binary | std::ios::ate); 
-	std::streamsize size = file.tellg();
-	
-	ASSERT(file.good(), "File '%s' does not exist.", fn.c_str());
-	
-	file.seekg(0, std::ios::beg);
+	#ifdef __ANDROID__
+		AAsset* asset = AAssetManager_open(this->android_amgr, fn.c_str(), AASSET_MODE_STREAMING);
+		ASSERT(asset != nullptr, "File '%s' does not exist.", fn.c_str());
+		int size = AAsset_getLength(asset);
+		ASSERT(size > 0, "File '%s' is of size 0.", fn.c_str());
+		
+	#else
+		std::ifstream file(fn, std::ios::binary | std::ios::ate); 
+		std::streamsize size = file.tellg();
+		ASSERT(file.good(), "File '%s' does not exist.", fn.c_str());
+		file.seekg(0, std::ios::beg);
+	#endif
 	
 	{
 		std::lock_guard<std::mutex> guard(this->mtx);
@@ -29,15 +51,21 @@ void FileCache::load_func(const std::string& fn){
 		}
 		
 		this->data[fn] = std::vector<char>(size);
-		file.read(this->data[fn]->data(), size);
+		#ifdef __ANDROID__
+			AAsset_read(asset, this->data[fn]->data(), size);
+		#else
+			file.read(this->data[fn]->data(), size);
+		#endif
 	}
 	
 	this->cv.notify_all(); //notify get/size
 	
-	ASSERT(file.good(), "Error loading file '%s'", fn.c_str());
-	
-	file.close();
-	
+	#ifdef __ANDROID__
+		AAsset_close(asset);
+	#else
+		ASSERT(file.good(), "Error loading file '%s'", fn.c_str());
+		file.close();
+	#endif
 	LOG("sage::FileCache: Loaded '%s'", fn.c_str());
 }
 
@@ -88,4 +116,7 @@ int FileCache::size(const std::string& fn){
 }
 
 FileCache::~FileCache(){
+	#ifdef __ANDROID__
+		this->android_jnienv->DeleteGlobalRef(this->glob_android_amgr);
+	#endif
 }

@@ -10,6 +10,13 @@
 #include <mutex>
 #include <condition_variable>
 
+#ifdef __ANDROID__
+	#include <SDL2/SDL.h> //SDL_AndroidGetJNIEnv()
+	#include <jni.h>
+	#include <android/asset_manager.h>
+	#include <android/asset_manager_jni.h>
+#endif
+
 namespace sage{
 	class FileCache{
 	public:
@@ -23,6 +30,11 @@ namespace sage{
 	private:
 		void load_func(const std::string&);
 		
+		#ifdef __ANDROID__
+			JNIEnv* android_jnienv;
+			jobject glob_android_amgr;
+			AAssetManager* android_amgr;
+		#endif
 		ThreadManager* threadManager;
 		
 		std::mutex mtx;

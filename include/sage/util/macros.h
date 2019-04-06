@@ -5,15 +5,15 @@
 #include <cstring>
 #include <cstdlib>
 
-#define PRNT(pre, post, format, ...) { \
-	char str[strlen(pre)+strlen(format)+strlen(post)+1]; \
-	strcpy(str, pre); \
-	strcat(str, format); \
-	strcat(str, post); \
-	printf(str, __VA_ARGS__); \
-}
+#ifdef __ANDROID__
+	#include <android/log.h>
+	
+	#define PRINT_MSG(type, post, format, ...) __android_log_print(ANDROID_LOG_DEBUG, "SAGE", type ": " format post "%s", __VA_ARGS__)
+#else	
+	#define PRINT_MSG(type, post, format, ...) printf(type ": " format post "%s\n", __VA_ARGS__)
+#endif
 
-#define LOG(...) if(DEBUG){ PRNT("DEBUG: ", "\n", __VA_ARGS__, ""); }
-#define ASSERT(condition, ...) if(!(condition)){ PRNT("ERROR: ", "\nExiting...\n", __VA_ARGS__, ""); exit(EXIT_FAILURE); }
+#define LOG(...) if(DEBUG){ PRINT_MSG("DEBUG", "", __VA_ARGS__, ""); }
+#define ASSERT(condition, ...) if(!(condition)){ PRINT_MSG("ERROR", " Exiting...", __VA_ARGS__, ""); exit(EXIT_FAILURE); }
 
 #endif // _SAGE_MACROS_H
