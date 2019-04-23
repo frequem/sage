@@ -1,7 +1,9 @@
-
-
 - event handlers
-- audio
+
+
+
+
+- additional audio formats
 
 
 
@@ -18,4 +20,4 @@
 
 
 
-- android compile
+

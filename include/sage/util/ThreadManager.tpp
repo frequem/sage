@@ -1,5 +1,5 @@
-#ifndef _SAGE_THREADMANAGER_IMPL_H
-#define _SAGE_THREADMANAGER_IMPL_H
+#ifndef _SAGE_THREADMANAGER_TPP
+#define _SAGE_THREADMANAGER_TPP
 
 #include <sage/util/config.h>
 
@@ -16,5 +16,5 @@ namespace sage{
 	}
 }
 
-#endif // _SAGE_THREADMANAGER_IMPL_H
+#endif // _SAGE_THREADMANAGER_TPP
 

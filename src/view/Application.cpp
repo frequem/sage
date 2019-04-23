@@ -33,7 +33,12 @@ Application::Application(const std::string& title, int width, int height){
 		ASSERT(glewError == GLEW_OK, "Error initializing GLEW! %s\n", glewGetErrorString(glewError));
 	#endif //__ANDROID__
 	
-	ASSERT(SDL_GL_SetSwapInterval(1) == 0, "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError());
+	//call may not be supported on all systems -> no assert
+	if(SDL_GL_SetSwapInterval(-1)==-1){
+		if(SDL_GL_SetSwapInterval(1)==-1){
+			SDL_GL_SetSwapInterval(0);
+		}
+	}
 	
 	glEnable(GL_STENCIL_TEST);
 	
@@ -45,12 +50,35 @@ Application::Application(const std::string& title, int width, int height){
 	ASSERT(Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == 0, "Failed to initialize SDL2_mixer: %s", Mix_GetError());
 	
 	this->threadManager = new ThreadManager(MAX_THREAD_COUNT);
+	
 	this->fileCache = new FileCache(this->threadManager);
 	this->imageCache = new ImageCache(this->fileCache, this->threadManager);
 	this->fontCache = new FontCache(this->fileCache, this->threadManager);
 	this->shaderCache = new ShaderCache(this->fileCache);
+	
 	this->audioCache = new AudioCache(this->fileCache, this->threadManager);
 	this->audioManager = new AudioManager(this->audioCache);
+	
+	this->eventDispatcher = new EventDispatcher();
+	
+	this->getEventDispatcher()->registerEvent(Event::WINDOW_LEAVE, std::function<void()>([this](){
+		this->isPaused = true;
+		this->getAudioManager()->pauseAll();
+	}));
+	
+	this->getEventDispatcher()->registerEvent(Event::WINDOW_ENTER, std::function<void()>([this](){
+		this->isPaused = false;
+		this->getAudioManager()->resumeAll();
+		this->lastUpdate = SDL_GetTicks();
+	}));
+	
+	
+	this->getEventDispatcher()->registerEvent(Event::QUIT, std::function<void()>([this](){
+		this->isRunning = false;
+	}));
+	
+	
+	
 	
 	this->lastUpdate = SDL_GetTicks();
 }
@@ -106,11 +134,12 @@ void Application::run(){
 	
 	this->isRunning = true;
 	
+	float diff_f = 0;
 	while(this->isRunning){
 		if(!this->isPaused){
 			uint32_t time = SDL_GetTicks();
 			uint32_t diff = time - this->lastUpdate;
-			float diff_f = diff / 1000.0f;
+			diff_f = diff / 1000.0f;
 			
 			this->getScene()->update(diff_f);
 			this->getScene()->render();
@@ -120,7 +149,7 @@ void Application::run(){
 		}
 		
 		SDL_Delay(1000/FPS);
-		this->handleEvents();
+		this->eventDispatcher->handleEvents(diff_f);
 	}
 }
 
@@ -150,13 +179,11 @@ FontCache* Application::getFontCache(){ return this->fontCache; }
 
 ShaderCache* Application::getShaderCache(){ return this->shaderCache; }
 
-AudioCache* Application::getAudioCache(){
-	return this->audioCache;
-}
+AudioCache* Application::getAudioCache(){ return this->audioCache; }
 
-AudioManager* Application::getAudioManager(){
-	return this->audioManager;
-}
+AudioManager* Application::getAudioManager(){ return this->audioManager; }
+
+EventDispatcher* Application::getEventDispatcher(){ return this->eventDispatcher; }
 
 Application::~Application(){
 	LOG("sage::Application Destructor");
@@ -171,6 +198,7 @@ Application::~Application(){
 	delete this->audioManager;
 	delete this->fileCache;
 	delete this->threadManager;
+	delete this->eventDispatcher;
 	
 	Mix_CloseAudio();
 	

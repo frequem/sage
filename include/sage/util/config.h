@@ -11,4 +11,7 @@
 //ThreadManager config
 #define MAX_THREAD_COUNT 100
 
+//EventDispatcher config
+#define MOUSE_CLICK_MAX_SHIFT 5 //maximum distance from mouse_down to mouse_up where a click is still registered
+
 #endif // _SAGE_CONFIG_H

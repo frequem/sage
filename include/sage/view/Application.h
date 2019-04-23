@@ -7,6 +7,7 @@
 #include <sage/cache/FontCache.h>
 #include <sage/cache/AudioCache.h>
 #include <sage/util/AudioManager.h>
+#include <sage/util/EventDispatcher.h>
 
 #include <stack>
 #include <SDL2/SDL.h>
@@ -41,6 +42,7 @@ namespace sage{
 		FontCache* getFontCache();
 		ShaderCache* getShaderCache();
 		AudioCache* getAudioCache();
+		EventDispatcher* getEventDispatcher();
 		
 		AudioManager* getAudioManager();
 		
@@ -56,6 +58,7 @@ namespace sage{
 		ShaderCache* shaderCache;
 		FontCache* fontCache;
 		AudioCache* audioCache;
+		EventDispatcher* eventDispatcher;
 		
 		AudioManager* audioManager;
 		
