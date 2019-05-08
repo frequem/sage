@@ -36,6 +36,7 @@ namespace sage{
 		glm::vec2 getWindowSize();
 		float getWindowWidth();
 		float getWindowHeight();
+		void getDPI(float *hdpi, float *vdpi);
 		
 		FileCache* getFileCache();
 		ImageCache* getImageCache();
@@ -64,8 +65,6 @@ namespace sage{
 		
 		bool isRunning = false;
 		bool isPaused = false;
-		SDL_Event sdlEvent;
-		void handleEvents();
 		
 		SDL_Window* sdlWindow;
 		SDL_GLContext glContext;

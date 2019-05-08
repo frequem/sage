@@ -59,7 +59,7 @@ Application::Application(const std::string& title, int width, int height){
 	this->audioCache = new AudioCache(this->fileCache, this->threadManager);
 	this->audioManager = new AudioManager(this->audioCache);
 	
-	this->eventDispatcher = new EventDispatcher();
+	this->eventDispatcher = new EventDispatcher(this);
 	
 	this->getEventDispatcher()->registerEvent(Event::WINDOW_LEAVE, std::function<void()>([this](){
 		this->isPaused = true;
@@ -104,31 +104,6 @@ void Application::popScene(){
 	delete s;
 }
 
-void Application::handleEvents(){
-	while(SDL_PollEvent(&sdlEvent) != 0){
-		switch(sdlEvent.type){
-			case SDL_WINDOWEVENT:
-				switch(sdlEvent.window.event){
-					case SDL_WINDOWEVENT_FOCUS_LOST:
-					case SDL_WINDOWEVENT_MINIMIZED:
-						this->isPaused = true;
-						this->getAudioManager()->pauseAll();
-						break;
-					case SDL_WINDOWEVENT_FOCUS_GAINED:
-					case SDL_WINDOWEVENT_RESTORED:
-						this->isPaused = false;
-						this->getAudioManager()->resumeAll();
-						this->lastUpdate = SDL_GetTicks();
-						break;
-				}
-				break;
-			case SDL_QUIT:
-				this->isRunning = false;
-				break;
-		}
-	}
-}
-
 void Application::run(){
 	ASSERT(this->scenes.size() > 0, "Application::run - No Scene");
 	
@@ -149,7 +124,7 @@ void Application::run(){
 		}
 		
 		SDL_Delay(1000/FPS);
-		this->eventDispatcher->handleEvents(diff_f);
+		this->eventDispatcher->handleEvents();
 	}
 }
 
@@ -157,6 +132,10 @@ glm::vec2 Application::getWindowSize(){
 	int w, h;
 	SDL_GetWindowSize(this->sdlWindow, &w, &h);
 	return glm::vec2(w, h);
+}
+
+void Application::setWindowSize(glm::vec2 size){
+	SDL_SetWindowSize(this->sdlWindow, size.x, size.y);
 }
 
 float Application::getWindowWidth(){
@@ -167,8 +146,13 @@ float Application::getWindowHeight(){
 	return this->getWindowSize().y;
 }
 
-void Application::setWindowSize(glm::vec2 size){
-	SDL_SetWindowSize(this->sdlWindow, size.x, size.y);
+void Application::getDPI(float *hdpi, float *vdpi){
+	#ifdef __ANDROID__
+		*hdpi = 400;
+		*vdpi = 400;
+	#else
+		SDL_GetDisplayDPI(SDL_GetWindowDisplayIndex(this->sdlWindow), nullptr, hdpi, vdpi);
+	#endif
 }
 
 FileCache* Application::getFileCache(){ return this->fileCache; }

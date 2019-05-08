@@ -12,6 +12,12 @@
 #define MAX_THREAD_COUNT 100
 
 //EventDispatcher config
-#define MOUSE_CLICK_MAX_SHIFT 5 //maximum distance from mouse_down to mouse_up where a click is still registered
+//maximum distance from mouse_down to mouse_up where a click is still registered, unweighted, must be multiplied by dpi
+#ifndef __ANDROID__
+	#define MOUSE_CLICK_MAX_SHIFT 0.04 
+#else
+	#define MOUSE_CLICK_MAX_SHIFT 0.04*2.5
+#endif
+#define MOUSE_CLICK_MAX_TIME 500 //in milliseconds
 
 #endif // _SAGE_CONFIG_H

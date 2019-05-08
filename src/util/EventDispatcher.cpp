@@ -1,13 +1,15 @@
 #include <sage/util/EventDispatcher.h>
+#include <sage/view/Application.h>
 #include <sage/view/Node.h>
 #include <sage/util/config.h>
+#include <sage/util/macros.h>
 #include <cstdlib>
 
 using namespace sage;
 
-EventDispatcher::EventDispatcher(){}
+EventDispatcher::EventDispatcher(Application* app) : application(app){}
 
-void EventDispatcher::handleEvents(float delta){
+void EventDispatcher::handleEvents(){
 	while(SDL_PollEvent(&sdlEvent) != 0){
 		switch(sdlEvent.type){
 			case SDL_WINDOWEVENT:
@@ -33,8 +35,12 @@ void EventDispatcher::handleEvents(float delta){
 					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel));
 				break;
 			case SDL_MOUSEBUTTONDOWN:
+				if(!isInsideClickRadius(sdlEvent.button.x, sdlEvent.button.y) || this->mouse_click_time + MOUSE_CLICK_MAX_TIME <= SDL_GetTicks()){
+					this->mouse_click_count = 0;
+				}
 				this->mouse_click_x = sdlEvent.button.x;
 				this->mouse_click_y = sdlEvent.button.y;
+				this->mouse_click_time = SDL_GetTicks();
 				
 				this->dispatchEvent(Event::MOUSE_DOWN, static_cast<int>(sdlEvent.button.button), 
 					static_cast<int>(sdlEvent.button.x), static_cast<int>(sdlEvent.button.y));
@@ -42,11 +48,13 @@ void EventDispatcher::handleEvents(float delta){
 			case SDL_MOUSEBUTTONUP:
 				this->dispatchEvent(Event::MOUSE_UP, static_cast<int>(sdlEvent.button.button), 
 					static_cast<int>(sdlEvent.button.x), static_cast<int>(sdlEvent.button.y));
-					
-				if(abs(sdlEvent.button.x - this->mouse_click_x) <= MOUSE_CLICK_MAX_SHIFT &&
-					abs(sdlEvent.button.y - this->mouse_click_y) <= MOUSE_CLICK_MAX_SHIFT){
-					this->dispatchEvent(Event::MOUSE_CLICK, static_cast<int>(sdlEvent.button.button), static_cast<int>(sdlEvent.button.clicks),
+				
+				if(isInsideClickRadius(sdlEvent.button.x, sdlEvent.button.y) && this->mouse_click_time + MOUSE_CLICK_MAX_TIME > SDL_GetTicks()){
+					this->mouse_click_count++;
+					this->dispatchEvent(Event::MOUSE_CLICK, static_cast<int>(sdlEvent.button.button), this->mouse_click_count,
 						static_cast<int>(sdlEvent.button.x), static_cast<int>(sdlEvent.button.y));
+				}else{
+					this->mouse_click_count = 0;
 				}
 				break;
 			case SDL_MOUSEWHEEL:
@@ -60,6 +68,13 @@ void EventDispatcher::handleEvents(float delta){
 				break;
 		}
 	}
+}
+
+bool EventDispatcher::isInsideClickRadius(int x, int y){
+	float hdpi, vdpi;
+	this->application->getDPI(&hdpi, &vdpi);
+	return abs(x - this->mouse_click_x) <= MOUSE_CLICK_MAX_SHIFT*hdpi &&
+				abs(y - this->mouse_click_y) <= MOUSE_CLICK_MAX_SHIFT*vdpi;
 }
 
 EventDispatcher::~EventDispatcher(){}
