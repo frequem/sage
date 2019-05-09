@@ -61,19 +61,19 @@ Application::Application(const std::string& title, int width, int height){
 	
 	this->eventDispatcher = new EventDispatcher(this);
 	
-	this->getEventDispatcher()->registerEvent(Event::WINDOW_LEAVE, std::function<void()>([this](){
+	this->getEventDispatcher()->addEventHandler(Event::WINDOW_LEAVE, std::function<void()>([this](){
 		this->isPaused = true;
 		this->getAudioManager()->pauseAll();
 	}));
 	
-	this->getEventDispatcher()->registerEvent(Event::WINDOW_ENTER, std::function<void()>([this](){
+	this->getEventDispatcher()->addEventHandler(Event::WINDOW_ENTER, std::function<void()>([this](){
 		this->isPaused = false;
 		this->getAudioManager()->resumeAll();
 		this->lastUpdate = SDL_GetTicks();
 	}));
 	
 	
-	this->getEventDispatcher()->registerEvent(Event::QUIT, std::function<void()>([this](){
+	this->getEventDispatcher()->addEventHandler(Event::QUIT, std::function<void()>([this](){
 		this->isRunning = false;
 	}));
 	

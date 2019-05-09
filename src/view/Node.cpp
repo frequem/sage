@@ -174,6 +174,18 @@ glm::vec2 Node::absPoint(glm::vec2 point){
 	return this->parentNode->absPoint(glm::vec2(model*glm::vec3(point, 1)));
 }
 
+glm::vec2 Node::relPoint(glm::vec2 point){
+	glm::mat3 model = glm::mat3(1);
+	
+	model = glm::translate(model, this->pos);
+	model = glm::scale(model, this->scale);
+	model = glm::rotate(model, this->rotation);
+	
+	model = glm::inverse(model);
+	
+	return glm::vec2(model*glm::vec3(this->parentNode->relPoint(point), 1));
+}
+
 std::vector<glm::vec2> Node::getAbsPoints(){
 	glm::vec2 size = this->getSize();
 	
@@ -187,6 +199,13 @@ std::vector<glm::vec2> Node::getAbsPoints(){
 }
 
 int Node::getDepth(){ return this->getParentNode()->getDepth()+1; }
+
+bool Node::containsAbs(glm::vec2 point){
+	glm::vec2 size = this->getSize();
+	glm::vec2 rp = this->relPoint(point)+(size*this->anchor);
+	
+	return (rp.x >= 0 && rp.x <= size.x) && (rp.y >= 0 && rp.y <= size.y);
+}
 
 Node::~Node(){
 	for(Node* n : this->childNodes){

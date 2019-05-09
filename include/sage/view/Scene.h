@@ -25,6 +25,7 @@ namespace sage{
 		Application* application;
 		
 		glm::vec2 absPoint(glm::vec2) override;
+		glm::vec2 relPoint(glm::vec2) override;
 		int getDepth() override;
 	};
 }

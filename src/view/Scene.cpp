@@ -39,6 +39,19 @@ glm::vec2 Scene::absPoint(glm::vec2 point){
 	return glm::vec2(model*glm::vec3(point, 1));
 }
 
+glm::vec2 Scene::relPoint(glm::vec2 point){
+	glm::mat3 model = glm::mat3(1);
+		
+	model = glm::translate(model, -this->pos);
+	model = glm::translate(model, this->getApplication()->getWindowSize()*this->anchor);
+	model = glm::scale(model, this->scale);
+	model = glm::rotate(model, this->rotation);
+	
+	model = glm::inverse(model);
+	
+	return glm::vec2(model*glm::vec3(point, 1));
+}
+
 glm::vec2 Scene::getSize(){ return getApplication()->getWindowSize(); }
 
 int Scene::getDepth(){ return 0; }

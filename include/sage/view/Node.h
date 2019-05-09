@@ -55,6 +55,7 @@ namespace sage{
 		float getHeight();
 				
 		std::vector<glm::vec2> getAbsPoints();
+		bool containsAbs(glm::vec2);
 		
 		virtual ~Node();
 	protected:	
@@ -63,6 +64,7 @@ namespace sage{
 		
 		void sortChildren();
 		virtual glm::vec2 absPoint(glm::vec2);
+		virtual glm::vec2 relPoint(glm::vec2);
 		
 		virtual int getDepth();
 	
