@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId 'com.example.hellojni'
+        applicationId 'com.example.sage.new_sage_project'
         minSdkVersion 24
         targetSdkVersion 27
         versionCode 1
@@ -12,8 +12,8 @@ android {
         externalNativeBuild {
             cmake {
                 arguments '-DANDROID_STL=c++_static',
-					'-DANDROID_GRADLE_BUILD=1'
-                    '-DCMAKE_VERBOSE_MAKEFILE=1'
+					'-DANDROID_GRADLE_BUILD=1',
+                    '-DSAGE_PROJECT_NAME=new_sage_project'
                 version "3.10.2"
             }
         }
