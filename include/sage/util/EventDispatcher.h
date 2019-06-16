@@ -12,7 +12,7 @@ namespace sage{
 	class Application;
 	class Node;
 	//TODO: KEY_PRESS (delay)
-	enum class Event{ WINDOW_LEAVE, WINDOW_ENTER, KEY_DOWN, KEY_UP, MOUSE_MOVE, MOUSE_DOWN, MOUSE_UP, MOUSE_CLICK, MOUSE_SCROLL, QUIT };
+	enum class Event{ WINDOW_LEAVE, WINDOW_ENTER, KEY_DOWN, KEY_UP, MOUSE_DOWN, MOUSE_UP, MOUSE_CLICK, MOUSE_MOVE, MOUSE_DRAG, MOUSE_SCROLL, QUIT };
 	enum class NodeEvent{ MOUSE_DOWN, MOUSE_UP, MOUSE_CLICK, MOUSE_MOVE, MOUSE_ENTER, MOUSE_LEAVE };
 	
 	class EventDispatcher{
@@ -49,6 +49,8 @@ namespace sage{
 		int mouse_click_x = 0, mouse_click_y = 0;
 		int mouse_click_count = 0;
 		uint32_t mouse_click_time = 0;
+		bool mouse_down = false;
+		int mouse_down_button;
 		
 		bool isInsideClickRadius(int, int);
 	};

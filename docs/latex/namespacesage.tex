@@ -1,0 +1,146 @@
+\hypertarget{namespacesage}{}\section{sage Namespace Reference}
+\label{namespacesage}\index{sage@{sage}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsage_1_1Application}{Application}}
+\begin{DoxyCompactList}\small\item\em Class that handles the window. Also manages Scenes, Caches and runs the main game loop. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}}
+\item 
+class \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}}
+\item 
+class \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}}
+\item 
+class \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}
+\begin{DoxyCompactList}\small\item\em Class that caches files into memory, so files don\textquotesingle{}t have to be loaded from disk more often than necessary. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}}
+\item 
+class \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}}
+\item 
+class \mbox{\hyperlink{classsage_1_1Node}{Node}}
+\begin{DoxyCompactList}\small\item\em Abstract class that describes all things drawn by the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. The \mbox{\hyperlink{classsage_1_1Scene}{Scene}} itself, which is also a \mbox{\hyperlink{classsage_1_1Node}{Node}}, is drawn by the \mbox{\hyperlink{classsage_1_1Application}{Application}}. Every \mbox{\hyperlink{classsage_1_1Node}{Node}} has children (Nodes) which are affected by the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s properties. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structsage_1_1NodePtrZCompare}{Node\+Ptr\+Z\+Compare}}
+\begin{DoxyCompactList}\small\item\em Compare for z-\/indices (z-\/depth) of \mbox{\hyperlink{classsage_1_1Node}{Node}} pointers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsage_1_1Scene}{Scene}}
+\item 
+class \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}}
+\item 
+class \mbox{\hyperlink{classsage_1_1Sprite}{Sprite}}
+\item 
+class \mbox{\hyperlink{classsage_1_1TextNode}{Text\+Node}}
+\item 
+class \mbox{\hyperlink{classsage_1_1TexturedNode}{Textured\+Node}}
+\item 
+class \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}} \{ \newline
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a373db8eafa29f92a5687dfb8002dc5bb}{Event\+::\+W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+A\+VE}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a9c32797ef326482ef73cac4f621e7d9b}{Event\+::\+W\+I\+N\+D\+O\+W\+\_\+\+E\+N\+T\+ER}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29ae27439eebd778013c33fbb14dd19fd04}{Event\+::\+K\+E\+Y\+\_\+\+D\+O\+WN}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29ac248b44c41333613a8ad29b656f8950e}{Event\+::\+K\+E\+Y\+\_\+\+UP}}, 
+\newline
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+M\+O\+VE}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+D\+O\+WN}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29abb966d5bf8c83e256da7695593d921b7}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+UP}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+C\+L\+I\+CK}}, 
+\newline
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+S\+C\+R\+O\+LL}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a5dfd352dd6b7a5d118237fcf1e19fcc1}{Event\+::\+Q\+U\+IT}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}} \{ \newline
+\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a8d96e3275d34aec916c3a13681b502c3}{Node\+Event\+::\+M\+O\+U\+S\+E\+\_\+\+D\+O\+WN}}, 
+\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13abb966d5bf8c83e256da7695593d921b7}{Node\+Event\+::\+M\+O\+U\+S\+E\+\_\+\+UP}}, 
+\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a4189a9f0e39ab4354d92142fbbbf49c2}{Node\+Event\+::\+M\+O\+U\+S\+E\+\_\+\+C\+L\+I\+CK}}, 
+\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a39b3291e13730aa8cdb221af2bdab3f3}{Node\+Event\+::\+M\+O\+U\+S\+E\+\_\+\+M\+O\+VE}}, 
+\newline
+\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a2b25a3f09f290053eac3958bb721553d}{Node\+Event\+::\+M\+O\+U\+S\+E\+\_\+\+E\+N\+T\+ER}}, 
+\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13af3fe871b6baba37eeecd6b2cfb671bdc}{Node\+Event\+::\+M\+O\+U\+S\+E\+\_\+\+L\+E\+A\+VE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29}} 
+\index{sage@{sage}!Event@{Event}}
+\index{Event@{Event}!sage@{sage}}
+\subsubsection{\texorpdfstring{Event}{Event}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{sage\+::\+Event}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOW\_LEAVE@{WINDOW\_LEAVE}!sage@{sage}}\index{sage@{sage}!WINDOW\_LEAVE@{WINDOW\_LEAVE}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a373db8eafa29f92a5687dfb8002dc5bb}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a373db8eafa29f92a5687dfb8002dc5bb}} 
+W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+A\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOW\_ENTER@{WINDOW\_ENTER}!sage@{sage}}\index{sage@{sage}!WINDOW\_ENTER@{WINDOW\_ENTER}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a9c32797ef326482ef73cac4f621e7d9b}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a9c32797ef326482ef73cac4f621e7d9b}} 
+W\+I\+N\+D\+O\+W\+\_\+\+E\+N\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_DOWN@{KEY\_DOWN}!sage@{sage}}\index{sage@{sage}!KEY\_DOWN@{KEY\_DOWN}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29ae27439eebd778013c33fbb14dd19fd04}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29ae27439eebd778013c33fbb14dd19fd04}} 
+K\+E\+Y\+\_\+\+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_UP@{KEY\_UP}!sage@{sage}}\index{sage@{sage}!KEY\_UP@{KEY\_UP}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29ac248b44c41333613a8ad29b656f8950e}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29ac248b44c41333613a8ad29b656f8950e}} 
+K\+E\+Y\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_MOVE@{MOUSE\_MOVE}!sage@{sage}}\index{sage@{sage}!MOUSE\_MOVE@{MOUSE\_MOVE}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}} 
+M\+O\+U\+S\+E\+\_\+\+M\+O\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_DOWN@{MOUSE\_DOWN}!sage@{sage}}\index{sage@{sage}!MOUSE\_DOWN@{MOUSE\_DOWN}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3}} 
+M\+O\+U\+S\+E\+\_\+\+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_UP@{MOUSE\_UP}!sage@{sage}}\index{sage@{sage}!MOUSE\_UP@{MOUSE\_UP}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29abb966d5bf8c83e256da7695593d921b7}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29abb966d5bf8c83e256da7695593d921b7}} 
+M\+O\+U\+S\+E\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_CLICK@{MOUSE\_CLICK}!sage@{sage}}\index{sage@{sage}!MOUSE\_CLICK@{MOUSE\_CLICK}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2}} 
+M\+O\+U\+S\+E\+\_\+\+C\+L\+I\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_SCROLL@{MOUSE\_SCROLL}!sage@{sage}}\index{sage@{sage}!MOUSE\_SCROLL@{MOUSE\_SCROLL}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76}} 
+M\+O\+U\+S\+E\+\_\+\+S\+C\+R\+O\+LL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QUIT@{QUIT}!sage@{sage}}\index{sage@{sage}!QUIT@{QUIT}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a5dfd352dd6b7a5d118237fcf1e19fcc1}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a5dfd352dd6b7a5d118237fcf1e19fcc1}} 
+Q\+U\+IT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}\label{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}} 
+\index{sage@{sage}!NodeEvent@{NodeEvent}}
+\index{NodeEvent@{NodeEvent}!sage@{sage}}
+\subsubsection{\texorpdfstring{NodeEvent}{NodeEvent}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{sage\+::\+Node\+Event}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_DOWN@{MOUSE\_DOWN}!sage@{sage}}\index{sage@{sage}!MOUSE\_DOWN@{MOUSE\_DOWN}}}\mbox{\Hypertarget{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a8d96e3275d34aec916c3a13681b502c3}\label{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a8d96e3275d34aec916c3a13681b502c3}} 
+M\+O\+U\+S\+E\+\_\+\+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_UP@{MOUSE\_UP}!sage@{sage}}\index{sage@{sage}!MOUSE\_UP@{MOUSE\_UP}}}\mbox{\Hypertarget{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13abb966d5bf8c83e256da7695593d921b7}\label{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13abb966d5bf8c83e256da7695593d921b7}} 
+M\+O\+U\+S\+E\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_CLICK@{MOUSE\_CLICK}!sage@{sage}}\index{sage@{sage}!MOUSE\_CLICK@{MOUSE\_CLICK}}}\mbox{\Hypertarget{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a4189a9f0e39ab4354d92142fbbbf49c2}\label{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a4189a9f0e39ab4354d92142fbbbf49c2}} 
+M\+O\+U\+S\+E\+\_\+\+C\+L\+I\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_MOVE@{MOUSE\_MOVE}!sage@{sage}}\index{sage@{sage}!MOUSE\_MOVE@{MOUSE\_MOVE}}}\mbox{\Hypertarget{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a39b3291e13730aa8cdb221af2bdab3f3}\label{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a39b3291e13730aa8cdb221af2bdab3f3}} 
+M\+O\+U\+S\+E\+\_\+\+M\+O\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_ENTER@{MOUSE\_ENTER}!sage@{sage}}\index{sage@{sage}!MOUSE\_ENTER@{MOUSE\_ENTER}}}\mbox{\Hypertarget{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a2b25a3f09f290053eac3958bb721553d}\label{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13a2b25a3f09f290053eac3958bb721553d}} 
+M\+O\+U\+S\+E\+\_\+\+E\+N\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_LEAVE@{MOUSE\_LEAVE}!sage@{sage}}\index{sage@{sage}!MOUSE\_LEAVE@{MOUSE\_LEAVE}}}\mbox{\Hypertarget{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13af3fe871b6baba37eeecd6b2cfb671bdc}\label{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13af3fe871b6baba37eeecd6b2cfb671bdc}} 
+M\+O\+U\+S\+E\+\_\+\+L\+E\+A\+VE&\\
+\hline
+
+\end{DoxyEnumFields}

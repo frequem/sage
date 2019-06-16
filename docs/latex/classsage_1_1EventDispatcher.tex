@@ -1,0 +1,178 @@
+\hypertarget{classsage_1_1EventDispatcher}{}\section{sage\+::Event\+Dispatcher Class Reference}
+\label{classsage_1_1EventDispatcher}\index{sage::EventDispatcher@{sage::EventDispatcher}}
+
+
+{\ttfamily \#include $<$Event\+Dispatcher.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1EventDispatcher_a6af3114e66a9f42aa03e13058d63dd62}{Event\+Dispatcher}} (\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\int \mbox{\hyperlink{classsage_1_1EventDispatcher_a871869f2a078e81c20a220a633d4e471}{add\+Event\+Handler}} (\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::function$<$ void(Args...)$>$ \&\&)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\int \mbox{\hyperlink{classsage_1_1EventDispatcher_ae913c37fa0b821da626ecd4adfd16435}{add\+Event\+Handler}} (\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}, \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$, std\+::function$<$ void(Args...)$>$ \&\&)
+\item 
+void \mbox{\hyperlink{classsage_1_1EventDispatcher_a79f655113b28c14ee6a86fa5ed7ec238}{remove\+Event\+Handler}} (int)
+\item 
+void \mbox{\hyperlink{classsage_1_1EventDispatcher_af94b0101f87f16334c1d32ea7a43c02a}{handle\+Events}} ()
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classsage_1_1EventDispatcher_a096c6d68c684bb49ec1f8055c0e2a2d9}{dispatch\+Event}} (\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, Args \&\&...)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classsage_1_1EventDispatcher_a508e38af7b9f87888fd9f37efecbb760}{dispatch\+Event}} (\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}, std\+::function$<$ bool(\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$, Args...)$>$ \&\&, Args \&\&...)
+\item 
+\mbox{\hyperlink{classsage_1_1EventDispatcher_abb5f401014e87f03027d6c4450964e55}{$\sim$\+Event\+Dispatcher}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsage_1_1EventDispatcher_a918e15fc278d82e1826c5da31b6cc897}{is\+Inside\+Click\+Radius}} (int, int)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ \mbox{\hyperlink{classsage_1_1EventDispatcher_a0c9ea12254c6806bd4252e0e336e7c81}{application}}
+\item 
+int \mbox{\hyperlink{classsage_1_1EventDispatcher_a45a41623356399b6a9afa584762e1897}{next\+Handler\+Id}} = 0
+\item 
+std\+::map$<$ \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::map$<$ int, std\+::any $>$ $>$ \mbox{\hyperlink{classsage_1_1EventDispatcher_ad1e2836de57436c39769b2792f8d97ba}{handlers}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}, std\+::map$<$ int, std\+::pair$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$, std\+::any $>$ $>$ $>$ \mbox{\hyperlink{classsage_1_1EventDispatcher_aefdb6a3e004a7bec95ae6f0845ba8d05}{node\+\_\+handlers}}
+\item 
+S\+D\+L\+\_\+\+Event \mbox{\hyperlink{classsage_1_1EventDispatcher_acc93b97b0ed92a64ab2e2040dc8ca04c}{sdl\+Event}}
+\item 
+int \mbox{\hyperlink{classsage_1_1EventDispatcher_a744f0db4a213a5e9d90316f991b10bcf}{mouse\+\_\+click\+\_\+x}} = 0
+\item 
+int \mbox{\hyperlink{classsage_1_1EventDispatcher_abf2ef4959095c77e28cd363b53d0cab2}{mouse\+\_\+click\+\_\+y}} = 0
+\item 
+int \mbox{\hyperlink{classsage_1_1EventDispatcher_ab66ab2cbe57fd5a7d04c130a25e042dd}{mouse\+\_\+click\+\_\+count}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classsage_1_1EventDispatcher_ae59ac77950d2ab74ad826220fa147ec7}{mouse\+\_\+click\+\_\+time}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a6af3114e66a9f42aa03e13058d63dd62}\label{classsage_1_1EventDispatcher_a6af3114e66a9f42aa03e13058d63dd62}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!EventDispatcher@{EventDispatcher}}
+\index{EventDispatcher@{EventDispatcher}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{EventDispatcher()}{EventDispatcher()}}
+{\footnotesize\ttfamily Event\+Dispatcher\+::\+Event\+Dispatcher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_abb5f401014e87f03027d6c4450964e55}\label{classsage_1_1EventDispatcher_abb5f401014e87f03027d6c4450964e55}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!````~EventDispatcher@{$\sim$EventDispatcher}}
+\index{````~EventDispatcher@{$\sim$EventDispatcher}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{$\sim$EventDispatcher()}{~EventDispatcher()}}
+{\footnotesize\ttfamily Event\+Dispatcher\+::$\sim$\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a871869f2a078e81c20a220a633d4e471}\label{classsage_1_1EventDispatcher_a871869f2a078e81c20a220a633d4e471}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!addEventHandler@{addEventHandler}}
+\index{addEventHandler@{addEventHandler}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{addEventHandler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+int sage\+::\+Event\+Dispatcher\+::add\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}}]{,  }\item[{std\+::function$<$ void(Args...)$>$ \&\&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_ae913c37fa0b821da626ecd4adfd16435}\label{classsage_1_1EventDispatcher_ae913c37fa0b821da626ecd4adfd16435}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!addEventHandler@{addEventHandler}}
+\index{addEventHandler@{addEventHandler}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{addEventHandler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+int sage\+::\+Event\+Dispatcher\+::add\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}}]{,  }\item[{\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$}]{,  }\item[{std\+::function$<$ void(Args...)$>$ \&\&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a096c6d68c684bb49ec1f8055c0e2a2d9}\label{classsage_1_1EventDispatcher_a096c6d68c684bb49ec1f8055c0e2a2d9}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!dispatchEvent@{dispatchEvent}}
+\index{dispatchEvent@{dispatchEvent}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{dispatchEvent()}{dispatchEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void sage\+::\+Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}}]{,  }\item[{Args \&\&}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a508e38af7b9f87888fd9f37efecbb760}\label{classsage_1_1EventDispatcher_a508e38af7b9f87888fd9f37efecbb760}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!dispatchEvent@{dispatchEvent}}
+\index{dispatchEvent@{dispatchEvent}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{dispatchEvent()}{dispatchEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void sage\+::\+Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}}]{,  }\item[{std\+::function$<$ bool(\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$, Args...)$>$ \&\&}]{,  }\item[{Args \&\&}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_af94b0101f87f16334c1d32ea7a43c02a}\label{classsage_1_1EventDispatcher_af94b0101f87f16334c1d32ea7a43c02a}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::handle\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a918e15fc278d82e1826c5da31b6cc897}\label{classsage_1_1EventDispatcher_a918e15fc278d82e1826c5da31b6cc897}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!isInsideClickRadius@{isInsideClickRadius}}
+\index{isInsideClickRadius@{isInsideClickRadius}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{isInsideClickRadius()}{isInsideClickRadius()}}
+{\footnotesize\ttfamily bool Event\+Dispatcher\+::is\+Inside\+Click\+Radius (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a79f655113b28c14ee6a86fa5ed7ec238}\label{classsage_1_1EventDispatcher_a79f655113b28c14ee6a86fa5ed7ec238}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!removeEventHandler@{removeEventHandler}}
+\index{removeEventHandler@{removeEventHandler}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{removeEventHandler()}{removeEventHandler()}}
+{\footnotesize\ttfamily void Event\+Dispatcher\+::remove\+Event\+Handler (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a0c9ea12254c6806bd4252e0e336e7c81}\label{classsage_1_1EventDispatcher_a0c9ea12254c6806bd4252e0e336e7c81}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!application@{application}}
+\index{application@{application}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{application}{application}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Application}{Application}}$\ast$ sage\+::\+Event\+Dispatcher\+::application\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_ad1e2836de57436c39769b2792f8d97ba}\label{classsage_1_1EventDispatcher_ad1e2836de57436c39769b2792f8d97ba}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!handlers@{handlers}}
+\index{handlers@{handlers}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{handlers}{handlers}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::map$<$int, std\+::any$>$ $>$ sage\+::\+Event\+Dispatcher\+::handlers\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_ab66ab2cbe57fd5a7d04c130a25e042dd}\label{classsage_1_1EventDispatcher_ab66ab2cbe57fd5a7d04c130a25e042dd}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!mouse\_click\_count@{mouse\_click\_count}}
+\index{mouse\_click\_count@{mouse\_click\_count}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{mouse\_click\_count}{mouse\_click\_count}}
+{\footnotesize\ttfamily int sage\+::\+Event\+Dispatcher\+::mouse\+\_\+click\+\_\+count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_ae59ac77950d2ab74ad826220fa147ec7}\label{classsage_1_1EventDispatcher_ae59ac77950d2ab74ad826220fa147ec7}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!mouse\_click\_time@{mouse\_click\_time}}
+\index{mouse\_click\_time@{mouse\_click\_time}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{mouse\_click\_time}{mouse\_click\_time}}
+{\footnotesize\ttfamily uint32\+\_\+t sage\+::\+Event\+Dispatcher\+::mouse\+\_\+click\+\_\+time = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a744f0db4a213a5e9d90316f991b10bcf}\label{classsage_1_1EventDispatcher_a744f0db4a213a5e9d90316f991b10bcf}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!mouse\_click\_x@{mouse\_click\_x}}
+\index{mouse\_click\_x@{mouse\_click\_x}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{mouse\_click\_x}{mouse\_click\_x}}
+{\footnotesize\ttfamily int sage\+::\+Event\+Dispatcher\+::mouse\+\_\+click\+\_\+x = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_abf2ef4959095c77e28cd363b53d0cab2}\label{classsage_1_1EventDispatcher_abf2ef4959095c77e28cd363b53d0cab2}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!mouse\_click\_y@{mouse\_click\_y}}
+\index{mouse\_click\_y@{mouse\_click\_y}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{mouse\_click\_y}{mouse\_click\_y}}
+{\footnotesize\ttfamily int sage\+::\+Event\+Dispatcher\+::mouse\+\_\+click\+\_\+y = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a45a41623356399b6a9afa584762e1897}\label{classsage_1_1EventDispatcher_a45a41623356399b6a9afa584762e1897}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!nextHandlerId@{nextHandlerId}}
+\index{nextHandlerId@{nextHandlerId}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{nextHandlerId}{nextHandlerId}}
+{\footnotesize\ttfamily int sage\+::\+Event\+Dispatcher\+::next\+Handler\+Id = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_aefdb6a3e004a7bec95ae6f0845ba8d05}\label{classsage_1_1EventDispatcher_aefdb6a3e004a7bec95ae6f0845ba8d05}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!node\_handlers@{node\_handlers}}
+\index{node\_handlers@{node\_handlers}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{node\_handlers}{node\_handlers}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}, std\+::map$<$int, std\+::pair$<$\mbox{\hyperlink{classsage_1_1Node}{Node}}$\ast$, std\+::any$>$ $>$ $>$ sage\+::\+Event\+Dispatcher\+::node\+\_\+handlers\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_acc93b97b0ed92a64ab2e2040dc8ca04c}\label{classsage_1_1EventDispatcher_acc93b97b0ed92a64ab2e2040dc8ca04c}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!sdlEvent@{sdlEvent}}
+\index{sdlEvent@{sdlEvent}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{sdlEvent}{sdlEvent}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Event sage\+::\+Event\+Dispatcher\+::sdl\+Event\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/util/\mbox{\hyperlink{EventDispatcher_8h}{Event\+Dispatcher.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/util/\mbox{\hyperlink{EventDispatcher_8cpp}{Event\+Dispatcher.\+cpp}}\end{DoxyCompactItemize}

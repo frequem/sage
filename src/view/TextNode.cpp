@@ -44,7 +44,7 @@ void TextNode::setColor(SDL_Color color){
 	this->rebuild();
 }
 
-glm::vec2 TextNode::getSize(){ return glm::vec2(this->surface->w, this->surface->h); }
+glm::vec3 TextNode::getSize(){ return glm::vec3(this->surface->w, this->surface->h, 0); }
 
 GLuint TextNode::getTexture(){ return this->texture; }
 

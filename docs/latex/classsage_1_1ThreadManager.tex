@@ -1,0 +1,76 @@
+\hypertarget{classsage_1_1ThreadManager}{}\section{sage\+::Thread\+Manager Class Reference}
+\label{classsage_1_1ThreadManager}\index{sage::ThreadManager@{sage::ThreadManager}}
+
+
+{\ttfamily \#include $<$Thread\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1ThreadManager_a613b13ebf45502e4d86c2f9317ec5871}{Thread\+Manager}} ()
+\item 
+\mbox{\hyperlink{classsage_1_1ThreadManager_af7d592b11ce70f64729bc6be1a35f1de}{Thread\+Manager}} (int)
+\item 
+{\footnotesize template$<$typename Callable , typename... Args$>$ }\\void \mbox{\hyperlink{classsage_1_1ThreadManager_abb7e6b4a8ed44173eff9de2213f64236}{run}} (Callable \&\&f, Args \&\&... args)
+\item 
+\mbox{\hyperlink{classsage_1_1ThreadManager_a18eb12d3d752075318c3672c8efffd5b}{$\sim$\+Thread\+Manager}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classsage_1_1ThreadManager_a683170f7241e11e86746d2a0aec413ed}{max\+Threads}} = 10
+\item 
+std\+::queue$<$ std\+::thread $>$ \mbox{\hyperlink{classsage_1_1ThreadManager_a998c3f4309c9eae2e7e69223b2d5de49}{threads}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1ThreadManager_a613b13ebf45502e4d86c2f9317ec5871}\label{classsage_1_1ThreadManager_a613b13ebf45502e4d86c2f9317ec5871}} 
+\index{sage::ThreadManager@{sage::ThreadManager}!ThreadManager@{ThreadManager}}
+\index{ThreadManager@{ThreadManager}!sage::ThreadManager@{sage::ThreadManager}}
+\subsubsection{\texorpdfstring{ThreadManager()}{ThreadManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Thread\+Manager\+::\+Thread\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ThreadManager_af7d592b11ce70f64729bc6be1a35f1de}\label{classsage_1_1ThreadManager_af7d592b11ce70f64729bc6be1a35f1de}} 
+\index{sage::ThreadManager@{sage::ThreadManager}!ThreadManager@{ThreadManager}}
+\index{ThreadManager@{ThreadManager}!sage::ThreadManager@{sage::ThreadManager}}
+\subsubsection{\texorpdfstring{ThreadManager()}{ThreadManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Thread\+Manager\+::\+Thread\+Manager (\begin{DoxyParamCaption}\item[{int}]{max\+Threads }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ThreadManager_a18eb12d3d752075318c3672c8efffd5b}\label{classsage_1_1ThreadManager_a18eb12d3d752075318c3672c8efffd5b}} 
+\index{sage::ThreadManager@{sage::ThreadManager}!````~ThreadManager@{$\sim$ThreadManager}}
+\index{````~ThreadManager@{$\sim$ThreadManager}!sage::ThreadManager@{sage::ThreadManager}}
+\subsubsection{\texorpdfstring{$\sim$ThreadManager()}{~ThreadManager()}}
+{\footnotesize\ttfamily Thread\+Manager\+::$\sim$\+Thread\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1ThreadManager_abb7e6b4a8ed44173eff9de2213f64236}\label{classsage_1_1ThreadManager_abb7e6b4a8ed44173eff9de2213f64236}} 
+\index{sage::ThreadManager@{sage::ThreadManager}!run@{run}}
+\index{run@{run}!sage::ThreadManager@{sage::ThreadManager}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily template$<$typename Callable , typename... Args$>$ \\
+void sage\+::\+Thread\+Manager\+::run (\begin{DoxyParamCaption}\item[{Callable \&\&}]{f,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1ThreadManager_a683170f7241e11e86746d2a0aec413ed}\label{classsage_1_1ThreadManager_a683170f7241e11e86746d2a0aec413ed}} 
+\index{sage::ThreadManager@{sage::ThreadManager}!maxThreads@{maxThreads}}
+\index{maxThreads@{maxThreads}!sage::ThreadManager@{sage::ThreadManager}}
+\subsubsection{\texorpdfstring{maxThreads}{maxThreads}}
+{\footnotesize\ttfamily int sage\+::\+Thread\+Manager\+::max\+Threads = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ThreadManager_a998c3f4309c9eae2e7e69223b2d5de49}\label{classsage_1_1ThreadManager_a998c3f4309c9eae2e7e69223b2d5de49}} 
+\index{sage::ThreadManager@{sage::ThreadManager}!threads@{threads}}
+\index{threads@{threads}!sage::ThreadManager@{sage::ThreadManager}}
+\subsubsection{\texorpdfstring{threads}{threads}}
+{\footnotesize\ttfamily std\+::queue$<$std\+::thread$>$ sage\+::\+Thread\+Manager\+::threads\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/util/\mbox{\hyperlink{ThreadManager_8h}{Thread\+Manager.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/util/\mbox{\hyperlink{ThreadManager_8cpp}{Thread\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,207 @@
+\hypertarget{classsage_1_1Scene}{}\section{sage\+::Scene Class Reference}
+\label{classsage_1_1Scene}\index{sage::Scene@{sage::Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+Inheritance diagram for sage\+::Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsage_1_1Scene}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1Scene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
+\item 
+void \mbox{\hyperlink{classsage_1_1Scene_a5179bf540ba57931b65668b5b42af10f}{render}} () override
+\begin{DoxyCompactList}\small\item\em Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ \mbox{\hyperlink{classsage_1_1Scene_ab09415b375ad054825e9fd4d4e471c6b}{get\+Scene}} () override
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1Scene}{Scene}} that contains this \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Scene_a9c1362c9cef9cd8029f912d4003908c8}{set\+Application}} (\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$)
+\item 
+\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ \mbox{\hyperlink{classsage_1_1Scene_a30ecf9ad001d30773982f0808b05867d}{get\+Application}} () override
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1Application}{Application}}. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Scene_a00e53fc54466062ecc1437b980f5fa69}{get\+Size}} () override
+\begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1Scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Scene_a97d7d623cc44062249a199c63c67b5be}{abs\+Point}} (glm\+::vec2) override
+\begin{DoxyCompactList}\small\item\em Converts a point in relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates to absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Scene_aa8b5a43db8e18dc3ec8695ca465a1308}{rel\+Point}} (glm\+::vec2) override
+\begin{DoxyCompactList}\small\item\em Converts a point in absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates to relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsage_1_1Scene_a46335ecefda27ab0b907397a393a12f9}{get\+Depth}} () override
+\begin{DoxyCompactList}\small\item\em Fetches the depth of a \mbox{\hyperlink{classsage_1_1Node}{Node}} under the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. e.\+g. (\mbox{\hyperlink{classsage_1_1Scene}{Scene}}\+: depth 0)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 1)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 2) etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ \mbox{\hyperlink{classsage_1_1Scene_a06046ccc778f9e7257e777c048c481b9}{application}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1Scene_ad10176d75a9cc0da56626f682d083507}\label{classsage_1_1Scene_ad10176d75a9cc0da56626f682d083507}} 
+\index{sage::Scene@{sage::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1Scene_a3b8cec2e32546713915f8c6303c951f1}\label{classsage_1_1Scene_a3b8cec2e32546713915f8c6303c951f1}} 
+\index{sage::Scene@{sage::Scene}!````~Scene@{$\sim$Scene}}
+\index{````~Scene@{$\sim$Scene}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
+{\footnotesize\ttfamily Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1Scene_a97d7d623cc44062249a199c63c67b5be}\label{classsage_1_1Scene_a97d7d623cc44062249a199c63c67b5be}} 
+\index{sage::Scene@{sage::Scene}!absPoint@{absPoint}}
+\index{absPoint@{absPoint}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{absPoint()}{absPoint()}}
+{\footnotesize\ttfamily glm\+::vec2 Scene\+::abs\+Point (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Converts a point in relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates to absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & a point in relative coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_a1c8fbbf37b6e9cf6c7f5e0a4ae4a73cb}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Scene_a30ecf9ad001d30773982f0808b05867d}\label{classsage_1_1Scene_a30ecf9ad001d30773982f0808b05867d}} 
+\index{sage::Scene@{sage::Scene}!getApplication@{getApplication}}
+\index{getApplication@{getApplication}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{getApplication()}{getApplication()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ Scene\+::get\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1Application}{Application}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1Application}{Application}} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_af0f8bb1150be77ccc56cf470f3058176}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Scene_a46335ecefda27ab0b907397a393a12f9}\label{classsage_1_1Scene_a46335ecefda27ab0b907397a393a12f9}} 
+\index{sage::Scene@{sage::Scene}!getDepth@{getDepth}}
+\index{getDepth@{getDepth}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{getDepth()}{getDepth()}}
+{\footnotesize\ttfamily int Scene\+::get\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Fetches the depth of a \mbox{\hyperlink{classsage_1_1Node}{Node}} under the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. e.\+g. (\mbox{\hyperlink{classsage_1_1Scene}{Scene}}\+: depth 0)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 1)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 2) etc. 
+
+\begin{DoxyReturn}{Returns}
+the depth 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_a303fffee8f70d39603b3a4e251e2e820}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Scene_ab09415b375ad054825e9fd4d4e471c6b}\label{classsage_1_1Scene_ab09415b375ad054825e9fd4d4e471c6b}} 
+\index{sage::Scene@{sage::Scene}!getScene@{getScene}}
+\index{getScene@{getScene}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{getScene()}{getScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ Scene\+::get\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1Scene}{Scene}} that contains this \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1Scene}{Scene}} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_a22d0dfa466965da0324d47d22eb24e6b}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Scene_a00e53fc54466062ecc1437b980f5fa69}\label{classsage_1_1Scene_a00e53fc54466062ecc1437b980f5fa69}} 
+\index{sage::Scene@{sage::Scene}!getSize@{getSize}}
+\index{getSize@{getSize}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Scene\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the size 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Scene_aa8b5a43db8e18dc3ec8695ca465a1308}\label{classsage_1_1Scene_aa8b5a43db8e18dc3ec8695ca465a1308}} 
+\index{sage::Scene@{sage::Scene}!relPoint@{relPoint}}
+\index{relPoint@{relPoint}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{relPoint()}{relPoint()}}
+{\footnotesize\ttfamily glm\+::vec2 Scene\+::rel\+Point (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Converts a point in absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates to relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & a point in absolute coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_a602f53d66ee202b54ae71b9a53057173}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Scene_a5179bf540ba57931b65668b5b42af10f}\label{classsage_1_1Scene_a5179bf540ba57931b65668b5b42af10f}} 
+\index{sage::Scene@{sage::Scene}!render@{render}}
+\index{render@{render}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Scene\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab93a6f41e02422a21c44227c0355382a}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Scene_a9c1362c9cef9cd8029f912d4003908c8}\label{classsage_1_1Scene_a9c1362c9cef9cd8029f912d4003908c8}} 
+\index{sage::Scene@{sage::Scene}!setApplication@{setApplication}}
+\index{setApplication@{setApplication}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{setApplication()}{setApplication()}}
+{\footnotesize\ttfamily void Scene\+::set\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$}]{application }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1Scene_a06046ccc778f9e7257e777c048c481b9}\label{classsage_1_1Scene_a06046ccc778f9e7257e777c048c481b9}} 
+\index{sage::Scene@{sage::Scene}!application@{application}}
+\index{application@{application}!sage::Scene@{sage::Scene}}
+\subsubsection{\texorpdfstring{application}{application}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Application}{Application}}$\ast$ sage\+::\+Scene\+::application\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/view/\mbox{\hyperlink{Scene_8h}{Scene.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/view/\mbox{\hyperlink{Scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

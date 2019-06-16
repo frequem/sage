@@ -1,0 +1,87 @@
+\hypertarget{classsage_1_1TexturedNode}{}\section{sage\+::Textured\+Node Class Reference}
+\label{classsage_1_1TexturedNode}\index{sage::TexturedNode@{sage::TexturedNode}}
+
+
+{\ttfamily \#include $<$Textured\+Node.\+h$>$}
+
+Inheritance diagram for sage\+::Textured\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsage_1_1TexturedNode}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1TexturedNode_a90aacfe1eb94e56ecf8176d7c7b74388}{Textured\+Node}} ()
+\item 
+void \mbox{\hyperlink{classsage_1_1TexturedNode_a17465d5cb984880866f90145bb93d928}{render}} () override
+\begin{DoxyCompactList}\small\item\em Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1TexturedNode_a2c67c0ec8c8839308a56e0aea6839b3e}{$\sim$\+Textured\+Node}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1TexturedNode_ada858d240f8074fd97e8a72e74d18a30}{get\+Tex\+Coords}} ()
+\item 
+virtual G\+Luint \mbox{\hyperlink{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea69459546736c0f}{get\+Texture}} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1TexturedNode_a90aacfe1eb94e56ecf8176d7c7b74388}\label{classsage_1_1TexturedNode_a90aacfe1eb94e56ecf8176d7c7b74388}} 
+\index{sage::TexturedNode@{sage::TexturedNode}!TexturedNode@{TexturedNode}}
+\index{TexturedNode@{TexturedNode}!sage::TexturedNode@{sage::TexturedNode}}
+\subsubsection{\texorpdfstring{TexturedNode()}{TexturedNode()}}
+{\footnotesize\ttfamily Textured\+Node\+::\+Textured\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1TexturedNode_a2c67c0ec8c8839308a56e0aea6839b3e}\label{classsage_1_1TexturedNode_a2c67c0ec8c8839308a56e0aea6839b3e}} 
+\index{sage::TexturedNode@{sage::TexturedNode}!````~TexturedNode@{$\sim$TexturedNode}}
+\index{````~TexturedNode@{$\sim$TexturedNode}!sage::TexturedNode@{sage::TexturedNode}}
+\subsubsection{\texorpdfstring{$\sim$TexturedNode()}{~TexturedNode()}}
+{\footnotesize\ttfamily Textured\+Node\+::$\sim$\+Textured\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1TexturedNode_ada858d240f8074fd97e8a72e74d18a30}\label{classsage_1_1TexturedNode_ada858d240f8074fd97e8a72e74d18a30}} 
+\index{sage::TexturedNode@{sage::TexturedNode}!getTexCoords@{getTexCoords}}
+\index{getTexCoords@{getTexCoords}!sage::TexturedNode@{sage::TexturedNode}}
+\subsubsection{\texorpdfstring{getTexCoords()}{getTexCoords()}}
+{\footnotesize\ttfamily std\+::vector$<$ glm\+::vec2 $>$ Textured\+Node\+::get\+Tex\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff622cfd2ff}{sage\+::\+Sprite}}.
+
+\mbox{\Hypertarget{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea69459546736c0f}\label{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea69459546736c0f}} 
+\index{sage::TexturedNode@{sage::TexturedNode}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!sage::TexturedNode@{sage::TexturedNode}}
+\subsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily virtual G\+Luint sage\+::\+Textured\+Node\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classsage_1_1Sprite_aa75f3595b809f99847a9642ce2bf319a}{sage\+::\+Sprite}}, and \mbox{\hyperlink{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}{sage\+::\+Text\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1TexturedNode_a17465d5cb984880866f90145bb93d928}\label{classsage_1_1TexturedNode_a17465d5cb984880866f90145bb93d928}} 
+\index{sage::TexturedNode@{sage::TexturedNode}!render@{render}}
+\index{render@{render}!sage::TexturedNode@{sage::TexturedNode}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Textured\+Node\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab93a6f41e02422a21c44227c0355382a}{sage\+::\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/view/\mbox{\hyperlink{TexturedNode_8h}{Textured\+Node.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/view/\mbox{\hyperlink{TexturedNode_8cpp}{Textured\+Node.\+cpp}}\end{DoxyCompactItemize}

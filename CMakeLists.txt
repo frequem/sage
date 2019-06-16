@@ -34,6 +34,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE HEADERS "include/${PROJECT_NAME}/*.*")
 add_library(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+	target_compile_definitions(${PROJECT_NAME} PRIVATE DEBUG=1)
+else()
+	target_compile_definitions(${PROJECT_NAME} PRIVATE DEBUG=0)
+endif()
 
 target_link_libraries(${PROJECT_NAME} PUBLIC SDL2::SDL2main SDL2::SDL2)
 target_link_libraries(${PROJECT_NAME} PUBLIC SDL_mixer::SDL_mixer)
@@ -43,7 +50,6 @@ if(NOT ANDROID)
 endif()
 target_link_libraries(${PROJECT_NAME} PUBLIC glm)
 target_link_libraries(${PROJECT_NAME} PUBLIC soil::soil)
-include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
 include(GNUInstallDirs)
 

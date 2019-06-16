@@ -1,0 +1,142 @@
+\hypertarget{classsage_1_1ImageCache}{}\section{sage\+::Image\+Cache Class Reference}
+\label{classsage_1_1ImageCache}\index{sage::ImageCache@{sage::ImageCache}}
+
+
+{\ttfamily \#include $<$Image\+Cache.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1ImageCache_aa6334522810673df149a290bfbf9da3d}{Image\+Cache}} (\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$, \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$)
+\item 
+void \mbox{\hyperlink{classsage_1_1ImageCache_a8dd56015ff31706f4fedc3d3b85510f4}{load}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{classsage_1_1ImageCache_ad97bd335815c57c59af1c9e5d5a2d9db}{unload}} (const std\+::string \&)
+\item 
+G\+Luint \mbox{\hyperlink{classsage_1_1ImageCache_a36611ddea849d743f31ad68972946002}{get\+Texture}} (const std\+::string \&)
+\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1ImageCache_ac81e10d00d95b6d5acdffad8b54bff09}{get\+Size}} (const std\+::string \&)
+\item 
+float \mbox{\hyperlink{classsage_1_1ImageCache_a62e8ffd461f65df1b8e990dd016e6fe4}{get\+Width}} (const std\+::string \&)
+\item 
+float \mbox{\hyperlink{classsage_1_1ImageCache_ab3fbe32a2cc379e05fb53a9883e20401}{get\+Height}} (const std\+::string \&)
+\item 
+\mbox{\hyperlink{classsage_1_1ImageCache_a48e8f9fc5513ee195d209cbec596c093}{$\sim$\+Image\+Cache}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsage_1_1ImageCache_ae7bd4b346cfe144cc720c6a8457a741f}{load\+\_\+func}} (const std\+::string \&)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1ImageCache_a114e9da7a04c34fa4521c8421729e60a}{thread\+Manager}}
+\item 
+\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1ImageCache_a6b667c59600e85d741c19abd1c56b37c}{file\+Cache}}
+\item 
+std\+::mutex \mbox{\hyperlink{classsage_1_1ImageCache_a1f00cfa79cf2a5dc7364905b0e0ec79e}{mtx}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classsage_1_1ImageCache_ade561f2902ee4d3c6c4d5cf5c1202846}{cv}}
+\item 
+std\+::map$<$ const std\+::string, std\+::optional$<$ std\+::pair$<$ glm\+::vec2, std\+::variant$<$ G\+Luint, unsigned char $\ast$ $>$ $>$ $>$ $>$ \mbox{\hyperlink{classsage_1_1ImageCache_a01b8aa5587b2cf9c5e1f1059431f0118}{textures}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1ImageCache_aa6334522810673df149a290bfbf9da3d}\label{classsage_1_1ImageCache_aa6334522810673df149a290bfbf9da3d}} 
+\index{sage::ImageCache@{sage::ImageCache}!ImageCache@{ImageCache}}
+\index{ImageCache@{ImageCache}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{ImageCache()}{ImageCache()}}
+{\footnotesize\ttfamily Image\+Cache\+::\+Image\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$}]{file\+Cache,  }\item[{\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$}]{tm }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a48e8f9fc5513ee195d209cbec596c093}\label{classsage_1_1ImageCache_a48e8f9fc5513ee195d209cbec596c093}} 
+\index{sage::ImageCache@{sage::ImageCache}!````~ImageCache@{$\sim$ImageCache}}
+\index{````~ImageCache@{$\sim$ImageCache}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{$\sim$ImageCache()}{~ImageCache()}}
+{\footnotesize\ttfamily Image\+Cache\+::$\sim$\+Image\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1ImageCache_ab3fbe32a2cc379e05fb53a9883e20401}\label{classsage_1_1ImageCache_ab3fbe32a2cc379e05fb53a9883e20401}} 
+\index{sage::ImageCache@{sage::ImageCache}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily float Image\+Cache\+::get\+Height (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_ac81e10d00d95b6d5acdffad8b54bff09}\label{classsage_1_1ImageCache_ac81e10d00d95b6d5acdffad8b54bff09}} 
+\index{sage::ImageCache@{sage::ImageCache}!getSize@{getSize}}
+\index{getSize@{getSize}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Image\+Cache\+::get\+Size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a36611ddea849d743f31ad68972946002}\label{classsage_1_1ImageCache_a36611ddea849d743f31ad68972946002}} 
+\index{sage::ImageCache@{sage::ImageCache}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily G\+Luint Image\+Cache\+::get\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a62e8ffd461f65df1b8e990dd016e6fe4}\label{classsage_1_1ImageCache_a62e8ffd461f65df1b8e990dd016e6fe4}} 
+\index{sage::ImageCache@{sage::ImageCache}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily float Image\+Cache\+::get\+Width (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a8dd56015ff31706f4fedc3d3b85510f4}\label{classsage_1_1ImageCache_a8dd56015ff31706f4fedc3d3b85510f4}} 
+\index{sage::ImageCache@{sage::ImageCache}!load@{load}}
+\index{load@{load}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Image\+Cache\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_ae7bd4b346cfe144cc720c6a8457a741f}\label{classsage_1_1ImageCache_ae7bd4b346cfe144cc720c6a8457a741f}} 
+\index{sage::ImageCache@{sage::ImageCache}!load\_func@{load\_func}}
+\index{load\_func@{load\_func}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{load\_func()}{load\_func()}}
+{\footnotesize\ttfamily void Image\+Cache\+::load\+\_\+func (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_ad97bd335815c57c59af1c9e5d5a2d9db}\label{classsage_1_1ImageCache_ad97bd335815c57c59af1c9e5d5a2d9db}} 
+\index{sage::ImageCache@{sage::ImageCache}!unload@{unload}}
+\index{unload@{unload}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Image\+Cache\+::unload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1ImageCache_ade561f2902ee4d3c6c4d5cf5c1202846}\label{classsage_1_1ImageCache_ade561f2902ee4d3c6c4d5cf5c1202846}} 
+\index{sage::ImageCache@{sage::ImageCache}!cv@{cv}}
+\index{cv@{cv}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{cv}{cv}}
+{\footnotesize\ttfamily std\+::condition\+\_\+variable sage\+::\+Image\+Cache\+::cv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a6b667c59600e85d741c19abd1c56b37c}\label{classsage_1_1ImageCache_a6b667c59600e85d741c19abd1c56b37c}} 
+\index{sage::ImageCache@{sage::ImageCache}!fileCache@{fileCache}}
+\index{fileCache@{fileCache}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{fileCache}{fileCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}$\ast$ sage\+::\+Image\+Cache\+::file\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a1f00cfa79cf2a5dc7364905b0e0ec79e}\label{classsage_1_1ImageCache_a1f00cfa79cf2a5dc7364905b0e0ec79e}} 
+\index{sage::ImageCache@{sage::ImageCache}!mtx@{mtx}}
+\index{mtx@{mtx}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{mtx}{mtx}}
+{\footnotesize\ttfamily std\+::mutex sage\+::\+Image\+Cache\+::mtx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a01b8aa5587b2cf9c5e1f1059431f0118}\label{classsage_1_1ImageCache_a01b8aa5587b2cf9c5e1f1059431f0118}} 
+\index{sage::ImageCache@{sage::ImageCache}!textures@{textures}}
+\index{textures@{textures}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily std\+::map$<$const std\+::string, std\+::optional$<$std\+::pair$<$glm\+::vec2, std\+::variant$<$G\+Luint, unsigned char$\ast$$>$ $>$ $>$ $>$ sage\+::\+Image\+Cache\+::textures\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ImageCache_a114e9da7a04c34fa4521c8421729e60a}\label{classsage_1_1ImageCache_a114e9da7a04c34fa4521c8421729e60a}} 
+\index{sage::ImageCache@{sage::ImageCache}!threadManager@{threadManager}}
+\index{threadManager@{threadManager}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{threadManager}{threadManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}}$\ast$ sage\+::\+Image\+Cache\+::thread\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/cache/\mbox{\hyperlink{ImageCache_8h}{Image\+Cache.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/cache/\mbox{\hyperlink{ImageCache_8cpp}{Image\+Cache.\+cpp}}\end{DoxyCompactItemize}

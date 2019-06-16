@@ -1,0 +1,94 @@
+\hypertarget{classsage_1_1ShaderCache}{}\section{sage\+::Shader\+Cache Class Reference}
+\label{classsage_1_1ShaderCache}\index{sage::ShaderCache@{sage::ShaderCache}}
+
+
+{\ttfamily \#include $<$Shader\+Cache.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1ShaderCache_a9977d4b3bae3c36778d0a6f0fd73bc2e}{Shader\+Cache}} (\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$)
+\item 
+void \mbox{\hyperlink{classsage_1_1ShaderCache_a3354d3c69b77ef0f1221ef8a0571826b}{load}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{classsage_1_1ShaderCache_ab305b4c76870619524a6236899327ad6}{unload}} (const std\+::string \&)
+\item 
+G\+Luint \mbox{\hyperlink{classsage_1_1ShaderCache_aafc93b46c5a0416653424ee0b60b8aae}{get}} (const std\+::string \&)
+\item 
+\mbox{\hyperlink{classsage_1_1ShaderCache_a060caa88a1718dddc0800aa552ac4a41}{$\sim$\+Shader\+Cache}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \mbox{\hyperlink{classsage_1_1ShaderCache_a6faed61c708a429ddb246855707c8596}{create\+Shader}} (const std\+::string \&, G\+Lenum shader\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1ShaderCache_af867dfc6c9921610804c856cd844f648}{file\+Cache}}
+\item 
+std\+::map$<$ const std\+::string, G\+Luint $>$ \mbox{\hyperlink{classsage_1_1ShaderCache_a194bb7e1c8d2304d251cdeb52d8530df}{shaders}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1ShaderCache_a9977d4b3bae3c36778d0a6f0fd73bc2e}\label{classsage_1_1ShaderCache_a9977d4b3bae3c36778d0a6f0fd73bc2e}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!ShaderCache@{ShaderCache}}
+\index{ShaderCache@{ShaderCache}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{ShaderCache()}{ShaderCache()}}
+{\footnotesize\ttfamily Shader\+Cache\+::\+Shader\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$}]{file\+Cache }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ShaderCache_a060caa88a1718dddc0800aa552ac4a41}\label{classsage_1_1ShaderCache_a060caa88a1718dddc0800aa552ac4a41}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!````~ShaderCache@{$\sim$ShaderCache}}
+\index{````~ShaderCache@{$\sim$ShaderCache}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{$\sim$ShaderCache()}{~ShaderCache()}}
+{\footnotesize\ttfamily Shader\+Cache\+::$\sim$\+Shader\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1ShaderCache_a6faed61c708a429ddb246855707c8596}\label{classsage_1_1ShaderCache_a6faed61c708a429ddb246855707c8596}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!createShader@{createShader}}
+\index{createShader@{createShader}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{createShader()}{createShader()}}
+{\footnotesize\ttfamily G\+Luint Shader\+Cache\+::create\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn,  }\item[{G\+Lenum}]{shader\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ShaderCache_aafc93b46c5a0416653424ee0b60b8aae}\label{classsage_1_1ShaderCache_aafc93b46c5a0416653424ee0b60b8aae}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!get@{get}}
+\index{get@{get}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily G\+Luint Shader\+Cache\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ShaderCache_a3354d3c69b77ef0f1221ef8a0571826b}\label{classsage_1_1ShaderCache_a3354d3c69b77ef0f1221ef8a0571826b}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!load@{load}}
+\index{load@{load}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Shader\+Cache\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1ShaderCache_ab305b4c76870619524a6236899327ad6}\label{classsage_1_1ShaderCache_ab305b4c76870619524a6236899327ad6}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!unload@{unload}}
+\index{unload@{unload}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Shader\+Cache\+::unload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader\+Name }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1ShaderCache_af867dfc6c9921610804c856cd844f648}\label{classsage_1_1ShaderCache_af867dfc6c9921610804c856cd844f648}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!fileCache@{fileCache}}
+\index{fileCache@{fileCache}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{fileCache}{fileCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}$\ast$ sage\+::\+Shader\+Cache\+::file\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1ShaderCache_a194bb7e1c8d2304d251cdeb52d8530df}\label{classsage_1_1ShaderCache_a194bb7e1c8d2304d251cdeb52d8530df}} 
+\index{sage::ShaderCache@{sage::ShaderCache}!shaders@{shaders}}
+\index{shaders@{shaders}!sage::ShaderCache@{sage::ShaderCache}}
+\subsubsection{\texorpdfstring{shaders}{shaders}}
+{\footnotesize\ttfamily std\+::map$<$const std\+::string, G\+Luint$>$ sage\+::\+Shader\+Cache\+::shaders\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/cache/\mbox{\hyperlink{ShaderCache_8h}{Shader\+Cache.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/cache/\mbox{\hyperlink{ShaderCache_8cpp}{Shader\+Cache.\+cpp}}\end{DoxyCompactItemize}

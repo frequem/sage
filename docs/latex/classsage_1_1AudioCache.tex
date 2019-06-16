@@ -1,0 +1,118 @@
+\hypertarget{classsage_1_1AudioCache}{}\section{sage\+::Audio\+Cache Class Reference}
+\label{classsage_1_1AudioCache}\index{sage::AudioCache@{sage::AudioCache}}
+
+
+{\ttfamily \#include $<$Audio\+Cache.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1AudioCache_a6fc6a4437b98c4ef0aa5d30f05c4c571}{Audio\+Cache}} (\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$, \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioCache_aafae5e1d8e31d8beac67b1326f59712a}{load}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioCache_a91a1bae14653a9f8b085adffdb2dbacf}{unload}} (const std\+::string \&)
+\item 
+Mix\+\_\+\+Chunk $\ast$ \mbox{\hyperlink{classsage_1_1AudioCache_a2a9ba507b403201dfb9d5d7b85160cb4}{get}} (const std\+::string \&)
+\item 
+\mbox{\hyperlink{classsage_1_1AudioCache_a83e03cef642e3988abff4846c2b962d3}{$\sim$\+Audio\+Cache}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioCache_a06400f89de15e5db96b8f0cbd27c71e3}{load\+\_\+func}} (const std\+::string \&)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1AudioCache_a3b9b0b2a42ab08e28fe2e9d4ccbd97b2}{thread\+Manager}}
+\item 
+\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1AudioCache_ae84b39a0913924ec3b3731748dff160f}{file\+Cache}}
+\item 
+std\+::mutex \mbox{\hyperlink{classsage_1_1AudioCache_a94ada12c063660c2fd9a0bc3b27f2bfd}{mtx}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classsage_1_1AudioCache_a8bf8e2eb17634591e783c20a793c884f}{cv}}
+\item 
+std\+::map$<$ const std\+::string, Mix\+\_\+\+Chunk $\ast$ $>$ \mbox{\hyperlink{classsage_1_1AudioCache_a0aed8eaeb96481fe7ecceb6b0d05df69}{chunks}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1AudioCache_a6fc6a4437b98c4ef0aa5d30f05c4c571}\label{classsage_1_1AudioCache_a6fc6a4437b98c4ef0aa5d30f05c4c571}} 
+\index{sage::AudioCache@{sage::AudioCache}!AudioCache@{AudioCache}}
+\index{AudioCache@{AudioCache}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{AudioCache()}{AudioCache()}}
+{\footnotesize\ttfamily Audio\+Cache\+::\+Audio\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$}]{file\+Cache,  }\item[{\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$}]{tm }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_a83e03cef642e3988abff4846c2b962d3}\label{classsage_1_1AudioCache_a83e03cef642e3988abff4846c2b962d3}} 
+\index{sage::AudioCache@{sage::AudioCache}!````~AudioCache@{$\sim$AudioCache}}
+\index{````~AudioCache@{$\sim$AudioCache}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{$\sim$AudioCache()}{~AudioCache()}}
+{\footnotesize\ttfamily Audio\+Cache\+::$\sim$\+Audio\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1AudioCache_a2a9ba507b403201dfb9d5d7b85160cb4}\label{classsage_1_1AudioCache_a2a9ba507b403201dfb9d5d7b85160cb4}} 
+\index{sage::AudioCache@{sage::AudioCache}!get@{get}}
+\index{get@{get}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily Mix\+\_\+\+Chunk $\ast$ Audio\+Cache\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_aafae5e1d8e31d8beac67b1326f59712a}\label{classsage_1_1AudioCache_aafae5e1d8e31d8beac67b1326f59712a}} 
+\index{sage::AudioCache@{sage::AudioCache}!load@{load}}
+\index{load@{load}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Audio\+Cache\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_a06400f89de15e5db96b8f0cbd27c71e3}\label{classsage_1_1AudioCache_a06400f89de15e5db96b8f0cbd27c71e3}} 
+\index{sage::AudioCache@{sage::AudioCache}!load\_func@{load\_func}}
+\index{load\_func@{load\_func}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{load\_func()}{load\_func()}}
+{\footnotesize\ttfamily void Audio\+Cache\+::load\+\_\+func (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_a91a1bae14653a9f8b085adffdb2dbacf}\label{classsage_1_1AudioCache_a91a1bae14653a9f8b085adffdb2dbacf}} 
+\index{sage::AudioCache@{sage::AudioCache}!unload@{unload}}
+\index{unload@{unload}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Audio\+Cache\+::unload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1AudioCache_a0aed8eaeb96481fe7ecceb6b0d05df69}\label{classsage_1_1AudioCache_a0aed8eaeb96481fe7ecceb6b0d05df69}} 
+\index{sage::AudioCache@{sage::AudioCache}!chunks@{chunks}}
+\index{chunks@{chunks}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{chunks}{chunks}}
+{\footnotesize\ttfamily std\+::map$<$const std\+::string, Mix\+\_\+\+Chunk$\ast$$>$ sage\+::\+Audio\+Cache\+::chunks\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_a8bf8e2eb17634591e783c20a793c884f}\label{classsage_1_1AudioCache_a8bf8e2eb17634591e783c20a793c884f}} 
+\index{sage::AudioCache@{sage::AudioCache}!cv@{cv}}
+\index{cv@{cv}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{cv}{cv}}
+{\footnotesize\ttfamily std\+::condition\+\_\+variable sage\+::\+Audio\+Cache\+::cv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_ae84b39a0913924ec3b3731748dff160f}\label{classsage_1_1AudioCache_ae84b39a0913924ec3b3731748dff160f}} 
+\index{sage::AudioCache@{sage::AudioCache}!fileCache@{fileCache}}
+\index{fileCache@{fileCache}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{fileCache}{fileCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}$\ast$ sage\+::\+Audio\+Cache\+::file\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_a94ada12c063660c2fd9a0bc3b27f2bfd}\label{classsage_1_1AudioCache_a94ada12c063660c2fd9a0bc3b27f2bfd}} 
+\index{sage::AudioCache@{sage::AudioCache}!mtx@{mtx}}
+\index{mtx@{mtx}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{mtx}{mtx}}
+{\footnotesize\ttfamily std\+::mutex sage\+::\+Audio\+Cache\+::mtx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1AudioCache_a3b9b0b2a42ab08e28fe2e9d4ccbd97b2}\label{classsage_1_1AudioCache_a3b9b0b2a42ab08e28fe2e9d4ccbd97b2}} 
+\index{sage::AudioCache@{sage::AudioCache}!threadManager@{threadManager}}
+\index{threadManager@{threadManager}!sage::AudioCache@{sage::AudioCache}}
+\subsubsection{\texorpdfstring{threadManager}{threadManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}}$\ast$ sage\+::\+Audio\+Cache\+::thread\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/cache/\mbox{\hyperlink{AudioCache_8h}{Audio\+Cache.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/cache/\mbox{\hyperlink{AudioCache_8cpp}{Audio\+Cache.\+cpp}}\end{DoxyCompactItemize}

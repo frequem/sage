@@ -13,20 +13,22 @@ namespace sage{
 	class Scene : public Node{
 	public:
 		Scene();
-		void render() override;
+		void render(int pass) override;
+		using Node::render; //get default render function
+		
 		Scene* getScene() override;
 		void setApplication(Application*);
 		Application* getApplication() override;
 		
-		glm::vec2 getSize() override;
+		glm::vec3 getSize() override;
 		
 		~Scene();
 	protected:
 		Application* application;
 		
-		glm::vec2 absPoint(glm::vec2) override;
-		glm::vec2 relPoint(glm::vec2) override;
-		int getDepth() override;
+		glm::vec3 absPoint(glm::vec3) override;
+		glm::vec3 relPoint(glm::vec3) override;
+		int getTreeDepth() override;
 	};
 }
 #endif // _SAGE_SCENE_H

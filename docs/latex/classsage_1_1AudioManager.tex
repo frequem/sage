@@ -1,0 +1,139 @@
+\hypertarget{classsage_1_1AudioManager}{}\section{sage\+::Audio\+Manager Class Reference}
+\label{classsage_1_1AudioManager}\index{sage::AudioManager@{sage::AudioManager}}
+
+
+{\ttfamily \#include $<$Audio\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1AudioManager_a95f2ed16e4c7fdb2396624d45b398b00}{Audio\+Manager}} (\mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} $\ast$)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a251df80c76c4c4031015c4681a2d0c0f}{play}} (const std\+::string \&, int)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a8393c79d76763795c835c0a636a8a8f3}{play\+On\+Channel}} (const std\+::string \&, int, int)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a09ed800755c7d35a12a889319494b798}{play}} (const std\+::string \&)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a928db254848a8eb2536ba065a0b719d3}{play\+On\+Channel}} (const std\+::string \&, int)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a02e449fb8c3d797336a17781a4d1abd4}{reserve\+Channel}} (int)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a96ab7e1b8ea7f52a6cd09675efb042eb}{unreserve\+Channel}} (int)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_aae16a9d852718c100659b185f86533b3}{pause\+All}} ()
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a6e851147d522d6dc255fc0b1f0134832}{pause}} (int)
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a295fca304a8dbd5d1e3c788a20d8e838}{resume\+All}} ()
+\item 
+void \mbox{\hyperlink{classsage_1_1AudioManager_a694c3a19eed23e395d3d03a9b4af5cdc}{resume}} (int)
+\item 
+\mbox{\hyperlink{classsage_1_1AudioManager_ad94dc46723c6d7cf8c81fc3772a842aa}{$\sim$\+Audio\+Manager}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1AudioManager_a67e231b6321bfb3d884a311522783a9c}{audio\+Cache}}
+\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{classsage_1_1AudioManager_a33e6f086e5dd82256d9b38edf6a56521}{reserved\+Channels}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1AudioManager_a95f2ed16e4c7fdb2396624d45b398b00}\label{classsage_1_1AudioManager_a95f2ed16e4c7fdb2396624d45b398b00}} 
+\index{sage::AudioManager@{sage::AudioManager}!AudioManager@{AudioManager}}
+\index{AudioManager@{AudioManager}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{AudioManager()}{AudioManager()}}
+{\footnotesize\ttfamily Audio\+Manager\+::\+Audio\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} $\ast$}]{audio\+Cache }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_ad94dc46723c6d7cf8c81fc3772a842aa}\label{classsage_1_1AudioManager_ad94dc46723c6d7cf8c81fc3772a842aa}} 
+\index{sage::AudioManager@{sage::AudioManager}!````~AudioManager@{$\sim$AudioManager}}
+\index{````~AudioManager@{$\sim$AudioManager}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{$\sim$AudioManager()}{~AudioManager()}}
+{\footnotesize\ttfamily Audio\+Manager\+::$\sim$\+Audio\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1AudioManager_a6e851147d522d6dc255fc0b1f0134832}\label{classsage_1_1AudioManager_a6e851147d522d6dc255fc0b1f0134832}} 
+\index{sage::AudioManager@{sage::AudioManager}!pause@{pause}}
+\index{pause@{pause}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void Audio\+Manager\+::pause (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_aae16a9d852718c100659b185f86533b3}\label{classsage_1_1AudioManager_aae16a9d852718c100659b185f86533b3}} 
+\index{sage::AudioManager@{sage::AudioManager}!pauseAll@{pauseAll}}
+\index{pauseAll@{pauseAll}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{pauseAll()}{pauseAll()}}
+{\footnotesize\ttfamily void Audio\+Manager\+::pause\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a251df80c76c4c4031015c4681a2d0c0f}\label{classsage_1_1AudioManager_a251df80c76c4c4031015c4681a2d0c0f}} 
+\index{sage::AudioManager@{sage::AudioManager}!play@{play}}
+\index{play@{play}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Audio\+Manager\+::play (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sound\+File,  }\item[{int}]{loops }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a09ed800755c7d35a12a889319494b798}\label{classsage_1_1AudioManager_a09ed800755c7d35a12a889319494b798}} 
+\index{sage::AudioManager@{sage::AudioManager}!play@{play}}
+\index{play@{play}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{play()}{play()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Audio\+Manager\+::play (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sound\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a8393c79d76763795c835c0a636a8a8f3}\label{classsage_1_1AudioManager_a8393c79d76763795c835c0a636a8a8f3}} 
+\index{sage::AudioManager@{sage::AudioManager}!playOnChannel@{playOnChannel}}
+\index{playOnChannel@{playOnChannel}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{playOnChannel()}{playOnChannel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Audio\+Manager\+::play\+On\+Channel (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sound\+File,  }\item[{int}]{channel,  }\item[{int}]{loops }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a928db254848a8eb2536ba065a0b719d3}\label{classsage_1_1AudioManager_a928db254848a8eb2536ba065a0b719d3}} 
+\index{sage::AudioManager@{sage::AudioManager}!playOnChannel@{playOnChannel}}
+\index{playOnChannel@{playOnChannel}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{playOnChannel()}{playOnChannel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Audio\+Manager\+::play\+On\+Channel (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sound\+File,  }\item[{int}]{channel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a02e449fb8c3d797336a17781a4d1abd4}\label{classsage_1_1AudioManager_a02e449fb8c3d797336a17781a4d1abd4}} 
+\index{sage::AudioManager@{sage::AudioManager}!reserveChannel@{reserveChannel}}
+\index{reserveChannel@{reserveChannel}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{reserveChannel()}{reserveChannel()}}
+{\footnotesize\ttfamily void Audio\+Manager\+::reserve\+Channel (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a694c3a19eed23e395d3d03a9b4af5cdc}\label{classsage_1_1AudioManager_a694c3a19eed23e395d3d03a9b4af5cdc}} 
+\index{sage::AudioManager@{sage::AudioManager}!resume@{resume}}
+\index{resume@{resume}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily void Audio\+Manager\+::resume (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a295fca304a8dbd5d1e3c788a20d8e838}\label{classsage_1_1AudioManager_a295fca304a8dbd5d1e3c788a20d8e838}} 
+\index{sage::AudioManager@{sage::AudioManager}!resumeAll@{resumeAll}}
+\index{resumeAll@{resumeAll}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{resumeAll()}{resumeAll()}}
+{\footnotesize\ttfamily void Audio\+Manager\+::resume\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a96ab7e1b8ea7f52a6cd09675efb042eb}\label{classsage_1_1AudioManager_a96ab7e1b8ea7f52a6cd09675efb042eb}} 
+\index{sage::AudioManager@{sage::AudioManager}!unreserveChannel@{unreserveChannel}}
+\index{unreserveChannel@{unreserveChannel}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{unreserveChannel()}{unreserveChannel()}}
+{\footnotesize\ttfamily void Audio\+Manager\+::unreserve\+Channel (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1AudioManager_a67e231b6321bfb3d884a311522783a9c}\label{classsage_1_1AudioManager_a67e231b6321bfb3d884a311522783a9c}} 
+\index{sage::AudioManager@{sage::AudioManager}!audioCache@{audioCache}}
+\index{audioCache@{audioCache}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{audioCache}{audioCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}}$\ast$ sage\+::\+Audio\+Manager\+::audio\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1AudioManager_a33e6f086e5dd82256d9b38edf6a56521}\label{classsage_1_1AudioManager_a33e6f086e5dd82256d9b38edf6a56521}} 
+\index{sage::AudioManager@{sage::AudioManager}!reservedChannels@{reservedChannels}}
+\index{reservedChannels@{reservedChannels}!sage::AudioManager@{sage::AudioManager}}
+\subsubsection{\texorpdfstring{reservedChannels}{reservedChannels}}
+{\footnotesize\ttfamily std\+::set$<$int$>$ sage\+::\+Audio\+Manager\+::reserved\+Channels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/util/\mbox{\hyperlink{AudioManager_8h}{Audio\+Manager.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/util/\mbox{\hyperlink{AudioManager_8cpp}{Audio\+Manager.\+cpp}}\end{DoxyCompactItemize}

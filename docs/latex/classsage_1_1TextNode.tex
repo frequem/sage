@@ -1,0 +1,193 @@
+\hypertarget{classsage_1_1TextNode}{}\section{sage\+::Text\+Node Class Reference}
+\label{classsage_1_1TextNode}\index{sage::TextNode@{sage::TextNode}}
+
+
+{\ttfamily \#include $<$Text\+Node.\+h$>$}
+
+Inheritance diagram for sage\+::Text\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsage_1_1TextNode}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1TextNode_a5fbde25db3407b5e5e84ef297821dec6}{Text\+Node}} (const std\+::string \&font, int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}})
+\item 
+\mbox{\hyperlink{classsage_1_1TextNode_a9988fa03958e378b3fd612ea3a103649}{Text\+Node}} (const std\+::string \&font, int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}}, const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}})
+\item 
+\mbox{\hyperlink{classsage_1_1TextNode_a5677717ec6c2db9e311a40ad1510adb9}{Text\+Node}} (const std\+::string \&font, int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}}, const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}}, S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}{color}})
+\item 
+void \mbox{\hyperlink{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}{init}} () override
+\begin{DoxyCompactList}\small\item\em Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1TextNode_ac5aa86ad68f3470c50f7021695a6c45d}{get\+Size}} () override
+\begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1TextNode_a81f9aa6c3c25d5b2b53904becad654fe}{set\+Text}} (const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}})
+\item 
+void \mbox{\hyperlink{classsage_1_1TextNode_a46a1738c681f158ab1d2468d3ec02a24}{set\+Color}} (S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}{color}})
+\item 
+\mbox{\hyperlink{classsage_1_1TextNode_a3ad8241316536959f2727a0abb8dc3e7}{$\sim$\+Text\+Node}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \mbox{\hyperlink{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}{get\+Texture}} () override
+\item 
+void \mbox{\hyperlink{classsage_1_1TextNode_a7984e4a663f48338da018b780704b95f}{rebuild}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsage_1_1TextNode_a2e09c9e2e42c0c99ea24239aa09d03c9}{font\+File}}
+\item 
+int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}}
+\item 
+std\+::string \mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}}
+\item 
+S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}{color}}
+\item 
+S\+D\+L\+\_\+\+Surface $\ast$ \mbox{\hyperlink{classsage_1_1TextNode_a6f15575871c6eef0b1a461aaa1b87ca2}{surface}}
+\item 
+G\+Luint \mbox{\hyperlink{classsage_1_1TextNode_a8ffd1a92389ec216de154ea9a5b211cc}{texture}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1TextNode_a5fbde25db3407b5e5e84ef297821dec6}\label{classsage_1_1TextNode_a5fbde25db3407b5e5e84ef297821dec6}} 
+\index{sage::TextNode@{sage::TextNode}!TextNode@{TextNode}}
+\index{TextNode@{TextNode}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{TextNode()}{TextNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Text\+Node\+::\+Text\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font,  }\item[{int}]{ptsize }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a9988fa03958e378b3fd612ea3a103649}\label{classsage_1_1TextNode_a9988fa03958e378b3fd612ea3a103649}} 
+\index{sage::TextNode@{sage::TextNode}!TextNode@{TextNode}}
+\index{TextNode@{TextNode}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{TextNode()}{TextNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Text\+Node\+::\+Text\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font,  }\item[{int}]{ptsize,  }\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a5677717ec6c2db9e311a40ad1510adb9}\label{classsage_1_1TextNode_a5677717ec6c2db9e311a40ad1510adb9}} 
+\index{sage::TextNode@{sage::TextNode}!TextNode@{TextNode}}
+\index{TextNode@{TextNode}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{TextNode()}{TextNode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Text\+Node\+::\+Text\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font,  }\item[{int}]{ptsize,  }\item[{const std\+::string \&}]{text,  }\item[{S\+D\+L\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a3ad8241316536959f2727a0abb8dc3e7}\label{classsage_1_1TextNode_a3ad8241316536959f2727a0abb8dc3e7}} 
+\index{sage::TextNode@{sage::TextNode}!````~TextNode@{$\sim$TextNode}}
+\index{````~TextNode@{$\sim$TextNode}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{$\sim$TextNode()}{~TextNode()}}
+{\footnotesize\ttfamily Text\+Node\+::$\sim$\+Text\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1TextNode_ac5aa86ad68f3470c50f7021695a6c45d}\label{classsage_1_1TextNode_ac5aa86ad68f3470c50f7021695a6c45d}} 
+\index{sage::TextNode@{sage::TextNode}!getSize@{getSize}}
+\index{getSize@{getSize}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Text\+Node\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the size 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}\label{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}} 
+\index{sage::TextNode@{sage::TextNode}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily G\+Luint Text\+Node\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea69459546736c0f}{sage\+::\+Textured\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}\label{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}} 
+\index{sage::TextNode@{sage::TextNode}!init@{init}}
+\index{init@{init}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Text\+Node\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab87776adae83149e235e37ed469f4e10}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a7984e4a663f48338da018b780704b95f}\label{classsage_1_1TextNode_a7984e4a663f48338da018b780704b95f}} 
+\index{sage::TextNode@{sage::TextNode}!rebuild@{rebuild}}
+\index{rebuild@{rebuild}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{rebuild()}{rebuild()}}
+{\footnotesize\ttfamily void Text\+Node\+::rebuild (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a46a1738c681f158ab1d2468d3ec02a24}\label{classsage_1_1TextNode_a46a1738c681f158ab1d2468d3ec02a24}} 
+\index{sage::TextNode@{sage::TextNode}!setColor@{setColor}}
+\index{setColor@{setColor}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Text\+Node\+::set\+Color (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a81f9aa6c3c25d5b2b53904becad654fe}\label{classsage_1_1TextNode_a81f9aa6c3c25d5b2b53904becad654fe}} 
+\index{sage::TextNode@{sage::TextNode}!setText@{setText}}
+\index{setText@{setText}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void Text\+Node\+::set\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}\label{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}} 
+\index{sage::TextNode@{sage::TextNode}!color@{color}}
+\index{color@{color}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Color sage\+::\+Text\+Node\+::color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a2e09c9e2e42c0c99ea24239aa09d03c9}\label{classsage_1_1TextNode_a2e09c9e2e42c0c99ea24239aa09d03c9}} 
+\index{sage::TextNode@{sage::TextNode}!fontFile@{fontFile}}
+\index{fontFile@{fontFile}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{fontFile}{fontFile}}
+{\footnotesize\ttfamily std\+::string sage\+::\+Text\+Node\+::font\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}\label{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}} 
+\index{sage::TextNode@{sage::TextNode}!ptsize@{ptsize}}
+\index{ptsize@{ptsize}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{ptsize}{ptsize}}
+{\footnotesize\ttfamily int sage\+::\+Text\+Node\+::ptsize\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a6f15575871c6eef0b1a461aaa1b87ca2}\label{classsage_1_1TextNode_a6f15575871c6eef0b1a461aaa1b87ca2}} 
+\index{sage::TextNode@{sage::TextNode}!surface@{surface}}
+\index{surface@{surface}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{surface}{surface}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Surface$\ast$ sage\+::\+Text\+Node\+::surface\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}\label{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}} 
+\index{sage::TextNode@{sage::TextNode}!text@{text}}
+\index{text@{text}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily std\+::string sage\+::\+Text\+Node\+::text\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1TextNode_a8ffd1a92389ec216de154ea9a5b211cc}\label{classsage_1_1TextNode_a8ffd1a92389ec216de154ea9a5b211cc}} 
+\index{sage::TextNode@{sage::TextNode}!texture@{texture}}
+\index{texture@{texture}!sage::TextNode@{sage::TextNode}}
+\subsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily G\+Luint sage\+::\+Text\+Node\+::texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/view/\mbox{\hyperlink{TextNode_8h}{Text\+Node.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/view/\mbox{\hyperlink{TextNode_8cpp}{Text\+Node.\+cpp}}\end{DoxyCompactItemize}

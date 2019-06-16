@@ -5,8 +5,7 @@
 
 using namespace sage;
 
-FileCache::FileCache(ThreadManager* tm){
-	this->threadManager = tm;
+FileCache::FileCache(ThreadManager* tm) : threadManager(tm){
 	
 	#ifdef __ANDROID__
 		this->android_jnienv = (JNIEnv*)SDL_AndroidGetJNIEnv();

@@ -3,7 +3,7 @@
 #include <sage/view/Node.h>
 #include <sage/util/config.h>
 #include <sage/util/macros.h>
-#include <cstdlib>
+#include <glm/glm.hpp>
 
 using namespace sage;
 
@@ -51,11 +51,16 @@ void EventDispatcher::handleEvents(){
 				this->dispatchEvent(Event::MOUSE_MOVE, static_cast<int>(sdlEvent.motion.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.motion.y),
 					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel));
 					
+				if(this->mouse_down){
+					this->dispatchEvent(Event::MOUSE_DRAG, static_cast<int>(sdlEvent.motion.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.motion.y),
+					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel), static_cast<int>(this->mouse_down_button));
+				}	
+				
 				this->dispatchEvent(NodeEvent::MOUSE_MOVE, static_cast<std::function<bool(Node*,int,int,int,int)>>([](Node* n, int x, int y, int xrel, int yrel){
 						return n->containsAbs(glm::vec2(x,y));
 					}), static_cast<int>(sdlEvent.motion.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.motion.y),
 					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel));
-					
+				
 				this->dispatchEvent(NodeEvent::MOUSE_ENTER, static_cast<std::function<bool(Node*,int,int,int,int)>>([](Node* n, int x, int y, int xrel, int yrel){
 						return !n->containsAbs(glm::vec2(x-xrel, y-yrel)) && n->containsAbs(glm::vec2(x,y));
 					}), static_cast<int>(sdlEvent.motion.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.motion.y),
@@ -73,6 +78,8 @@ void EventDispatcher::handleEvents(){
 				this->mouse_click_x = sdlEvent.button.x;
 				this->mouse_click_y = sdlEvent.button.y;
 				this->mouse_click_time = SDL_GetTicks();
+				this->mouse_down = true;
+				this->mouse_down_button = sdlEvent.button.button;
 				
 				this->dispatchEvent(Event::MOUSE_DOWN, static_cast<int>(sdlEvent.button.x), static_cast<int>(sdlEvent.button.y),
 					static_cast<int>(sdlEvent.button.button));
@@ -84,6 +91,7 @@ void EventDispatcher::handleEvents(){
 					static_cast<int>(sdlEvent.button.button));
 				break;
 			case SDL_MOUSEBUTTONUP:
+				this->mouse_down = false;
 				this->dispatchEvent(Event::MOUSE_UP, static_cast<int>(sdlEvent.button.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.button.y),
 					static_cast<int>(sdlEvent.button.button));
 					
@@ -119,10 +127,9 @@ void EventDispatcher::handleEvents(){
 }
 
 bool EventDispatcher::isInsideClickRadius(int x, int y){
-	float hdpi, vdpi;
-	this->application->getDPI(&hdpi, &vdpi);
-	return abs(x - this->mouse_click_x) <= MOUSE_CLICK_MAX_SHIFT*hdpi &&
-				abs(y - this->mouse_click_y) <= MOUSE_CLICK_MAX_SHIFT*vdpi;
+	glm::vec2 dpi = this->application->getDPI();
+	return abs(x - this->mouse_click_x) <= MOUSE_CLICK_MAX_SHIFT*dpi.x &&
+				abs(y - this->mouse_click_y) <= MOUSE_CLICK_MAX_SHIFT*dpi.y;
 }
 
 EventDispatcher::~EventDispatcher(){}

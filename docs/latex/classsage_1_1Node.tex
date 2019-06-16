@@ -1,0 +1,1097 @@
+\hypertarget{classsage_1_1Node}{}\section{sage\+::Node Class Reference}
+\label{classsage_1_1Node}\index{sage::Node@{sage::Node}}
+
+
+Abstract class that describes all things drawn by the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. The \mbox{\hyperlink{classsage_1_1Scene}{Scene}} itself, which is also a \mbox{\hyperlink{classsage_1_1Node}{Node}}, is drawn by the \mbox{\hyperlink{classsage_1_1Application}{Application}}. Every \mbox{\hyperlink{classsage_1_1Node}{Node}} has children (Nodes) which are affected by the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s properties.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for sage\+::Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsage_1_1Node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1Node_ad7a34779cad45d997bfd6d3d8043c75f}{Node}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1Node}{Node}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Node}{Node}} with position (0,0), anchor (0,0), scale (1,1), rotation 0 and z-\/index 0. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsage_1_1Node_ab93a6f41e02422a21c44227c0355382a}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsage_1_1Node_a32878481ba54b3856ab53c10af13848e}{update}} (float delta)
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. Updates are required to set the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s postion, scale, etc. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsage_1_1Node_ab87776adae83149e235e37ed469f4e10}{init}} ()
+\begin{DoxyCompactList}\small\item\em Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ \mbox{\hyperlink{classsage_1_1Node_a22d0dfa466965da0324d47d22eb24e6b}{get\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1Scene}{Scene}} that contains this \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ \mbox{\hyperlink{classsage_1_1Node_af0f8bb1150be77ccc56cf470f3058176}{get\+Application}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1Application}{Application}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_ae7bf832d6fd80f69a244ae3dad7b3fb4}{add\+Child}} (\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Adds the given \mbox{\hyperlink{classsage_1_1Node}{Node}} as a child. Automatically sorts the children by z-\/index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}{set\+Position}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets the position of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}{set\+Position}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}})
+\begin{DoxyCompactList}\small\item\em Sets the position of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}{set\+PositionX}} (float x)
+\begin{DoxyCompactList}\small\item\em Sets the x-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}{set\+PositionY}} (float y)
+\begin{DoxyCompactList}\small\item\em Sets the y-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the position of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}{get\+PositionX}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the x-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}{get\+PositionY}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the y-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_a8813a645a74f6ab59b25d434e65035c6}{set\+Anchor}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets the anchor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_a957a7e578660950b8518926239397ea0}{set\+Anchor}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}{anchor}})
+\begin{DoxyCompactList}\small\item\em Sets the anchor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a6733949b7b281d78a8bef8beafe1b630}{get\+Anchor}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the anchor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_aa5f31c33d60b32b618d3beaf4e5c6c51}{get\+AnchorX}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the relative anchor x-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_a78c5f86d0081854603178fb52d8c0a9b}{get\+AnchorY}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the relative anchor y-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale}} (float s)
+\begin{DoxyCompactList}\small\item\em Sets the scale-\/factor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}{set\+Scale}} (glm\+::vec2 s)
+\begin{DoxyCompactList}\small\item\em Sets the scale-\/factor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}{set\+ScaleX}} (float x)
+\begin{DoxyCompactList}\small\item\em Sets the scale-\/factor in x direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}{set\+ScaleY}} (float y)
+\begin{DoxyCompactList}\small\item\em Sets the scale-\/factor in y direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}{get\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the scale-\/factor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}{get\+ScaleX}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the scale-\/factor in x direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}{get\+ScaleY}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the scale-\/factor in y direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_a422e877f5a830ad4d50b8e13250ee553}{set\+Rotation}} (float r)
+\begin{DoxyCompactList}\small\item\em Sets the rotation of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_aca7139bc3ea6705d41bb65a4fb7ddb6c}{get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the rotation of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_a16a5cb054eb05a3d22e97b6d690ebc3f}{set\+Z\+Index}} (int z)
+\begin{DoxyCompactList}\small\item\em Sets the z-\/index of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsage_1_1Node_a8e9bb673c18c8637fb2bba6a0e2a8653}{get\+Z\+Index}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the z-\/index of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+virtual glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{get\+Size}} ()=0
+\begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the width of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the height of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1Node_af1dc65160a79ba86b10b08fd3eb28560}{get\+Abs\+Points}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the corner points of the \mbox{\hyperlink{classsage_1_1Node}{Node}} in absolute coordinates (\mbox{\hyperlink{classsage_1_1Application}{Application}} coordinates). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsage_1_1Node_a5ab70d0b3fc9a167175f7f864549db4d}{contains\+Abs}} (glm\+::vec2 point)
+\begin{DoxyCompactList}\small\item\em Checks if the \mbox{\hyperlink{classsage_1_1Node}{Node}} contains a point given in absolute coordinates. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsage_1_1Node_aa0840c3cb5c7159be6d992adecd2097c}{$\sim$\+Node}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1Node}{Node}} destructor. Deletes children. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classsage_1_1Node_a6f20a4c713eb7044d63d62fe110ebf39}{get\+Parent\+Node}} () const
+\begin{DoxyCompactList}\small\item\em Fetches the parent-\/\+Node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_ad916f8953f6b38ef3514a37f75f9c20d}{set\+Parent\+Node}} (\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Sets the parent-\/\+Node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Node_aa7d796f1bad7d0e23a4cdd2575b4b9f3}{sort\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Sort the children by their z-\/index. \end{DoxyCompactList}\item 
+virtual glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a1c8fbbf37b6e9cf6c7f5e0a4ae4a73cb}{abs\+Point}} (glm\+::vec2 point)
+\begin{DoxyCompactList}\small\item\em Converts a point in relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates to absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates. \end{DoxyCompactList}\item 
+virtual glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a602f53d66ee202b54ae71b9a53057173}{rel\+Point}} (glm\+::vec2 point)
+\begin{DoxyCompactList}\small\item\em Converts a point in absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates to relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classsage_1_1Node_a303fffee8f70d39603b3a4e251e2e820}{get\+Depth}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the depth of a \mbox{\hyperlink{classsage_1_1Node}{Node}} under the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. e.\+g. (\mbox{\hyperlink{classsage_1_1Scene}{Scene}}\+: depth 0)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 1)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 2) etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsage_1_1Node_a2c2cf2d54ee6a9368ece7ea46ad13deb}{initialized}} = false
+\item 
+\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classsage_1_1Node_a9f6d79896df762b8e8cff9574f1e9262}{parent\+Node}} = nullptr
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$ $>$ \mbox{\hyperlink{classsage_1_1Node_a296882fbf277d09cb672da2275aa5527}{child\+Nodes}}
+\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}}
+\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}{anchor}}
+\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}}
+\item 
+float \mbox{\hyperlink{classsage_1_1Node_ae83b239ad4c722fee62708977e0560f4}{rotation}}
+\item 
+int \mbox{\hyperlink{classsage_1_1Node_ad98383ce93e985bf20e1cd678c622097}{z\+\_\+index}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class that describes all things drawn by the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. The \mbox{\hyperlink{classsage_1_1Scene}{Scene}} itself, which is also a \mbox{\hyperlink{classsage_1_1Node}{Node}}, is drawn by the \mbox{\hyperlink{classsage_1_1Application}{Application}}. Every \mbox{\hyperlink{classsage_1_1Node}{Node}} has children (Nodes) which are affected by the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s properties. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1Node_ad7a34779cad45d997bfd6d3d8043c75f}\label{classsage_1_1Node_ad7a34779cad45d997bfd6d3d8043c75f}} 
+\index{sage::Node@{sage::Node}!Node@{Node}}
+\index{Node@{Node}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classsage_1_1Node}{Node}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Node}{Node}} with position (0,0), anchor (0,0), scale (1,1), rotation 0 and z-\/index 0. 
+
+\mbox{\Hypertarget{classsage_1_1Node_aa0840c3cb5c7159be6d992adecd2097c}\label{classsage_1_1Node_aa0840c3cb5c7159be6d992adecd2097c}} 
+\index{sage::Node@{sage::Node}!````~Node@{$\sim$Node}}
+\index{````~Node@{$\sim$Node}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{$\sim$Node()}{~Node()}}
+{\footnotesize\ttfamily Node\+::$\sim$\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classsage_1_1Node}{Node}} destructor. Deletes children. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1Node_a1c8fbbf37b6e9cf6c7f5e0a4ae4a73cb}\label{classsage_1_1Node_a1c8fbbf37b6e9cf6c7f5e0a4ae4a73cb}} 
+\index{sage::Node@{sage::Node}!absPoint@{absPoint}}
+\index{absPoint@{absPoint}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{absPoint()}{absPoint()}}
+{\footnotesize\ttfamily glm\+::vec2 Node\+::abs\+Point (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Converts a point in relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates to absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & a point in relative coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Scene_a97d7d623cc44062249a199c63c67b5be}{sage\+::\+Scene}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_ae7bf832d6fd80f69a244ae3dad7b3fb4}\label{classsage_1_1Node_ae7bf832d6fd80f69a244ae3dad7b3fb4}} 
+\index{sage::Node@{sage::Node}!addChild@{addChild}}
+\index{addChild@{addChild}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{addChild()}{addChild()}}
+{\footnotesize\ttfamily void Node\+::add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Adds the given \mbox{\hyperlink{classsage_1_1Node}{Node}} as a child. Automatically sorts the children by z-\/index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & the new child-\/\+Node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsage_1_1Node_a5ab70d0b3fc9a167175f7f864549db4d}\label{classsage_1_1Node_a5ab70d0b3fc9a167175f7f864549db4d}} 
+\index{sage::Node@{sage::Node}!containsAbs@{containsAbs}}
+\index{containsAbs@{containsAbs}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{containsAbs()}{containsAbs()}}
+{\footnotesize\ttfamily bool Node\+::contains\+Abs (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{point }\end{DoxyParamCaption})}
+
+
+
+Checks if the \mbox{\hyperlink{classsage_1_1Node}{Node}} contains a point given in absolute coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & the point to check \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsage_1_1Node_af1dc65160a79ba86b10b08fd3eb28560}\label{classsage_1_1Node_af1dc65160a79ba86b10b08fd3eb28560}} 
+\index{sage::Node@{sage::Node}!getAbsPoints@{getAbsPoints}}
+\index{getAbsPoints@{getAbsPoints}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getAbsPoints()}{getAbsPoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ glm\+::vec2 $>$ Node\+::get\+Abs\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the corner points of the \mbox{\hyperlink{classsage_1_1Node}{Node}} in absolute coordinates (\mbox{\hyperlink{classsage_1_1Application}{Application}} coordinates). 
+
+\begin{DoxyReturn}{Returns}
+vector of 4 corner points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsage_1_1Node_a6733949b7b281d78a8bef8beafe1b630}\label{classsage_1_1Node_a6733949b7b281d78a8bef8beafe1b630}} 
+\index{sage::Node@{sage::Node}!getAnchor@{getAnchor}}
+\index{getAnchor@{getAnchor}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getAnchor()}{getAnchor()}}
+{\footnotesize\ttfamily glm\+::vec2 Node\+::get\+Anchor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the anchor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. 
+
+\begin{DoxyReturn}{Returns}
+the anchor 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}{anchor}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a8813a645a74f6ab59b25d434e65035c6}{set\+Anchor(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a957a7e578660950b8518926239397ea0}{set\+Anchor(glm\+::vec2 anchor)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aa5f31c33d60b32b618d3beaf4e5c6c51}{get\+Anchor\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a78c5f86d0081854603178fb52d8c0a9b}{get\+Anchor\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_aa5f31c33d60b32b618d3beaf4e5c6c51}\label{classsage_1_1Node_aa5f31c33d60b32b618d3beaf4e5c6c51}} 
+\index{sage::Node@{sage::Node}!getAnchorX@{getAnchorX}}
+\index{getAnchorX@{getAnchorX}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getAnchorX()}{getAnchorX()}}
+{\footnotesize\ttfamily float Node\+::get\+AnchorX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the relative anchor x-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. 
+
+\begin{DoxyReturn}{Returns}
+the anchor\textquotesingle{}s x-\/coordinate 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}{anchor}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a8813a645a74f6ab59b25d434e65035c6}{set\+Anchor(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a957a7e578660950b8518926239397ea0}{set\+Anchor(glm\+::vec2 anchor)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6733949b7b281d78a8bef8beafe1b630}{get\+Anchor()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a78c5f86d0081854603178fb52d8c0a9b}{get\+Anchor\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a78c5f86d0081854603178fb52d8c0a9b}\label{classsage_1_1Node_a78c5f86d0081854603178fb52d8c0a9b}} 
+\index{sage::Node@{sage::Node}!getAnchorY@{getAnchorY}}
+\index{getAnchorY@{getAnchorY}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getAnchorY()}{getAnchorY()}}
+{\footnotesize\ttfamily float Node\+::get\+AnchorY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the relative anchor y-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. 
+
+\begin{DoxyReturn}{Returns}
+the anchor\textquotesingle{}s y-\/coordinate 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}{anchor}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a8813a645a74f6ab59b25d434e65035c6}{set\+Anchor(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a957a7e578660950b8518926239397ea0}{set\+Anchor(glm\+::vec2 anchor)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6733949b7b281d78a8bef8beafe1b630}{get\+Anchor()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aa5f31c33d60b32b618d3beaf4e5c6c51}{get\+Anchor\+X()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_af0f8bb1150be77ccc56cf470f3058176}\label{classsage_1_1Node_af0f8bb1150be77ccc56cf470f3058176}} 
+\index{sage::Node@{sage::Node}!getApplication@{getApplication}}
+\index{getApplication@{getApplication}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getApplication()}{getApplication()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ Node\+::get\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1Application}{Application}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1Application}{Application}} 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Scene_a30ecf9ad001d30773982f0808b05867d}{sage\+::\+Scene}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_a303fffee8f70d39603b3a4e251e2e820}\label{classsage_1_1Node_a303fffee8f70d39603b3a4e251e2e820}} 
+\index{sage::Node@{sage::Node}!getDepth@{getDepth}}
+\index{getDepth@{getDepth}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getDepth()}{getDepth()}}
+{\footnotesize\ttfamily int Node\+::get\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Fetches the depth of a \mbox{\hyperlink{classsage_1_1Node}{Node}} under the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. e.\+g. (\mbox{\hyperlink{classsage_1_1Scene}{Scene}}\+: depth 0)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 1)-\/$>$(\mbox{\hyperlink{classsage_1_1Node}{Node}}\+: depth 2) etc. 
+
+\begin{DoxyReturn}{Returns}
+the depth 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Scene_a46335ecefda27ab0b907397a393a12f9}{sage\+::\+Scene}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}\label{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}} 
+\index{sage::Node@{sage::Node}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily float Node\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the height of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the height 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{get\+Size()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a6f20a4c713eb7044d63d62fe110ebf39}\label{classsage_1_1Node_a6f20a4c713eb7044d63d62fe110ebf39}} 
+\index{sage::Node@{sage::Node}!getParentNode@{getParentNode}}
+\index{getParentNode@{getParentNode}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getParentNode()}{getParentNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$ Node\+::get\+Parent\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Fetches the parent-\/\+Node. 
+
+\begin{DoxyReturn}{Returns}
+the parent \mbox{\hyperlink{classsage_1_1Node}{Node}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}\label{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}} 
+\index{sage::Node@{sage::Node}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily glm\+::vec2 Node\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the position of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the position 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}{set\+Position(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}{set\+Position(glm\+::vec2 pos)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}{set\+Position\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}{set\+Position\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}{get\+Position\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}{get\+Position\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}\label{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}} 
+\index{sage::Node@{sage::Node}!getPositionX@{getPositionX}}
+\index{getPositionX@{getPositionX}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getPositionX()}{getPositionX()}}
+{\footnotesize\ttfamily float Node\+::get\+PositionX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the x-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the x coordinate 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}{set\+Position(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}{set\+Position(glm\+::vec2 pos)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}{set\+Position\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}{set\+Position\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}{get\+Position()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}{get\+Position\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}\label{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}} 
+\index{sage::Node@{sage::Node}!getPositionY@{getPositionY}}
+\index{getPositionY@{getPositionY}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getPositionY()}{getPositionY()}}
+{\footnotesize\ttfamily float Node\+::get\+PositionY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the y-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the y coordinate 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}{set\+Position(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}{set\+Position(glm\+::vec2 pos)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}{set\+Position\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}{set\+Position\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}{get\+Position()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}{get\+Position\+X()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_aca7139bc3ea6705d41bb65a4fb7ddb6c}\label{classsage_1_1Node_aca7139bc3ea6705d41bb65a4fb7ddb6c}} 
+\index{sage::Node@{sage::Node}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float Node\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the rotation of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the rotation 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_ae83b239ad4c722fee62708977e0560f4}{rotation}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a422e877f5a830ad4d50b8e13250ee553}{set\+Rotation(float r)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}\label{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}} 
+\index{sage::Node@{sage::Node}!getScale@{getScale}}
+\index{getScale@{getScale}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily glm\+::vec2 Node\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the scale-\/factor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the scale 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale(float s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}{set\+Scale(glm\+::vec2 s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}{set\+Scale\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}{set\+Scale\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}{get\+Scale\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}{get\+Scale\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}\label{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}} 
+\index{sage::Node@{sage::Node}!getScaleX@{getScaleX}}
+\index{getScaleX@{getScaleX}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getScaleX()}{getScaleX()}}
+{\footnotesize\ttfamily float Node\+::get\+ScaleX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the scale-\/factor in x direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the x scale 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale(float s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}{set\+Scale(glm\+::vec2 s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}{set\+Scale\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}{set\+Scale\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}{get\+Scale()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}{get\+Scale\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}\label{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}} 
+\index{sage::Node@{sage::Node}!getScaleY@{getScaleY}}
+\index{getScaleY@{getScaleY}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getScaleY()}{getScaleY()}}
+{\footnotesize\ttfamily float Node\+::get\+ScaleY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the scale-\/factor in y direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the y scale 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale(float s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}{set\+Scale(glm\+::vec2 s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}{set\+Scale\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}{set\+Scale\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}{get\+Scale()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}{get\+Scale\+X()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a22d0dfa466965da0324d47d22eb24e6b}\label{classsage_1_1Node_a22d0dfa466965da0324d47d22eb24e6b}} 
+\index{sage::Node@{sage::Node}!getScene@{getScene}}
+\index{getScene@{getScene}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getScene()}{getScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ Node\+::get\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1Scene}{Scene}} that contains this \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1Scene}{Scene}} 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Scene_ab09415b375ad054825e9fd4d4e471c6b}{sage\+::\+Scene}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}\label{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}} 
+\index{sage::Node@{sage::Node}!getSize@{getSize}}
+\index{getSize@{getSize}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily virtual glm\+::vec2 sage\+::\+Node\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the size 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height()}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classsage_1_1Sprite_ab6c3b12b45eeafab8e816207158121a1}{sage\+::\+Sprite}}, \mbox{\hyperlink{classsage_1_1Scene_a00e53fc54466062ecc1437b980f5fa69}{sage\+::\+Scene}}, and \mbox{\hyperlink{classsage_1_1TextNode_ac5aa86ad68f3470c50f7021695a6c45d}{sage\+::\+Text\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}\label{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}} 
+\index{sage::Node@{sage::Node}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily float Node\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the width of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the width 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{get\+Size()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a8e9bb673c18c8637fb2bba6a0e2a8653}\label{classsage_1_1Node_a8e9bb673c18c8637fb2bba6a0e2a8653}} 
+\index{sage::Node@{sage::Node}!getZIndex@{getZIndex}}
+\index{getZIndex@{getZIndex}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{getZIndex()}{getZIndex()}}
+{\footnotesize\ttfamily int Node\+::get\+Z\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Fetches the z-\/index of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the z-\/index 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_ad98383ce93e985bf20e1cd678c622097}{z\+\_\+index}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a16a5cb054eb05a3d22e97b6d690ebc3f}{set\+Z\+Index(int z)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_ab87776adae83149e235e37ed469f4e10}\label{classsage_1_1Node_ab87776adae83149e235e37ed469f4e10}} 
+\index{sage::Node@{sage::Node}!init@{init}}
+\index{init@{init}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Node\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}{sage\+::\+Sprite}}, and \mbox{\hyperlink{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}{sage\+::\+Text\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_a602f53d66ee202b54ae71b9a53057173}\label{classsage_1_1Node_a602f53d66ee202b54ae71b9a53057173}} 
+\index{sage::Node@{sage::Node}!relPoint@{relPoint}}
+\index{relPoint@{relPoint}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{relPoint()}{relPoint()}}
+{\footnotesize\ttfamily glm\+::vec2 Node\+::rel\+Point (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Converts a point in absolute (\mbox{\hyperlink{classsage_1_1Application}{Application}}) coordinates to relative (\mbox{\hyperlink{classsage_1_1Node}{Node}}) coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & a point in absolute coordinates \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Scene_aa8b5a43db8e18dc3ec8695ca465a1308}{sage\+::\+Scene}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_ab93a6f41e02422a21c44227c0355382a}\label{classsage_1_1Node_ab93a6f41e02422a21c44227c0355382a}} 
+\index{sage::Node@{sage::Node}!render@{render}}
+\index{render@{render}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Node\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1Scene_a5179bf540ba57931b65668b5b42af10f}{sage\+::\+Scene}}, and \mbox{\hyperlink{classsage_1_1TexturedNode_a17465d5cb984880866f90145bb93d928}{sage\+::\+Textured\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_a8813a645a74f6ab59b25d434e65035c6}\label{classsage_1_1Node_a8813a645a74f6ab59b25d434e65035c6}} 
+\index{sage::Node@{sage::Node}!setAnchor@{setAnchor}}
+\index{setAnchor@{setAnchor}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setAnchor()}{setAnchor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Node\+::set\+Anchor (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the anchor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the relative anchor x-\/coordinate \\
+\hline
+{\em y} & the relative anchor y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}{anchor}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a957a7e578660950b8518926239397ea0}{set\+Anchor(glm\+::vec2 anchor)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6733949b7b281d78a8bef8beafe1b630}{get\+Anchor()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aa5f31c33d60b32b618d3beaf4e5c6c51}{get\+Anchor\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a78c5f86d0081854603178fb52d8c0a9b}{get\+Anchor\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a957a7e578660950b8518926239397ea0}\label{classsage_1_1Node_a957a7e578660950b8518926239397ea0}} 
+\index{sage::Node@{sage::Node}!setAnchor@{setAnchor}}
+\index{setAnchor@{setAnchor}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setAnchor()}{setAnchor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Node\+::set\+Anchor (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{anchor }\end{DoxyParamCaption})}
+
+
+
+Sets the anchor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. See anchor for further details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em anchor} & the anchor \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}{anchor}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a8813a645a74f6ab59b25d434e65035c6}{set\+Anchor(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6733949b7b281d78a8bef8beafe1b630}{get\+Anchor()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aa5f31c33d60b32b618d3beaf4e5c6c51}{get\+Anchor\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a78c5f86d0081854603178fb52d8c0a9b}{get\+Anchor\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_ad916f8953f6b38ef3514a37f75f9c20d}\label{classsage_1_1Node_ad916f8953f6b38ef3514a37f75f9c20d}} 
+\index{sage::Node@{sage::Node}!setParentNode@{setParentNode}}
+\index{setParentNode@{setParentNode}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setParentNode()}{setParentNode()}}
+{\footnotesize\ttfamily void Node\+::set\+Parent\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets the parent-\/\+Node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & the new parent \mbox{\hyperlink{classsage_1_1Node}{Node}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}\label{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}} 
+\index{sage::Node@{sage::Node}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Node\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the new x-\/coordinate \\
+\hline
+{\em y} & the new y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}{set\+Position(glm\+::vec2 pos)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}{set\+Position\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}{set\+Position\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}{get\+Position()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}{get\+Position\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}{get\+Position\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}\label{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}} 
+\index{sage::Node@{sage::Node}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Node\+::set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{pos }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & the new position \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}{set\+Position(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}{set\+Position\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}{set\+Position\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}{get\+Position()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}{get\+Position\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}{get\+Position\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}\label{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}} 
+\index{sage::Node@{sage::Node}!setPositionX@{setPositionX}}
+\index{setPositionX@{setPositionX}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setPositionX()}{setPositionX()}}
+{\footnotesize\ttfamily void Node\+::set\+PositionX (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Sets the x-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the new x-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}{set\+Position(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}{set\+Position(glm\+::vec2 pos)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}{set\+Position\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}{get\+Position()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}{get\+Position\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}{get\+Position\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}\label{classsage_1_1Node_a5c97d36655f0daa71a5f6c715d2b0470}} 
+\index{sage::Node@{sage::Node}!setPositionY@{setPositionY}}
+\index{setPositionY@{setPositionY}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setPositionY()}{setPositionY()}}
+{\footnotesize\ttfamily void Node\+::set\+PositionY (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the y-\/coordinate of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & the new y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aaa8545c103ef1b35e5076dbedab93af5}{set\+Position(float x, float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae2731cefe38e706c2bf21afae6da18b3}{set\+Position(glm\+::vec2 pos)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ae1dfc73d6122a95778d5d9db3d1fd913}{set\+Position\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a67eb5862f4da3cc4b2219a7e555a5678}{get\+Position()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a17e92da5beaeb4b299c4e93729a22b1a}{get\+Position\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a26337a40b7da400233451b71e85759cc}{get\+Position\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a422e877f5a830ad4d50b8e13250ee553}\label{classsage_1_1Node_a422e877f5a830ad4d50b8e13250ee553}} 
+\index{sage::Node@{sage::Node}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Node\+::set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{r }\end{DoxyParamCaption})}
+
+
+
+Sets the rotation of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the rotation \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_ae83b239ad4c722fee62708977e0560f4}{rotation}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aca7139bc3ea6705d41bb65a4fb7ddb6c}{get\+Rotation()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}\label{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}} 
+\index{sage::Node@{sage::Node}!setScale@{setScale}}
+\index{setScale@{setScale}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Node\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption})}
+
+
+
+Sets the scale-\/factor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the x-\/ and y-\/ scale \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale(float s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}{set\+Scale(glm\+::vec2 s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}{set\+Scale\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}{set\+Scale\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}{get\+Scale()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}{get\+Scale\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}{get\+Scale\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}\label{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}} 
+\index{sage::Node@{sage::Node}!setScale@{setScale}}
+\index{setScale@{setScale}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setScale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Node\+::set\+Scale (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{s }\end{DoxyParamCaption})}
+
+
+
+Sets the scale-\/factor of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the scale \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale(float s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}{set\+Scale\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}{set\+Scale\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}{get\+Scale()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}{get\+Scale\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}{get\+Scale\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}\label{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}} 
+\index{sage::Node@{sage::Node}!setScaleX@{setScaleX}}
+\index{setScaleX@{setScaleX}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setScaleX()}{setScaleX()}}
+{\footnotesize\ttfamily void Node\+::set\+ScaleX (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Sets the scale-\/factor in x direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the x scale \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale(float s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}{set\+Scale(glm\+::vec2 s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}{set\+Scale\+Y(float y)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}{get\+Scale()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}{get\+Scale\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}{get\+Scale\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}\label{classsage_1_1Node_afa22161545d63e9e011f8eeb5acdead7}} 
+\index{sage::Node@{sage::Node}!setScaleY@{setScaleY}}
+\index{setScaleY@{setScaleY}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setScaleY()}{setScaleY()}}
+{\footnotesize\ttfamily void Node\+::set\+ScaleY (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the scale-\/factor in y direction of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & the y scale \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}{scale}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a939698b2eb68ee5b60b91e2426e95369}{set\+Scale(float s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_aecff30b003ce1c2266cc60a34b72559d}{set\+Scale(glm\+::vec2 s)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab8126397f90ccdee0755b984b26809d8}{set\+Scale\+X(float x)}} 
+
+\mbox{\hyperlink{classsage_1_1Node_af1a9bc0715acbc80623b5a15a5f65f3f}{get\+Scale()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a27040ef8ab59ccf42b87d6ddc8d794e6}{get\+Scale\+X()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_ab87661ab8940512baf2e7639ea55ff87}{get\+Scale\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_a16a5cb054eb05a3d22e97b6d690ebc3f}\label{classsage_1_1Node_a16a5cb054eb05a3d22e97b6d690ebc3f}} 
+\index{sage::Node@{sage::Node}!setZIndex@{setZIndex}}
+\index{setZIndex@{setZIndex}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{setZIndex()}{setZIndex()}}
+{\footnotesize\ttfamily void Node\+::set\+Z\+Index (\begin{DoxyParamCaption}\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+Sets the z-\/index of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & the z-\/index \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_ad98383ce93e985bf20e1cd678c622097}{z\+\_\+index}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a8e9bb673c18c8637fb2bba6a0e2a8653}{get\+Z\+Index()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Node_aa7d796f1bad7d0e23a4cdd2575b4b9f3}\label{classsage_1_1Node_aa7d796f1bad7d0e23a4cdd2575b4b9f3}} 
+\index{sage::Node@{sage::Node}!sortChildren@{sortChildren}}
+\index{sortChildren@{sortChildren}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{sortChildren()}{sortChildren()}}
+{\footnotesize\ttfamily void Node\+::sort\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sort the children by their z-\/index. 
+
+\mbox{\Hypertarget{classsage_1_1Node_a32878481ba54b3856ab53c10af13848e}\label{classsage_1_1Node_a32878481ba54b3856ab53c10af13848e}} 
+\index{sage::Node@{sage::Node}!update@{update}}
+\index{update@{update}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Node\+::update (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the \mbox{\hyperlink{classsage_1_1Node}{Node}} and its children. Updates are required to set the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s postion, scale, etc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & the time since the last update \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}\label{classsage_1_1Node_a0956f07efec6dcbd3cf796a9028b9175}} 
+\index{sage::Node@{sage::Node}!anchor@{anchor}}
+\index{anchor@{anchor}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{anchor}{anchor}}
+{\footnotesize\ttfamily glm\+::vec2 sage\+::\+Node\+::anchor\hspace{0.3cm}{\ttfamily [protected]}}
+
+The anchor is a relative point around which all transformations and other manipulations take place. (0,0) is bottom-\/left and (1,1) is top-\/right. \mbox{\Hypertarget{classsage_1_1Node_a296882fbf277d09cb672da2275aa5527}\label{classsage_1_1Node_a296882fbf277d09cb672da2275aa5527}} 
+\index{sage::Node@{sage::Node}!childNodes@{childNodes}}
+\index{childNodes@{childNodes}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{childNodes}{childNodes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classsage_1_1Node}{Node}}$\ast$$>$ sage\+::\+Node\+::child\+Nodes\hspace{0.3cm}{\ttfamily [protected]}}
+
+The vector of children \mbox{\Hypertarget{classsage_1_1Node_a2c2cf2d54ee6a9368ece7ea46ad13deb}\label{classsage_1_1Node_a2c2cf2d54ee6a9368ece7ea46ad13deb}} 
+\index{sage::Node@{sage::Node}!initialized@{initialized}}
+\index{initialized@{initialized}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool sage\+::\+Node\+::initialized = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Whether the \mbox{\hyperlink{classsage_1_1Node}{Node}} is initialized and therefore the \mbox{\hyperlink{classsage_1_1Application}{Application}} available \mbox{\Hypertarget{classsage_1_1Node_a9f6d79896df762b8e8cff9574f1e9262}\label{classsage_1_1Node_a9f6d79896df762b8e8cff9574f1e9262}} 
+\index{sage::Node@{sage::Node}!parentNode@{parentNode}}
+\index{parentNode@{parentNode}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{parentNode}{parentNode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Node}{Node}}$\ast$ sage\+::\+Node\+::parent\+Node = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+The parent \mbox{\hyperlink{classsage_1_1Node}{Node}}, is set as soon as the \mbox{\hyperlink{classsage_1_1Node}{Node}} is added as a child of another \mbox{\hyperlink{classsage_1_1Node}{Node}} \mbox{\Hypertarget{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}\label{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}} 
+\index{sage::Node@{sage::Node}!pos@{pos}}
+\index{pos@{pos}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily glm\+::vec2 sage\+::\+Node\+::pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+The position of the \mbox{\hyperlink{classsage_1_1Node}{Node}} in parent-\/\+Node coordinates \mbox{\Hypertarget{classsage_1_1Node_ae83b239ad4c722fee62708977e0560f4}\label{classsage_1_1Node_ae83b239ad4c722fee62708977e0560f4}} 
+\index{sage::Node@{sage::Node}!rotation@{rotation}}
+\index{rotation@{rotation}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily float sage\+::\+Node\+::rotation\hspace{0.3cm}{\ttfamily [protected]}}
+
+The rotation of the \mbox{\hyperlink{classsage_1_1Node}{Node}} \mbox{\Hypertarget{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}\label{classsage_1_1Node_a3014b585d97d3a449e83bc0252db0c50}} 
+\index{sage::Node@{sage::Node}!scale@{scale}}
+\index{scale@{scale}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily glm\+::vec2 sage\+::\+Node\+::scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+The scale of the \mbox{\hyperlink{classsage_1_1Node}{Node}} \mbox{\Hypertarget{classsage_1_1Node_ad98383ce93e985bf20e1cd678c622097}\label{classsage_1_1Node_ad98383ce93e985bf20e1cd678c622097}} 
+\index{sage::Node@{sage::Node}!z\_index@{z\_index}}
+\index{z\_index@{z\_index}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{z\_index}{z\_index}}
+{\footnotesize\ttfamily int sage\+::\+Node\+::z\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+The z-\/index of the \mbox{\hyperlink{classsage_1_1Node}{Node}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/view/\mbox{\hyperlink{Node_8h}{Node.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/view/\mbox{\hyperlink{Node_8cpp}{Node.\+cpp}}\end{DoxyCompactItemize}

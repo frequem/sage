@@ -1,0 +1,189 @@
+\hypertarget{classsage_1_1Sprite}{}\section{sage\+::Sprite Class Reference}
+\label{classsage_1_1Sprite}\index{sage::Sprite@{sage::Sprite}}
+
+
+{\ttfamily \#include $<$Sprite.\+h$>$}
+
+Inheritance diagram for sage\+::Sprite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classsage_1_1Sprite}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1Sprite_abae47a15ec83a91f3b714db14f2a492b}{Sprite}} (const std\+::string \&)
+\item 
+\mbox{\hyperlink{classsage_1_1Sprite_a76a269d903de2837314b42c3d43f0df2}{Sprite}} (const std\+::string \&, glm\+::vec2 size)
+\item 
+\mbox{\hyperlink{classsage_1_1Sprite_a4ed2be3fab0b4869728be4f91cb67169}{Sprite}} (const std\+::string \&, glm\+::vec2 size, std\+::initializer\+\_\+list$<$ glm\+::vec2 $>$ coords)
+\item 
+void \mbox{\hyperlink{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}{init}} () override
+\begin{DoxyCompactList}\small\item\em Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Sprite_ab6c3b12b45eeafab8e816207158121a1}{get\+Size}} () override
+\begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsage_1_1Sprite_a7444391256eab0cf1b7a994885026352}{add\+Frame}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}})
+\item 
+void \mbox{\hyperlink{classsage_1_1Sprite_ada2cb241cf1fc71378372d04f19926e2}{set\+Frame}} (int frame\+Id)
+\item 
+int \mbox{\hyperlink{classsage_1_1Sprite_af7d9465b0ef867d23cbb587b6c7b6b13}{get\+Frame}} ()
+\item 
+\mbox{\hyperlink{classsage_1_1Sprite_a8accab430f9d90ae5117b57d67e32b84}{$\sim$\+Sprite}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \mbox{\hyperlink{classsage_1_1Sprite_aa75f3595b809f99847a9642ce2bf319a}{get\+Texture}} () override
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff622cfd2ff}{get\+Tex\+Coords}} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsage_1_1Sprite_a3ad65ff16f4f98a15f52092b1542838b}{texture\+File}}
+\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Sprite_ae6d6160fb0c882acd8b786d2353208e6}{frame\+Size}}
+\item 
+int \mbox{\hyperlink{classsage_1_1Sprite_aae69224b9c75eb83097f02d484975f68}{current\+Frame}}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1Sprite_ad6aa87dfe1f1ce53e2de2df0aa10f229}{frames}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1Sprite_abae47a15ec83a91f3b714db14f2a492b}\label{classsage_1_1Sprite_abae47a15ec83a91f3b714db14f2a492b}} 
+\index{sage::Sprite@{sage::Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_a76a269d903de2837314b42c3d43f0df2}\label{classsage_1_1Sprite_a76a269d903de2837314b42c3d43f0df2}} 
+\index{sage::Sprite@{sage::Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+File,  }\item[{glm\+::vec2}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_a4ed2be3fab0b4869728be4f91cb67169}\label{classsage_1_1Sprite_a4ed2be3fab0b4869728be4f91cb67169}} 
+\index{sage::Sprite@{sage::Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+File,  }\item[{glm\+::vec2}]{size,  }\item[{std\+::initializer\+\_\+list$<$ glm\+::vec2 $>$}]{coords }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_a8accab430f9d90ae5117b57d67e32b84}\label{classsage_1_1Sprite_a8accab430f9d90ae5117b57d67e32b84}} 
+\index{sage::Sprite@{sage::Sprite}!````~Sprite@{$\sim$Sprite}}
+\index{````~Sprite@{$\sim$Sprite}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{$\sim$Sprite()}{~Sprite()}}
+{\footnotesize\ttfamily Sprite\+::$\sim$\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1Sprite_a7444391256eab0cf1b7a994885026352}\label{classsage_1_1Sprite_a7444391256eab0cf1b7a994885026352}} 
+\index{sage::Sprite@{sage::Sprite}!addFrame@{addFrame}}
+\index{addFrame@{addFrame}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{addFrame()}{addFrame()}}
+{\footnotesize\ttfamily int Sprite\+::add\+Frame (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_af7d9465b0ef867d23cbb587b6c7b6b13}\label{classsage_1_1Sprite_af7d9465b0ef867d23cbb587b6c7b6b13}} 
+\index{sage::Sprite@{sage::Sprite}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{getFrame()}{getFrame()}}
+{\footnotesize\ttfamily int Sprite\+::get\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_ab6c3b12b45eeafab8e816207158121a1}\label{classsage_1_1Sprite_ab6c3b12b45eeafab8e816207158121a1}} 
+\index{sage::Sprite@{sage::Sprite}!getSize@{getSize}}
+\index{getSize@{getSize}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Sprite\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. 
+
+\begin{DoxyReturn}{Returns}
+the size 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height()}} 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff622cfd2ff}\label{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff622cfd2ff}} 
+\index{sage::Sprite@{sage::Sprite}!getTexCoords@{getTexCoords}}
+\index{getTexCoords@{getTexCoords}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{getTexCoords()}{getTexCoords()}}
+{\footnotesize\ttfamily std\+::vector$<$ glm\+::vec2 $>$ Sprite\+::get\+Tex\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1TexturedNode_ada858d240f8074fd97e8a72e74d18a30}{sage\+::\+Textured\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Sprite_aa75f3595b809f99847a9642ce2bf319a}\label{classsage_1_1Sprite_aa75f3595b809f99847a9642ce2bf319a}} 
+\index{sage::Sprite@{sage::Sprite}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily G\+Luint Sprite\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea69459546736c0f}{sage\+::\+Textured\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}\label{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}} 
+\index{sage::Sprite@{sage::Sprite}!init@{init}}
+\index{init@{init}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Sprite\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab87776adae83149e235e37ed469f4e10}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1Sprite_ada2cb241cf1fc71378372d04f19926e2}\label{classsage_1_1Sprite_ada2cb241cf1fc71378372d04f19926e2}} 
+\index{sage::Sprite@{sage::Sprite}!setFrame@{setFrame}}
+\index{setFrame@{setFrame}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{setFrame()}{setFrame()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Frame (\begin{DoxyParamCaption}\item[{int}]{frame\+Id }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1Sprite_aae69224b9c75eb83097f02d484975f68}\label{classsage_1_1Sprite_aae69224b9c75eb83097f02d484975f68}} 
+\index{sage::Sprite@{sage::Sprite}!currentFrame@{currentFrame}}
+\index{currentFrame@{currentFrame}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{currentFrame}{currentFrame}}
+{\footnotesize\ttfamily int sage\+::\+Sprite\+::current\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_ad6aa87dfe1f1ce53e2de2df0aa10f229}\label{classsage_1_1Sprite_ad6aa87dfe1f1ce53e2de2df0aa10f229}} 
+\index{sage::Sprite@{sage::Sprite}!frames@{frames}}
+\index{frames@{frames}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{frames}{frames}}
+{\footnotesize\ttfamily std\+::vector$<$glm\+::vec2$>$ sage\+::\+Sprite\+::frames\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_ae6d6160fb0c882acd8b786d2353208e6}\label{classsage_1_1Sprite_ae6d6160fb0c882acd8b786d2353208e6}} 
+\index{sage::Sprite@{sage::Sprite}!frameSize@{frameSize}}
+\index{frameSize@{frameSize}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{frameSize}{frameSize}}
+{\footnotesize\ttfamily glm\+::vec2 sage\+::\+Sprite\+::frame\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1Sprite_a3ad65ff16f4f98a15f52092b1542838b}\label{classsage_1_1Sprite_a3ad65ff16f4f98a15f52092b1542838b}} 
+\index{sage::Sprite@{sage::Sprite}!textureFile@{textureFile}}
+\index{textureFile@{textureFile}!sage::Sprite@{sage::Sprite}}
+\subsubsection{\texorpdfstring{textureFile}{textureFile}}
+{\footnotesize\ttfamily std\+::string sage\+::\+Sprite\+::texture\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/view/\mbox{\hyperlink{Sprite_8h}{Sprite.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/view/\mbox{\hyperlink{Sprite_8cpp}{Sprite.\+cpp}}\end{DoxyCompactItemize}

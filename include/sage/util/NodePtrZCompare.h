@@ -4,8 +4,17 @@
 namespace sage{
 	class Node;
 	
+	/**
+	 * @brief Compare for z-indices (z-depth) of Node pointers.
+	 */
 	struct NodePtrZCompare{
-		bool operator()(const Node* lhs, const Node* rhs) const;
+		/**
+		 * @brief Compares the z-index of two Nodes.
+		 * @param n1 the first Node
+		 * @param n2 the second Node
+		 * @return true if n1 < n2 is given for the z-indices
+		 */
+		bool operator()(const Node* n1, const Node* n2) const;
 	};
 }
 

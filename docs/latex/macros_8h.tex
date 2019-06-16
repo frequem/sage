@@ -1,0 +1,35 @@
+\hypertarget{macros_8h}{}\section{/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/util/macros.h File Reference}
+\label{macros_8h}\index{/home/frequem/Documents/programming/cpp/sageExample1/contrib/sage/include/sage/util/macros.h@{/home/frequem/Documents/programming/cpp/sageExample1/contrib/sage/include/sage/util/macros.h}}
+{\ttfamily \#include $<$sage/util/config.\+h$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{macros_8h_ae78390f3bbb9a5b52e5c3fd9fa57bcdf}{P\+R\+I\+N\+T\+\_\+\+M\+SG}}(type,  post,  format, ...)~printf(type \char`\"{}\+: \char`\"{} format post \char`\"{}\%s\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{macros_8h_a3577749fb48d57a158b8ac1a0b3ab57e}{L\+OG}}(...)~if(D\+E\+B\+UG)\{ \mbox{\hyperlink{macros_8h_ae78390f3bbb9a5b52e5c3fd9fa57bcdf}{P\+R\+I\+N\+T\+\_\+\+M\+SG}}(\char`\"{}D\+E\+B\+UG\char`\"{}, \char`\"{}\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, \char`\"{}\char`\"{}); \}
+\item 
+\#define \mbox{\hyperlink{macros_8h_a9179532e575967b12397ed528dd4b498}{A\+S\+S\+E\+RT}}(condition, ...)~if(!(condition))\{ \mbox{\hyperlink{macros_8h_ae78390f3bbb9a5b52e5c3fd9fa57bcdf}{P\+R\+I\+N\+T\+\_\+\+M\+SG}}(\char`\"{}E\+R\+R\+OR\char`\"{}, \char`\"{} Exiting...\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, \char`\"{}\char`\"{}); exit(E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE); \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{macros_8h_a9179532e575967b12397ed528dd4b498}\label{macros_8h_a9179532e575967b12397ed528dd4b498}} 
+\index{macros.h@{macros.h}!ASSERT@{ASSERT}}
+\index{ASSERT@{ASSERT}!macros.h@{macros.h}}
+\subsubsection{\texorpdfstring{ASSERT}{ASSERT}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+RT(\begin{DoxyParamCaption}\item[{}]{condition,  }\item[{}]{... }\end{DoxyParamCaption})~if(!(condition))\{ \mbox{\hyperlink{macros_8h_ae78390f3bbb9a5b52e5c3fd9fa57bcdf}{P\+R\+I\+N\+T\+\_\+\+M\+SG}}(\char`\"{}E\+R\+R\+OR\char`\"{}, \char`\"{} Exiting...\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, \char`\"{}\char`\"{}); exit(E\+X\+I\+T\+\_\+\+F\+A\+I\+L\+U\+RE); \}}
+
+\mbox{\Hypertarget{macros_8h_a3577749fb48d57a158b8ac1a0b3ab57e}\label{macros_8h_a3577749fb48d57a158b8ac1a0b3ab57e}} 
+\index{macros.h@{macros.h}!LOG@{LOG}}
+\index{LOG@{LOG}!macros.h@{macros.h}}
+\subsubsection{\texorpdfstring{LOG}{LOG}}
+{\footnotesize\ttfamily \#define L\+OG(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~if(D\+E\+B\+UG)\{ \mbox{\hyperlink{macros_8h_ae78390f3bbb9a5b52e5c3fd9fa57bcdf}{P\+R\+I\+N\+T\+\_\+\+M\+SG}}(\char`\"{}D\+E\+B\+UG\char`\"{}, \char`\"{}\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+, \char`\"{}\char`\"{}); \}}
+
+\mbox{\Hypertarget{macros_8h_ae78390f3bbb9a5b52e5c3fd9fa57bcdf}\label{macros_8h_ae78390f3bbb9a5b52e5c3fd9fa57bcdf}} 
+\index{macros.h@{macros.h}!PRINT\_MSG@{PRINT\_MSG}}
+\index{PRINT\_MSG@{PRINT\_MSG}!macros.h@{macros.h}}
+\subsubsection{\texorpdfstring{PRINT\_MSG}{PRINT\_MSG}}
+{\footnotesize\ttfamily \#define P\+R\+I\+N\+T\+\_\+\+M\+SG(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{post,  }\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})~printf(type \char`\"{}\+: \char`\"{} format post \char`\"{}\%s\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}
+

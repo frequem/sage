@@ -20,7 +20,7 @@ namespace sage{
 		
 		void init() override;
 		
-		glm::vec2 getSize() override;
+		glm::vec3 getSize() override;
 		
 		int addFrame(glm::vec2 pos);
 		void setFrame(int frameId);

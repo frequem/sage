@@ -4,6 +4,6 @@
 
 using namespace sage;
 
-bool NodePtrZCompare::operator()(const Node* lhs, const Node* rhs) const{		
-	return lhs->getZIndex() < rhs->getZIndex();
+bool NodePtrZCompare::operator()(const Node* n1, const Node* n2) const{		
+	return n1->getPositionZ() < n2->getPositionZ();
 }

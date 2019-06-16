@@ -1,0 +1,559 @@
+\hypertarget{classsage_1_1Application}{}\section{sage\+::Application Class Reference}
+\label{classsage_1_1Application}\index{sage::Application@{sage::Application}}
+
+
+Class that handles the window. Also manages Scenes, Caches and runs the main game loop.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1Application_afa8cc05ce6b6092be5ecdfdae44e05f8}{Application}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1Application}{Application}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Application}{Application}} with title \char`\"{}sage Application\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1Application_a357c8d817e692dae201b5b29148ad74d}{Application}} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1Application}{Application}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Application}{Application}} with size 960x540. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1Application_ac7fce9bde96a86a6d26618a34cb09fa5}{Application}} (const std\+::string \&title, int width, int height)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1Application}{Application}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Application}{Application}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Application_ad69ba03dafa5afd69f2d6eb2a9d5fad5}{push\+Scene}} (\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$scene)
+\begin{DoxyCompactList}\small\item\em Pushes a \mbox{\hyperlink{classsage_1_1Scene}{Scene}} onto the stack. It will be displayed in the next rendering call and be active until it is popped. Calls the init() function of the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Application_a49f5ce7574cf4f3053c4213d3177c76c}{replace\+Scene}} (\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$scene)
+\begin{DoxyCompactList}\small\item\em Replaces the current \mbox{\hyperlink{classsage_1_1Scene}{Scene}} on the stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a4eaac489d4247bd184e17fa0aa6c858c}{get\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the current \mbox{\hyperlink{classsage_1_1Scene}{Scene}} from the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Application_a47b5bec61b3d93cbb4998b42d0d2ea47}{pop\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Pops the current \mbox{\hyperlink{classsage_1_1Scene}{Scene}} from the stack. Also deletes the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}, do not delete manually! \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Application_a991df90e69398b7fe8eeb0fa2df3d92e}{set\+Window\+Size}} (glm\+::vec2 size)
+\begin{DoxyCompactList}\small\item\em Sets the size of the window. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Application_ac0fa1750ee8dcacc37cc9eaed72f12f9}{get\+Window\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the current size of the window. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Application_ac67034adebee2a531f1da502b9ac4634}{get\+Window\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the current width of the window. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsage_1_1Application_a20be3d592c9d2662051796420d0cd1d8}{get\+Window\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the current height of the window. \end{DoxyCompactList}\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1Application_a452bc916f132e0997a02de53d49364d3}{get\+D\+PI}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the D\+PI of the display, the window is currently on. x contains the horizontal, y the vertical D\+PI value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a782edaec320c507870814d8576f84fba}{get\+File\+Cache}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a3c8156460d822447b22835bc4879c1a1}{get\+Image\+Cache}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a4cd47a4230ba22582b6172ce430feb1d}{get\+Font\+Cache}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_aa9260bf22da6d4fc5451c789c17ad7a5}{get\+Shader\+Cache}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_aaed4c540666d784b83d5506e51fb5eaa}{get\+Audio\+Cache}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a37c65bddaa8e4534b28f5b36b66fdd81}{get\+Event\+Dispatcher}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_ac21f1df422a3589af890dc7616b272d7}{get\+Audio\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1Application_a68965449404743bf1add056784d6cf81}{run}} ()
+\begin{DoxyCompactList}\small\item\em Starts the main game loop. Manages rendering and timing, starts the \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1Application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1Application}{Application}} Destructor. Deletes all Scenes, Caches, etc., destroys the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::stack$<$ \mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ $>$ \mbox{\hyperlink{classsage_1_1Application_a684050e1d1b3033c9226c2a3481f934d}{scenes}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classsage_1_1Application_a08facf4df89e707b2a07a1be0782643a}{last\+Update}} = 0
+\item 
+\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a246cb87d276d2ee0ca471379307bc456}{thread\+Manager}}
+\item 
+\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_ab576f71a5b927d4b7f7790ae0b15c213}{file\+Cache}}
+\item 
+\mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_ab335f3e9f82d3648878128a75caeb89b}{image\+Cache}}
+\item 
+\mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_adc39fae2de148d3c726b86d0c93a4816}{shader\+Cache}}
+\item 
+\mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a998309542a632e444d9a7d9ef6e5d5bf}{font\+Cache}}
+\item 
+\mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_a38828d2324d2b6a9feae40049eee2aa7}{audio\+Cache}}
+\item 
+\mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_af44decd857e2843750a781ec141163f0}{event\+Dispatcher}}
+\item 
+\mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1Application_aa5d509f796f7d2d9a779fc01143c3a75}{audio\+Manager}}
+\item 
+bool \mbox{\hyperlink{classsage_1_1Application_aa5197cd07379bdbc371c26c21f936c17}{is\+Running}} = false
+\item 
+bool \mbox{\hyperlink{classsage_1_1Application_a2c8135f73ec3091ffcb750dcc280c4d2}{is\+Paused}} = false
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ \mbox{\hyperlink{classsage_1_1Application_ab8d3166ecc1b2c3387da0633557f0d77}{sdl\+Window}}
+\item 
+S\+D\+L\+\_\+\+G\+L\+Context \mbox{\hyperlink{classsage_1_1Application_af4b3656acba3ea7f6409885223e49dc2}{gl\+Context}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that handles the window. Also manages Scenes, Caches and runs the main game loop. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1Application_afa8cc05ce6b6092be5ecdfdae44e05f8}\label{classsage_1_1Application_afa8cc05ce6b6092be5ecdfdae44e05f8}} 
+\index{sage::Application@{sage::Application}!Application@{Application}}
+\index{Application@{Application}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classsage_1_1Application}{Application}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Application}{Application}} with title \char`\"{}sage Application\char`\"{}. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_a357c8d817e692dae201b5b29148ad74d}{Application(const std\+::string\& title)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a357c8d817e692dae201b5b29148ad74d}\label{classsage_1_1Application_a357c8d817e692dae201b5b29148ad74d}} 
+\index{sage::Application@{sage::Application}!Application@{Application}}
+\index{Application@{Application}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classsage_1_1Application}{Application}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Application}{Application}} with size 960x540. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & the window title \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ac7fce9bde96a86a6d26618a34cb09fa5}{Application(const std\+::string\& title, int with, int height)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_ac7fce9bde96a86a6d26618a34cb09fa5}\label{classsage_1_1Application_ac7fce9bde96a86a6d26618a34cb09fa5}} 
+\index{sage::Application@{sage::Application}!Application@{Application}}
+\index{Application@{Application}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classsage_1_1Application}{Application}} constructor. Initializes the \mbox{\hyperlink{classsage_1_1Application}{Application}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & the window title \\
+\hline
+{\em width} & the window width \\
+\hline
+{\em height} & the window height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsage_1_1Application_a748bca84fefb9c12661cfaa2f623748d}\label{classsage_1_1Application_a748bca84fefb9c12661cfaa2f623748d}} 
+\index{sage::Application@{sage::Application}!````~Application@{$\sim$Application}}
+\index{````~Application@{$\sim$Application}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{$\sim$Application()}{~Application()}}
+{\footnotesize\ttfamily Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classsage_1_1Application}{Application}} Destructor. Deletes all Scenes, Caches, etc., destroys the window. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1Application_aaed4c540666d784b83d5506e51fb5eaa}\label{classsage_1_1Application_aaed4c540666d784b83d5506e51fb5eaa}} 
+\index{sage::Application@{sage::Application}!getAudioCache@{getAudioCache}}
+\index{getAudioCache@{getAudioCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getAudioCache()}{getAudioCache()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} $\ast$ Application\+::get\+Audio\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_a38828d2324d2b6a9feae40049eee2aa7}{audio\+Cache}} 
+
+\mbox{\hyperlink{classsage_1_1Application_ac21f1df422a3589af890dc7616b272d7}{get\+Audio\+Manager()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a782edaec320c507870814d8576f84fba}{get\+File\+Cache()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_ac21f1df422a3589af890dc7616b272d7}\label{classsage_1_1Application_ac21f1df422a3589af890dc7616b272d7}} 
+\index{sage::Application@{sage::Application}!getAudioManager@{getAudioManager}}
+\index{getAudioManager@{getAudioManager}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getAudioManager()}{getAudioManager()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}} $\ast$ Application\+::get\+Audio\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_aa5d509f796f7d2d9a779fc01143c3a75}{audio\+Manager}} 
+
+\mbox{\hyperlink{classsage_1_1Application_aaed4c540666d784b83d5506e51fb5eaa}{get\+Audio\+Cache()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a452bc916f132e0997a02de53d49364d3}\label{classsage_1_1Application_a452bc916f132e0997a02de53d49364d3}} 
+\index{sage::Application@{sage::Application}!getDPI@{getDPI}}
+\index{getDPI@{getDPI}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getDPI()}{getDPI()}}
+{\footnotesize\ttfamily glm\+::vec2 Application\+::get\+D\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the D\+PI of the display, the window is currently on. x contains the horizontal, y the vertical D\+PI value. 
+
+\begin{DoxyReturn}{Returns}
+the displays horizontal and vertical D\+PI 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsage_1_1Application_a37c65bddaa8e4534b28f5b36b66fdd81}\label{classsage_1_1Application_a37c65bddaa8e4534b28f5b36b66fdd81}} 
+\index{sage::Application@{sage::Application}!getEventDispatcher@{getEventDispatcher}}
+\index{getEventDispatcher@{getEventDispatcher}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getEventDispatcher()}{getEventDispatcher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}} $\ast$ Application\+::get\+Event\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_af44decd857e2843750a781ec141163f0}{event\+Dispatcher}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a782edaec320c507870814d8576f84fba}\label{classsage_1_1Application_a782edaec320c507870814d8576f84fba}} 
+\index{sage::Application@{sage::Application}!getFileCache@{getFileCache}}
+\index{getFileCache@{getFileCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getFileCache()}{getFileCache()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ Application\+::get\+File\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ab576f71a5b927d4b7f7790ae0b15c213}{file\+Cache}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a3c8156460d822447b22835bc4879c1a1}{get\+Image\+Cache()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a4cd47a4230ba22582b6172ce430feb1d}{get\+Font\+Cache()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_aa9260bf22da6d4fc5451c789c17ad7a5}{get\+Shader\+Cache()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_aaed4c540666d784b83d5506e51fb5eaa}{get\+Audio\+Cache()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a4cd47a4230ba22582b6172ce430feb1d}\label{classsage_1_1Application_a4cd47a4230ba22582b6172ce430feb1d}} 
+\index{sage::Application@{sage::Application}!getFontCache@{getFontCache}}
+\index{getFontCache@{getFontCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getFontCache()}{getFontCache()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}} $\ast$ Application\+::get\+Font\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_a998309542a632e444d9a7d9ef6e5d5bf}{font\+Cache}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a782edaec320c507870814d8576f84fba}{get\+File\+Cache()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a3c8156460d822447b22835bc4879c1a1}\label{classsage_1_1Application_a3c8156460d822447b22835bc4879c1a1}} 
+\index{sage::Application@{sage::Application}!getImageCache@{getImageCache}}
+\index{getImageCache@{getImageCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getImageCache()}{getImageCache()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}} $\ast$ Application\+::get\+Image\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ab335f3e9f82d3648878128a75caeb89b}{image\+Cache}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a782edaec320c507870814d8576f84fba}{get\+File\+Cache()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a4eaac489d4247bd184e17fa0aa6c858c}\label{classsage_1_1Application_a4eaac489d4247bd184e17fa0aa6c858c}} 
+\index{sage::Application@{sage::Application}!getScene@{getScene}}
+\index{getScene@{getScene}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getScene()}{getScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ Application\+::get\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the current \mbox{\hyperlink{classsage_1_1Scene}{Scene}} from the stack. 
+
+\begin{DoxyReturn}{Returns}
+the current \mbox{\hyperlink{classsage_1_1Scene}{Scene}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ad69ba03dafa5afd69f2d6eb2a9d5fad5}{push\+Scene}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a49f5ce7574cf4f3053c4213d3177c76c}{replace\+Scene}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a47b5bec61b3d93cbb4998b42d0d2ea47}{pop\+Scene}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_aa9260bf22da6d4fc5451c789c17ad7a5}\label{classsage_1_1Application_aa9260bf22da6d4fc5451c789c17ad7a5}} 
+\index{sage::Application@{sage::Application}!getShaderCache@{getShaderCache}}
+\index{getShaderCache@{getShaderCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getShaderCache()}{getShaderCache()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}} $\ast$ Application\+::get\+Shader\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}}. 
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_adc39fae2de148d3c726b86d0c93a4816}{shader\+Cache}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a782edaec320c507870814d8576f84fba}{get\+File\+Cache()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a20be3d592c9d2662051796420d0cd1d8}\label{classsage_1_1Application_a20be3d592c9d2662051796420d0cd1d8}} 
+\index{sage::Application@{sage::Application}!getWindowHeight@{getWindowHeight}}
+\index{getWindowHeight@{getWindowHeight}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getWindowHeight()}{getWindowHeight()}}
+{\footnotesize\ttfamily float Application\+::get\+Window\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the current height of the window. 
+
+\begin{DoxyReturn}{Returns}
+the window height 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ac0fa1750ee8dcacc37cc9eaed72f12f9}{get\+Window\+Size()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_ac67034adebee2a531f1da502b9ac4634}{get\+Window\+Width()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_ac0fa1750ee8dcacc37cc9eaed72f12f9}\label{classsage_1_1Application_ac0fa1750ee8dcacc37cc9eaed72f12f9}} 
+\index{sage::Application@{sage::Application}!getWindowSize@{getWindowSize}}
+\index{getWindowSize@{getWindowSize}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getWindowSize()}{getWindowSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Application\+::get\+Window\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the current size of the window. 
+
+\begin{DoxyReturn}{Returns}
+the window size 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_a991df90e69398b7fe8eeb0fa2df3d92e}{set\+Window\+Size()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_ac67034adebee2a531f1da502b9ac4634}{get\+Window\+Width()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a20be3d592c9d2662051796420d0cd1d8}{get\+Window\+Height()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_ac67034adebee2a531f1da502b9ac4634}\label{classsage_1_1Application_ac67034adebee2a531f1da502b9ac4634}} 
+\index{sage::Application@{sage::Application}!getWindowWidth@{getWindowWidth}}
+\index{getWindowWidth@{getWindowWidth}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{getWindowWidth()}{getWindowWidth()}}
+{\footnotesize\ttfamily float Application\+::get\+Window\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fetches the current width of the window. 
+
+\begin{DoxyReturn}{Returns}
+the window width 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ac0fa1750ee8dcacc37cc9eaed72f12f9}{get\+Window\+Size()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a20be3d592c9d2662051796420d0cd1d8}{get\+Window\+Height()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a47b5bec61b3d93cbb4998b42d0d2ea47}\label{classsage_1_1Application_a47b5bec61b3d93cbb4998b42d0d2ea47}} 
+\index{sage::Application@{sage::Application}!popScene@{popScene}}
+\index{popScene@{popScene}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{popScene()}{popScene()}}
+{\footnotesize\ttfamily void Application\+::pop\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pops the current \mbox{\hyperlink{classsage_1_1Scene}{Scene}} from the stack. Also deletes the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}, do not delete manually! 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ad69ba03dafa5afd69f2d6eb2a9d5fad5}{push\+Scene}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a49f5ce7574cf4f3053c4213d3177c76c}{replace\+Scene}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a4eaac489d4247bd184e17fa0aa6c858c}{get\+Scene}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_ad69ba03dafa5afd69f2d6eb2a9d5fad5}\label{classsage_1_1Application_ad69ba03dafa5afd69f2d6eb2a9d5fad5}} 
+\index{sage::Application@{sage::Application}!pushScene@{pushScene}}
+\index{pushScene@{pushScene}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{pushScene()}{pushScene()}}
+{\footnotesize\ttfamily void Application\+::push\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Pushes a \mbox{\hyperlink{classsage_1_1Scene}{Scene}} onto the stack. It will be displayed in the next rendering call and be active until it is popped. Calls the init() function of the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the \mbox{\hyperlink{classsage_1_1Scene}{Scene}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_a49f5ce7574cf4f3053c4213d3177c76c}{replace\+Scene()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a47b5bec61b3d93cbb4998b42d0d2ea47}{pop\+Scene()}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a4eaac489d4247bd184e17fa0aa6c858c}{get\+Scene()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a49f5ce7574cf4f3053c4213d3177c76c}\label{classsage_1_1Application_a49f5ce7574cf4f3053c4213d3177c76c}} 
+\index{sage::Application@{sage::Application}!replaceScene@{replaceScene}}
+\index{replaceScene@{replaceScene}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{replaceScene()}{replaceScene()}}
+{\footnotesize\ttfamily void Application\+::replace\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Replaces the current \mbox{\hyperlink{classsage_1_1Scene}{Scene}} on the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the new \mbox{\hyperlink{classsage_1_1Scene}{Scene}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ad69ba03dafa5afd69f2d6eb2a9d5fad5}{push\+Scene}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a47b5bec61b3d93cbb4998b42d0d2ea47}{pop\+Scene}} 
+
+\mbox{\hyperlink{classsage_1_1Application_a4eaac489d4247bd184e17fa0aa6c858c}{get\+Scene}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1Application_a68965449404743bf1add056784d6cf81}\label{classsage_1_1Application_a68965449404743bf1add056784d6cf81}} 
+\index{sage::Application@{sage::Application}!run@{run}}
+\index{run@{run}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Application\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the main game loop. Manages rendering and timing, starts the \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}}. 
+
+\mbox{\Hypertarget{classsage_1_1Application_a991df90e69398b7fe8eeb0fa2df3d92e}\label{classsage_1_1Application_a991df90e69398b7fe8eeb0fa2df3d92e}} 
+\index{sage::Application@{sage::Application}!setWindowSize@{setWindowSize}}
+\index{setWindowSize@{setWindowSize}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{setWindowSize()}{setWindowSize()}}
+{\footnotesize\ttfamily void Application\+::set\+Window\+Size (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{size }\end{DoxyParamCaption})}
+
+
+
+Sets the size of the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the new window size \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1Application_ac0fa1750ee8dcacc37cc9eaed72f12f9}{get\+Window\+Size()}} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1Application_a38828d2324d2b6a9feae40049eee2aa7}\label{classsage_1_1Application_a38828d2324d2b6a9feae40049eee2aa7}} 
+\index{sage::Application@{sage::Application}!audioCache@{audioCache}}
+\index{audioCache@{audioCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{audioCache}{audioCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}}$\ast$ sage\+::\+Application\+::audio\+Cache\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}} \mbox{\Hypertarget{classsage_1_1Application_aa5d509f796f7d2d9a779fc01143c3a75}\label{classsage_1_1Application_aa5d509f796f7d2d9a779fc01143c3a75}} 
+\index{sage::Application@{sage::Application}!audioManager@{audioManager}}
+\index{audioManager@{audioManager}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{audioManager}{audioManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}}$\ast$ sage\+::\+Application\+::audio\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}} \mbox{\Hypertarget{classsage_1_1Application_af44decd857e2843750a781ec141163f0}\label{classsage_1_1Application_af44decd857e2843750a781ec141163f0}} 
+\index{sage::Application@{sage::Application}!eventDispatcher@{eventDispatcher}}
+\index{eventDispatcher@{eventDispatcher}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{eventDispatcher}{eventDispatcher}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}}$\ast$ sage\+::\+Application\+::event\+Dispatcher\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}} \mbox{\Hypertarget{classsage_1_1Application_ab576f71a5b927d4b7f7790ae0b15c213}\label{classsage_1_1Application_ab576f71a5b927d4b7f7790ae0b15c213}} 
+\index{sage::Application@{sage::Application}!fileCache@{fileCache}}
+\index{fileCache@{fileCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{fileCache}{fileCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}$\ast$ sage\+::\+Application\+::file\+Cache\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} \mbox{\Hypertarget{classsage_1_1Application_a998309542a632e444d9a7d9ef6e5d5bf}\label{classsage_1_1Application_a998309542a632e444d9a7d9ef6e5d5bf}} 
+\index{sage::Application@{sage::Application}!fontCache@{fontCache}}
+\index{fontCache@{fontCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{fontCache}{fontCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}}$\ast$ sage\+::\+Application\+::font\+Cache\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1FontCache}{Font\+Cache}} \mbox{\Hypertarget{classsage_1_1Application_af4b3656acba3ea7f6409885223e49dc2}\label{classsage_1_1Application_af4b3656acba3ea7f6409885223e49dc2}} 
+\index{sage::Application@{sage::Application}!glContext@{glContext}}
+\index{glContext@{glContext}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{glContext}{glContext}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+G\+L\+Context sage\+::\+Application\+::gl\+Context\hspace{0.3cm}{\ttfamily [protected]}}
+
+The Open\+GL context for the window \mbox{\Hypertarget{classsage_1_1Application_ab335f3e9f82d3648878128a75caeb89b}\label{classsage_1_1Application_ab335f3e9f82d3648878128a75caeb89b}} 
+\index{sage::Application@{sage::Application}!imageCache@{imageCache}}
+\index{imageCache@{imageCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{imageCache}{imageCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}}$\ast$ sage\+::\+Application\+::image\+Cache\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}} \mbox{\Hypertarget{classsage_1_1Application_a2c8135f73ec3091ffcb750dcc280c4d2}\label{classsage_1_1Application_a2c8135f73ec3091ffcb750dcc280c4d2}} 
+\index{sage::Application@{sage::Application}!isPaused@{isPaused}}
+\index{isPaused@{isPaused}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{isPaused}{isPaused}}
+{\footnotesize\ttfamily bool sage\+::\+Application\+::is\+Paused = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Whether the \mbox{\hyperlink{classsage_1_1Application}{Application}} is currently paused or not \mbox{\Hypertarget{classsage_1_1Application_aa5197cd07379bdbc371c26c21f936c17}\label{classsage_1_1Application_aa5197cd07379bdbc371c26c21f936c17}} 
+\index{sage::Application@{sage::Application}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{isRunning}{isRunning}}
+{\footnotesize\ttfamily bool sage\+::\+Application\+::is\+Running = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Whether the run function has already been called or not \mbox{\Hypertarget{classsage_1_1Application_a08facf4df89e707b2a07a1be0782643a}\label{classsage_1_1Application_a08facf4df89e707b2a07a1be0782643a}} 
+\index{sage::Application@{sage::Application}!lastUpdate@{lastUpdate}}
+\index{lastUpdate@{lastUpdate}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{lastUpdate}{lastUpdate}}
+{\footnotesize\ttfamily uint32\+\_\+t sage\+::\+Application\+::last\+Update = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+The time, that the most recent update call has been made to a \mbox{\hyperlink{classsage_1_1Scene}{Scene}} \mbox{\Hypertarget{classsage_1_1Application_a684050e1d1b3033c9226c2a3481f934d}\label{classsage_1_1Application_a684050e1d1b3033c9226c2a3481f934d}} 
+\index{sage::Application@{sage::Application}!scenes@{scenes}}
+\index{scenes@{scenes}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{scenes}{scenes}}
+{\footnotesize\ttfamily std\+::stack$<$\mbox{\hyperlink{classsage_1_1Scene}{Scene}}$\ast$$>$ sage\+::\+Application\+::scenes\hspace{0.3cm}{\ttfamily [protected]}}
+
+The \mbox{\hyperlink{classsage_1_1Scene}{Scene}} stack \mbox{\Hypertarget{classsage_1_1Application_ab8d3166ecc1b2c3387da0633557f0d77}\label{classsage_1_1Application_ab8d3166ecc1b2c3387da0633557f0d77}} 
+\index{sage::Application@{sage::Application}!sdlWindow@{sdlWindow}}
+\index{sdlWindow@{sdlWindow}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{sdlWindow}{sdlWindow}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$ sage\+::\+Application\+::sdl\+Window\hspace{0.3cm}{\ttfamily [protected]}}
+
+The S\+DL window that the \mbox{\hyperlink{classsage_1_1Application}{Application}} manages \mbox{\Hypertarget{classsage_1_1Application_adc39fae2de148d3c726b86d0c93a4816}\label{classsage_1_1Application_adc39fae2de148d3c726b86d0c93a4816}} 
+\index{sage::Application@{sage::Application}!shaderCache@{shaderCache}}
+\index{shaderCache@{shaderCache}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{shaderCache}{shaderCache}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}}$\ast$ sage\+::\+Application\+::shader\+Cache\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}} \mbox{\Hypertarget{classsage_1_1Application_a246cb87d276d2ee0ca471379307bc456}\label{classsage_1_1Application_a246cb87d276d2ee0ca471379307bc456}} 
+\index{sage::Application@{sage::Application}!threadManager@{threadManager}}
+\index{threadManager@{threadManager}!sage::Application@{sage::Application}}
+\subsubsection{\texorpdfstring{threadManager}{threadManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}}$\ast$ sage\+::\+Application\+::thread\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/view/\mbox{\hyperlink{Application_8h}{Application.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/view/\mbox{\hyperlink{Application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

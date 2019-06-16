@@ -1,8 +1,9 @@
 #ifndef _SAGE_CONFIG_H
 #define _SAGE_CONFIG_H
 
+//rendering config
 #define FPS 60
-#define DEBUG 1
+#define DEPTH_PEELING_PASSES 2
 
 //ShaderCache config
 #define SHADER_VERTEX_POSTFIX "_vertex.glsl"

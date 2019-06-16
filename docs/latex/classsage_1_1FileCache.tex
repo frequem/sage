@@ -1,0 +1,206 @@
+\hypertarget{classsage_1_1FileCache}{}\section{sage\+::File\+Cache Class Reference}
+\label{classsage_1_1FileCache}\index{sage::FileCache@{sage::FileCache}}
+
+
+Class that caches files into memory, so files don\textquotesingle{}t have to be loaded from disk more often than necessary.  
+
+
+
+
+{\ttfamily \#include $<$File\+Cache.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1FileCache_af7d6799763e910957cee829000f9adb6}{File\+Cache}} (\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$tm)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1FileCache_addb15593e848f038a5d7a7c6c3828053}{load}} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Starts a thread that loads a file from disk into memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsage_1_1FileCache_a902a36451f11c4b6e4267358bfadb024}{unload}} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Purges a file from memory. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classsage_1_1FileCache_a67fe1af6ccb8d06b7e97dc54a1836eee}{get}} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the contents of a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsage_1_1FileCache_a369b86f1fb585e5ce5142a7f1f22e38c}{size}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Gets the size of the contents of a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1FileCache_a07c4e05a6d3d792685b48fba44142e08}{$\sim$\+File\+Cache}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsage_1_1FileCache_a991e5569482a4f6f864dd9854c4524d0}{load\+\_\+func}} (const std\+::string \&fn)
+\begin{DoxyCompactList}\small\item\em Loads a file from disk into memory. Called by a file loading thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1FileCache_a02a6333cfba88c7e03a5952c23e253d9}{thread\+Manager}}
+\item 
+std\+::mutex \mbox{\hyperlink{classsage_1_1FileCache_a1bbc9aebae036d04a6eef1f74d535d5a}{mtx}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classsage_1_1FileCache_ac6f227036472f8b5b5265d3126f992ae}{cv}}
+\item 
+std\+::map$<$ const std\+::string, std\+::optional$<$ std\+::vector$<$ char $>$ $>$ $>$ \mbox{\hyperlink{classsage_1_1FileCache_ac3d22a89c9d2ab8aa2af4949002a8df4}{data}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that caches files into memory, so files don\textquotesingle{}t have to be loaded from disk more often than necessary. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1FileCache_af7d6799763e910957cee829000f9adb6}\label{classsage_1_1FileCache_af7d6799763e910957cee829000f9adb6}} 
+\index{sage::FileCache@{sage::FileCache}!FileCache@{FileCache}}
+\index{FileCache@{FileCache}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{FileCache()}{FileCache()}}
+{\footnotesize\ttfamily File\+Cache\+::\+File\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$}]{tm }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tm} & the \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsage_1_1FileCache_a07c4e05a6d3d792685b48fba44142e08}\label{classsage_1_1FileCache_a07c4e05a6d3d792685b48fba44142e08}} 
+\index{sage::FileCache@{sage::FileCache}!````~FileCache@{$\sim$FileCache}}
+\index{````~FileCache@{$\sim$FileCache}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{$\sim$FileCache()}{~FileCache()}}
+{\footnotesize\ttfamily File\+Cache\+::$\sim$\+File\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1FileCache_a67fe1af6ccb8d06b7e97dc54a1836eee}\label{classsage_1_1FileCache_a67fe1af6ccb8d06b7e97dc54a1836eee}} 
+\index{sage::FileCache@{sage::FileCache}!get@{get}}
+\index{get@{get}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily const char $\ast$ File\+Cache\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the contents of a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & the path to (or filename of) the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the contents of the given file. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1FileCache_addb15593e848f038a5d7a7c6c3828053}{load(const std\+::string\& fn)}} 
+
+\mbox{\hyperlink{classsage_1_1FileCache_a369b86f1fb585e5ce5142a7f1f22e38c}{size(const std\+::string\& fn)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1FileCache_addb15593e848f038a5d7a7c6c3828053}\label{classsage_1_1FileCache_addb15593e848f038a5d7a7c6c3828053}} 
+\index{sage::FileCache@{sage::FileCache}!load@{load}}
+\index{load@{load}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void File\+Cache\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+
+
+Starts a thread that loads a file from disk into memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & the path to (or filename of) the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1FileCache_a902a36451f11c4b6e4267358bfadb024}{unload(const std\+::string\& fn)}} 
+
+\mbox{\hyperlink{classsage_1_1FileCache_a67fe1af6ccb8d06b7e97dc54a1836eee}{get(const std\+::string\& fn)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1FileCache_a991e5569482a4f6f864dd9854c4524d0}\label{classsage_1_1FileCache_a991e5569482a4f6f864dd9854c4524d0}} 
+\index{sage::FileCache@{sage::FileCache}!load\_func@{load\_func}}
+\index{load\_func@{load\_func}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{load\_func()}{load\_func()}}
+{\footnotesize\ttfamily void File\+Cache\+::load\+\_\+func (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads a file from disk into memory. Called by a file loading thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & the path to (or filename of) the file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsage_1_1FileCache_a369b86f1fb585e5ce5142a7f1f22e38c}\label{classsage_1_1FileCache_a369b86f1fb585e5ce5142a7f1f22e38c}} 
+\index{sage::FileCache@{sage::FileCache}!size@{size}}
+\index{size@{size}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int File\+Cache\+::size (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+
+
+Gets the size of the contents of a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & the path to (or filename of) the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size to the contents of the given file. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1FileCache_a67fe1af6ccb8d06b7e97dc54a1836eee}{get(const std\+::string\& fn)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsage_1_1FileCache_a902a36451f11c4b6e4267358bfadb024}\label{classsage_1_1FileCache_a902a36451f11c4b6e4267358bfadb024}} 
+\index{sage::FileCache@{sage::FileCache}!unload@{unload}}
+\index{unload@{unload}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void File\+Cache\+::unload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fn }\end{DoxyParamCaption})}
+
+
+
+Purges a file from memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & the path to (or filename of) the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsage_1_1FileCache_addb15593e848f038a5d7a7c6c3828053}{load(const std\+::string\& fn)}} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1FileCache_ac6f227036472f8b5b5265d3126f992ae}\label{classsage_1_1FileCache_ac6f227036472f8b5b5265d3126f992ae}} 
+\index{sage::FileCache@{sage::FileCache}!cv@{cv}}
+\index{cv@{cv}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{cv}{cv}}
+{\footnotesize\ttfamily std\+::condition\+\_\+variable sage\+::\+File\+Cache\+::cv\hspace{0.3cm}{\ttfamily [private]}}
+
+Condition variable to protect the data map \mbox{\Hypertarget{classsage_1_1FileCache_ac3d22a89c9d2ab8aa2af4949002a8df4}\label{classsage_1_1FileCache_ac3d22a89c9d2ab8aa2af4949002a8df4}} 
+\index{sage::FileCache@{sage::FileCache}!data@{data}}
+\index{data@{data}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::map$<$const std\+::string, std\+::optional$<$std\+::vector$<$char$>$ $>$ $>$ sage\+::\+File\+Cache\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+The map where the file contents are stored, if a map entry exists then a file load has been issued, if the entry exists and the optional has a value, the file has successfully been loaded \mbox{\Hypertarget{classsage_1_1FileCache_a1bbc9aebae036d04a6eef1f74d535d5a}\label{classsage_1_1FileCache_a1bbc9aebae036d04a6eef1f74d535d5a}} 
+\index{sage::FileCache@{sage::FileCache}!mtx@{mtx}}
+\index{mtx@{mtx}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{mtx}{mtx}}
+{\footnotesize\ttfamily std\+::mutex sage\+::\+File\+Cache\+::mtx\hspace{0.3cm}{\ttfamily [private]}}
+
+Mutex to protect the data map \mbox{\Hypertarget{classsage_1_1FileCache_a02a6333cfba88c7e03a5952c23e253d9}\label{classsage_1_1FileCache_a02a6333cfba88c7e03a5952c23e253d9}} 
+\index{sage::FileCache@{sage::FileCache}!threadManager@{threadManager}}
+\index{threadManager@{threadManager}!sage::FileCache@{sage::FileCache}}
+\subsubsection{\texorpdfstring{threadManager}{threadManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}}$\ast$ sage\+::\+File\+Cache\+::thread\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+The thread\+Manager 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/cache/\mbox{\hyperlink{FileCache_8h}{File\+Cache.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/cache/\mbox{\hyperlink{FileCache_8cpp}{File\+Cache.\+cpp}}\end{DoxyCompactItemize}

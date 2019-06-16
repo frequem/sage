@@ -36,7 +36,7 @@ void Sprite::setFrame(int frameId){ this->currentFrame = std::clamp(frameId, 0, 
 
 int Sprite::getFrame(){ return this->currentFrame; }
 
-glm::vec2 Sprite::getSize(){ return this->frameSize; }
+glm::vec3 Sprite::getSize(){ return glm::vec3(this->frameSize, 0); }
 
 GLuint Sprite::getTexture(){ return this->getApplication()->getImageCache()->getTexture(this->textureFile); }
 
