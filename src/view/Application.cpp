@@ -2,6 +2,8 @@
 #include <sage/util/config.h>
 #include <sage/util/macros.h>
 #include <sage/view/Scene.h>
+#include <sage/renderer/BasicRenderer.h>
+#include <sage/renderer/DepthPeelRenderer.h>
 
 using namespace sage;
 
@@ -41,67 +43,52 @@ Application::Application(const std::string& title, int width, int height){
 		}
 	}
 	
-	//sdl ttf
 	ASSERT(TTF_Init() == 0, "Failed to initialize SDL_ttf: %s", TTF_GetError());
-	//sdl mixer
-	//int flags = MIX_INIT_MP3;
-	//ASSERT((Mix_Init(flags)&flags) == flags, "Could not initialize mp3 loader: %s", Mix_GetError());
 	ASSERT(Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == 0, "Failed to initialize SDL2_mixer: %s", Mix_GetError());
 	
-	this->threadManager = new ThreadManager(MAX_THREAD_COUNT);
+	this->threadManager = std::make_unique<ThreadManager>(MAX_THREAD_COUNT);
+	this->fileCache = std::make_unique<FileCache>(*this);
+	this->imageCache = std::make_unique<ImageCache>(*this);
+	this->fontCache = std::make_unique<FontCache>(*this);
+	this->shaderCache = std::make_unique<ShaderCache>(*this);
+	this->audioCache = std::make_unique<AudioCache>(*this);
+	this->audioManager = std::make_unique<AudioManager>(*this);
+	this->eventDispatcher = std::make_unique<EventDispatcher>(*this);
+	//this->renderer = new BasicRenderer();
+	this->renderer = std::make_unique<DepthPeelRenderer>(*this);
 	
-	this->fileCache = new FileCache(this->threadManager);
-	this->imageCache = new ImageCache(this->fileCache, this->threadManager);
-	this->fontCache = new FontCache(this->fileCache, this->threadManager);
-	this->shaderCache = new ShaderCache(this->fileCache);
-	
-	this->audioCache = new AudioCache(this->fileCache, this->threadManager);
-	this->audioManager = new AudioManager(this->audioCache);
-	
-	this->eventDispatcher = new EventDispatcher(this);
-	
-	this->getEventDispatcher()->addEventHandler(Event::WINDOW_LEAVE, std::function<void()>([this](){
+	this->getEventDispatcher().addEventHandler(Event::WINDOW_LEAVE, std::function<void()>([this](){
 		this->isPaused = true;
-		this->getAudioManager()->pauseAll();
+		this->getAudioManager().pauseAll();
 	}));
 	
-	this->getEventDispatcher()->addEventHandler(Event::WINDOW_ENTER, std::function<void()>([this](){
+	this->getEventDispatcher().addEventHandler(Event::WINDOW_ENTER, std::function<void()>([this](){
 		this->isPaused = false;
-		this->getAudioManager()->resumeAll();
+		this->getAudioManager().resumeAll();
 		this->lastUpdate = SDL_GetTicks();
 	}));
 	
-	
-	this->getEventDispatcher()->addEventHandler(Event::QUIT, std::function<void()>([this](){
+	this->getEventDispatcher().addEventHandler(Event::QUIT, std::function<void()>([this](){
 		this->isRunning = false;
 	}));
-	
-	
-	
 	
 	this->lastUpdate = SDL_GetTicks();
 }
 
-void Application::pushScene(Scene* scene){
-	scene->setApplication(this);
+void Application::pushScene(std::shared_ptr<Scene> scene){
+	scene->setApplication(*this);
 	this->scenes.push(scene);
 	scene->init();
 }
 
-void Application::replaceScene(Scene* scene){
+void Application::replaceScene(std::shared_ptr<Scene> scene){
 	this->popScene();
 	this->pushScene(scene);
 }
 
-Scene* Application::getScene(){
-	return this->scenes.top();
-}
+std::shared_ptr<Scene> Application::getScene(){ return this->scenes.top(); }
 
-void Application::popScene(){
-	auto s = this->getScene();
-	this->scenes.pop();
-	delete s;
-}
+void Application::popScene(){ this->scenes.pop(); }
 
 void Application::run(){
 	ASSERT(this->scenes.size() > 0, "Application::run - No Scene");
@@ -115,7 +102,8 @@ void Application::run(){
 		delay = 1000/FPS;
 		if(!this->isPaused){			
 			this->getScene()->update((time-this->lastUpdate)/1000.0f);//time since last update in s
-			this->getScene()->render();
+			//this->getScene()->render();
+			this->getRenderer().render();
 			SDL_GL_SwapWindow(this->sdlWindow);
 			
 			this->lastUpdate = time;
@@ -138,13 +126,8 @@ void Application::setWindowSize(glm::vec2 size){
 	SDL_SetWindowSize(this->sdlWindow, size.x, size.y);
 }
 
-float Application::getWindowWidth(){
-	return this->getWindowSize().x;
-}
-
-float Application::getWindowHeight(){
-	return this->getWindowSize().y;
-}
+float Application::getWindowWidth(){ return this->getWindowSize().x; }
+float Application::getWindowHeight(){ return this->getWindowSize().y; }
 
 glm::vec2 Application::getDPI(){
 	float vdpi, hdpi;
@@ -157,37 +140,22 @@ glm::vec2 Application::getDPI(){
 	return glm::vec2(hdpi, vdpi);
 }
 
-FileCache* Application::getFileCache(){ return this->fileCache; }
-
-ImageCache* Application::getImageCache(){ return this->imageCache; }
-
-FontCache* Application::getFontCache(){ return this->fontCache; }
-
-ShaderCache* Application::getShaderCache(){ return this->shaderCache; }
-
-AudioCache* Application::getAudioCache(){ return this->audioCache; }
-
-AudioManager* Application::getAudioManager(){ return this->audioManager; }
-
-EventDispatcher* Application::getEventDispatcher(){ return this->eventDispatcher; }
+FileCache& Application::getFileCache(){ return *(this->fileCache); }
+ImageCache& Application::getImageCache(){ return *(this->imageCache); }
+FontCache& Application::getFontCache(){ return *(this->fontCache); }
+ShaderCache& Application::getShaderCache(){ return *(this->shaderCache); }
+AudioCache& Application::getAudioCache(){ return *(this->audioCache); }
+AudioManager& Application::getAudioManager(){ return *(this->audioManager); }
+ThreadManager& Application::getThreadManager(){ return *(this->threadManager); }
+EventDispatcher& Application::getEventDispatcher(){ return *(this->eventDispatcher); }
+Renderer& Application::getRenderer(){ return *(this->renderer); }
 
 Application::~Application(){
 	LOG("sage::Application Destructor");
-	while(!this->scenes.empty()){
-		this->popScene();
-	}
 	
-	delete this->imageCache;
-	delete this->fontCache;
-	delete this->shaderCache;
-	delete this->audioCache;
-	delete this->audioManager;
-	delete this->fileCache;
-	delete this->threadManager;
-	delete this->eventDispatcher;
-	
+	this->audioCache.reset();
 	Mix_CloseAudio();
-	
+	this->fontCache.reset();
 	TTF_Quit();
 	
 	SDL_GL_DeleteContext(this->glContext);

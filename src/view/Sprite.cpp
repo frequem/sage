@@ -5,11 +5,7 @@
 using namespace sage;
 
 
-Sprite::Sprite(const std::string& textureFile, glm::vec2 size) : TexturedNode(){ 
-	this->textureFile = textureFile;
-	this->frameSize = size;
-	this->currentFrame = 0;
-}
+Sprite::Sprite(const std::string& textureFile, glm::vec2 size) : TexturedNode(), textureFile(textureFile), frameSize(size){}
 
 Sprite::Sprite(const std::string& textureFile) : Sprite(textureFile, glm::vec2(0.0, 0.0)){ //0x0 is initialized to full image size
 	this->frames.push_back(glm::vec2(0.0, 0.0)); //top left
@@ -21,7 +17,7 @@ Sprite::Sprite(const std::string& textureFile, glm::vec2 size, std::initializer_
 
 void Sprite::init(){
 	if(glm::any(glm::lessThanEqual(this->frameSize, glm::vec2(0.0, 0.0)))){
-		this->frameSize = this->getApplication()->getImageCache()->getSize(this->textureFile);
+		this->frameSize = this->getApplication().getImageCache().getSize(this->textureFile);
 	}
 	
 	Node::init();
@@ -38,10 +34,10 @@ int Sprite::getFrame(){ return this->currentFrame; }
 
 glm::vec3 Sprite::getSize(){ return glm::vec3(this->frameSize, 0); }
 
-GLuint Sprite::getTexture(){ return this->getApplication()->getImageCache()->getTexture(this->textureFile); }
+GLuint Sprite::getTexture(){ return this->getApplication().getImageCache().getTexture(this->textureFile); }
 
 std::vector<glm::vec2> Sprite::getTexCoords(){
-	glm::vec2 is = this->getApplication()->getImageCache()->getSize(this->textureFile); //overall image size
+	glm::vec2 is = this->getApplication().getImageCache().getSize(this->textureFile); //overall image size
 	glm::vec2 fs = this->getSize(); //frame size
 	glm::vec2 p = this->frames[this->currentFrame]; //position
 	

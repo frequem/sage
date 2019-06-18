@@ -1,9 +1,6 @@
 #ifndef _SAGE_IMAGECACHE_H
 #define _SAGE_IMAGECACHE_H
 
-#include <sage/util/ThreadManager.h>
-#include <sage/cache/FileCache.h>
-
 #include <map>
 #include <string>
 #include <mutex>
@@ -18,9 +15,10 @@
 #include <SOIL/SOIL.h>
 
 namespace sage{
+	class Application;
 	class ImageCache{
 	public:
-		ImageCache(FileCache*, ThreadManager*);
+		ImageCache(Application&);
 		void load(const std::string&);
 		void unload(const std::string&);
 		
@@ -33,8 +31,7 @@ namespace sage{
 	private:
 		void load_func(const std::string&);
 		
-		ThreadManager* threadManager;
-		FileCache* fileCache;
+		Application* application;
 				
 		std::mutex mtx;
 		std::condition_variable cv;

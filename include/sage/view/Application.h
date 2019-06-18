@@ -1,6 +1,7 @@
 #ifndef _SAGE_APPLICATION_H
 #define _SAGE_APPLICATION_H
 
+#include <sage/util/ThreadManager.h>
 #include <sage/cache/FileCache.h>
 #include <sage/cache/ImageCache.h>
 #include <sage/cache/ShaderCache.h>
@@ -8,6 +9,7 @@
 #include <sage/cache/AudioCache.h>
 #include <sage/util/AudioManager.h>
 #include <sage/util/EventDispatcher.h>
+#include <sage/renderer/Renderer.h>
 
 #include <stack>
 #include <SDL2/SDL.h>
@@ -16,6 +18,7 @@
 #include <SDL2/SDL_mixer.h> 
 #include <glm/glm.hpp>
 #include <string>
+#include <memory>
 
 namespace sage{
 	class Scene;
@@ -59,7 +62,7 @@ namespace sage{
 		 * @see popScene()
 		 * @see getScene()
 		 */
-		void pushScene(Scene* scene);
+		void pushScene(std::shared_ptr<Scene> scene);
 		
 		/**
 		 * @brief Replaces the current Scene on the stack.
@@ -68,7 +71,7 @@ namespace sage{
 		 * @see popScene
 		 * @see getScene
 		 */
-		void replaceScene(Scene* scene);
+		void replaceScene(std::shared_ptr<Scene> scene);
 		
 		/**
 		 * @brief Fetches the current Scene from the stack.
@@ -77,7 +80,7 @@ namespace sage{
 		 * @see replaceScene
 		 * @see popScene
 		 */
-		Scene* getScene();
+		std::shared_ptr<Scene> getScene();
 		
 		/**
 		 * @brief Pops the current Scene from the stack.
@@ -123,6 +126,7 @@ namespace sage{
 		/**
 		 * @brief Fetches the DPI of the display, the window is currently on.
 		 * x contains the horizontal, y the vertical DPI value.
+		 * Currently always returns 400 on Android (SDL_GetDisplayDPI does not work on Android)
 		 * @return the displays horizontal and vertical DPI
 		 */
 		glm::vec2 getDPI();
@@ -136,7 +140,7 @@ namespace sage{
 		 * @see getShaderCache()
 		 * @see getAudioCache()
 		 */
-		FileCache* getFileCache();
+		FileCache& getFileCache();
 		
 		/**
 		 * @brief Fetches the ImageCache.
@@ -144,7 +148,7 @@ namespace sage{
 		 * @see imageCache
 		 * @see getFileCache()
 		 */
-		ImageCache* getImageCache();
+		ImageCache& getImageCache();
 		
 		/**
 		 * @brief Fetches the FontCache.
@@ -152,7 +156,7 @@ namespace sage{
 		 * @see fontCache
 		 * @see getFileCache()
 		 */
-		FontCache* getFontCache();
+		FontCache& getFontCache();
 		
 		/**
 		 * @brief Fetches the ShaderCache.
@@ -160,7 +164,7 @@ namespace sage{
 		 * @see shaderCache
 		 * @see getFileCache()
 		 */
-		ShaderCache* getShaderCache();
+		ShaderCache& getShaderCache();
 		
 		/**
 		 * @brief Fetches the AudioCache.
@@ -169,14 +173,14 @@ namespace sage{
 		 * @see getAudioManager()
 		 * @see getFileCache()
 		 */
-		AudioCache* getAudioCache();
+		AudioCache& getAudioCache();
 		
 		/**
 		 * @brief Fetches the EventDispatcher.
 		 * @return the EventDispatcher
 		 * @see eventDispatcher
 		 */
-		EventDispatcher* getEventDispatcher();
+		EventDispatcher& getEventDispatcher();
 		
 		/**
 		 * @brief Fetches the AudioManager.
@@ -184,7 +188,21 @@ namespace sage{
 		 * @see audioManager
 		 * @see getAudioCache()
 		 */
-		AudioManager* getAudioManager();
+		AudioManager& getAudioManager();
+		
+		/**
+		 * @brief Fetches the ThreadManager.
+		 * @return the ThreadManager
+		 * @see threadManager
+		 */
+		ThreadManager& getThreadManager();
+		
+		/**
+		 * @brief Fetches the Renderer.
+		 * @return the Renderer
+		 * @see renderer
+		 */
+		Renderer& getRenderer();
 		
 		/**
 		 * @brief Starts the main game loop.
@@ -197,24 +215,26 @@ namespace sage{
 		 * Deletes all Scenes, Caches, etc., destroys the window.
 		 */
 		~Application();
-	protected:
-		std::stack<Scene*> scenes; /**< The Scene stack */
+	private:
+		std::stack<std::shared_ptr<Scene>> scenes; /**< The Scene stack */
 		uint32_t lastUpdate = 0; /**< The time, that the most recent update call has been made to a Scene */
 		
-		ThreadManager* threadManager; /**< Pointer to the ThreadManager */
-		FileCache* fileCache; /**< Pointer to the FileCache */
-		ImageCache* imageCache; /**< Pointer to the ImageCache */
-		ShaderCache* shaderCache; /**< Pointer to the ShaderCache */
-		FontCache* fontCache; /**< Pointer to the FontCache */
-		AudioCache* audioCache; /**< Pointer to the AudioCache */
-		EventDispatcher* eventDispatcher; /**< Pointer to the EventDispatcher */
-		AudioManager* audioManager; /**< Pointer to the AudioManager */
+		std::unique_ptr<ThreadManager> threadManager; /**< Pointer to the ThreadManager */
+		std::unique_ptr<FileCache> fileCache; /**< Pointer to the FileCache */
+		std::unique_ptr<ImageCache> imageCache; /**< Pointer to the ImageCache */
+		std::unique_ptr<ShaderCache> shaderCache; /**< Pointer to the ShaderCache */
+		std::unique_ptr<FontCache> fontCache; /**< Pointer to the FontCache */
+		std::unique_ptr<AudioCache> audioCache; /**< Pointer to the AudioCache */
+		std::unique_ptr<EventDispatcher> eventDispatcher; /**< Pointer to the EventDispatcher */
+		std::unique_ptr<AudioManager> audioManager; /**< Pointer to the AudioManager */
+		std::unique_ptr<Renderer> renderer; /**< Pointer to the Renderer which decides how to render the Nodes */
 		
 		bool isRunning = false; /**< Whether the run function has already been called or not*/
 		bool isPaused = false; /**< Whether the Application is currently paused or not*/
 		
 		SDL_Window* sdlWindow; /**< The SDL window that the Application manages */
 		SDL_GLContext glContext; /**< The OpenGL context for the window */
+		
 	};
 }
 #endif // _SAGE_APPLICATION_H

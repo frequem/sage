@@ -1,16 +1,15 @@
 #include <sage/cache/ShaderCache.h>
+#include <sage/view/Application.h>
 #include <sage/util/config.h>
 #include <sage/util/macros.h>
 
 using namespace sage;
 
-ShaderCache::ShaderCache(FileCache* fileCache){
-	this->fileCache = fileCache;
-}
+ShaderCache::ShaderCache(Application& application) : application(&application){}
 
 void ShaderCache::load(const std::string& shaderName){
-	this->fileCache->load(shaderName + SHADER_VERTEX_POSTFIX);
-	this->fileCache->load(shaderName + SHADER_FRAGMENT_POSTFIX);
+	this->application->getFileCache().load(shaderName + SHADER_VERTEX_POSTFIX);
+	this->application->getFileCache().load(shaderName + SHADER_FRAGMENT_POSTFIX);
 }
 
 void ShaderCache::unload(const std::string& shaderName){
@@ -20,15 +19,15 @@ void ShaderCache::unload(const std::string& shaderName){
 		glDeleteProgram(pid);
 		this->shaders.erase(i);
 	}
-	this->fileCache->unload(shaderName + SHADER_VERTEX_POSTFIX);
-	this->fileCache->unload(shaderName + SHADER_FRAGMENT_POSTFIX);
+	this->application->getFileCache().unload(shaderName + SHADER_VERTEX_POSTFIX);
+	this->application->getFileCache().unload(shaderName + SHADER_FRAGMENT_POSTFIX);
 }
 
 GLuint ShaderCache::createShader(const std::string& fn, GLenum shaderType){
 	GLuint sid = glCreateShader(shaderType);
 	
-	const char* data = this->fileCache->get(fn);
-	int size = this->fileCache->size(fn);
+	const char* data = this->application->getFileCache().get(fn);
+	int size = this->application->getFileCache().size(fn);
 	
 	LOG("sage::ShaderCache: Compiling '%s'", fn.c_str());
 	glShaderSource(sid, 1, &data, &size);

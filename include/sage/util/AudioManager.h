@@ -1,16 +1,15 @@
 #ifndef _SAGE_AUDIOMANAGER_H
 #define _SAGE_AUDIOMANAGER_H
 
-#include <sage/cache/AudioCache.h>
-
 #include <string>
 #include <set>
 #include <SDL2/SDL_mixer.h> 
 
 namespace sage{
+	class Application;
 	class AudioManager{
 	public:
-		AudioManager(AudioCache*);
+		AudioManager(Application&);
 		void play(const std::string&, int);
 		void playOnChannel(const std::string&, int, int);
 		void play(const std::string&);
@@ -26,7 +25,7 @@ namespace sage{
 		
 		~AudioManager();
 	private:
-		AudioCache* audioCache;
+		Application* application;
 		std::set<int> reservedChannels;
 	};
 }

@@ -1,8 +1,6 @@
 #ifndef _SAGE_SHADERCACHE_H
 #define _SAGE_SHADERCACHE_H
 
-#include <sage/cache/FileCache.h>
-
 #include <map>
 #include <string>
 #include <mutex>
@@ -14,16 +12,17 @@
 #include <glm/glm.hpp>
 
 namespace sage{
+	class Application;
 	class ShaderCache{
 	
 	public:
-		ShaderCache(FileCache*);
+		ShaderCache(Application&);
 		void load(const std::string&);
 		void unload(const std::string&);
 		GLuint get(const std::string&);
 		~ShaderCache();
 	private:
-		FileCache* fileCache;
+		Application* application;
 		std::map<const std::string, GLuint> shaders;
 		
 		GLuint createShader(const std::string&, GLenum shaderType);

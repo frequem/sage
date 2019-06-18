@@ -1,15 +1,15 @@
 #include <sage/cache/AudioCache.h>
+#include <sage/view/Application.h>
+#include <sage/cache/FileCache.h>
+#include <sage/util/ThreadManager.h>
 #include <sage/util/macros.h>
 
 using namespace sage;
 
-AudioCache::AudioCache(FileCache* fileCache, ThreadManager* tm){
-	this->fileCache = fileCache;
-	this->threadManager = tm;
-}
+AudioCache::AudioCache(Application& application) : application(&application){}
 
 void AudioCache::load_func(const std::string& fn){
-	SDL_RWops* rwops = SDL_RWFromMem((void*)this->fileCache->get(fn), this->fileCache->size(fn));
+	SDL_RWops* rwops = SDL_RWFromMem((void*)this->application->getFileCache().get(fn), this->application->getFileCache().size(fn));
 	{
 		std::lock_guard<std::mutex> guard(this->mtx);
 		
@@ -33,7 +33,7 @@ void AudioCache::load(const std::string& fn){
 	}
 	
 	this->chunks[fn] = nullptr;
-	this->threadManager->run(&AudioCache::load_func, this, fn);
+	this->application->getThreadManager().run(&AudioCache::load_func, this, fn);
 }
 
 void AudioCache::unload(const std::string& fn){
@@ -49,7 +49,7 @@ void AudioCache::unload(const std::string& fn){
 	
 	this->chunks.erase(fn);
 	
-	this->fileCache->unload(fn);
+	this->application->getFileCache().unload(fn);
 }
 
 Mix_Chunk* AudioCache::get(const std::string& fn){

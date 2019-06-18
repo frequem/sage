@@ -4,7 +4,7 @@
 #include <sage/util/macros.h>
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/transform.hpp>
-#include <algorithm>
+#include <utility>
 
 using namespace sage;
 
@@ -15,39 +15,29 @@ Node::Node(){
 	this->setRotation(glm::vec3(0,0,0));
 }
 
-void Node::render(int pass){
-	for(Node* n : this->childNodes){
-		n->render(pass);
-	}
-}
-
-void Node::render(){ this->render(0); }
-
 void Node::update(float delta){
-	for(Node* n : this->childNodes){
+	for(auto&& n : this->childNodes){
 		n->update(delta);
 	}
 }
 
 void Node::init(){
-	for(Node* n : this->childNodes){
+	for(auto&& n : this->childNodes){
 		n->init();
 	}
 	this->initialized = true;
 }
 
-Node* Node::getParentNode() const{ return this->parentNode; }
+Node& Node::getParentNode() const{ return *(this->parentNode); }
+void Node::setParentNode(Node& parent){ this->parentNode = &parent; }
+std::vector<std::shared_ptr<Node>> Node::getChildren(){ return this->childNodes; }
+Scene& Node::getScene(){ return this->getParentNode().getScene(); }
 
-void Node::setParentNode(Node* parent){ this->parentNode = parent; }
+Application& Node::getApplication(){ return this->getParentNode().getApplication(); }
 
-Scene* Node::getScene(){ return this->getParentNode()->getScene(); }
-
-Application* Node::getApplication(){ return this->getParentNode()->getApplication(); }
-
-void Node::addChild(Node* node){
-	node->setParentNode(this);
+void Node::addChild(std::shared_ptr<Node> node){
 	this->childNodes.push_back(node);
-	//this->sortChildren();
+	node->setParentNode(*this);
 	
 	if(this->initialized){
 		node->init();
@@ -93,8 +83,6 @@ void Node::setRotation(float r){ this->rotation.x = r; }
 void Node::setRotation(glm::vec3 r){ this->rotation = r; }
 
 glm::vec3 Node::getRotation() const{ return this->rotation; }
-
-void Node::sortChildren(){ std::sort(this->childNodes.begin(), this->childNodes.end(), NodePtrZCompare()); }
 
 float Node::getWidth(){ return this->getSize().x; }
 float Node::getHeight(){ return this->getSize().y; }
@@ -142,7 +130,7 @@ std::vector<glm::vec3> Node::getAbsPoints(){
 	return temp;
 }
 
-int Node::getTreeDepth(){ return this->getParentNode()->getTreeDepth()+1; }
+int Node::getTreeDepth(){ return this->getParentNode().getTreeDepth()+1; }
 
 bool Node::containsAbs(glm::vec3 point){
 	glm::vec3 size = this->getSize();
@@ -154,9 +142,5 @@ bool Node::containsAbs(glm::vec2 point){
 	return this->containsAbs(glm::vec3(point, 0));
 }
 
-Node::~Node(){
-	for(Node* n : this->childNodes){
-		delete n;
-	}
-}
+Node::~Node(){}
 

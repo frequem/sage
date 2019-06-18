@@ -1,15 +1,13 @@
 #include <sage/cache/FontCache.h>
+#include <sage/view/Application.h>
 #include <sage/util/macros.h>
 
 using namespace sage;
 
-FontCache::FontCache(FileCache* fileCache, ThreadManager* tm){
-	this->fileCache = fileCache;
-	this->threadManager = tm;
-}
+FontCache::FontCache(Application& application) : application(&application){}
 
 void FontCache::load_func(const std::string& fn, int ptsize){
-	SDL_RWops* rwops = SDL_RWFromMem((void*)this->fileCache->get(fn), this->fileCache->size(fn));
+	SDL_RWops* rwops = SDL_RWFromMem((void*)this->application->getFileCache().get(fn), this->application->getFileCache().size(fn));
 	{
 		std::lock_guard<std::mutex> guard(this->mtx);
 		
@@ -37,7 +35,7 @@ void FontCache::load(const std::string& fn, int ptsize){
 	}
 	
 	this->fonts[fn][ptsize] = nullptr;
-	this->threadManager->run(&FontCache::load_func, this, fn, ptsize);
+	this->application->getThreadManager().run(&FontCache::load_func, this, fn, ptsize);
 }
 
 void FontCache::unload(const std::string& fn, int ptsize){
@@ -58,7 +56,7 @@ void FontCache::unload(const std::string& fn, int ptsize){
 	
 	if(this->fonts[fn].size() == 0){ //erase outer map when its empty
 		this->fonts.erase(fn);
-		this->fileCache->unload(fn);
+		this->application->getFileCache().unload(fn);
 	}
 }
 

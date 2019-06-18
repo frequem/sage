@@ -7,7 +7,7 @@
 
 using namespace sage;
 
-EventDispatcher::EventDispatcher(Application* app) : application(app){}
+EventDispatcher::EventDispatcher(Application& application) : application(&application){}
 
 void EventDispatcher::removeEventHandler(int id){
 	for(auto const& [event, h_map] : this->handlers){
@@ -56,18 +56,18 @@ void EventDispatcher::handleEvents(){
 					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel), static_cast<int>(this->mouse_down_button));
 				}	
 				
-				this->dispatchEvent(NodeEvent::MOUSE_MOVE, static_cast<std::function<bool(Node*,int,int,int,int)>>([](Node* n, int x, int y, int xrel, int yrel){
-						return n->containsAbs(glm::vec2(x,y));
+				this->dispatchEvent(NodeEvent::MOUSE_MOVE, static_cast<std::function<bool(Node&,int,int,int,int)>>([](Node& n, int x, int y, int xrel, int yrel){
+						return n.containsAbs(glm::vec2(x,y));
 					}), static_cast<int>(sdlEvent.motion.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.motion.y),
 					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel));
 				
-				this->dispatchEvent(NodeEvent::MOUSE_ENTER, static_cast<std::function<bool(Node*,int,int,int,int)>>([](Node* n, int x, int y, int xrel, int yrel){
-						return !n->containsAbs(glm::vec2(x-xrel, y-yrel)) && n->containsAbs(glm::vec2(x,y));
+				this->dispatchEvent(NodeEvent::MOUSE_ENTER, static_cast<std::function<bool(Node&,int,int,int,int)>>([](Node& n, int x, int y, int xrel, int yrel){
+						return !n.containsAbs(glm::vec2(x-xrel, y-yrel)) && n.containsAbs(glm::vec2(x,y));
 					}), static_cast<int>(sdlEvent.motion.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.motion.y),
 					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel));
 				
-				this->dispatchEvent(NodeEvent::MOUSE_LEAVE, static_cast<std::function<bool(Node*,int,int,int,int)>>([](Node* n, int x, int y, int xrel, int yrel){
-						return n->containsAbs(glm::vec2(x-xrel, y-yrel)) && !n->containsAbs(glm::vec2(x,y));
+				this->dispatchEvent(NodeEvent::MOUSE_LEAVE, static_cast<std::function<bool(Node&,int,int,int,int)>>([](Node& n, int x, int y, int xrel, int yrel){
+						return n.containsAbs(glm::vec2(x-xrel, y-yrel)) && !n.containsAbs(glm::vec2(x,y));
 					}), static_cast<int>(sdlEvent.motion.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.motion.y),
 					static_cast<int>(sdlEvent.motion.xrel), static_cast<int>(-sdlEvent.motion.yrel));
 				break;
@@ -84,8 +84,8 @@ void EventDispatcher::handleEvents(){
 				this->dispatchEvent(Event::MOUSE_DOWN, static_cast<int>(sdlEvent.button.x), static_cast<int>(sdlEvent.button.y),
 					static_cast<int>(sdlEvent.button.button));
 					
-				this->dispatchEvent(NodeEvent::MOUSE_DOWN, static_cast<std::function<bool(Node*,int,int,int)>>([](Node* n, int x, int y, int button){
-						return n->containsAbs(glm::vec2(x,y));
+				this->dispatchEvent(NodeEvent::MOUSE_DOWN, static_cast<std::function<bool(Node&,int,int,int)>>([](Node& n, int x, int y, int button){
+						return n.containsAbs(glm::vec2(x,y));
 					}),
 					static_cast<int>(sdlEvent.button.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.button.y),
 					static_cast<int>(sdlEvent.button.button));
@@ -95,8 +95,8 @@ void EventDispatcher::handleEvents(){
 				this->dispatchEvent(Event::MOUSE_UP, static_cast<int>(sdlEvent.button.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.button.y),
 					static_cast<int>(sdlEvent.button.button));
 					
-				this->dispatchEvent(NodeEvent::MOUSE_UP, static_cast<std::function<bool(Node*,int,int,int)>>([](Node* n, int x, int y, int button){
-						return n->containsAbs(glm::vec2(x,y));
+				this->dispatchEvent(NodeEvent::MOUSE_UP, static_cast<std::function<bool(Node&,int,int,int)>>([](Node& n, int x, int y, int button){
+						return n.containsAbs(glm::vec2(x,y));
 					}), static_cast<int>(sdlEvent.button.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.button.y),
 					static_cast<int>(sdlEvent.button.button));
 				
@@ -105,8 +105,8 @@ void EventDispatcher::handleEvents(){
 					this->dispatchEvent(Event::MOUSE_CLICK, static_cast<int>(sdlEvent.button.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.button.y),
 						static_cast<int>(sdlEvent.button.button), static_cast<int>(this->mouse_click_count));
 						
-					this->dispatchEvent(NodeEvent::MOUSE_CLICK, static_cast<std::function<bool(Node*,int,int,int,int)>>([](Node* n, int x, int y, int button, int clicks){
-							return n->containsAbs(glm::vec2(x,y));
+					this->dispatchEvent(NodeEvent::MOUSE_CLICK, static_cast<std::function<bool(Node&,int,int,int,int)>>([](Node& n, int x, int y, int button, int clicks){
+							return n.containsAbs(glm::vec2(x,y));
 						}), static_cast<int>(sdlEvent.button.x), static_cast<int>(this->application->getWindowHeight()-sdlEvent.button.y),
 						static_cast<int>(sdlEvent.button.button),  static_cast<int>(this->mouse_click_count));
 				}else{

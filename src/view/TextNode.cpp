@@ -6,11 +6,9 @@
 
 using namespace sage;
 
-TextNode::TextNode(const std::string& font, int ptsize) : 
-	TextNode(font, ptsize, ""){}
+TextNode::TextNode(const std::string& font, int ptsize) : TextNode(font, ptsize, ""){}
 
-TextNode::TextNode(const std::string& font, int ptsize, const std::string& text) : 
-	TextNode(font, ptsize, text, {255, 255, 255, 0}){}
+TextNode::TextNode(const std::string& font, int ptsize, const std::string& text) : TextNode(font, ptsize, text, {255, 255, 255, 0}){}
 
 TextNode::TextNode(const std::string& font, int ptsize, const std::string& text, SDL_Color color) : 
 	TexturedNode(), fontFile(font), ptsize(ptsize), text(text), color(color){
@@ -23,7 +21,7 @@ void TextNode::init(){
 }
 
 void TextNode::rebuild(){
-	TTF_Font* font = this->getApplication()->getFontCache()->get(this->fontFile, this->ptsize);
+	TTF_Font* font = this->getApplication().getFontCache().get(this->fontFile, this->ptsize);
 	auto s = TTF_RenderText_Blended(font, this->text.c_str(), this->color);
 	this->surface = SDL_ConvertSurfaceFormat(s, SDL_PIXELFORMAT_RGBA32, 0);
 	

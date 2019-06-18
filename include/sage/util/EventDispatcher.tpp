@@ -10,8 +10,8 @@ namespace sage{
 	}
 	
 	template<typename... Args>
-	int EventDispatcher::addEventHandler(NodeEvent e, Node* n, std::function<void(Args...)>&& f){
-		this->node_handlers[e][nextHandlerId] = std::make_pair(n, f);
+	int EventDispatcher::addEventHandler(NodeEvent e, Node& n, std::function<void(Args...)>&& f){
+		this->node_handlers[e][nextHandlerId] = std::make_pair(&n, f);
 		return nextHandlerId++;
 	}
 
@@ -24,13 +24,13 @@ namespace sage{
 	
 	
 	template<typename... Args>
-	void EventDispatcher::dispatchEvent(NodeEvent e, std::function<bool(Node*, Args...)>&& checkfunc, Args&&... a){
+	void EventDispatcher::dispatchEvent(NodeEvent e, std::function<bool(Node&, Args...)>&& checkfunc, Args&&... a){
 		for(auto i = this->node_handlers[e].begin(); i != this->node_handlers[e].end();){
 			Node* n = i->second.first; // = pair.node
 			if(n == nullptr){
 				i = this->node_handlers[e].erase(i);
 				continue;
-			}else if(checkfunc(n, a...)){
+			}else if(checkfunc(*n, a...)){
 				std::any_cast<std::function<void(Args...)>>(i->second.second)(a...);
 			}
 			i++;

@@ -18,8 +18,6 @@ namespace sage{
 		Sprite(const std::string&, glm::vec2 size);
 		Sprite(const std::string&, glm::vec2 size, std::initializer_list<glm::vec2> coords);
 		
-		void init() override;
-		
 		glm::vec3 getSize() override;
 		
 		int addFrame(glm::vec2 pos);
@@ -28,12 +26,13 @@ namespace sage{
 		
 		~Sprite();
 	protected:
+		void init() override;
 		GLuint getTexture() override;
 		std::vector<glm::vec2> getTexCoords() override;
 	private:
 		std::string textureFile;
 		glm::vec2 frameSize;
-		int currentFrame;
+		int currentFrame = 0;
 		std::vector<glm::vec2> frames;
 	};
 }

@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <glm/glm.hpp>
+#include <memory>
 
 namespace sage{
 	class Scene;
@@ -21,52 +22,27 @@ namespace sage{
 		 * Initializes the Node with position (0,0,0), anchor (0,0,0), scale (1,1,1), rotation (0,0,0)
 		 */
 		Node();
-		
-		/**
-		 * @brief Renders the Node and its children.
-		 * @param pass the current rendering pass (useful for depth peeling)
-		 * @see render()
-		 */
-		virtual void render(int pass);
-		
-		/**
-		 * @brief Renders the Node and its children. Calls render(0)
-		 * @see render(int pass)
-		 */
-		virtual void render();
-		
 		/**
 		 * @brief Updates the Node and its children.
 		 * Updates are required to set the Node's postion, scale, etc.
 		 * @param delta the time since the last update
 		 */
 		virtual void update(float delta);
-		
-		/**
-		 * @brief Is called as soon as the Application is available to the Node.
-		 * Recursively initializes its children.
-		 */ 
-		virtual void init();
-		
 		/**
 		 * @brief Fetches the Scene that contains this Node.
 		 * @return the Scene
 		 */
-		virtual Scene* getScene();
-		
+		virtual Scene& getScene();
 		/**
 		 * @brief Fetches the Application.
 		 * @return the Application
 		 */
-		virtual Application* getApplication();
-		
+		virtual Application& getApplication();
 		/**
 		 * @brief Adds the given Node as a child.
-		 * Automatically sorts the children by z-index.
 		 * @param node the new child-Node
 		 */
-		void addChild(Node* node);
-		
+		void addChild(std::shared_ptr<Node> node);
 		/**
 		 * @brief Sets the position of the Node.
 		 * @param x the new x-coordinate
@@ -180,7 +156,6 @@ namespace sage{
 		 * @see getPositionZ()
 		 */
 		void setPositionZ(float z);
-		
 		/**
 		 * @brief Fetches the position of the Node.
 		 * @return the position
@@ -241,7 +216,6 @@ namespace sage{
 		 * @see getPositionY()
 		 */
 		float getPositionZ() const;
-		
 		/**
 		 * @brief Sets the anchor of the Node.
 		 * See anchor for further details.
@@ -301,7 +275,6 @@ namespace sage{
 		 * @see getAnchorZ()
 		 */
 		void setAnchor(glm::vec2 anchor);
-		
 		/**
 		 * @brief Fetches the anchor of the Node.
 		 * See anchor for further details.
@@ -357,7 +330,6 @@ namespace sage{
 		 * @see getAnchorY()
 		 */
 		float getAnchorZ() const;
-		
 		/**
 		 * @brief Sets the scale-factor of the Node.
 		 * @param s the x- and y- scale
@@ -448,7 +420,6 @@ namespace sage{
 		 * @see getScaleZ()
 		 */
 		void setScaleZ(float z);
-		
 		/**
 		 * @brief Fetches the scale-factor of the Node.
 		 * @return the scale
@@ -505,7 +476,6 @@ namespace sage{
 		 * @see getScaleY()
 		 */
 		float getScaleZ() const;
-		
 		/**
 		 * @brief Sets the rotation of the Node around the z-axis.
 		 * @param r the rotation
@@ -522,7 +492,6 @@ namespace sage{
 		 * @see getRotation()
 		 */
 		void setRotation(glm::vec3 r);
-		
 		/**
 		 * @brief Fetches the rotation of the Node.
 		 * @return the rotation
@@ -531,7 +500,6 @@ namespace sage{
 		 * @see setRotation(glm::vec3 r)
 		 */
 		glm::vec3 getRotation() const;
-		
 		/**
 		 * @brief Fetches the size of the Node.
 		 * @return the size
@@ -564,13 +532,11 @@ namespace sage{
 		 * @see getWidth()
 		 */
 		float getDepth();
-		
 		/**
 		 * @brief Fetches the corner points of the Node in absolute coordinates (Application coordinates).
 		 * @return vector of 8 corner points
 		 */
 		std::vector<glm::vec3> getAbsPoints();
-		
 		/**
 		 * @brief Checks if the Node contains a point given in absolute coordinates.
 		 * @param point the point to check
@@ -581,7 +547,11 @@ namespace sage{
 		 * @param point the point to check
 		 */
 		bool containsAbs(glm::vec2 point);
-		
+		/**
+		 * @brief Fetches the child-Nodes.
+		 * @return a vector containing child-Nodes
+		 */
+		std::vector<std::shared_ptr<Node>> getChildren();
 		/**
 		 * @brief Node destructor.
 		 * Deletes children.
@@ -589,35 +559,30 @@ namespace sage{
 		virtual ~Node();
 	protected:	
 		/**
+		 * @brief Is called as soon as the Application is available to the Node.
+		 * Recursively initializes its children.
+		 */ 
+		virtual void init();
+		/**
 		 * @brief Fetches the parent-Node.
 		 * @return the parent Node
 		 */
-		Node* getParentNode() const;
-		
+		Node& getParentNode() const;
 		/**
 		 * @brief Sets the parent-Node.
 		 * @param parent the new parent Node
 		 */
-		void setParentNode(Node* parent);
-		
-		/**
-		 * @brief Sort the children by their z values.
-		 */
-		void sortChildren();
-		
+		void setParentNode(Node& parent);
 		/**
 		 * @brief Converts a point in relative (Node) coordinates to absolute (Application) coordinates.
 		 * @param point a point in relative coordinates
 		 */
 		virtual glm::vec3 absPoint(glm::vec3 point);
-		
-		
 		/**
 		 * @brief Converts a point in absolute (Application) coordinates to relative (Node) coordinates.
 		 * @param point a point in absolute coordinates
 		 */
 		virtual glm::vec3 relPoint(glm::vec3 point);
-		
 		/**
 		 * @brief Fetches the depth of a Node under the Scene.
 		 * e.g. (Scene: depth 0)->(Node: depth 1)->(Node: depth 2) etc.
@@ -627,7 +592,7 @@ namespace sage{
 	
 		bool initialized = false; /**< Whether the Node is initialized and therefore the Application available */
 		Node* parentNode = nullptr; /**< The parent Node, is set as soon as the Node is added as a child of another Node */
-		std::vector<Node*> childNodes; /**< The vector of children */
+		std::vector<std::shared_ptr<Node>> childNodes; /**< The vector of children */
 		glm::vec3 pos; /**< The position of the Node in parent-Node coordinates*/
 		glm::vec3 anchor; /**< The anchor is a relative point around which all transformations and other manipulations take place. (0,0,0) is near-bottom-left and (1,1,1) is far-top-right. */
 		glm::vec3 scale; /**< The scale of the Node */

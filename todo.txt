@@ -1,18 +1,20 @@
+- z aware depth peeling
+- VBOs
+
+
+
+- actions instead of logic inside update function
+
+
+
+
+
+
 - additional audio formats
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+- Freetype text rendering
+- replace sdl with (free)glut?

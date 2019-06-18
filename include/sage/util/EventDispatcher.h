@@ -17,14 +17,14 @@ namespace sage{
 	
 	class EventDispatcher{
 	public:
-		EventDispatcher(Application*);
+		EventDispatcher(Application&);
 		
 		
 		template<typename... Args>
 		int addEventHandler(Event, std::function<void(Args...)>&&);
 		
 		template<typename... Args>
-		int addEventHandler(NodeEvent, Node*, std::function<void(Args...)>&&);
+		int addEventHandler(NodeEvent, Node&, std::function<void(Args...)>&&);
 		
 		void removeEventHandler(int);
 						
@@ -34,7 +34,7 @@ namespace sage{
 		void dispatchEvent(Event, Args&&...);
 		
 		template<typename... Args>
-		void dispatchEvent(NodeEvent, std::function<bool(Node*, Args...)>&&, Args&&...);
+		void dispatchEvent(NodeEvent, std::function<bool(Node&, Args...)>&&, Args&&...);
 		
 		~EventDispatcher();
 	private:

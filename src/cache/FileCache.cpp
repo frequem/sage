@@ -1,12 +1,13 @@
 #include <sage/cache/FileCache.h>
+#include <sage/view/Application.h>
+#include <sage/util/ThreadManager.h>
 #include <sage/util/macros.h>
 #include <fstream>
 #include <iostream>
 
 using namespace sage;
 
-FileCache::FileCache(ThreadManager* tm) : threadManager(tm){
-	
+FileCache::FileCache(Application& application) : application(&application){
 	#ifdef __ANDROID__
 		this->android_jnienv = (JNIEnv*)SDL_AndroidGetJNIEnv();
 		jobject activity = (jobject)SDL_AndroidGetActivity();
@@ -30,7 +31,6 @@ void FileCache::load_func(const std::string& fn){
 		ASSERT(asset != nullptr, "File '%s' does not exist.", fn.c_str());
 		int size = AAsset_getLength(asset);
 		ASSERT(size > 0, "File '%s' is of size 0.", fn.c_str());
-		
 	#else
 		std::ifstream file(fn, std::ios::binary | std::ios::ate); 
 		std::streamsize size = file.tellg();
@@ -76,7 +76,7 @@ void FileCache::load(const std::string& fn){
 	}
 	
 	this->data[fn] = std::nullopt;
-	this->threadManager->run(&FileCache::load_func, this, fn);
+	this->application->getThreadManager().run(&FileCache::load_func, this, fn);
 }
 
 void FileCache::unload(const std::string& fn){

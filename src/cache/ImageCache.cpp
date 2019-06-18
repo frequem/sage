@@ -1,18 +1,18 @@
 #include <sage/cache/ImageCache.h>
+#include <sage/view/Application.h>
+#include <sage/cache/FileCache.h>
+#include <sage/util/ThreadManager.h>
 #include <sage/util/macros.h>
 
 using namespace sage;
 
-ImageCache::ImageCache(FileCache* fileCache, ThreadManager* tm){
-	this->fileCache = fileCache;
-	this->threadManager = tm;
-}
+ImageCache::ImageCache(Application& application) : application(&application){}
 
 void ImageCache::load_func(const std::string& fn){
 	int w, h; 
 	unsigned char* data = SOIL_load_image_from_memory(
-		(unsigned char*)this->fileCache->get(fn), 
-		this->fileCache->size(fn),
+		(unsigned char*)this->application->getFileCache().get(fn), 
+		this->application->getFileCache().size(fn),
 		&w,
 		&h,
 		0,
@@ -47,7 +47,7 @@ void ImageCache::load(const std::string& fn){
 	}
 	
 	this->textures[fn] = std::nullopt;
-	this->threadManager->run(&ImageCache::load_func, this, fn);
+	this->application->getThreadManager().run(&ImageCache::load_func, this, fn);
 }
 
 void ImageCache::unload(const std::string& fn){
@@ -66,7 +66,7 @@ void ImageCache::unload(const std::string& fn){
 	
 	this->textures.erase(fn);
 	
-	this->fileCache->unload(fn);
+	this->application->getFileCache().unload(fn);
 }
 
 GLuint ImageCache::getTexture(const std::string& fn){
@@ -111,13 +111,8 @@ glm::vec2 ImageCache::getSize(const std::string& fn){
 	return this->textures[fn]->first;
 }
 
-float ImageCache::getWidth(const std::string& fn){
-	return this->getSize(fn).x;
-}
-
-float ImageCache::getHeight(const std::string& fn){
-	return this->getSize(fn).y;
-}
+float ImageCache::getWidth(const std::string& fn){ return this->getSize(fn).x; }
+float ImageCache::getHeight(const std::string& fn){	return this->getSize(fn).y; }
 
 ImageCache::~ImageCache(){
 	while(!this->textures.empty()){

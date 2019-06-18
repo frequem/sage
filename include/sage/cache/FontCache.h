@@ -1,8 +1,6 @@
 #ifndef _SAGE_FONTCACHE_H
 #define _SAGE_FONTCACHE_H
 
-#include <sage/cache/FileCache.h>
-
 #include <map>
 #include <string>
 #include <mutex>
@@ -14,9 +12,10 @@
 #include <glm/glm.hpp>
 
 namespace sage{
+	class Application;
 	class FontCache{
 	public:
-		FontCache(FileCache*, ThreadManager*);
+		FontCache(Application&);
 		void load(const std::string&, int);
 		void unload(const std::string&, int);
 		void unload(const std::string&);
@@ -26,8 +25,7 @@ namespace sage{
 	private:
 		void load_func(const std::string&, int);
 		
-		ThreadManager* threadManager;
-		FileCache* fileCache;
+		Application* application;
 		
 		std::mutex mtx;
 		std::condition_variable cv;

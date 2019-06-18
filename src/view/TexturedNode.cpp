@@ -6,77 +6,7 @@
 
 using namespace sage;
 
-TexturedNode::TexturedNode() : Node(){ }
-
-void TexturedNode::render(int pass){
-	//glStencilFunc(GL_EQUAL, this->getDepth()-1, ~0);
-	//glStencilOp(GL_KEEP, GL_INCR, GL_INCR);
-	
-    GLuint p = this->getApplication()->getShaderCache()->get("depthpeel");
-    glUseProgram(p);
-    	
-	glm::vec2 windowSize = this->getApplication()->getWindowSize();
-	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
-	
-	glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, this->getTexture());
-    glUniform1i(glGetUniformLocation(p, "tex"), 0);
-    
-    glUniform1i(glGetUniformLocation(p, "peel"), pass>0);
-	glUniform1i(glGetUniformLocation(p, "depthTex"), (pass+1)%2 + 1); //1 or 2 (the previous one)
-	
-	std::vector<glm::vec3> points = this->getAbsPoints();
-	GLint position = glGetAttribLocation(p, "position");
-	
-	std::vector<glm::vec2> coordinates = this->getTexCoords();
-	GLint texCoord = glGetAttribLocation(p, "texCoord");
-	
-	glEnableVertexAttribArray(position);
-	glEnableVertexAttribArray(texCoord);
-	
-	glVertexAttribPointer(position, 3, GL_FLOAT, GL_FALSE, 0, points.data());
-	glVertexAttribPointer(texCoord, 2, GL_FLOAT, GL_FALSE, 0, coordinates.data());
-	
-	
-	//glEnable(GL_BLEND);
-	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	if(pass == 0){
-		glEnable(GL_DEPTH_TEST);
-		glDepthFunc(GL_LEQUAL);
-		glDepthMask(GL_TRUE);
-	}
-	
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-
-	glDisable(GL_DEPTH_TEST);
-	glDisable(GL_BLEND);
-	
-	glDisableVertexAttribArray(position);
-	glDisableVertexAttribArray(texCoord);
-	
-	glUseProgram(0);
-	
-	Node::render(pass);
-	/*
-	glStencilFunc(GL_EQUAL, this->getDepth(), ~0);
-	glStencilOp(GL_KEEP, GL_DECR, GL_DECR);
-	
-    p = this->getApplication()->getShaderCache()->get("stencil2d");
-    glUseProgram(p);
-    
-	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
-	
-	position = glGetAttribLocation(p, "position");
-	glEnableVertexAttribArray(position);
-	glVertexAttribPointer(position, 3, GL_FLOAT, GL_FALSE, 0, points.data());
-	
-	glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-	glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
-	glUseProgram(0);
-	
-	glDisableVertexAttribArray(position);*/
-}
+TexturedNode::TexturedNode() : Node(){}
 
 std::vector<glm::vec2> TexturedNode::getTexCoords(){
 	std::vector<glm::vec2> temp;
@@ -88,6 +18,5 @@ std::vector<glm::vec2> TexturedNode::getTexCoords(){
 	return temp;
 };
 
-TexturedNode::~TexturedNode(){
-}
+TexturedNode::~TexturedNode(){}
 

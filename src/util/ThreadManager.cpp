@@ -3,12 +3,9 @@
 
 using namespace sage;
 
-ThreadManager::ThreadManager() : ThreadManager(MAX_THREAD_COUNT){
-}
+ThreadManager::ThreadManager() : ThreadManager(MAX_THREAD_COUNT){}
 
-ThreadManager::ThreadManager(int maxThreads){
-	this->maxThreads = maxThreads;
-}
+ThreadManager::ThreadManager(int maxThreads){ this->maxThreads = maxThreads; }
 
 ThreadManager::~ThreadManager(){
 	LOG("sage::ThreadManager Destructor");

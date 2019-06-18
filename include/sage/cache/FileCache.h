@@ -1,7 +1,6 @@
 #ifndef _SAGE_FILECACHE_H
 #define _SAGE_FILECACHE_H
 
-#include <sage/util/ThreadManager.h>
 
 #include <string>
 #include <map>
@@ -18,6 +17,7 @@
 #endif
 
 namespace sage{
+	class Application;
 	/**
 	 * @brief Class that caches files into memory, so files don't have to be loaded from disk more often than necessary.
 	 */
@@ -25,9 +25,9 @@ namespace sage{
 	public:
 		/**
 		 * @brief FileCache constructor.
-		 * @param tm the ThreadManager
+		 * @param application the Application
 		 */
-		FileCache(ThreadManager* tm);
+		FileCache(Application& application);
 		
 		/**
 		 * @brief Starts a thread that loads a file from disk into memory.
@@ -79,7 +79,7 @@ namespace sage{
 			jobject glob_android_amgr; /**< The android java AssetManager */
 			AAssetManager* android_amgr;/**< The android native AssetManager */
 		#endif
-		ThreadManager* threadManager; /**< The threadManager */
+		Application* application; /**< The Application */
 	
 		std::mutex mtx; /**< Mutex to protect the data map */
 		std::condition_variable cv; /**< Condition variable to protect the data map */
