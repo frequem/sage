@@ -42,7 +42,7 @@ void EventDispatcher::handleEvents(){
 				}
 				break;
 			case SDL_KEYDOWN:
-				this->dispatchEvent(Event::KEY_DOWN, &sdlEvent.key.keysym);
+				this->dispatchEvent(Event::KEY_DOWN, &sdlEvent.key.keysym, static_cast<int>(sdlEvent.key.repeat));
 				break;
 			case SDL_KEYUP:
 				this->dispatchEvent(Event::KEY_UP, &sdlEvent.key.keysym);
