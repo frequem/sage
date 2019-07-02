@@ -4,23 +4,30 @@
 #include <sage/renderer/Renderer.h>
 #include <sage/view/TexturedNode.h>
 #include <sage/view/Sprite.h>
-#include <sage/util/config.h>
+#include <glm/glm.hpp>
 
 namespace sage{
 	class Application;
 	class DepthPeelRenderer : public Renderer{
 	public:
 		DepthPeelRenderer(Application&);
+		DepthPeelRenderer(Application&, int peels);
 		
 		void render() override;
 		
 		void renderSingle(TexturedNode& tn) override;
 		~DepthPeelRenderer();
-	private:		
+	protected:		
+		void initBuffers();
+		void deinitBuffers();
+		
+		int peels;
 		int currentPass;
-		GLuint frameBuffers[DEPTH_PEELING_PASSES];
-		GLuint frameTextures[DEPTH_PEELING_PASSES];
-		GLuint depthTextures[2];
+		
+		glm::vec2 oldFrameSize;
+		GLuint* frameBuffers;
+		GLuint* frameTextures;
+		GLuint* depthTextures;
 	};
 }
 

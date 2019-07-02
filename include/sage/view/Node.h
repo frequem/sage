@@ -564,6 +564,10 @@ namespace sage{
 		 */ 
 		virtual void init();
 		/**
+		 * @brief Sorts the children by their z values.
+		 */
+		void sortChildren();
+		/**
 		 * @brief Fetches the parent-Node.
 		 * @return the parent Node
 		 */
@@ -589,7 +593,19 @@ namespace sage{
 		 * @return the depth
 		 */
 		virtual int getTreeDepth();
-	
+		/**
+		 * @brief Fetches childOrderChanged
+		 * @see setChildOrderChanged()
+		 * @see childOrderChanged
+		 */
+		bool getChildOrderChanged();
+		/**
+		 * @brief Sets childOrderChanged to true
+		 * @see getChildOrderChanged();
+		 * @see childOrderChanged
+		 */
+		void setChildOrderChanged();
+		
 		bool initialized = false; /**< Whether the Node is initialized and therefore the Application available */
 		Node* parentNode = nullptr; /**< The parent Node, is set as soon as the Node is added as a child of another Node */
 		std::vector<std::shared_ptr<Node>> childNodes; /**< The vector of children */
@@ -597,6 +613,9 @@ namespace sage{
 		glm::vec3 anchor; /**< The anchor is a relative point around which all transformations and other manipulations take place. (0,0,0) is near-bottom-left and (1,1,1) is far-top-right. */
 		glm::vec3 scale; /**< The scale of the Node */
 		glm::vec3 rotation; /**< The rotation of the Node around the x-,y- and z-axes*/
+		bool childOrderChanged = false; /**< Whether the order of the child-Nodes has potentially changed (child's z-position changed or new child added)*/
+		
+		friend class BasicRenderer;
 	};
 
 }

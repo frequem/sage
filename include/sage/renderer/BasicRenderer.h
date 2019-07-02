@@ -12,8 +12,10 @@ namespace sage{
 		
 		void render() override;
 		
-		void renderSingle(TexturedNode& tn) override;
 		~BasicRenderer();
+	protected:
+		void render(Node& n) override;
+		void renderSingle(TexturedNode& tn) override;
 	};
 }
 

@@ -18,7 +18,7 @@ namespace sage{
 		template <typename T>
 		bool tryRenderSingle(Node& n);
 		void tryRenderSingles(Node& n);
-		void render(Node& n);
+		virtual void render(Node& n);
 		void render(std::vector<std::shared_ptr<Node>>);
 		
 		virtual void renderSingle(TexturedNode& tn) = 0;

@@ -54,8 +54,7 @@ Application::Application(const std::string& title, int width, int height){
 	this->audioCache = std::make_unique<AudioCache>(*this);
 	this->audioManager = std::make_unique<AudioManager>(*this);
 	this->eventDispatcher = std::make_unique<EventDispatcher>(*this);
-	//this->renderer = new BasicRenderer();
-	this->renderer = std::make_unique<DepthPeelRenderer>(*this);
+	this->renderer = std::make_unique<BasicRenderer>(*this);
 	
 	this->getEventDispatcher().addEventHandler(Event::WINDOW_LEAVE, std::function<void()>([this](){
 		this->isPaused = true;
@@ -148,7 +147,9 @@ AudioCache& Application::getAudioCache(){ return *(this->audioCache); }
 AudioManager& Application::getAudioManager(){ return *(this->audioManager); }
 ThreadManager& Application::getThreadManager(){ return *(this->threadManager); }
 EventDispatcher& Application::getEventDispatcher(){ return *(this->eventDispatcher); }
+
 Renderer& Application::getRenderer(){ return *(this->renderer); }
+void Application::setRenderer(std::unique_ptr<Renderer> renderer){ this->renderer = std::move(renderer); }
 
 Application::~Application(){
 	LOG("sage::Application Destructor");

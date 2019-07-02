@@ -12,6 +12,13 @@ void BasicRenderer::render(){
 	Renderer::render();
 }
 
+void BasicRenderer::render(Node& n){
+	if(n.getChildOrderChanged()){
+		n.sortChildren();
+	}
+	Renderer::render(n);
+}
+
 void BasicRenderer::renderSingle(TexturedNode& tn){
     GLuint p = this->application->getShaderCache().get("basicTexture");
     glUseProgram(p);

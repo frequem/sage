@@ -38,19 +38,25 @@ Application& Node::getApplication(){ return this->getParentNode().getApplication
 void Node::addChild(std::shared_ptr<Node> node){
 	this->childNodes.push_back(node);
 	node->setParentNode(*this);
+	this->setChildOrderChanged();
 	
 	if(this->initialized){
 		node->init();
 	}
 }
 
-void Node::setPosition(float x, float y, float z){ this->pos.x = x; this->pos.y = y; this->pos.z = z; }
-void Node::setPosition(glm::vec3 pos){ this->pos = pos; }
-void Node::setPosition(float x, float y){ this->pos.x = x; this->pos.y = y; }
+void Node::setPosition(float x, float y, float z){ this->setPositionX(x); this->setPositionY(y); this->setPositionZ(z); }
+void Node::setPosition(glm::vec3 pos){ this->setPosition(pos.x, pos.y, pos.z); }
+void Node::setPosition(float x, float y){ this->setPositionX(x); this->setPositionY(y); }
 void Node::setPosition(glm::vec2 pos){ this->setPosition(pos.x, pos.y); }
 void Node::setPositionX(float x){ this->pos.x = x; }
 void Node::setPositionY(float y){ this->pos.y = y; }
-void Node::setPositionZ(float z){ this->pos.z = z; }
+void Node::setPositionZ(float z){
+	this->pos.z = z;
+	if(this->parentNode != nullptr){
+		this->parentNode->setChildOrderChanged();
+	}
+}
 
 glm::vec3 Node::getPosition() const{ return this->pos; }
 float Node::getPositionX() const{ return this->pos.x; }
@@ -87,6 +93,14 @@ glm::vec3 Node::getRotation() const{ return this->rotation; }
 float Node::getWidth(){ return this->getSize().x; }
 float Node::getHeight(){ return this->getSize().y; }
 float Node::getDepth(){ return this->getSize().z; }
+
+bool Node::getChildOrderChanged(){ return this->childOrderChanged; }
+void Node::setChildOrderChanged(){ this->childOrderChanged = true; }
+
+void Node::sortChildren(){ 
+	std::sort(this->childNodes.begin(), this->childNodes.end(), NodePtrZCompare());
+	this->childOrderChanged = false;
+}
 
 glm::vec3 Node::absPoint(glm::vec3 point){
 	glm::mat4 model = glm::mat4(1);

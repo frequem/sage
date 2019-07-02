@@ -200,10 +200,19 @@ namespace sage{
 		/**
 		 * @brief Fetches the Renderer.
 		 * @return the Renderer
+		 * @see setRenderer(std::unique_ptr<Renderer> renderer)
 		 * @see renderer
 		 */
 		Renderer& getRenderer();
 		
+		/**
+		 * @brief Sets the Renderer
+		 * @param renderer the Renderer
+		 * @see getRenderer()
+		 * @see renderer
+		 */
+		 void setRenderer(std::unique_ptr<Renderer> renderer);
+		 
 		/**
 		 * @brief Starts the main game loop.
 		 * Manages rendering and timing, starts the EventDispatcher.
