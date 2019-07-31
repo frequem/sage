@@ -10,7 +10,7 @@ var searchData=
   ['texturednode_2eh',['TexturedNode.h',['../TexturedNode_8h.html',1,'']]],
   ['texturefile',['textureFile',['../classsage_1_1Sprite.html#a3ad65ff16f4f98a15f52092b1542838b',1,'sage::Sprite']]],
   ['textures',['textures',['../classsage_1_1ImageCache.html#a01b8aa5587b2cf9c5e1f1059431f0118',1,'sage::ImageCache']]],
-  ['threadmanager',['ThreadManager',['../classsage_1_1ThreadManager.html',1,'sage::ThreadManager'],['../classsage_1_1ThreadManager.html#a613b13ebf45502e4d86c2f9317ec5871',1,'sage::ThreadManager::ThreadManager()'],['../classsage_1_1ThreadManager.html#af7d592b11ce70f64729bc6be1a35f1de',1,'sage::ThreadManager::ThreadManager(int)'],['../classsage_1_1Application.html#a32a666257ae6b2729ebaf2906abc13d4',1,'sage::Application::threadManager()']]],
+  ['threadmanager',['ThreadManager',['../classsage_1_1ThreadManager.html',1,'sage::ThreadManager'],['../classsage_1_1Application.html#a32a666257ae6b2729ebaf2906abc13d4',1,'sage::Application::threadManager()'],['../classsage_1_1ThreadManager.html#a613b13ebf45502e4d86c2f9317ec5871',1,'sage::ThreadManager::ThreadManager()'],['../classsage_1_1ThreadManager.html#af7d592b11ce70f64729bc6be1a35f1de',1,'sage::ThreadManager::ThreadManager(int)']]],
   ['threadmanager_2ecpp',['ThreadManager.cpp',['../ThreadManager_8cpp.html',1,'']]],
   ['threadmanager_2eh',['ThreadManager.h',['../ThreadManager_8h.html',1,'']]],
   ['threadmanager_2etpp',['ThreadManager.tpp',['../ThreadManager_8tpp.html',1,'']]],

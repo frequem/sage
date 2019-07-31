@@ -9,6 +9,8 @@
 \item 
 \mbox{\hyperlink{classsage_1_1EventDispatcher_aa80c440a5ba6379d084f616417ce0958}{Event\+Dispatcher}} (\mbox{\hyperlink{classsage_1_1Application}{Application}} \&)
 \item 
+{\footnotesize template$<$typename... Args$>$ }\\int \mbox{\hyperlink{classsage_1_1EventDispatcher_aeea139ba4798b0dd9409ca8367b0727e}{add\+Event\+Handler}} (\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, \mbox{\hyperlink{classsage_1_1Scene}{Scene}} \&, std\+::function$<$ void(Args...)$>$ \&\&)
+\item 
 {\footnotesize template$<$typename... Args$>$ }\\int \mbox{\hyperlink{classsage_1_1EventDispatcher_a871869f2a078e81c20a220a633d4e471}{add\+Event\+Handler}} (\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::function$<$ void(Args...)$>$ \&\&)
 \item 
 {\footnotesize template$<$typename... Args$>$ }\\int \mbox{\hyperlink{classsage_1_1EventDispatcher_a730d8eaf8806453d30dede2150b60071}{add\+Event\+Handler}} (\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}, \mbox{\hyperlink{classsage_1_1Node}{Node}} \&, std\+::function$<$ void(Args...)$>$ \&\&)
@@ -27,6 +29,10 @@ void \mbox{\hyperlink{classsage_1_1EventDispatcher_af94b0101f87f16334c1d32ea7a43
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{classsage_1_1EventDispatcher_a918e15fc278d82e1826c5da31b6cc897}{is\+Inside\+Click\+Radius}} (int, int)
+\item 
+bool \mbox{\hyperlink{classsage_1_1EventDispatcher_ae76233a36c5bea9afdee715231c30641}{is\+Scene\+Member}} (\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$, \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$)
+\item 
+\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ \mbox{\hyperlink{classsage_1_1EventDispatcher_a360b6c05663a1716b7caad26dbc89279}{get\+Active\+Scene}} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -35,7 +41,7 @@ bool \mbox{\hyperlink{classsage_1_1EventDispatcher_a918e15fc278d82e1826c5da31b6c
 \item 
 int \mbox{\hyperlink{classsage_1_1EventDispatcher_a45a41623356399b6a9afa584762e1897}{next\+Handler\+Id}} = 0
 \item 
-std\+::map$<$ \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::map$<$ int, std\+::any $>$ $>$ \mbox{\hyperlink{classsage_1_1EventDispatcher_ad1e2836de57436c39769b2792f8d97ba}{handlers}}
+std\+::map$<$ \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::map$<$ int, std\+::pair$<$ \mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$, std\+::any $>$ $>$ $>$ \mbox{\hyperlink{classsage_1_1EventDispatcher_a68ed02b0370072fa581e7a9b8b1a68c9}{handlers}}
 \item 
 std\+::map$<$ \mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}, std\+::map$<$ int, std\+::pair$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$, std\+::any $>$ $>$ $>$ \mbox{\hyperlink{classsage_1_1EventDispatcher_aefdb6a3e004a7bec95ae6f0845ba8d05}{node\+\_\+handlers}}
 \item 
@@ -71,17 +77,24 @@ int \mbox{\hyperlink{classsage_1_1EventDispatcher_ab4e7abdcd8cedf5ecf3a662b762cf
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_aeea139ba4798b0dd9409ca8367b0727e}\label{classsage_1_1EventDispatcher_aeea139ba4798b0dd9409ca8367b0727e}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!addEventHandler@{addEventHandler}}
+\index{addEventHandler@{addEventHandler}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{addEventHandler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+int sage\+::\+Event\+Dispatcher\+::add\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}}]{,  }\item[{\mbox{\hyperlink{classsage_1_1Scene}{Scene}} \&}]{,  }\item[{std\+::function$<$ void(Args...)$>$ \&\&}]{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classsage_1_1EventDispatcher_a871869f2a078e81c20a220a633d4e471}\label{classsage_1_1EventDispatcher_a871869f2a078e81c20a220a633d4e471}} 
 \index{sage::EventDispatcher@{sage::EventDispatcher}!addEventHandler@{addEventHandler}}
 \index{addEventHandler@{addEventHandler}!sage::EventDispatcher@{sage::EventDispatcher}}
-\subsubsection{\texorpdfstring{addEventHandler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{addEventHandler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename... Args$>$ \\
 int sage\+::\+Event\+Dispatcher\+::add\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}}]{,  }\item[{std\+::function$<$ void(Args...)$>$ \&\&}]{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classsage_1_1EventDispatcher_a730d8eaf8806453d30dede2150b60071}\label{classsage_1_1EventDispatcher_a730d8eaf8806453d30dede2150b60071}} 
 \index{sage::EventDispatcher@{sage::EventDispatcher}!addEventHandler@{addEventHandler}}
 \index{addEventHandler@{addEventHandler}!sage::EventDispatcher@{sage::EventDispatcher}}
-\subsubsection{\texorpdfstring{addEventHandler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{addEventHandler()}{addEventHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename... Args$>$ \\
 int sage\+::\+Event\+Dispatcher\+::add\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}}]{,  }\item[{\mbox{\hyperlink{classsage_1_1Node}{Node}} \&}]{,  }\item[{std\+::function$<$ void(Args...)$>$ \&\&}]{ }\end{DoxyParamCaption})}
 
@@ -99,6 +112,12 @@ void sage\+::\+Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\it
 {\footnotesize\ttfamily template$<$typename... Args$>$ \\
 void sage\+::\+Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesage_ad2c7b0e1ebf67f572d43620e6b07aa13}{Node\+Event}}}]{,  }\item[{std\+::function$<$ bool(\mbox{\hyperlink{classsage_1_1Node}{Node}} \&, Args...)$>$ \&\&}]{,  }\item[{Args \&\&}]{... }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a360b6c05663a1716b7caad26dbc89279}\label{classsage_1_1EventDispatcher_a360b6c05663a1716b7caad26dbc89279}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!getActiveScene@{getActiveScene}}
+\index{getActiveScene@{getActiveScene}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{getActiveScene()}{getActiveScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$ Event\+Dispatcher\+::get\+Active\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classsage_1_1EventDispatcher_af94b0101f87f16334c1d32ea7a43c02a}\label{classsage_1_1EventDispatcher_af94b0101f87f16334c1d32ea7a43c02a}} 
 \index{sage::EventDispatcher@{sage::EventDispatcher}!handleEvents@{handleEvents}}
 \index{handleEvents@{handleEvents}!sage::EventDispatcher@{sage::EventDispatcher}}
@@ -110,6 +129,12 @@ void sage\+::\+Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\it
 \index{isInsideClickRadius@{isInsideClickRadius}!sage::EventDispatcher@{sage::EventDispatcher}}
 \subsubsection{\texorpdfstring{isInsideClickRadius()}{isInsideClickRadius()}}
 {\footnotesize\ttfamily bool Event\+Dispatcher\+::is\+Inside\+Click\+Radius (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_ae76233a36c5bea9afdee715231c30641}\label{classsage_1_1EventDispatcher_ae76233a36c5bea9afdee715231c30641}} 
+\index{sage::EventDispatcher@{sage::EventDispatcher}!isSceneMember@{isSceneMember}}
+\index{isSceneMember@{isSceneMember}!sage::EventDispatcher@{sage::EventDispatcher}}
+\subsubsection{\texorpdfstring{isSceneMember()}{isSceneMember()}}
+{\footnotesize\ttfamily bool Event\+Dispatcher\+::is\+Scene\+Member (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Scene}{Scene}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classsage_1_1EventDispatcher_a79f655113b28c14ee6a86fa5ed7ec238}\label{classsage_1_1EventDispatcher_a79f655113b28c14ee6a86fa5ed7ec238}} 
 \index{sage::EventDispatcher@{sage::EventDispatcher}!removeEventHandler@{removeEventHandler}}
@@ -126,11 +151,11 @@ void sage\+::\+Event\+Dispatcher\+::dispatch\+Event (\begin{DoxyParamCaption}\it
 \subsubsection{\texorpdfstring{application}{application}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Application}{Application}}$\ast$ sage\+::\+Event\+Dispatcher\+::application\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classsage_1_1EventDispatcher_ad1e2836de57436c39769b2792f8d97ba}\label{classsage_1_1EventDispatcher_ad1e2836de57436c39769b2792f8d97ba}} 
+\mbox{\Hypertarget{classsage_1_1EventDispatcher_a68ed02b0370072fa581e7a9b8b1a68c9}\label{classsage_1_1EventDispatcher_a68ed02b0370072fa581e7a9b8b1a68c9}} 
 \index{sage::EventDispatcher@{sage::EventDispatcher}!handlers@{handlers}}
 \index{handlers@{handlers}!sage::EventDispatcher@{sage::EventDispatcher}}
 \subsubsection{\texorpdfstring{handlers}{handlers}}
-{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::map$<$int, std\+::any$>$ $>$ sage\+::\+Event\+Dispatcher\+::handlers\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}}, std\+::map$<$int, std\+::pair$<$\mbox{\hyperlink{classsage_1_1Scene}{Scene}}$\ast$, std\+::any$>$ $>$ $>$ sage\+::\+Event\+Dispatcher\+::handlers\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classsage_1_1EventDispatcher_ab66ab2cbe57fd5a7d04c130a25e042dd}\label{classsage_1_1EventDispatcher_ab66ab2cbe57fd5a7d04c130a25e042dd}} 
 \index{sage::EventDispatcher@{sage::EventDispatcher}!mouse\_click\_count@{mouse\_click\_count}}

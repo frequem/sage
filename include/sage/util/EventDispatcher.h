@@ -20,6 +20,8 @@ namespace sage{
 	public:
 		EventDispatcher(Application&);
 		
+		template<typename... Args>
+		int addEventHandler(Event, Scene&, std::function<void(Args...)>&&);
 		
 		template<typename... Args>
 		int addEventHandler(Event, std::function<void(Args...)>&&);
@@ -42,7 +44,7 @@ namespace sage{
 		Application* application;
 		
 		int nextHandlerId = 0;
-		std::map<Event, std::map<int, std::any>> handlers;
+		std::map<Event, std::map<int, std::pair<Scene*, std::any>>> handlers;
 		std::map<NodeEvent, std::map<int, std::pair<Node*, std::any>>> node_handlers;
 		
 		SDL_Event sdlEvent;
@@ -54,6 +56,8 @@ namespace sage{
 		int mouse_down_button;
 		
 		bool isInsideClickRadius(int, int);
+		bool isSceneMember(Scene*, Node*);
+		Scene* getActiveScene();
 	};
 }
 

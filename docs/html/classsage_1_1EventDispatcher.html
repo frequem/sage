@@ -109,6 +109,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa80c440a5ba6379d084f616417ce0958"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#aa80c440a5ba6379d084f616417ce0958">EventDispatcher</a> (<a class="el" href="classsage_1_1Application.html">Application</a> &amp;)</td></tr>
 <tr class="separator:aa80c440a5ba6379d084f616417ce0958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea139ba4798b0dd9409ca8367b0727e"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:aeea139ba4798b0dd9409ca8367b0727e"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#aeea139ba4798b0dd9409ca8367b0727e">addEventHandler</a> (<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29">Event</a>, <a class="el" href="classsage_1_1Scene.html">Scene</a> &amp;, std::function&lt; void(Args...)&gt; &amp;&amp;)</td></tr>
+<tr class="separator:aeea139ba4798b0dd9409ca8367b0727e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a871869f2a078e81c20a220a633d4e471"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a871869f2a078e81c20a220a633d4e471"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#a871869f2a078e81c20a220a633d4e471">addEventHandler</a> (<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29">Event</a>, std::function&lt; void(Args...)&gt; &amp;&amp;)</td></tr>
 <tr class="separator:a871869f2a078e81c20a220a633d4e471"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +135,10 @@ Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a918e15fc278d82e1826c5da31b6cc897"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#a918e15fc278d82e1826c5da31b6cc897">isInsideClickRadius</a> (int, int)</td></tr>
 <tr class="separator:a918e15fc278d82e1826c5da31b6cc897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76233a36c5bea9afdee715231c30641"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#ae76233a36c5bea9afdee715231c30641">isSceneMember</a> (<a class="el" href="classsage_1_1Scene.html">Scene</a> *, <a class="el" href="classsage_1_1Node.html">Node</a> *)</td></tr>
+<tr class="separator:ae76233a36c5bea9afdee715231c30641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360b6c05663a1716b7caad26dbc89279"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1Scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#a360b6c05663a1716b7caad26dbc89279">getActiveScene</a> ()</td></tr>
+<tr class="separator:a360b6c05663a1716b7caad26dbc89279"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -139,8 +146,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a0c9ea12254c6806bd4252e0e336e7c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45a41623356399b6a9afa584762e1897"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#a45a41623356399b6a9afa584762e1897">nextHandlerId</a> = 0</td></tr>
 <tr class="separator:a45a41623356399b6a9afa584762e1897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1e2836de57436c39769b2792f8d97ba"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29">Event</a>, std::map&lt; int, std::any &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#ad1e2836de57436c39769b2792f8d97ba">handlers</a></td></tr>
-<tr class="separator:ad1e2836de57436c39769b2792f8d97ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ed02b0370072fa581e7a9b8b1a68c9"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29">Event</a>, std::map&lt; int, std::pair&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> *, std::any &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#a68ed02b0370072fa581e7a9b8b1a68c9">handlers</a></td></tr>
+<tr class="separator:a68ed02b0370072fa581e7a9b8b1a68c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefdb6a3e004a7bec95ae6f0845ba8d05"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="namespacesage.html#ad2c7b0e1ebf67f572d43620e6b07aa13">NodeEvent</a>, std::map&lt; int, std::pair&lt; <a class="el" href="classsage_1_1Node.html">Node</a> *, std::any &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#aefdb6a3e004a7bec95ae6f0845ba8d05">node_handlers</a></td></tr>
 <tr class="separator:aefdb6a3e004a7bec95ae6f0845ba8d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc93b97b0ed92a64ab2e2040dc8ca04c"><td class="memItemLeft" align="right" valign="top">SDL_Event&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html#acc93b97b0ed92a64ab2e2040dc8ca04c">sdlEvent</a></td></tr>
@@ -195,8 +202,44 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aeea139ba4798b0dd9409ca8367b0727e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeea139ba4798b0dd9409ca8367b0727e">&#9670;&nbsp;</a></span>addEventHandler() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int sage::EventDispatcher::addEventHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29">Event</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsage_1_1Scene.html">Scene</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(Args...)&gt; &amp;&amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a871869f2a078e81c20a220a633d4e471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a871869f2a078e81c20a220a633d4e471">&#9670;&nbsp;</a></span>addEventHandler() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a871869f2a078e81c20a220a633d4e471">&#9670;&nbsp;</a></span>addEventHandler() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +269,7 @@ template&lt;typename... Args&gt; </div>
 </div>
 </div>
 <a id="a730d8eaf8806453d30dede2150b60071"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a730d8eaf8806453d30dede2150b60071">&#9670;&nbsp;</a></span>addEventHandler() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a730d8eaf8806453d30dede2150b60071">&#9670;&nbsp;</a></span>addEventHandler() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,6 +370,31 @@ template&lt;typename... Args&gt; </div>
 
 </div>
 </div>
+<a id="a360b6c05663a1716b7caad26dbc89279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360b6c05663a1716b7caad26dbc89279">&#9670;&nbsp;</a></span>getActiveScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsage_1_1Scene.html">Scene</a> * EventDispatcher::getActiveScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af94b0101f87f16334c1d32ea7a43c02a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af94b0101f87f16334c1d32ea7a43c02a">&#9670;&nbsp;</a></span>handleEvents()</h2>
 
@@ -364,6 +432,42 @@ template&lt;typename... Args&gt; </div>
           <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae76233a36c5bea9afdee715231c30641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76233a36c5bea9afdee715231c30641">&#9670;&nbsp;</a></span>isSceneMember()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventDispatcher::isSceneMember </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classsage_1_1Scene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classsage_1_1Node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -421,8 +525,8 @@ template&lt;typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="ad1e2836de57436c39769b2792f8d97ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1e2836de57436c39769b2792f8d97ba">&#9670;&nbsp;</a></span>handlers</h2>
+<a id="a68ed02b0370072fa581e7a9b8b1a68c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ed02b0370072fa581e7a9b8b1a68c9">&#9670;&nbsp;</a></span>handlers</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,7 +535,7 @@ template&lt;typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29">Event</a>, std::map&lt;int, std::any&gt; &gt; sage::EventDispatcher::handlers</td>
+          <td class="memname">std::map&lt;<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29">Event</a>, std::map&lt;int, std::pair&lt;<a class="el" href="classsage_1_1Scene.html">Scene</a>*, std::any&gt; &gt; &gt; sage::EventDispatcher::handlers</td>
         </tr>
       </table>
   </td>
@@ -648,7 +752,7 @@ template&lt;typename... Args&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 31 2019 16:40:26 for sage by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 31 2019 21:10:13 for sage by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

@@ -6,6 +6,7 @@
 #include <sage/view/Scene.h>
 #include <sage/view/Sprite.h>
 #include <sage/view/TextNode.h>
+#include <sage/view/ColorNode.h>
 
 #include <sage/cache/FileCache.h>
 #include <sage/cache/ImageCache.h>

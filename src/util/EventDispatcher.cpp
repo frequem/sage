@@ -133,4 +133,12 @@ bool EventDispatcher::isInsideClickRadius(int x, int y){
 				abs(y - this->mouse_click_y) <= MOUSE_CLICK_MAX_SHIFT*dpi.y;
 }
 
+bool EventDispatcher::isSceneMember(Scene* s, Node* n){
+	return &(n->getScene()) == s;
+}
+
+Scene* EventDispatcher::getActiveScene(){
+	return this->application->getScene().get();
+}
+
 EventDispatcher::~EventDispatcher(){}

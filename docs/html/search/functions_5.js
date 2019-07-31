@@ -2,6 +2,7 @@ var searchData=
 [
   ['get',['get',['../classsage_1_1AudioCache.html#a2a9ba507b403201dfb9d5d7b85160cb4',1,'sage::AudioCache::get()'],['../classsage_1_1FileCache.html#a67fe1af6ccb8d06b7e97dc54a1836eee',1,'sage::FileCache::get()'],['../classsage_1_1FontCache.html#a36e3d099603a50bc73a4d8ff6d6bc8dc',1,'sage::FontCache::get()'],['../classsage_1_1ShaderCache.html#aafc93b46c5a0416653424ee0b60b8aae',1,'sage::ShaderCache::get()']]],
   ['getabspoints',['getAbsPoints',['../classsage_1_1Node.html#a59ed0e3a59713eef867f9e4948dcddcf',1,'sage::Node']]],
+  ['getactivescene',['getActiveScene',['../classsage_1_1EventDispatcher.html#a360b6c05663a1716b7caad26dbc89279',1,'sage::EventDispatcher']]],
   ['getanchor',['getAnchor',['../classsage_1_1Node.html#a1314e39981d8adee8a75c96f29c9e181',1,'sage::Node']]],
   ['getanchorx',['getAnchorX',['../classsage_1_1Node.html#aa5f31c33d60b32b618d3beaf4e5c6c51',1,'sage::Node']]],
   ['getanchory',['getAnchorY',['../classsage_1_1Node.html#a78c5f86d0081854603178fb52d8c0a9b',1,'sage::Node']]],
