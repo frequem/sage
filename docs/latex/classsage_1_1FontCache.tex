@@ -7,7 +7,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classsage_1_1FontCache_ae8c3c01ce64871f70b4bab669015784e}{Font\+Cache}} (\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$, \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$)
+\mbox{\hyperlink{classsage_1_1FontCache_af000fb145e7692fb178bc8bb334fbf16}{Font\+Cache}} (\mbox{\hyperlink{classsage_1_1Application}{Application}} \&)
 \item 
 void \mbox{\hyperlink{classsage_1_1FontCache_a2221e34a4ddd51266f374b727baac79e}{load}} (const std\+::string \&, int)
 \item 
@@ -27,9 +27,7 @@ void \mbox{\hyperlink{classsage_1_1FontCache_a9792b2e9a7db90b2c44a9ebfd8fe9067}{
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1FontCache_a175364ee3cbd642d347f6a6c0c974bf1}{thread\+Manager}}
-\item 
-\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1FontCache_a9039e7ebe986ce1b35b5e1566d19e0de}{file\+Cache}}
+\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ \mbox{\hyperlink{classsage_1_1FontCache_a9c600ddba2ac2370ea5ed2916ac1727a}{application}}
 \item 
 std\+::mutex \mbox{\hyperlink{classsage_1_1FontCache_aa60c136f3ccb1516e80321ceea56cf53}{mtx}}
 \item 
@@ -40,11 +38,11 @@ std\+::map$<$ const std\+::string, std\+::map$<$ int, T\+T\+F\+\_\+\+Font $\ast$
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classsage_1_1FontCache_ae8c3c01ce64871f70b4bab669015784e}\label{classsage_1_1FontCache_ae8c3c01ce64871f70b4bab669015784e}} 
+\mbox{\Hypertarget{classsage_1_1FontCache_af000fb145e7692fb178bc8bb334fbf16}\label{classsage_1_1FontCache_af000fb145e7692fb178bc8bb334fbf16}} 
 \index{sage::FontCache@{sage::FontCache}!FontCache@{FontCache}}
 \index{FontCache@{FontCache}!sage::FontCache@{sage::FontCache}}
 \subsubsection{\texorpdfstring{FontCache()}{FontCache()}}
-{\footnotesize\ttfamily Font\+Cache\+::\+Font\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$}]{file\+Cache,  }\item[{\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$}]{tm }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Font\+Cache\+::\+Font\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Application}{Application}} \&}]{application }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classsage_1_1FontCache_a91c4f1c179ae27d846a9f0180ea2e0dc}\label{classsage_1_1FontCache_a91c4f1c179ae27d846a9f0180ea2e0dc}} 
 \index{sage::FontCache@{sage::FontCache}!````~FontCache@{$\sim$FontCache}}
@@ -88,17 +86,17 @@ std\+::map$<$ const std\+::string, std\+::map$<$ int, T\+T\+F\+\_\+\+Font $\ast$
 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1FontCache_a9c600ddba2ac2370ea5ed2916ac1727a}\label{classsage_1_1FontCache_a9c600ddba2ac2370ea5ed2916ac1727a}} 
+\index{sage::FontCache@{sage::FontCache}!application@{application}}
+\index{application@{application}!sage::FontCache@{sage::FontCache}}
+\subsubsection{\texorpdfstring{application}{application}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Application}{Application}}$\ast$ sage\+::\+Font\+Cache\+::application\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classsage_1_1FontCache_abe84a5350b1056e3ca812e5ac9d4928b}\label{classsage_1_1FontCache_abe84a5350b1056e3ca812e5ac9d4928b}} 
 \index{sage::FontCache@{sage::FontCache}!cv@{cv}}
 \index{cv@{cv}!sage::FontCache@{sage::FontCache}}
 \subsubsection{\texorpdfstring{cv}{cv}}
 {\footnotesize\ttfamily std\+::condition\+\_\+variable sage\+::\+Font\+Cache\+::cv\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classsage_1_1FontCache_a9039e7ebe986ce1b35b5e1566d19e0de}\label{classsage_1_1FontCache_a9039e7ebe986ce1b35b5e1566d19e0de}} 
-\index{sage::FontCache@{sage::FontCache}!fileCache@{fileCache}}
-\index{fileCache@{fileCache}!sage::FontCache@{sage::FontCache}}
-\subsubsection{\texorpdfstring{fileCache}{fileCache}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}$\ast$ sage\+::\+Font\+Cache\+::file\+Cache\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classsage_1_1FontCache_ad5f7cceb38a5946e67fe0ec39d79c85f}\label{classsage_1_1FontCache_ad5f7cceb38a5946e67fe0ec39d79c85f}} 
 \index{sage::FontCache@{sage::FontCache}!fonts@{fonts}}
@@ -111,12 +109,6 @@ std\+::map$<$ const std\+::string, std\+::map$<$ int, T\+T\+F\+\_\+\+Font $\ast$
 \index{mtx@{mtx}!sage::FontCache@{sage::FontCache}}
 \subsubsection{\texorpdfstring{mtx}{mtx}}
 {\footnotesize\ttfamily std\+::mutex sage\+::\+Font\+Cache\+::mtx\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classsage_1_1FontCache_a175364ee3cbd642d347f6a6c0c974bf1}\label{classsage_1_1FontCache_a175364ee3cbd642d347f6a6c0c974bf1}} 
-\index{sage::FontCache@{sage::FontCache}!threadManager@{threadManager}}
-\index{threadManager@{threadManager}!sage::FontCache@{sage::FontCache}}
-\subsubsection{\texorpdfstring{threadManager}{threadManager}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}}$\ast$ sage\+::\+Font\+Cache\+::thread\+Manager\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

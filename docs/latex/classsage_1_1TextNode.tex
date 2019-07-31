@@ -19,9 +19,7 @@ Inheritance diagram for sage\+::Text\+Node\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classsage_1_1TextNode_a5677717ec6c2db9e311a40ad1510adb9}{Text\+Node}} (const std\+::string \&font, int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}}, const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}}, S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}{color}})
 \item 
-void \mbox{\hyperlink{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}{init}} () override
-\begin{DoxyCompactList}\small\item\em Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. \end{DoxyCompactList}\item 
-glm\+::vec2 \mbox{\hyperlink{classsage_1_1TextNode_ac5aa86ad68f3470c50f7021695a6c45d}{get\+Size}} () override
+glm\+::vec3 \mbox{\hyperlink{classsage_1_1TextNode_acdfcc350ceb004d934ab731ad9d1e176}{get\+Size}} () override
 \begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsage_1_1TextNode_a81f9aa6c3c25d5b2b53904becad654fe}{set\+Text}} (const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}})
 \item 
@@ -32,6 +30,8 @@ void \mbox{\hyperlink{classsage_1_1TextNode_a46a1738c681f158ab1d2468d3ec02a24}{s
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}{init}} () override
+\begin{DoxyCompactList}\small\item\em Is called every time the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s \mbox{\hyperlink{classsage_1_1Scene}{Scene}} is set as the top \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. Recursively initializes its children. \end{DoxyCompactList}\item 
 G\+Luint \mbox{\hyperlink{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}{get\+Texture}} () override
 \item 
 void \mbox{\hyperlink{classsage_1_1TextNode_a7984e4a663f48338da018b780704b95f}{rebuild}} ()
@@ -82,11 +82,11 @@ G\+Luint \mbox{\hyperlink{classsage_1_1TextNode_a8ffd1a92389ec216de154ea9a5b211c
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classsage_1_1TextNode_ac5aa86ad68f3470c50f7021695a6c45d}\label{classsage_1_1TextNode_ac5aa86ad68f3470c50f7021695a6c45d}} 
+\mbox{\Hypertarget{classsage_1_1TextNode_acdfcc350ceb004d934ab731ad9d1e176}\label{classsage_1_1TextNode_acdfcc350ceb004d934ab731ad9d1e176}} 
 \index{sage::TextNode@{sage::TextNode}!getSize@{getSize}}
 \index{getSize@{getSize}!sage::TextNode@{sage::TextNode}}
 \subsubsection{\texorpdfstring{getSize()}{getSize()}}
-{\footnotesize\ttfamily glm\+::vec2 Text\+Node\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily glm\+::vec3 Text\+Node\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -99,10 +99,12 @@ the size
 \mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width()}} 
 
 \mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c4c28939c7adf7e4a65dbb02c0cbcd3}{get\+Depth()}} 
 \end{DoxySeeAlso}
 
 
-Implements \mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{sage\+::\+Node}}.
+Implements \mbox{\hyperlink{classsage_1_1Node_ad14a04d08b5261c27d3080f6a5e12836}{sage\+::\+Node}}.
 
 \mbox{\Hypertarget{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}\label{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}} 
 \index{sage::TextNode@{sage::TextNode}!getTexture@{getTexture}}
@@ -118,11 +120,11 @@ Implements \mbox{\hyperlink{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea6945954
 \index{sage::TextNode@{sage::TextNode}!init@{init}}
 \index{init@{init}!sage::TextNode@{sage::TextNode}}
 \subsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily void Text\+Node\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Text\+Node\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 
-Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. 
+Is called every time the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s \mbox{\hyperlink{classsage_1_1Scene}{Scene}} is set as the top \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. Recursively initializes its children. 
 
 
 

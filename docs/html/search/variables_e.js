@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['text',['text',['../classsage_1_1TextNode.html#a2828e281a4ea3cce151de7cc983ca2c0',1,'sage::TextNode']]],
-  ['texture',['texture',['../classsage_1_1TextNode.html#a8ffd1a92389ec216de154ea9a5b211cc',1,'sage::TextNode']]],
-  ['texturefile',['textureFile',['../classsage_1_1Sprite.html#a3ad65ff16f4f98a15f52092b1542838b',1,'sage::Sprite']]],
-  ['textures',['textures',['../classsage_1_1ImageCache.html#a01b8aa5587b2cf9c5e1f1059431f0118',1,'sage::ImageCache']]],
-  ['threadmanager',['threadManager',['../classsage_1_1AudioCache.html#a3b9b0b2a42ab08e28fe2e9d4ccbd97b2',1,'sage::AudioCache::threadManager()'],['../classsage_1_1FileCache.html#a02a6333cfba88c7e03a5952c23e253d9',1,'sage::FileCache::threadManager()'],['../classsage_1_1FontCache.html#a175364ee3cbd642d347f6a6c0c974bf1',1,'sage::FontCache::threadManager()'],['../classsage_1_1ImageCache.html#a114e9da7a04c34fa4521c8421729e60a',1,'sage::ImageCache::threadManager()'],['../classsage_1_1Application.html#a246cb87d276d2ee0ca471379307bc456',1,'sage::Application::threadManager()']]],
-  ['threads',['threads',['../classsage_1_1ThreadManager.html#a998c3f4309c9eae2e7e69223b2d5de49',1,'sage::ThreadManager']]]
+  ['scale',['scale',['../classsage_1_1Node.html#a686c3edeea1faab8b566bfdf2fe3f906',1,'sage::Node']]],
+  ['scenes',['scenes',['../classsage_1_1Application.html#a3365f5f5f8f63eeca5e778ded7dbe210',1,'sage::Application']]],
+  ['sdlevent',['sdlEvent',['../classsage_1_1EventDispatcher.html#acc93b97b0ed92a64ab2e2040dc8ca04c',1,'sage::EventDispatcher']]],
+  ['sdlwindow',['sdlWindow',['../classsage_1_1Application.html#ab8d3166ecc1b2c3387da0633557f0d77',1,'sage::Application']]],
+  ['shadercache',['shaderCache',['../classsage_1_1Application.html#a9a7bcc406dca9a460d54f11c2eda47c4',1,'sage::Application']]],
+  ['shaders',['shaders',['../classsage_1_1ShaderCache.html#a194bb7e1c8d2304d251cdeb52d8530df',1,'sage::ShaderCache']]],
+  ['size',['size',['../classsage_1_1ColorNode.html#a04b687374b9c171ff820c514f15b0ae0',1,'sage::ColorNode']]],
+  ['surface',['surface',['../classsage_1_1TextNode.html#a6f15575871c6eef0b1a461aaa1b87ca2',1,'sage::TextNode']]]
 ];

@@ -9,6 +9,12 @@ class \mbox{\hyperlink{classsage_1_1AudioCache}{Audio\+Cache}}
 \item 
 class \mbox{\hyperlink{classsage_1_1AudioManager}{Audio\+Manager}}
 \item 
+class \mbox{\hyperlink{classsage_1_1BasicRenderer}{Basic\+Renderer}}
+\item 
+class \mbox{\hyperlink{classsage_1_1ColorNode}{Color\+Node}}
+\item 
+class \mbox{\hyperlink{classsage_1_1DepthPeelRenderer}{Depth\+Peel\+Renderer}}
+\item 
 class \mbox{\hyperlink{classsage_1_1EventDispatcher}{Event\+Dispatcher}}
 \item 
 class \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}
@@ -20,7 +26,9 @@ class \mbox{\hyperlink{classsage_1_1ImageCache}{Image\+Cache}}
 class \mbox{\hyperlink{classsage_1_1Node}{Node}}
 \begin{DoxyCompactList}\small\item\em Abstract class that describes all things drawn by the \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. The \mbox{\hyperlink{classsage_1_1Scene}{Scene}} itself, which is also a \mbox{\hyperlink{classsage_1_1Node}{Node}}, is drawn by the \mbox{\hyperlink{classsage_1_1Application}{Application}}. Every \mbox{\hyperlink{classsage_1_1Node}{Node}} has children (Nodes) which are affected by the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s properties. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structsage_1_1NodePtrZCompare}{Node\+Ptr\+Z\+Compare}}
-\begin{DoxyCompactList}\small\item\em Compare for z-\/indices (z-\/depth) of \mbox{\hyperlink{classsage_1_1Node}{Node}} pointers. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compare for z-\/position of \mbox{\hyperlink{classsage_1_1Node}{Node}} pointers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}}
+\item 
 class \mbox{\hyperlink{classsage_1_1Scene}{Scene}}
 \item 
 class \mbox{\hyperlink{classsage_1_1ShaderCache}{Shader\+Cache}}
@@ -42,11 +50,12 @@ enum \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29}{Event}} \
 \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29ae27439eebd778013c33fbb14dd19fd04}{Event\+::\+K\+E\+Y\+\_\+\+D\+O\+WN}}, 
 \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29ac248b44c41333613a8ad29b656f8950e}{Event\+::\+K\+E\+Y\+\_\+\+UP}}, 
 \newline
-\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+M\+O\+VE}}, 
 \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+D\+O\+WN}}, 
 \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29abb966d5bf8c83e256da7695593d921b7}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+UP}}, 
 \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+C\+L\+I\+CK}}, 
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+M\+O\+VE}}, 
 \newline
+\mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a2fd12cb464523597cd21f35ebd3c0c3c}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+D\+R\+AG}}, 
 \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76}{Event\+::\+M\+O\+U\+S\+E\+\_\+\+S\+C\+R\+O\+LL}}, 
 \mbox{\hyperlink{namespacesage_afe706a25026cc74fe69b56d53a265d29a5dfd352dd6b7a5d118237fcf1e19fcc1}{Event\+::\+Q\+U\+IT}}
  \}
@@ -87,10 +96,6 @@ K\+E\+Y\+\_\+\+D\+O\+WN&\\
 K\+E\+Y\+\_\+\+UP&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_MOVE@{MOUSE\_MOVE}!sage@{sage}}\index{sage@{sage}!MOUSE\_MOVE@{MOUSE\_MOVE}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}} 
-M\+O\+U\+S\+E\+\_\+\+M\+O\+VE&\\
-\hline
-
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_DOWN@{MOUSE\_DOWN}!sage@{sage}}\index{sage@{sage}!MOUSE\_DOWN@{MOUSE\_DOWN}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3}} 
 M\+O\+U\+S\+E\+\_\+\+D\+O\+WN&\\
 \hline
@@ -101,6 +106,14 @@ M\+O\+U\+S\+E\+\_\+\+UP&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_CLICK@{MOUSE\_CLICK}!sage@{sage}}\index{sage@{sage}!MOUSE\_CLICK@{MOUSE\_CLICK}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2}} 
 M\+O\+U\+S\+E\+\_\+\+C\+L\+I\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_MOVE@{MOUSE\_MOVE}!sage@{sage}}\index{sage@{sage}!MOUSE\_MOVE@{MOUSE\_MOVE}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3}} 
+M\+O\+U\+S\+E\+\_\+\+M\+O\+VE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_DRAG@{MOUSE\_DRAG}!sage@{sage}}\index{sage@{sage}!MOUSE\_DRAG@{MOUSE\_DRAG}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a2fd12cb464523597cd21f35ebd3c0c3c}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a2fd12cb464523597cd21f35ebd3c0c3c}} 
+M\+O\+U\+S\+E\+\_\+\+D\+R\+AG&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_SCROLL@{MOUSE\_SCROLL}!sage@{sage}}\index{sage@{sage}!MOUSE\_SCROLL@{MOUSE\_SCROLL}}}\mbox{\Hypertarget{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76}\label{namespacesage_afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76}} 

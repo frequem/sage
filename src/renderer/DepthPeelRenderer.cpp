@@ -139,6 +139,9 @@ void DepthPeelRenderer::renderSingle(TexturedNode& tn){
 	glUseProgram(0);
 }
 
+void DepthPeelRenderer::renderSingle(ColorNode& cn){
+}
+
 DepthPeelRenderer::~DepthPeelRenderer(){
 	this->deinitBuffers();
 	delete [] this->frameTextures;

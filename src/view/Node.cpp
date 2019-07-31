@@ -28,6 +28,13 @@ void Node::init(){
 	this->initialized = true;
 }
 
+void Node::deinit(){
+	for(auto&& n : this->childNodes){
+		n->deinit();
+	}
+	this->initialized = false;
+}
+
 Node& Node::getParentNode() const{ return *(this->parentNode); }
 void Node::setParentNode(Node& parent){ this->parentNode = &parent; }
 std::vector<std::shared_ptr<Node>> Node::getChildren(){ return this->childNodes; }
@@ -153,7 +160,10 @@ bool Node::containsAbs(glm::vec3 point){
 	return (rp.x >= 0 && rp.x <= size.x) && (rp.y >= 0 && rp.y <= size.y) && (rp.z >= 0 && rp.z <= size.z);
 }
 bool Node::containsAbs(glm::vec2 point){
-	return this->containsAbs(glm::vec3(point, 0));
+	glm::vec3 size = this->getSize();
+	glm::vec3 rp = this->relPoint(glm::vec3(point, 0))+(size*this->anchor);
+	
+	return (rp.x >= 0 && rp.x <= size.x) && (rp.y >= 0 && rp.y <= size.y);
 }
 
 Node::~Node(){}

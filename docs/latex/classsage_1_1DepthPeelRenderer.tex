@@ -1,0 +1,160 @@
+\hypertarget{classsage_1_1DepthPeelRenderer}{}\section{sage\+::Depth\+Peel\+Renderer Class Reference}
+\label{classsage_1_1DepthPeelRenderer}\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+
+
+{\ttfamily \#include $<$Depth\+Peel\+Renderer.\+h$>$}
+
+Inheritance diagram for sage\+::Depth\+Peel\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsage_1_1DepthPeelRenderer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsage_1_1DepthPeelRenderer_aabc19f8da49637f4c10035ffb32910f1}{Depth\+Peel\+Renderer}} (\mbox{\hyperlink{classsage_1_1Application}{Application}} \&)
+\item 
+\mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a82fb609830c881fc2fd77c239c811f29}{Depth\+Peel\+Renderer}} (\mbox{\hyperlink{classsage_1_1Application}{Application}} \&, int \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a4ffb28eb6faffc06f3ef8cb3c6882484}{peels}})
+\item 
+void \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a84443362d98ad685cac1f2558c9445ee}{render}} () override
+\item 
+void \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a45528a298ccddd656e0aa377bb4fc646}{render\+Single}} (\mbox{\hyperlink{classsage_1_1TexturedNode}{Textured\+Node}} \&tn) override
+\item 
+void \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_af5414d31a754eaf5a91447e5793365a7}{render\+Single}} (\mbox{\hyperlink{classsage_1_1ColorNode}{Color\+Node}} \&tn) override
+\item 
+\mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a25cbfc23170cda3ec170cce2e0681bcd}{$\sim$\+Depth\+Peel\+Renderer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_aa2d91f10ea251ceb3b8566f713fd4086}{init\+Buffers}} ()
+\item 
+void \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a0b598e6d6cd9d14a21184cf895aca441}{deinit\+Buffers}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a4ffb28eb6faffc06f3ef8cb3c6882484}{peels}}
+\item 
+int \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a974d2de89e4efa233179d04071ad01a8}{current\+Pass}}
+\item 
+glm\+::vec2 \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a13ffd76ace4de9e39acc01a4a25634cf}{old\+Frame\+Size}}
+\item 
+G\+Luint $\ast$ \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_ab68cb59974bf2e40f61693ee03a99475}{frame\+Buffers}}
+\item 
+G\+Luint $\ast$ \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_adf53903d948d4d5e2290cf1baa8148ea}{frame\+Textures}}
+\item 
+G\+Luint $\ast$ \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a053e3c6a03a0038208b30d88848e1a95}{depth\+Textures}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_aabc19f8da49637f4c10035ffb32910f1}\label{classsage_1_1DepthPeelRenderer_aabc19f8da49637f4c10035ffb32910f1}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!DepthPeelRenderer@{DepthPeelRenderer}}
+\index{DepthPeelRenderer@{DepthPeelRenderer}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{DepthPeelRenderer()}{DepthPeelRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Depth\+Peel\+Renderer\+::\+Depth\+Peel\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Application}{Application}} \&}]{application }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a82fb609830c881fc2fd77c239c811f29}\label{classsage_1_1DepthPeelRenderer_a82fb609830c881fc2fd77c239c811f29}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!DepthPeelRenderer@{DepthPeelRenderer}}
+\index{DepthPeelRenderer@{DepthPeelRenderer}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{DepthPeelRenderer()}{DepthPeelRenderer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Depth\+Peel\+Renderer\+::\+Depth\+Peel\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Application}{Application}} \&}]{application,  }\item[{int}]{peels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a25cbfc23170cda3ec170cce2e0681bcd}\label{classsage_1_1DepthPeelRenderer_a25cbfc23170cda3ec170cce2e0681bcd}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!````~DepthPeelRenderer@{$\sim$DepthPeelRenderer}}
+\index{````~DepthPeelRenderer@{$\sim$DepthPeelRenderer}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{$\sim$DepthPeelRenderer()}{~DepthPeelRenderer()}}
+{\footnotesize\ttfamily Depth\+Peel\+Renderer\+::$\sim$\+Depth\+Peel\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a0b598e6d6cd9d14a21184cf895aca441}\label{classsage_1_1DepthPeelRenderer_a0b598e6d6cd9d14a21184cf895aca441}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!deinitBuffers@{deinitBuffers}}
+\index{deinitBuffers@{deinitBuffers}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{deinitBuffers()}{deinitBuffers()}}
+{\footnotesize\ttfamily void Depth\+Peel\+Renderer\+::deinit\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_aa2d91f10ea251ceb3b8566f713fd4086}\label{classsage_1_1DepthPeelRenderer_aa2d91f10ea251ceb3b8566f713fd4086}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!initBuffers@{initBuffers}}
+\index{initBuffers@{initBuffers}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{initBuffers()}{initBuffers()}}
+{\footnotesize\ttfamily void Depth\+Peel\+Renderer\+::init\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a84443362d98ad685cac1f2558c9445ee}\label{classsage_1_1DepthPeelRenderer_a84443362d98ad685cac1f2558c9445ee}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!render@{render}}
+\index{render@{render}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Depth\+Peel\+Renderer\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Renderer_af7e5f8f68742f198e315fb4683a605a4}{sage\+::\+Renderer}}.
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a45528a298ccddd656e0aa377bb4fc646}\label{classsage_1_1DepthPeelRenderer_a45528a298ccddd656e0aa377bb4fc646}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!renderSingle@{renderSingle}}
+\index{renderSingle@{renderSingle}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{renderSingle()}{renderSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Depth\+Peel\+Renderer\+::render\+Single (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1TexturedNode}{Textured\+Node}} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{sage\+::\+Renderer}}.
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_af5414d31a754eaf5a91447e5793365a7}\label{classsage_1_1DepthPeelRenderer_af5414d31a754eaf5a91447e5793365a7}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!renderSingle@{renderSingle}}
+\index{renderSingle@{renderSingle}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{renderSingle()}{renderSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Depth\+Peel\+Renderer\+::render\+Single (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1ColorNode}{Color\+Node}} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsage_1_1Renderer_a8f0af306879420d208abd8a0555055b5}{sage\+::\+Renderer}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a974d2de89e4efa233179d04071ad01a8}\label{classsage_1_1DepthPeelRenderer_a974d2de89e4efa233179d04071ad01a8}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!currentPass@{currentPass}}
+\index{currentPass@{currentPass}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{currentPass}{currentPass}}
+{\footnotesize\ttfamily int sage\+::\+Depth\+Peel\+Renderer\+::current\+Pass\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a053e3c6a03a0038208b30d88848e1a95}\label{classsage_1_1DepthPeelRenderer_a053e3c6a03a0038208b30d88848e1a95}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!depthTextures@{depthTextures}}
+\index{depthTextures@{depthTextures}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{depthTextures}{depthTextures}}
+{\footnotesize\ttfamily G\+Luint$\ast$ sage\+::\+Depth\+Peel\+Renderer\+::depth\+Textures\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_ab68cb59974bf2e40f61693ee03a99475}\label{classsage_1_1DepthPeelRenderer_ab68cb59974bf2e40f61693ee03a99475}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!frameBuffers@{frameBuffers}}
+\index{frameBuffers@{frameBuffers}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{frameBuffers}{frameBuffers}}
+{\footnotesize\ttfamily G\+Luint$\ast$ sage\+::\+Depth\+Peel\+Renderer\+::frame\+Buffers\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_adf53903d948d4d5e2290cf1baa8148ea}\label{classsage_1_1DepthPeelRenderer_adf53903d948d4d5e2290cf1baa8148ea}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!frameTextures@{frameTextures}}
+\index{frameTextures@{frameTextures}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{frameTextures}{frameTextures}}
+{\footnotesize\ttfamily G\+Luint$\ast$ sage\+::\+Depth\+Peel\+Renderer\+::frame\+Textures\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a13ffd76ace4de9e39acc01a4a25634cf}\label{classsage_1_1DepthPeelRenderer_a13ffd76ace4de9e39acc01a4a25634cf}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!oldFrameSize@{oldFrameSize}}
+\index{oldFrameSize@{oldFrameSize}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{oldFrameSize}{oldFrameSize}}
+{\footnotesize\ttfamily glm\+::vec2 sage\+::\+Depth\+Peel\+Renderer\+::old\+Frame\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsage_1_1DepthPeelRenderer_a4ffb28eb6faffc06f3ef8cb3c6882484}\label{classsage_1_1DepthPeelRenderer_a4ffb28eb6faffc06f3ef8cb3c6882484}} 
+\index{sage::DepthPeelRenderer@{sage::DepthPeelRenderer}!peels@{peels}}
+\index{peels@{peels}!sage::DepthPeelRenderer@{sage::DepthPeelRenderer}}
+\subsubsection{\texorpdfstring{peels}{peels}}
+{\footnotesize\ttfamily int sage\+::\+Depth\+Peel\+Renderer\+::peels\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/include/sage/renderer/\mbox{\hyperlink{DepthPeelRenderer_8h}{Depth\+Peel\+Renderer.\+h}}\item 
+/home/frequem/\+Documents/programming/cpp/sage\+Example1/contrib/sage/src/renderer/\mbox{\hyperlink{DepthPeelRenderer_8cpp}{Depth\+Peel\+Renderer.\+cpp}}\end{DoxyCompactItemize}

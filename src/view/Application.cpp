@@ -76,6 +76,10 @@ Application::Application(const std::string& title, int width, int height){
 
 void Application::pushScene(std::shared_ptr<Scene> scene){
 	scene->setApplication(*this);
+	
+	if(this->scenes.size() > 0)
+		this->getScene()->deinit(); //deinit current scene
+		
 	this->scenes.push(scene);
 	scene->init();
 }
@@ -87,7 +91,13 @@ void Application::replaceScene(std::shared_ptr<Scene> scene){
 
 std::shared_ptr<Scene> Application::getScene(){ return this->scenes.top(); }
 
-void Application::popScene(){ this->scenes.pop(); }
+void Application::popScene(){
+	this->getScene()->deinit(); 
+	this->scenes.pop();
+	
+	if(this->scenes.size() > 0)
+		this->getScene()->init();
+}
 
 void Application::run(){
 	ASSERT(this->scenes.size() > 0, "Application::run - No Scene");
@@ -153,6 +163,9 @@ void Application::setRenderer(std::unique_ptr<Renderer> renderer){ this->rendere
 
 Application::~Application(){
 	LOG("sage::Application Destructor");
+	while(this->scenes.size() > 0){
+		this->popScene();
+	}
 	
 	this->audioCache.reset();
 	Mix_CloseAudio();

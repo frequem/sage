@@ -406,8 +406,8 @@ namespace sage{
 		 */
 		void setScaleY(float y);
 		/**
-		 * @brief Sets the scale-factor in y direction of the Node.
-		 * @param y the y scale
+		 * @brief Sets the scale-factor in z direction of the Node.
+		 * @param z the z scale
 		 * @see scale
 		 * @see setScale(float s)
 		 * @see setScale(glm::vec2 s)
@@ -559,10 +559,15 @@ namespace sage{
 		virtual ~Node();
 	protected:	
 		/**
-		 * @brief Is called as soon as the Application is available to the Node.
+		 * @brief Is called every time the Node's Scene is set as the top Scene.
 		 * Recursively initializes its children.
 		 */ 
 		virtual void init();
+		/**
+		 * @brief Is called before the Node's Scene is removed from the top.
+		 * Recursively deinitializes its children.
+		 */ 
+		virtual void deinit();
 		/**
 		 * @brief Sorts the children by their z values.
 		 */

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['imagecache',['ImageCache',['../classsage_1_1ImageCache.html',1,'sage']]]
+  ['depthpeelrenderer',['DepthPeelRenderer',['../classsage_1_1DepthPeelRenderer.html',1,'sage']]]
 ];

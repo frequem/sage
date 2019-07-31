@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventdispatcher',['eventDispatcher',['../classsage_1_1Application.html#af44decd857e2843750a781ec141163f0',1,'sage::Application']]]
+  ['eventdispatcher',['eventDispatcher',['../classsage_1_1Application.html#ae7cbe4333c8c285fb78fa6d561090281',1,'sage::Application']]]
 ];

@@ -107,8 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa6334522810673df149a290bfbf9da3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#aa6334522810673df149a290bfbf9da3d">ImageCache</a> (<a class="el" href="classsage_1_1FileCache.html">FileCache</a> *, <a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> *)</td></tr>
-<tr class="separator:aa6334522810673df149a290bfbf9da3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad3c395b2baa07ce3763a593d253ee4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#abad3c395b2baa07ce3763a593d253ee4">ImageCache</a> (<a class="el" href="classsage_1_1Application.html">Application</a> &amp;)</td></tr>
+<tr class="separator:abad3c395b2baa07ce3763a593d253ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dd56015ff31706f4fedc3d3b85510f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#a8dd56015ff31706f4fedc3d3b85510f4">load</a> (const std::string &amp;)</td></tr>
 <tr class="separator:a8dd56015ff31706f4fedc3d3b85510f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad97bd335815c57c59af1c9e5d5a2d9db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#ad97bd335815c57c59af1c9e5d5a2d9db">unload</a> (const std::string &amp;)</td></tr>
@@ -131,10 +131,8 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a114e9da7a04c34fa4521c8421729e60a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#a114e9da7a04c34fa4521c8421729e60a">threadManager</a></td></tr>
-<tr class="separator:a114e9da7a04c34fa4521c8421729e60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b667c59600e85d741c19abd1c56b37c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1FileCache.html">FileCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#a6b667c59600e85d741c19abd1c56b37c">fileCache</a></td></tr>
-<tr class="separator:a6b667c59600e85d741c19abd1c56b37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ed371dca2a9591f78b92623667cc78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1Application.html">Application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#a39ed371dca2a9591f78b92623667cc78">application</a></td></tr>
+<tr class="separator:a39ed371dca2a9591f78b92623667cc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f00cfa79cf2a5dc7364905b0e0ec79e"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#a1f00cfa79cf2a5dc7364905b0e0ec79e">mtx</a></td></tr>
 <tr class="separator:a1f00cfa79cf2a5dc7364905b0e0ec79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade561f2902ee4d3c6c4d5cf5c1202846"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ImageCache.html#ade561f2902ee4d3c6c4d5cf5c1202846">cv</a></td></tr>
@@ -143,8 +141,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a01b8aa5587b2cf9c5e1f1059431f0118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa6334522810673df149a290bfbf9da3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6334522810673df149a290bfbf9da3d">&#9670;&nbsp;</a></span>ImageCache()</h2>
+<a id="abad3c395b2baa07ce3763a593d253ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad3c395b2baa07ce3763a593d253ee4">&#9670;&nbsp;</a></span>ImageCache()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,19 +150,9 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">ImageCache::ImageCache </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classsage_1_1FileCache.html">FileCache</a> *&#160;</td>
-          <td class="paramname"><em>fileCache</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classsage_1_1Application.html">Application</a> &amp;&#160;</td>
+          <td class="paramname"><em>application</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> *&#160;</td>
-          <td class="paramname"><em>tm</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -324,8 +312,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ade561f2902ee4d3c6c4d5cf5c1202846"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade561f2902ee4d3c6c4d5cf5c1202846">&#9670;&nbsp;</a></span>cv</h2>
+<a id="a39ed371dca2a9591f78b92623667cc78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39ed371dca2a9591f78b92623667cc78">&#9670;&nbsp;</a></span>application</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,7 +322,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::condition_variable sage::ImageCache::cv</td>
+          <td class="memname"><a class="el" href="classsage_1_1Application.html">Application</a>* sage::ImageCache::application</td>
         </tr>
       </table>
   </td>
@@ -346,8 +334,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b667c59600e85d741c19abd1c56b37c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b667c59600e85d741c19abd1c56b37c">&#9670;&nbsp;</a></span>fileCache</h2>
+<a id="ade561f2902ee4d3c6c4d5cf5c1202846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade561f2902ee4d3c6c4d5cf5c1202846">&#9670;&nbsp;</a></span>cv</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,7 +344,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1FileCache.html">FileCache</a>* sage::ImageCache::fileCache</td>
+          <td class="memname">std::condition_variable sage::ImageCache::cv</td>
         </tr>
       </table>
   </td>
@@ -412,28 +400,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a114e9da7a04c34fa4521c8421729e60a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a114e9da7a04c34fa4521c8421729e60a">&#9670;&nbsp;</a></span>threadManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a>* sage::ImageCache::threadManager</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/frequem/Documents/programming/cpp/sageExample1/contrib/sage/include/sage/cache/<a class="el" href="ImageCache_8h_source.html">ImageCache.h</a></li>
 <li>/home/frequem/Documents/programming/cpp/sageExample1/contrib/sage/src/cache/<a class="el" href="ImageCache_8cpp.html">ImageCache.cpp</a></li>
@@ -441,7 +407,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 24 2019 15:36:18 for sage by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 31 2019 16:40:26 for sage by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

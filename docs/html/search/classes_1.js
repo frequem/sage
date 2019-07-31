@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventdispatcher',['EventDispatcher',['../classsage_1_1EventDispatcher.html',1,'sage']]]
+  ['basicrenderer',['BasicRenderer',['../classsage_1_1BasicRenderer.html',1,'sage']]]
 ];

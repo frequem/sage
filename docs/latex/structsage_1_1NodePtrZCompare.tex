@@ -2,7 +2,7 @@
 \label{structsage_1_1NodePtrZCompare}\index{sage::NodePtrZCompare@{sage::NodePtrZCompare}}
 
 
-Compare for z-\/indices (z-\/depth) of \mbox{\hyperlink{classsage_1_1Node}{Node}} pointers.  
+Compare for z-\/position of \mbox{\hyperlink{classsage_1_1Node}{Node}} pointers.  
 
 
 
@@ -12,23 +12,23 @@ Compare for z-\/indices (z-\/depth) of \mbox{\hyperlink{classsage_1_1Node}{Node}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{structsage_1_1NodePtrZCompare_ae787a8574fedaf8ee6bdec99ad322363}{operator()}} (const \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$n1, const \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$n2) const
-\begin{DoxyCompactList}\small\item\em Compares the z-\/index of two Nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{structsage_1_1NodePtrZCompare_a1241650c04a8d27fae228a7a43f35f30}{operator()}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $>$ \&n1, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $>$ \&n2) const
+\begin{DoxyCompactList}\small\item\em Compares the z-\/position of two Nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Compare for z-\/indices (z-\/depth) of \mbox{\hyperlink{classsage_1_1Node}{Node}} pointers. 
+Compare for z-\/position of \mbox{\hyperlink{classsage_1_1Node}{Node}} pointers. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{structsage_1_1NodePtrZCompare_ae787a8574fedaf8ee6bdec99ad322363}\label{structsage_1_1NodePtrZCompare_ae787a8574fedaf8ee6bdec99ad322363}} 
+\mbox{\Hypertarget{structsage_1_1NodePtrZCompare_a1241650c04a8d27fae228a7a43f35f30}\label{structsage_1_1NodePtrZCompare_a1241650c04a8d27fae228a7a43f35f30}} 
 \index{sage::NodePtrZCompare@{sage::NodePtrZCompare}!operator()@{operator()}}
 \index{operator()@{operator()}!sage::NodePtrZCompare@{sage::NodePtrZCompare}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}}
-{\footnotesize\ttfamily bool Node\+Ptr\+Z\+Compare\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$}]{n1,  }\item[{const \mbox{\hyperlink{classsage_1_1Node}{Node}} $\ast$}]{n2 }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Node\+Ptr\+Z\+Compare\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $>$ \&}]{n1,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $>$ \&}]{n2 }\end{DoxyParamCaption}) const}
 
 
 
-Compares the z-\/index of two Nodes. 
+Compares the z-\/position of two Nodes. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -38,7 +38,7 @@ Compares the z-\/index of two Nodes.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if n1 $<$ n2 is given for the z-\/indices 
+true if n1 $<$ n2 is given for the z-\/position 
 \end{DoxyReturn}
 
 

@@ -56,4 +56,7 @@ void BasicRenderer::renderSingle(TexturedNode& tn){
 	glUseProgram(0);
 }
 
+void BasicRenderer::renderSingle(ColorNode& cn){
+}
+
 BasicRenderer::~BasicRenderer(){}

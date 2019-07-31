@@ -8,6 +8,7 @@
 namespace sage{
 	class Node;
 	class TexturedNode;
+	class ColorNode;
 	class Application;
 	class Renderer{
 	public:
@@ -22,6 +23,7 @@ namespace sage{
 		void render(std::vector<std::shared_ptr<Node>>);
 		
 		virtual void renderSingle(TexturedNode& tn) = 0;
+		virtual void renderSingle(ColorNode& tn) = 0;
 		
 		Application* application;
 	};

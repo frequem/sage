@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['parentnode',['parentNode',['../classsage_1_1Node.html#a9f6d79896df762b8e8cff9574f1e9262',1,'sage::Node']]],
-  ['pos',['pos',['../classsage_1_1Node.html#a7e0ae6eeb84fae60e54e6685c982b0b2',1,'sage::Node']]],
-  ['ptsize',['ptsize',['../classsage_1_1TextNode.html#a1811c136026bea8ba6f27184e2d53c0c',1,'sage::TextNode']]]
+  ['oldframesize',['oldFrameSize',['../classsage_1_1DepthPeelRenderer.html#a13ffd76ace4de9e39acc01a4a25634cf',1,'sage::DepthPeelRenderer']]]
 ];

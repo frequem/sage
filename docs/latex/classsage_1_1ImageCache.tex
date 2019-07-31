@@ -7,7 +7,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classsage_1_1ImageCache_aa6334522810673df149a290bfbf9da3d}{Image\+Cache}} (\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$, \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$)
+\mbox{\hyperlink{classsage_1_1ImageCache_abad3c395b2baa07ce3763a593d253ee4}{Image\+Cache}} (\mbox{\hyperlink{classsage_1_1Application}{Application}} \&)
 \item 
 void \mbox{\hyperlink{classsage_1_1ImageCache_a8dd56015ff31706f4fedc3d3b85510f4}{load}} (const std\+::string \&)
 \item 
@@ -31,9 +31,7 @@ void \mbox{\hyperlink{classsage_1_1ImageCache_ae7bd4b346cfe144cc720c6a8457a741f}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$ \mbox{\hyperlink{classsage_1_1ImageCache_a114e9da7a04c34fa4521c8421729e60a}{thread\+Manager}}
-\item 
-\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$ \mbox{\hyperlink{classsage_1_1ImageCache_a6b667c59600e85d741c19abd1c56b37c}{file\+Cache}}
+\mbox{\hyperlink{classsage_1_1Application}{Application}} $\ast$ \mbox{\hyperlink{classsage_1_1ImageCache_a39ed371dca2a9591f78b92623667cc78}{application}}
 \item 
 std\+::mutex \mbox{\hyperlink{classsage_1_1ImageCache_a1f00cfa79cf2a5dc7364905b0e0ec79e}{mtx}}
 \item 
@@ -44,11 +42,11 @@ std\+::map$<$ const std\+::string, std\+::optional$<$ std\+::pair$<$ glm\+::vec2
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classsage_1_1ImageCache_aa6334522810673df149a290bfbf9da3d}\label{classsage_1_1ImageCache_aa6334522810673df149a290bfbf9da3d}} 
+\mbox{\Hypertarget{classsage_1_1ImageCache_abad3c395b2baa07ce3763a593d253ee4}\label{classsage_1_1ImageCache_abad3c395b2baa07ce3763a593d253ee4}} 
 \index{sage::ImageCache@{sage::ImageCache}!ImageCache@{ImageCache}}
 \index{ImageCache@{ImageCache}!sage::ImageCache@{sage::ImageCache}}
 \subsubsection{\texorpdfstring{ImageCache()}{ImageCache()}}
-{\footnotesize\ttfamily Image\+Cache\+::\+Image\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}} $\ast$}]{file\+Cache,  }\item[{\mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}} $\ast$}]{tm }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Image\+Cache\+::\+Image\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Application}{Application}} \&}]{application }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classsage_1_1ImageCache_a48e8f9fc5513ee195d209cbec596c093}\label{classsage_1_1ImageCache_a48e8f9fc5513ee195d209cbec596c093}} 
 \index{sage::ImageCache@{sage::ImageCache}!````~ImageCache@{$\sim$ImageCache}}
@@ -104,17 +102,17 @@ std\+::map$<$ const std\+::string, std\+::optional$<$ std\+::pair$<$ glm\+::vec2
 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{classsage_1_1ImageCache_a39ed371dca2a9591f78b92623667cc78}\label{classsage_1_1ImageCache_a39ed371dca2a9591f78b92623667cc78}} 
+\index{sage::ImageCache@{sage::ImageCache}!application@{application}}
+\index{application@{application}!sage::ImageCache@{sage::ImageCache}}
+\subsubsection{\texorpdfstring{application}{application}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1Application}{Application}}$\ast$ sage\+::\+Image\+Cache\+::application\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classsage_1_1ImageCache_ade561f2902ee4d3c6c4d5cf5c1202846}\label{classsage_1_1ImageCache_ade561f2902ee4d3c6c4d5cf5c1202846}} 
 \index{sage::ImageCache@{sage::ImageCache}!cv@{cv}}
 \index{cv@{cv}!sage::ImageCache@{sage::ImageCache}}
 \subsubsection{\texorpdfstring{cv}{cv}}
 {\footnotesize\ttfamily std\+::condition\+\_\+variable sage\+::\+Image\+Cache\+::cv\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classsage_1_1ImageCache_a6b667c59600e85d741c19abd1c56b37c}\label{classsage_1_1ImageCache_a6b667c59600e85d741c19abd1c56b37c}} 
-\index{sage::ImageCache@{sage::ImageCache}!fileCache@{fileCache}}
-\index{fileCache@{fileCache}!sage::ImageCache@{sage::ImageCache}}
-\subsubsection{\texorpdfstring{fileCache}{fileCache}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1FileCache}{File\+Cache}}$\ast$ sage\+::\+Image\+Cache\+::file\+Cache\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classsage_1_1ImageCache_a1f00cfa79cf2a5dc7364905b0e0ec79e}\label{classsage_1_1ImageCache_a1f00cfa79cf2a5dc7364905b0e0ec79e}} 
 \index{sage::ImageCache@{sage::ImageCache}!mtx@{mtx}}
@@ -127,12 +125,6 @@ std\+::map$<$ const std\+::string, std\+::optional$<$ std\+::pair$<$ glm\+::vec2
 \index{textures@{textures}!sage::ImageCache@{sage::ImageCache}}
 \subsubsection{\texorpdfstring{textures}{textures}}
 {\footnotesize\ttfamily std\+::map$<$const std\+::string, std\+::optional$<$std\+::pair$<$glm\+::vec2, std\+::variant$<$G\+Luint, unsigned char$\ast$$>$ $>$ $>$ $>$ sage\+::\+Image\+Cache\+::textures\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classsage_1_1ImageCache_a114e9da7a04c34fa4521c8421729e60a}\label{classsage_1_1ImageCache_a114e9da7a04c34fa4521c8421729e60a}} 
-\index{sage::ImageCache@{sage::ImageCache}!threadManager@{threadManager}}
-\index{threadManager@{threadManager}!sage::ImageCache@{sage::ImageCache}}
-\subsubsection{\texorpdfstring{threadManager}{threadManager}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsage_1_1ThreadManager}{Thread\+Manager}}$\ast$ sage\+::\+Image\+Cache\+::thread\+Manager\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

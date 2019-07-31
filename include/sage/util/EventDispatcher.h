@@ -10,6 +10,7 @@
 
 namespace sage{
 	class Application;
+	class Scene;
 	class Node;
 	//TODO: KEY_PRESS (delay)
 	enum class Event{ WINDOW_LEAVE, WINDOW_ENTER, KEY_DOWN, KEY_UP, MOUSE_DOWN, MOUSE_UP, MOUSE_CLICK, MOUSE_MOVE, MOUSE_DRAG, MOUSE_SCROLL, QUIT };

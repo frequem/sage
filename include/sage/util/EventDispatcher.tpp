@@ -2,7 +2,7 @@
 #define _SAGE_EVENTDISPATCHER_TPP
 
 #include <sage/util/macros.h>
-namespace sage{	
+namespace sage{		
 	template<typename... Args>
 	int EventDispatcher::addEventHandler(Event e, std::function<void(Args...)>&& f){
 		this->handlers[e][nextHandlerId] = f;
@@ -17,11 +17,10 @@ namespace sage{
 
 	template<typename... Args>
 	void EventDispatcher::dispatchEvent(Event e, Args&&... a){
-		for(auto const& [key, h] : this->handlers[e]){
-			std::any_cast<std::function<void(Args...)>>(h)(a...);
+		for(auto i = this->handlers[e].begin(); i != this->handlers[e].end(); i++){
+			std::any_cast<std::function<void(Args...)>>(i->second)(a...);
 		}
 	}
-	
 	
 	template<typename... Args>
 	void EventDispatcher::dispatchEvent(NodeEvent e, std::function<bool(Node&, Args...)>&& checkfunc, Args&&... a){

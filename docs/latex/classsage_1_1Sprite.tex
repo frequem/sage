@@ -19,11 +19,9 @@ Inheritance diagram for sage\+::Sprite\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classsage_1_1Sprite_a4ed2be3fab0b4869728be4f91cb67169}{Sprite}} (const std\+::string \&, glm\+::vec2 size, std\+::initializer\+\_\+list$<$ glm\+::vec2 $>$ coords)
 \item 
-void \mbox{\hyperlink{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}{init}} () override
-\begin{DoxyCompactList}\small\item\em Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. \end{DoxyCompactList}\item 
-glm\+::vec2 \mbox{\hyperlink{classsage_1_1Sprite_ab6c3b12b45eeafab8e816207158121a1}{get\+Size}} () override
+glm\+::vec3 \mbox{\hyperlink{classsage_1_1Sprite_a4fbebafc74986ae399360118796dd069}{get\+Size}} () override
 \begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classsage_1_1Sprite_a7444391256eab0cf1b7a994885026352}{add\+Frame}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a7e0ae6eeb84fae60e54e6685c982b0b2}{pos}})
+int \mbox{\hyperlink{classsage_1_1Sprite_a7444391256eab0cf1b7a994885026352}{add\+Frame}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1Node_a26c32e5ec11e0ed7f33053ecac6830d5}{pos}})
 \item 
 void \mbox{\hyperlink{classsage_1_1Sprite_ada2cb241cf1fc71378372d04f19926e2}{set\+Frame}} (int frame\+Id)
 \item 
@@ -34,6 +32,8 @@ int \mbox{\hyperlink{classsage_1_1Sprite_af7d9465b0ef867d23cbb587b6c7b6b13}{get\
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}{init}} () override
+\begin{DoxyCompactList}\small\item\em Is called every time the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s \mbox{\hyperlink{classsage_1_1Scene}{Scene}} is set as the top \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. Recursively initializes its children. \end{DoxyCompactList}\item 
 G\+Luint \mbox{\hyperlink{classsage_1_1Sprite_aa75f3595b809f99847a9642ce2bf319a}{get\+Texture}} () override
 \item 
 std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff622cfd2ff}{get\+Tex\+Coords}} () override
@@ -45,7 +45,7 @@ std\+::string \mbox{\hyperlink{classsage_1_1Sprite_a3ad65ff16f4f98a15f52092b1542
 \item 
 glm\+::vec2 \mbox{\hyperlink{classsage_1_1Sprite_ae6d6160fb0c882acd8b786d2353208e6}{frame\+Size}}
 \item 
-int \mbox{\hyperlink{classsage_1_1Sprite_aae69224b9c75eb83097f02d484975f68}{current\+Frame}}
+int \mbox{\hyperlink{classsage_1_1Sprite_aae69224b9c75eb83097f02d484975f68}{current\+Frame}} = 0
 \item 
 std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1Sprite_ad6aa87dfe1f1ce53e2de2df0aa10f229}{frames}}
 \end{DoxyCompactItemize}
@@ -92,11 +92,11 @@ std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1Sprite_ad6aa87dfe
 \subsubsection{\texorpdfstring{getFrame()}{getFrame()}}
 {\footnotesize\ttfamily int Sprite\+::get\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classsage_1_1Sprite_ab6c3b12b45eeafab8e816207158121a1}\label{classsage_1_1Sprite_ab6c3b12b45eeafab8e816207158121a1}} 
+\mbox{\Hypertarget{classsage_1_1Sprite_a4fbebafc74986ae399360118796dd069}\label{classsage_1_1Sprite_a4fbebafc74986ae399360118796dd069}} 
 \index{sage::Sprite@{sage::Sprite}!getSize@{getSize}}
 \index{getSize@{getSize}!sage::Sprite@{sage::Sprite}}
 \subsubsection{\texorpdfstring{getSize()}{getSize()}}
-{\footnotesize\ttfamily glm\+::vec2 Sprite\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily glm\+::vec3 Sprite\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -109,10 +109,12 @@ the size
 \mbox{\hyperlink{classsage_1_1Node_a65163ffabcfe9f482282ea37ead6fc5f}{get\+Width()}} 
 
 \mbox{\hyperlink{classsage_1_1Node_a6af5a8378ac8d2c3490adbc2a03f1247}{get\+Height()}} 
+
+\mbox{\hyperlink{classsage_1_1Node_a5c4c28939c7adf7e4a65dbb02c0cbcd3}{get\+Depth()}} 
 \end{DoxySeeAlso}
 
 
-Implements \mbox{\hyperlink{classsage_1_1Node_a286d3b5b0d16d31991b58cab972fb03b}{sage\+::\+Node}}.
+Implements \mbox{\hyperlink{classsage_1_1Node_ad14a04d08b5261c27d3080f6a5e12836}{sage\+::\+Node}}.
 
 \mbox{\Hypertarget{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff622cfd2ff}\label{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff622cfd2ff}} 
 \index{sage::Sprite@{sage::Sprite}!getTexCoords@{getTexCoords}}
@@ -138,11 +140,11 @@ Implements \mbox{\hyperlink{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea6945954
 \index{sage::Sprite@{sage::Sprite}!init@{init}}
 \index{init@{init}!sage::Sprite@{sage::Sprite}}
 \subsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily void Sprite\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Sprite\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 
-Is called as soon as the \mbox{\hyperlink{classsage_1_1Application}{Application}} is available to the \mbox{\hyperlink{classsage_1_1Node}{Node}}. Recursively initializes its children. 
+Is called every time the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesingle{}s \mbox{\hyperlink{classsage_1_1Scene}{Scene}} is set as the top \mbox{\hyperlink{classsage_1_1Scene}{Scene}}. Recursively initializes its children. 
 
 
 
@@ -161,7 +163,7 @@ Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab87776adae83149e235e37ed4
 \index{sage::Sprite@{sage::Sprite}!currentFrame@{currentFrame}}
 \index{currentFrame@{currentFrame}!sage::Sprite@{sage::Sprite}}
 \subsubsection{\texorpdfstring{currentFrame}{currentFrame}}
-{\footnotesize\ttfamily int sage\+::\+Sprite\+::current\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int sage\+::\+Sprite\+::current\+Frame = 0\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classsage_1_1Sprite_ad6aa87dfe1f1ce53e2de2df0aa10f229}\label{classsage_1_1Sprite_ad6aa87dfe1f1ce53e2de2df0aa10f229}} 
 \index{sage::Sprite@{sage::Sprite}!frames@{frames}}

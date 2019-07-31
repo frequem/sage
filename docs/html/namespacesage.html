@@ -104,6 +104,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1AudioManager.html">AudioManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1BasicRenderer.html">BasicRenderer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ColorNode.html">ColorNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1DepthPeelRenderer.html">DepthPeelRenderer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1FileCache.html">FileCache</a></td></tr>
@@ -117,7 +123,9 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class that describes all things drawn by the <a class="el" href="classsage_1_1Scene.html">Scene</a>. The <a class="el" href="classsage_1_1Scene.html">Scene</a> itself, which is also a <a class="el" href="classsage_1_1Node.html" title="Abstract class that describes all things drawn by the Scene. The Scene itself, which is also a Node,...">Node</a>, is drawn by the <a class="el" href="classsage_1_1Application.html" title="Class that handles the window. Also manages Scenes, Caches and runs the main game loop.">Application</a>. Every <a class="el" href="classsage_1_1Node.html" title="Abstract class that describes all things drawn by the Scene. The Scene itself, which is also a Node,...">Node</a> has children (Nodes) which are affected by the <a class="el" href="classsage_1_1Node.html" title="Abstract class that describes all things drawn by the Scene. The Scene itself, which is also a Node,...">Node</a>'s properties.  <a href="classsage_1_1Node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsage_1_1NodePtrZCompare.html">NodePtrZCompare</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare for z-indices (z-depth) of <a class="el" href="classsage_1_1Node.html" title="Abstract class that describes all things drawn by the Scene. The Scene itself, which is also a Node,...">Node</a> pointers.  <a href="structsage_1_1NodePtrZCompare.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare for z-position of <a class="el" href="classsage_1_1Node.html" title="Abstract class that describes all things drawn by the Scene. The Scene itself, which is also a Node,...">Node</a> pointers.  <a href="structsage_1_1NodePtrZCompare.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Renderer.html">Renderer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Scene.html">Scene</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,12 +148,13 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29ae27439eebd778013c33fbb14dd19fd04">Event::KEY_DOWN</a>, 
 <a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29ac248b44c41333613a8ad29b656f8950e">Event::KEY_UP</a>, 
 <br />
-&#160;&#160;<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3">Event::MOUSE_MOVE</a>, 
-<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3">Event::MOUSE_DOWN</a>, 
+&#160;&#160;<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3">Event::MOUSE_DOWN</a>, 
 <a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29abb966d5bf8c83e256da7695593d921b7">Event::MOUSE_UP</a>, 
 <a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2">Event::MOUSE_CLICK</a>, 
+<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3">Event::MOUSE_MOVE</a>, 
 <br />
-&#160;&#160;<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76">Event::MOUSE_SCROLL</a>, 
+&#160;&#160;<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a2fd12cb464523597cd21f35ebd3c0c3c">Event::MOUSE_DRAG</a>, 
+<a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76">Event::MOUSE_SCROLL</a>, 
 <a class="el" href="namespacesage.html#afe706a25026cc74fe69b56d53a265d29a5dfd352dd6b7a5d118237fcf1e19fcc1">Event::QUIT</a>
 <br />
  }</td></tr>
@@ -187,10 +196,11 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a9c32797ef326482ef73cac4f621e7d9b"></a>WINDOW_ENTER&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29ae27439eebd778013c33fbb14dd19fd04"></a>KEY_DOWN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29ac248b44c41333613a8ad29b656f8950e"></a>KEY_UP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3"></a>MOUSE_MOVE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a8d96e3275d34aec916c3a13681b502c3"></a>MOUSE_DOWN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29abb966d5bf8c83e256da7695593d921b7"></a>MOUSE_UP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a4189a9f0e39ab4354d92142fbbbf49c2"></a>MOUSE_CLICK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a39b3291e13730aa8cdb221af2bdab3f3"></a>MOUSE_MOVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a2fd12cb464523597cd21f35ebd3c0c3c"></a>MOUSE_DRAG&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a8d39183657ef1c142f973da7bf626a76"></a>MOUSE_SCROLL&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="afe706a25026cc74fe69b56d53a265d29a5dfd352dd6b7a5d118237fcf1e19fcc1"></a>QUIT&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -230,7 +240,7 @@ Enumerations</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 24 2019 15:36:18 for sage by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 31 2019 16:40:26 for sage by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

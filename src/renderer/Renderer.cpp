@@ -3,6 +3,7 @@
 #include <sage/view/Node.h>
 #include <sage/view/Scene.h>
 #include <sage/view/TexturedNode.h>
+#include <sage/view/ColorNode.h>
 #include <algorithm>
 
 using namespace sage;
@@ -24,6 +25,7 @@ void Renderer::render(Node& n){
 
 void Renderer::tryRenderSingles(Node& n){
 	if(tryRenderSingle<TexturedNode>(n)) return;
+	if(tryRenderSingle<ColorNode>(n)) return;
 }
 
 Renderer::~Renderer(){}

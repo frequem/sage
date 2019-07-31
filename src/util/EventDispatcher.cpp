@@ -1,5 +1,6 @@
 #include <sage/util/EventDispatcher.h>
 #include <sage/view/Application.h>
+#include <sage/view/Scene.h>
 #include <sage/view/Node.h>
 #include <sage/util/config.h>
 #include <sage/util/macros.h>

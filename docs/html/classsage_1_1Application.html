@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classsage_1_1Application-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">sage::Application Class Reference</div>  </div>
@@ -118,15 +118,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7fce9bde96a86a6d26618a34cb09fa5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ac7fce9bde96a86a6d26618a34cb09fa5">Application</a> (const std::string &amp;title, int width, int height)</td></tr>
 <tr class="memdesc:ac7fce9bde96a86a6d26618a34cb09fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsage_1_1Application.html" title="Class that handles the window. Also manages Scenes, Caches and runs the main game loop.">Application</a> constructor. Initializes the <a class="el" href="classsage_1_1Application.html" title="Class that handles the window. Also manages Scenes, Caches and runs the main game loop.">Application</a>.  <a href="#ac7fce9bde96a86a6d26618a34cb09fa5">More...</a><br /></td></tr>
 <tr class="separator:ac7fce9bde96a86a6d26618a34cb09fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad69ba03dafa5afd69f2d6eb2a9d5fad5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ad69ba03dafa5afd69f2d6eb2a9d5fad5">pushScene</a> (<a class="el" href="classsage_1_1Scene.html">Scene</a> *scene)</td></tr>
-<tr class="memdesc:ad69ba03dafa5afd69f2d6eb2a9d5fad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a <a class="el" href="classsage_1_1Scene.html">Scene</a> onto the stack. It will be displayed in the next rendering call and be active until it is popped. Calls the init() function of the <a class="el" href="classsage_1_1Scene.html">Scene</a>.  <a href="#ad69ba03dafa5afd69f2d6eb2a9d5fad5">More...</a><br /></td></tr>
-<tr class="separator:ad69ba03dafa5afd69f2d6eb2a9d5fad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49f5ce7574cf4f3053c4213d3177c76c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a49f5ce7574cf4f3053c4213d3177c76c">replaceScene</a> (<a class="el" href="classsage_1_1Scene.html">Scene</a> *scene)</td></tr>
-<tr class="memdesc:a49f5ce7574cf4f3053c4213d3177c76c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the current <a class="el" href="classsage_1_1Scene.html">Scene</a> on the stack.  <a href="#a49f5ce7574cf4f3053c4213d3177c76c">More...</a><br /></td></tr>
-<tr class="separator:a49f5ce7574cf4f3053c4213d3177c76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eaac489d4247bd184e17fa0aa6c858c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1Scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a4eaac489d4247bd184e17fa0aa6c858c">getScene</a> ()</td></tr>
-<tr class="memdesc:a4eaac489d4247bd184e17fa0aa6c858c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the current <a class="el" href="classsage_1_1Scene.html">Scene</a> from the stack.  <a href="#a4eaac489d4247bd184e17fa0aa6c858c">More...</a><br /></td></tr>
-<tr class="separator:a4eaac489d4247bd184e17fa0aa6c858c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4644a106875cb18286b08131cb807d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#aa4644a106875cb18286b08131cb807d2">pushScene</a> (std::shared_ptr&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> &gt; scene)</td></tr>
+<tr class="memdesc:aa4644a106875cb18286b08131cb807d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a <a class="el" href="classsage_1_1Scene.html">Scene</a> onto the stack. It will be displayed in the next rendering call and be active until it is popped. Calls the init() function of the <a class="el" href="classsage_1_1Scene.html">Scene</a>.  <a href="#aa4644a106875cb18286b08131cb807d2">More...</a><br /></td></tr>
+<tr class="separator:aa4644a106875cb18286b08131cb807d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0458ccb5b0a4aae4bcb1fc958f369f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ac0458ccb5b0a4aae4bcb1fc958f369f4">replaceScene</a> (std::shared_ptr&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> &gt; scene)</td></tr>
+<tr class="memdesc:ac0458ccb5b0a4aae4bcb1fc958f369f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the current <a class="el" href="classsage_1_1Scene.html">Scene</a> on the stack.  <a href="#ac0458ccb5b0a4aae4bcb1fc958f369f4">More...</a><br /></td></tr>
+<tr class="separator:ac0458ccb5b0a4aae4bcb1fc958f369f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d40d8fae7f9f26cf45d8fca6e811c3f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a4d40d8fae7f9f26cf45d8fca6e811c3f">getScene</a> ()</td></tr>
+<tr class="memdesc:a4d40d8fae7f9f26cf45d8fca6e811c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the current <a class="el" href="classsage_1_1Scene.html">Scene</a> from the stack.  <a href="#a4d40d8fae7f9f26cf45d8fca6e811c3f">More...</a><br /></td></tr>
+<tr class="separator:a4d40d8fae7f9f26cf45d8fca6e811c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b5bec61b3d93cbb4998b42d0d2ea47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a47b5bec61b3d93cbb4998b42d0d2ea47">popScene</a> ()</td></tr>
 <tr class="memdesc:a47b5bec61b3d93cbb4998b42d0d2ea47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops the current <a class="el" href="classsage_1_1Scene.html">Scene</a> from the stack. Also deletes the <a class="el" href="classsage_1_1Scene.html">Scene</a>, do not delete manually!  <a href="#a47b5bec61b3d93cbb4998b42d0d2ea47">More...</a><br /></td></tr>
 <tr class="separator:a47b5bec61b3d93cbb4998b42d0d2ea47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,29 +143,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a20be3d592c9d2662051796420d0cd1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the current height of the window.  <a href="#a20be3d592c9d2662051796420d0cd1d8">More...</a><br /></td></tr>
 <tr class="separator:a20be3d592c9d2662051796420d0cd1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a452bc916f132e0997a02de53d49364d3"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a452bc916f132e0997a02de53d49364d3">getDPI</a> ()</td></tr>
-<tr class="memdesc:a452bc916f132e0997a02de53d49364d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the DPI of the display, the window is currently on. x contains the horizontal, y the vertical DPI value.  <a href="#a452bc916f132e0997a02de53d49364d3">More...</a><br /></td></tr>
+<tr class="memdesc:a452bc916f132e0997a02de53d49364d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the DPI of the display, the window is currently on. x contains the horizontal, y the vertical DPI value. Currently always returns 400 on Android (SDL_GetDisplayDPI does not work on Android)  <a href="#a452bc916f132e0997a02de53d49364d3">More...</a><br /></td></tr>
 <tr class="separator:a452bc916f132e0997a02de53d49364d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a782edaec320c507870814d8576f84fba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1FileCache.html">FileCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a782edaec320c507870814d8576f84fba">getFileCache</a> ()</td></tr>
-<tr class="memdesc:a782edaec320c507870814d8576f84fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1FileCache.html" title="Class that caches files into memory, so files don&#39;t have to be loaded from disk more often than neces...">FileCache</a>.  <a href="#a782edaec320c507870814d8576f84fba">More...</a><br /></td></tr>
-<tr class="separator:a782edaec320c507870814d8576f84fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c8156460d822447b22835bc4879c1a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ImageCache.html">ImageCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a3c8156460d822447b22835bc4879c1a1">getImageCache</a> ()</td></tr>
-<tr class="memdesc:a3c8156460d822447b22835bc4879c1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1ImageCache.html">ImageCache</a>.  <a href="#a3c8156460d822447b22835bc4879c1a1">More...</a><br /></td></tr>
-<tr class="separator:a3c8156460d822447b22835bc4879c1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd47a4230ba22582b6172ce430feb1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1FontCache.html">FontCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a4cd47a4230ba22582b6172ce430feb1d">getFontCache</a> ()</td></tr>
-<tr class="memdesc:a4cd47a4230ba22582b6172ce430feb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1FontCache.html">FontCache</a>.  <a href="#a4cd47a4230ba22582b6172ce430feb1d">More...</a><br /></td></tr>
-<tr class="separator:a4cd47a4230ba22582b6172ce430feb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9260bf22da6d4fc5451c789c17ad7a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#aa9260bf22da6d4fc5451c789c17ad7a5">getShaderCache</a> ()</td></tr>
-<tr class="memdesc:aa9260bf22da6d4fc5451c789c17ad7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a>.  <a href="#aa9260bf22da6d4fc5451c789c17ad7a5">More...</a><br /></td></tr>
-<tr class="separator:aa9260bf22da6d4fc5451c789c17ad7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaed4c540666d784b83d5506e51fb5eaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1AudioCache.html">AudioCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#aaed4c540666d784b83d5506e51fb5eaa">getAudioCache</a> ()</td></tr>
-<tr class="memdesc:aaed4c540666d784b83d5506e51fb5eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1AudioCache.html">AudioCache</a>.  <a href="#aaed4c540666d784b83d5506e51fb5eaa">More...</a><br /></td></tr>
-<tr class="separator:aaed4c540666d784b83d5506e51fb5eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37c65bddaa8e4534b28f5b36b66fdd81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a37c65bddaa8e4534b28f5b36b66fdd81">getEventDispatcher</a> ()</td></tr>
-<tr class="memdesc:a37c65bddaa8e4534b28f5b36b66fdd81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a>.  <a href="#a37c65bddaa8e4534b28f5b36b66fdd81">More...</a><br /></td></tr>
-<tr class="separator:a37c65bddaa8e4534b28f5b36b66fdd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac21f1df422a3589af890dc7616b272d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1AudioManager.html">AudioManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ac21f1df422a3589af890dc7616b272d7">getAudioManager</a> ()</td></tr>
-<tr class="memdesc:ac21f1df422a3589af890dc7616b272d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1AudioManager.html">AudioManager</a>.  <a href="#ac21f1df422a3589af890dc7616b272d7">More...</a><br /></td></tr>
-<tr class="separator:ac21f1df422a3589af890dc7616b272d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaacf80b3ecc3efdd4696b869ca3aedd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1FileCache.html">FileCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#adaacf80b3ecc3efdd4696b869ca3aedd">getFileCache</a> ()</td></tr>
+<tr class="memdesc:adaacf80b3ecc3efdd4696b869ca3aedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1FileCache.html" title="Class that caches files into memory, so files don&#39;t have to be loaded from disk more often than neces...">FileCache</a>.  <a href="#adaacf80b3ecc3efdd4696b869ca3aedd">More...</a><br /></td></tr>
+<tr class="separator:adaacf80b3ecc3efdd4696b869ca3aedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6659ce3fdb899bee814c0628dcbcc423"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ImageCache.html">ImageCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a6659ce3fdb899bee814c0628dcbcc423">getImageCache</a> ()</td></tr>
+<tr class="memdesc:a6659ce3fdb899bee814c0628dcbcc423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1ImageCache.html">ImageCache</a>.  <a href="#a6659ce3fdb899bee814c0628dcbcc423">More...</a><br /></td></tr>
+<tr class="separator:a6659ce3fdb899bee814c0628dcbcc423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a325c4ae42e7c7adbb435d68be16f20e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1FontCache.html">FontCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a325c4ae42e7c7adbb435d68be16f20e7">getFontCache</a> ()</td></tr>
+<tr class="memdesc:a325c4ae42e7c7adbb435d68be16f20e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1FontCache.html">FontCache</a>.  <a href="#a325c4ae42e7c7adbb435d68be16f20e7">More...</a><br /></td></tr>
+<tr class="separator:a325c4ae42e7c7adbb435d68be16f20e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2968bb7e8ae2247aa49d1092f24a751a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a2968bb7e8ae2247aa49d1092f24a751a">getShaderCache</a> ()</td></tr>
+<tr class="memdesc:a2968bb7e8ae2247aa49d1092f24a751a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a>.  <a href="#a2968bb7e8ae2247aa49d1092f24a751a">More...</a><br /></td></tr>
+<tr class="separator:a2968bb7e8ae2247aa49d1092f24a751a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68d5ca5d6fd24fa3ec8354e8ec62227a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1AudioCache.html">AudioCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a68d5ca5d6fd24fa3ec8354e8ec62227a">getAudioCache</a> ()</td></tr>
+<tr class="memdesc:a68d5ca5d6fd24fa3ec8354e8ec62227a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1AudioCache.html">AudioCache</a>.  <a href="#a68d5ca5d6fd24fa3ec8354e8ec62227a">More...</a><br /></td></tr>
+<tr class="separator:a68d5ca5d6fd24fa3ec8354e8ec62227a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc4b687788236f83fbb879465d80efe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#abdc4b687788236f83fbb879465d80efe">getEventDispatcher</a> ()</td></tr>
+<tr class="memdesc:abdc4b687788236f83fbb879465d80efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a>.  <a href="#abdc4b687788236f83fbb879465d80efe">More...</a><br /></td></tr>
+<tr class="separator:abdc4b687788236f83fbb879465d80efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717c0e8323d219589975f607ab561462"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1AudioManager.html">AudioManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a717c0e8323d219589975f607ab561462">getAudioManager</a> ()</td></tr>
+<tr class="memdesc:a717c0e8323d219589975f607ab561462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1AudioManager.html">AudioManager</a>.  <a href="#a717c0e8323d219589975f607ab561462">More...</a><br /></td></tr>
+<tr class="separator:a717c0e8323d219589975f607ab561462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf21b81ebd78065cef478cc57847eab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a8cf21b81ebd78065cef478cc57847eab">getThreadManager</a> ()</td></tr>
+<tr class="memdesc:a8cf21b81ebd78065cef478cc57847eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a>.  <a href="#a8cf21b81ebd78065cef478cc57847eab">More...</a><br /></td></tr>
+<tr class="separator:a8cf21b81ebd78065cef478cc57847eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a023b31b837007c82c91dab8be17d149c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1Renderer.html">Renderer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a023b31b837007c82c91dab8be17d149c">getRenderer</a> ()</td></tr>
+<tr class="memdesc:a023b31b837007c82c91dab8be17d149c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches the <a class="el" href="classsage_1_1Renderer.html">Renderer</a>.  <a href="#a023b31b837007c82c91dab8be17d149c">More...</a><br /></td></tr>
+<tr class="separator:a023b31b837007c82c91dab8be17d149c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9d4014d4913a035e970a16bbc03199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a9b9d4014d4913a035e970a16bbc03199">setRenderer</a> (std::unique_ptr&lt; <a class="el" href="classsage_1_1Renderer.html">Renderer</a> &gt; <a class="el" href="classsage_1_1Application.html#ac0297e6d65ef3662c807f4026f63c8ba">renderer</a>)</td></tr>
+<tr class="memdesc:a9b9d4014d4913a035e970a16bbc03199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="classsage_1_1Renderer.html">Renderer</a>.  <a href="#a9b9d4014d4913a035e970a16bbc03199">More...</a><br /></td></tr>
+<tr class="separator:a9b9d4014d4913a035e970a16bbc03199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68965449404743bf1add056784d6cf81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a68965449404743bf1add056784d6cf81">run</a> ()</td></tr>
 <tr class="memdesc:a68965449404743bf1add056784d6cf81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the main game loop. Manages rendering and timing, starts the <a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a>.  <a href="#a68965449404743bf1add056784d6cf81">More...</a><br /></td></tr>
 <tr class="separator:a68965449404743bf1add056784d6cf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,28 +182,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a748bca84fefb9c12661cfaa2f623748d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classsage_1_1Application.html" title="Class that handles the window. Also manages Scenes, Caches and runs the main game loop.">Application</a> Destructor. Deletes all Scenes, Caches, etc., destroys the window.  <a href="#a748bca84fefb9c12661cfaa2f623748d">More...</a><br /></td></tr>
 <tr class="separator:a748bca84fefb9c12661cfaa2f623748d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a684050e1d1b3033c9226c2a3481f934d"><td class="memItemLeft" align="right" valign="top">std::stack&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a684050e1d1b3033c9226c2a3481f934d">scenes</a></td></tr>
-<tr class="separator:a684050e1d1b3033c9226c2a3481f934d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3365f5f5f8f63eeca5e778ded7dbe210"><td class="memItemLeft" align="right" valign="top">std::stack&lt; std::shared_ptr&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a3365f5f5f8f63eeca5e778ded7dbe210">scenes</a></td></tr>
+<tr class="separator:a3365f5f5f8f63eeca5e778ded7dbe210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08facf4df89e707b2a07a1be0782643a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a08facf4df89e707b2a07a1be0782643a">lastUpdate</a> = 0</td></tr>
 <tr class="separator:a08facf4df89e707b2a07a1be0782643a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246cb87d276d2ee0ca471379307bc456"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a246cb87d276d2ee0ca471379307bc456">threadManager</a></td></tr>
-<tr class="separator:a246cb87d276d2ee0ca471379307bc456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab576f71a5b927d4b7f7790ae0b15c213"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1FileCache.html">FileCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ab576f71a5b927d4b7f7790ae0b15c213">fileCache</a></td></tr>
-<tr class="separator:ab576f71a5b927d4b7f7790ae0b15c213"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab335f3e9f82d3648878128a75caeb89b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ImageCache.html">ImageCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ab335f3e9f82d3648878128a75caeb89b">imageCache</a></td></tr>
-<tr class="separator:ab335f3e9f82d3648878128a75caeb89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc39fae2de148d3c726b86d0c93a4816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#adc39fae2de148d3c726b86d0c93a4816">shaderCache</a></td></tr>
-<tr class="separator:adc39fae2de148d3c726b86d0c93a4816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a998309542a632e444d9a7d9ef6e5d5bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1FontCache.html">FontCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a998309542a632e444d9a7d9ef6e5d5bf">fontCache</a></td></tr>
-<tr class="separator:a998309542a632e444d9a7d9ef6e5d5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38828d2324d2b6a9feae40049eee2aa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1AudioCache.html">AudioCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a38828d2324d2b6a9feae40049eee2aa7">audioCache</a></td></tr>
-<tr class="separator:a38828d2324d2b6a9feae40049eee2aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44decd857e2843750a781ec141163f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#af44decd857e2843750a781ec141163f0">eventDispatcher</a></td></tr>
-<tr class="separator:af44decd857e2843750a781ec141163f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5d509f796f7d2d9a779fc01143c3a75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsage_1_1AudioManager.html">AudioManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#aa5d509f796f7d2d9a779fc01143c3a75">audioManager</a></td></tr>
-<tr class="separator:aa5d509f796f7d2d9a779fc01143c3a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a666257ae6b2729ebaf2906abc13d4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a32a666257ae6b2729ebaf2906abc13d4">threadManager</a></td></tr>
+<tr class="separator:a32a666257ae6b2729ebaf2906abc13d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaaeb004710d17aaff977ba58acaa9a5"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1FileCache.html">FileCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#adaaeb004710d17aaff977ba58acaa9a5">fileCache</a></td></tr>
+<tr class="separator:adaaeb004710d17aaff977ba58acaa9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951b28603bbc30da98db70a1757ac526"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1ImageCache.html">ImageCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a951b28603bbc30da98db70a1757ac526">imageCache</a></td></tr>
+<tr class="separator:a951b28603bbc30da98db70a1757ac526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7bcc406dca9a460d54f11c2eda47c4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a9a7bcc406dca9a460d54f11c2eda47c4">shaderCache</a></td></tr>
+<tr class="separator:a9a7bcc406dca9a460d54f11c2eda47c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1d694037e52b302d32e99ff532277d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1FontCache.html">FontCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a5b1d694037e52b302d32e99ff532277d">fontCache</a></td></tr>
+<tr class="separator:a5b1d694037e52b302d32e99ff532277d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a266e1a477f1c82d36e4cb5c2feab8"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1AudioCache.html">AudioCache</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a84a266e1a477f1c82d36e4cb5c2feab8">audioCache</a></td></tr>
+<tr class="separator:a84a266e1a477f1c82d36e4cb5c2feab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7cbe4333c8c285fb78fa6d561090281"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ae7cbe4333c8c285fb78fa6d561090281">eventDispatcher</a></td></tr>
+<tr class="separator:ae7cbe4333c8c285fb78fa6d561090281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac581d8db2c28c51373d3eae40e816620"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1AudioManager.html">AudioManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ac581d8db2c28c51373d3eae40e816620">audioManager</a></td></tr>
+<tr class="separator:ac581d8db2c28c51373d3eae40e816620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0297e6d65ef3662c807f4026f63c8ba"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classsage_1_1Renderer.html">Renderer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#ac0297e6d65ef3662c807f4026f63c8ba">renderer</a></td></tr>
+<tr class="separator:ac0297e6d65ef3662c807f4026f63c8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5197cd07379bdbc371c26c21f936c17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#aa5197cd07379bdbc371c26c21f936c17">isRunning</a> = false</td></tr>
 <tr class="separator:aa5197cd07379bdbc371c26c21f936c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c8135f73ec3091ffcb750dcc280c4d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1Application.html#a2c8135f73ec3091ffcb750dcc280c4d2">isPaused</a> = false</td></tr>
@@ -318,14 +329,14 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aaed4c540666d784b83d5506e51fb5eaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaed4c540666d784b83d5506e51fb5eaa">&#9670;&nbsp;</a></span>getAudioCache()</h2>
+<a id="a68d5ca5d6fd24fa3ec8354e8ec62227a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d5ca5d6fd24fa3ec8354e8ec62227a">&#9670;&nbsp;</a></span>getAudioCache()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1AudioCache.html">AudioCache</a> * Application::getAudioCache </td>
+          <td class="memname"><a class="el" href="classsage_1_1AudioCache.html">AudioCache</a> &amp; Application::getAudioCache </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -335,22 +346,22 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the <a class="el" href="classsage_1_1AudioCache.html">AudioCache</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1AudioCache.html">AudioCache</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a38828d2324d2b6a9feae40049eee2aa7">audioCache</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a84a266e1a477f1c82d36e4cb5c2feab8">audioCache</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#ac21f1df422a3589af890dc7616b272d7" title="Fetches the AudioManager.">getAudioManager()</a> </dd>
+<a class="el" href="classsage_1_1Application.html#a717c0e8323d219589975f607ab561462" title="Fetches the AudioManager.">getAudioManager()</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a782edaec320c507870814d8576f84fba" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#adaacf80b3ecc3efdd4696b869ca3aedd" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
 
 </div>
 </div>
-<a id="ac21f1df422a3589af890dc7616b272d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac21f1df422a3589af890dc7616b272d7">&#9670;&nbsp;</a></span>getAudioManager()</h2>
+<a id="a717c0e8323d219589975f607ab561462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a717c0e8323d219589975f607ab561462">&#9670;&nbsp;</a></span>getAudioManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1AudioManager.html">AudioManager</a> * Application::getAudioManager </td>
+          <td class="memname"><a class="el" href="classsage_1_1AudioManager.html">AudioManager</a> &amp; Application::getAudioManager </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -360,9 +371,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the <a class="el" href="classsage_1_1AudioManager.html">AudioManager</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1AudioManager.html">AudioManager</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#aa5d509f796f7d2d9a779fc01143c3a75">audioManager</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ac581d8db2c28c51373d3eae40e816620">audioManager</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#aaed4c540666d784b83d5506e51fb5eaa" title="Fetches the AudioCache.">getAudioCache()</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#a68d5ca5d6fd24fa3ec8354e8ec62227a" title="Fetches the AudioCache.">getAudioCache()</a> </dd></dl>
 
 </div>
 </div>
@@ -381,19 +392,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fetches the DPI of the display, the window is currently on. x contains the horizontal, y the vertical DPI value. </p>
+<p>Fetches the DPI of the display, the window is currently on. x contains the horizontal, y the vertical DPI value. Currently always returns 400 on Android (SDL_GetDisplayDPI does not work on Android) </p>
 <dl class="section return"><dt>Returns</dt><dd>the displays horizontal and vertical DPI </dd></dl>
 
 </div>
 </div>
-<a id="a37c65bddaa8e4534b28f5b36b66fdd81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37c65bddaa8e4534b28f5b36b66fdd81">&#9670;&nbsp;</a></span>getEventDispatcher()</h2>
+<a id="abdc4b687788236f83fbb879465d80efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc4b687788236f83fbb879465d80efe">&#9670;&nbsp;</a></span>getEventDispatcher()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a> * Application::getEventDispatcher </td>
+          <td class="memname"><a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a> &amp; Application::getEventDispatcher </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -403,18 +414,18 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the <a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#af44decd857e2843750a781ec141163f0">eventDispatcher</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ae7cbe4333c8c285fb78fa6d561090281">eventDispatcher</a> </dd></dl>
 
 </div>
 </div>
-<a id="a782edaec320c507870814d8576f84fba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a782edaec320c507870814d8576f84fba">&#9670;&nbsp;</a></span>getFileCache()</h2>
+<a id="adaacf80b3ecc3efdd4696b869ca3aedd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaacf80b3ecc3efdd4696b869ca3aedd">&#9670;&nbsp;</a></span>getFileCache()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1FileCache.html">FileCache</a> * Application::getFileCache </td>
+          <td class="memname"><a class="el" href="classsage_1_1FileCache.html">FileCache</a> &amp; Application::getFileCache </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -424,26 +435,26 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the <a class="el" href="classsage_1_1FileCache.html" title="Class that caches files into memory, so files don&#39;t have to be loaded from disk more often than neces...">FileCache</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1FileCache.html" title="Class that caches files into memory, so files don&#39;t have to be loaded from disk more often than neces...">FileCache</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ab576f71a5b927d4b7f7790ae0b15c213">fileCache</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#adaaeb004710d17aaff977ba58acaa9a5">fileCache</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a3c8156460d822447b22835bc4879c1a1" title="Fetches the ImageCache.">getImageCache()</a> </dd>
+<a class="el" href="classsage_1_1Application.html#a6659ce3fdb899bee814c0628dcbcc423" title="Fetches the ImageCache.">getImageCache()</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a4cd47a4230ba22582b6172ce430feb1d" title="Fetches the FontCache.">getFontCache()</a> </dd>
+<a class="el" href="classsage_1_1Application.html#a325c4ae42e7c7adbb435d68be16f20e7" title="Fetches the FontCache.">getFontCache()</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#aa9260bf22da6d4fc5451c789c17ad7a5" title="Fetches the ShaderCache.">getShaderCache()</a> </dd>
+<a class="el" href="classsage_1_1Application.html#a2968bb7e8ae2247aa49d1092f24a751a" title="Fetches the ShaderCache.">getShaderCache()</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#aaed4c540666d784b83d5506e51fb5eaa" title="Fetches the AudioCache.">getAudioCache()</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#a68d5ca5d6fd24fa3ec8354e8ec62227a" title="Fetches the AudioCache.">getAudioCache()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a4cd47a4230ba22582b6172ce430feb1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cd47a4230ba22582b6172ce430feb1d">&#9670;&nbsp;</a></span>getFontCache()</h2>
+<a id="a325c4ae42e7c7adbb435d68be16f20e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a325c4ae42e7c7adbb435d68be16f20e7">&#9670;&nbsp;</a></span>getFontCache()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1FontCache.html">FontCache</a> * Application::getFontCache </td>
+          <td class="memname"><a class="el" href="classsage_1_1FontCache.html">FontCache</a> &amp; Application::getFontCache </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -453,20 +464,20 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the <a class="el" href="classsage_1_1FontCache.html">FontCache</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1FontCache.html">FontCache</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a998309542a632e444d9a7d9ef6e5d5bf">fontCache</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a5b1d694037e52b302d32e99ff532277d">fontCache</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a782edaec320c507870814d8576f84fba" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#adaacf80b3ecc3efdd4696b869ca3aedd" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a3c8156460d822447b22835bc4879c1a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c8156460d822447b22835bc4879c1a1">&#9670;&nbsp;</a></span>getImageCache()</h2>
+<a id="a6659ce3fdb899bee814c0628dcbcc423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6659ce3fdb899bee814c0628dcbcc423">&#9670;&nbsp;</a></span>getImageCache()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1ImageCache.html">ImageCache</a> * Application::getImageCache </td>
+          <td class="memname"><a class="el" href="classsage_1_1ImageCache.html">ImageCache</a> &amp; Application::getImageCache </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -476,20 +487,43 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the <a class="el" href="classsage_1_1ImageCache.html">ImageCache</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1ImageCache.html">ImageCache</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ab335f3e9f82d3648878128a75caeb89b">imageCache</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a951b28603bbc30da98db70a1757ac526">imageCache</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a782edaec320c507870814d8576f84fba" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#adaacf80b3ecc3efdd4696b869ca3aedd" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a4eaac489d4247bd184e17fa0aa6c858c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eaac489d4247bd184e17fa0aa6c858c">&#9670;&nbsp;</a></span>getScene()</h2>
+<a id="a023b31b837007c82c91dab8be17d149c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a023b31b837007c82c91dab8be17d149c">&#9670;&nbsp;</a></span>getRenderer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1Scene.html">Scene</a> * Application::getScene </td>
+          <td class="memname"><a class="el" href="classsage_1_1Renderer.html">Renderer</a> &amp; Application::getRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetches the <a class="el" href="classsage_1_1Renderer.html">Renderer</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1Renderer.html">Renderer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a9b9d4014d4913a035e970a16bbc03199" title="Sets the Renderer.">setRenderer(std::unique_ptr&lt;Renderer&gt; renderer)</a> </dd>
+<dd>
+<a class="el" href="classsage_1_1Application.html#ac0297e6d65ef3662c807f4026f63c8ba">renderer</a> </dd></dl>
+
+</div>
+</div>
+<a id="a4d40d8fae7f9f26cf45d8fca6e811c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d40d8fae7f9f26cf45d8fca6e811c3f">&#9670;&nbsp;</a></span>getScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> &gt; Application::getScene </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -499,22 +533,22 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the current <a class="el" href="classsage_1_1Scene.html">Scene</a> from the stack. </p>
 <dl class="section return"><dt>Returns</dt><dd>the current <a class="el" href="classsage_1_1Scene.html">Scene</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ad69ba03dafa5afd69f2d6eb2a9d5fad5" title="Pushes a Scene onto the stack. It will be displayed in the next rendering call and be active until it...">pushScene</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#aa4644a106875cb18286b08131cb807d2" title="Pushes a Scene onto the stack. It will be displayed in the next rendering call and be active until it...">pushScene</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a49f5ce7574cf4f3053c4213d3177c76c" title="Replaces the current Scene on the stack.">replaceScene</a> </dd>
+<a class="el" href="classsage_1_1Application.html#ac0458ccb5b0a4aae4bcb1fc958f369f4" title="Replaces the current Scene on the stack.">replaceScene</a> </dd>
 <dd>
 <a class="el" href="classsage_1_1Application.html#a47b5bec61b3d93cbb4998b42d0d2ea47" title="Pops the current Scene from the stack. Also deletes the Scene, do not delete manually!">popScene</a> </dd></dl>
 
 </div>
 </div>
-<a id="aa9260bf22da6d4fc5451c789c17ad7a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9260bf22da6d4fc5451c789c17ad7a5">&#9670;&nbsp;</a></span>getShaderCache()</h2>
+<a id="a2968bb7e8ae2247aa49d1092f24a751a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2968bb7e8ae2247aa49d1092f24a751a">&#9670;&nbsp;</a></span>getShaderCache()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a> * Application::getShaderCache </td>
+          <td class="memname"><a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a> &amp; Application::getShaderCache </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -524,9 +558,30 @@ Protected Attributes</h2></td></tr>
 
 <p>Fetches the <a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a> </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#adc39fae2de148d3c726b86d0c93a4816">shaderCache</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a9a7bcc406dca9a460d54f11c2eda47c4">shaderCache</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a782edaec320c507870814d8576f84fba" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#adaacf80b3ecc3efdd4696b869ca3aedd" title="Fetches the FileCache.">getFileCache()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8cf21b81ebd78065cef478cc57847eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf21b81ebd78065cef478cc57847eab">&#9670;&nbsp;</a></span>getThreadManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> &amp; Application::getThreadManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fetches the <a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a32a666257ae6b2729ebaf2906abc13d4">threadManager</a> </dd></dl>
 
 </div>
 </div>
@@ -617,16 +672,16 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pops the current <a class="el" href="classsage_1_1Scene.html">Scene</a> from the stack. Also deletes the <a class="el" href="classsage_1_1Scene.html">Scene</a>, do not delete manually! </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ad69ba03dafa5afd69f2d6eb2a9d5fad5" title="Pushes a Scene onto the stack. It will be displayed in the next rendering call and be active until it...">pushScene</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#aa4644a106875cb18286b08131cb807d2" title="Pushes a Scene onto the stack. It will be displayed in the next rendering call and be active until it...">pushScene</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a49f5ce7574cf4f3053c4213d3177c76c" title="Replaces the current Scene on the stack.">replaceScene</a> </dd>
+<a class="el" href="classsage_1_1Application.html#ac0458ccb5b0a4aae4bcb1fc958f369f4" title="Replaces the current Scene on the stack.">replaceScene</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a4eaac489d4247bd184e17fa0aa6c858c" title="Fetches the current Scene from the stack.">getScene</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#a4d40d8fae7f9f26cf45d8fca6e811c3f" title="Fetches the current Scene from the stack.">getScene</a> </dd></dl>
 
 </div>
 </div>
-<a id="ad69ba03dafa5afd69f2d6eb2a9d5fad5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad69ba03dafa5afd69f2d6eb2a9d5fad5">&#9670;&nbsp;</a></span>pushScene()</h2>
+<a id="aa4644a106875cb18286b08131cb807d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4644a106875cb18286b08131cb807d2">&#9670;&nbsp;</a></span>pushScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -634,7 +689,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Application::pushScene </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classsage_1_1Scene.html">Scene</a> *&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> &gt;&#160;</td>
           <td class="paramname"><em>scene</em></td><td>)</td>
           <td></td>
         </tr>
@@ -648,16 +703,16 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a49f5ce7574cf4f3053c4213d3177c76c" title="Replaces the current Scene on the stack.">replaceScene()</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ac0458ccb5b0a4aae4bcb1fc958f369f4" title="Replaces the current Scene on the stack.">replaceScene()</a> </dd>
 <dd>
 <a class="el" href="classsage_1_1Application.html#a47b5bec61b3d93cbb4998b42d0d2ea47" title="Pops the current Scene from the stack. Also deletes the Scene, do not delete manually!">popScene()</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a4eaac489d4247bd184e17fa0aa6c858c" title="Fetches the current Scene from the stack.">getScene()</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#a4d40d8fae7f9f26cf45d8fca6e811c3f" title="Fetches the current Scene from the stack.">getScene()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a49f5ce7574cf4f3053c4213d3177c76c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49f5ce7574cf4f3053c4213d3177c76c">&#9670;&nbsp;</a></span>replaceScene()</h2>
+<a id="ac0458ccb5b0a4aae4bcb1fc958f369f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0458ccb5b0a4aae4bcb1fc958f369f4">&#9670;&nbsp;</a></span>replaceScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -665,7 +720,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Application::replaceScene </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classsage_1_1Scene.html">Scene</a> *&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classsage_1_1Scene.html">Scene</a> &gt;&#160;</td>
           <td class="paramname"><em>scene</em></td><td>)</td>
           <td></td>
         </tr>
@@ -679,11 +734,11 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#ad69ba03dafa5afd69f2d6eb2a9d5fad5" title="Pushes a Scene onto the stack. It will be displayed in the next rendering call and be active until it...">pushScene</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#aa4644a106875cb18286b08131cb807d2" title="Pushes a Scene onto the stack. It will be displayed in the next rendering call and be active until it...">pushScene</a> </dd>
 <dd>
 <a class="el" href="classsage_1_1Application.html#a47b5bec61b3d93cbb4998b42d0d2ea47" title="Pops the current Scene from the stack. Also deletes the Scene, do not delete manually!">popScene</a> </dd>
 <dd>
-<a class="el" href="classsage_1_1Application.html#a4eaac489d4247bd184e17fa0aa6c858c" title="Fetches the current Scene from the stack.">getScene</a> </dd></dl>
+<a class="el" href="classsage_1_1Application.html#a4d40d8fae7f9f26cf45d8fca6e811c3f" title="Fetches the current Scene from the stack.">getScene</a> </dd></dl>
 
 </div>
 </div>
@@ -703,6 +758,35 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the main game loop. Manages rendering and timing, starts the <a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a>. </p>
+
+</div>
+</div>
+<a id="a9b9d4014d4913a035e970a16bbc03199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9d4014d4913a035e970a16bbc03199">&#9670;&nbsp;</a></span>setRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::setRenderer </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classsage_1_1Renderer.html">Renderer</a> &gt;&#160;</td>
+          <td class="paramname"><em>renderer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the <a class="el" href="classsage_1_1Renderer.html">Renderer</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderer</td><td>the <a class="el" href="classsage_1_1Renderer.html">Renderer</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsage_1_1Application.html#a023b31b837007c82c91dab8be17d149c" title="Fetches the Renderer.">getRenderer()</a> </dd>
+<dd>
+<a class="el" href="classsage_1_1Application.html#ac0297e6d65ef3662c807f4026f63c8ba">renderer</a> </dd></dl>
 
 </div>
 </div>
@@ -734,8 +818,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a38828d2324d2b6a9feae40049eee2aa7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38828d2324d2b6a9feae40049eee2aa7">&#9670;&nbsp;</a></span>audioCache</h2>
+<a id="a84a266e1a477f1c82d36e4cb5c2feab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a266e1a477f1c82d36e4cb5c2feab8">&#9670;&nbsp;</a></span>audioCache</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -744,12 +828,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1AudioCache.html">AudioCache</a>* sage::Application::audioCache</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1AudioCache.html">AudioCache</a>&gt; sage::Application::audioCache</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -757,8 +841,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa5d509f796f7d2d9a779fc01143c3a75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5d509f796f7d2d9a779fc01143c3a75">&#9670;&nbsp;</a></span>audioManager</h2>
+<a id="ac581d8db2c28c51373d3eae40e816620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac581d8db2c28c51373d3eae40e816620">&#9670;&nbsp;</a></span>audioManager</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -767,12 +851,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1AudioManager.html">AudioManager</a>* sage::Application::audioManager</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1AudioManager.html">AudioManager</a>&gt; sage::Application::audioManager</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -780,8 +864,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af44decd857e2843750a781ec141163f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af44decd857e2843750a781ec141163f0">&#9670;&nbsp;</a></span>eventDispatcher</h2>
+<a id="ae7cbe4333c8c285fb78fa6d561090281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7cbe4333c8c285fb78fa6d561090281">&#9670;&nbsp;</a></span>eventDispatcher</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -790,12 +874,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a>* sage::Application::eventDispatcher</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1EventDispatcher.html">EventDispatcher</a>&gt; sage::Application::eventDispatcher</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -803,8 +887,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab576f71a5b927d4b7f7790ae0b15c213"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab576f71a5b927d4b7f7790ae0b15c213">&#9670;&nbsp;</a></span>fileCache</h2>
+<a id="adaaeb004710d17aaff977ba58acaa9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaaeb004710d17aaff977ba58acaa9a5">&#9670;&nbsp;</a></span>fileCache</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -813,12 +897,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1FileCache.html">FileCache</a>* sage::Application::fileCache</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1FileCache.html">FileCache</a>&gt; sage::Application::fileCache</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -826,8 +910,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a998309542a632e444d9a7d9ef6e5d5bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a998309542a632e444d9a7d9ef6e5d5bf">&#9670;&nbsp;</a></span>fontCache</h2>
+<a id="a5b1d694037e52b302d32e99ff532277d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1d694037e52b302d32e99ff532277d">&#9670;&nbsp;</a></span>fontCache</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -836,12 +920,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1FontCache.html">FontCache</a>* sage::Application::fontCache</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1FontCache.html">FontCache</a>&gt; sage::Application::fontCache</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -864,7 +948,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -872,8 +956,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab335f3e9f82d3648878128a75caeb89b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab335f3e9f82d3648878128a75caeb89b">&#9670;&nbsp;</a></span>imageCache</h2>
+<a id="a951b28603bbc30da98db70a1757ac526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951b28603bbc30da98db70a1757ac526">&#9670;&nbsp;</a></span>imageCache</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -882,12 +966,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1ImageCache.html">ImageCache</a>* sage::Application::imageCache</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1ImageCache.html">ImageCache</a>&gt; sage::Application::imageCache</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -910,7 +994,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -933,7 +1017,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -956,7 +1040,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -964,8 +1048,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a684050e1d1b3033c9226c2a3481f934d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a684050e1d1b3033c9226c2a3481f934d">&#9670;&nbsp;</a></span>scenes</h2>
+<a id="ac0297e6d65ef3662c807f4026f63c8ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0297e6d65ef3662c807f4026f63c8ba">&#9670;&nbsp;</a></span>renderer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -974,12 +1058,35 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::stack&lt;<a class="el" href="classsage_1_1Scene.html">Scene</a>*&gt; sage::Application::scenes</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1Renderer.html">Renderer</a>&gt; sage::Application::renderer</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Pointer to the <a class="el" href="classsage_1_1Renderer.html">Renderer</a> which decides how to render the Nodes </p>
+
+</div>
+</div>
+<a id="a3365f5f5f8f63eeca5e778ded7dbe210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3365f5f5f8f63eeca5e778ded7dbe210">&#9670;&nbsp;</a></span>scenes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stack&lt;std::shared_ptr&lt;<a class="el" href="classsage_1_1Scene.html">Scene</a>&gt; &gt; sage::Application::scenes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1002,7 +1109,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1010,8 +1117,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adc39fae2de148d3c726b86d0c93a4816"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc39fae2de148d3c726b86d0c93a4816">&#9670;&nbsp;</a></span>shaderCache</h2>
+<a id="a9a7bcc406dca9a460d54f11c2eda47c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7bcc406dca9a460d54f11c2eda47c4">&#9670;&nbsp;</a></span>shaderCache</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1020,12 +1127,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a>* sage::Application::shaderCache</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1ShaderCache.html">ShaderCache</a>&gt; sage::Application::shaderCache</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1033,8 +1140,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a246cb87d276d2ee0ca471379307bc456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a246cb87d276d2ee0ca471379307bc456">&#9670;&nbsp;</a></span>threadManager</h2>
+<a id="a32a666257ae6b2729ebaf2906abc13d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32a666257ae6b2729ebaf2906abc13d4">&#9670;&nbsp;</a></span>threadManager</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1043,12 +1150,12 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a>* sage::Application::threadManager</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classsage_1_1ThreadManager.html">ThreadManager</a>&gt; sage::Application::threadManager</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1063,7 +1170,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 24 2019 15:36:18 for sage by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 31 2019 16:40:26 for sage by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
