@@ -9,6 +9,7 @@
 
 namespace sage{
 	class Scene;
+	class Renderer;
 	
 	/**
 	 * @brief Abstract class that describes all things drawn by the Scene.
@@ -552,6 +553,12 @@ namespace sage{
 		 * @return a vector containing child-Nodes
 		 */
 		std::vector<std::shared_ptr<Node>> getChildren();
+		/**
+		 * @brief Renders the Node by calling the Renderer
+		 * Implementations of this function need to call Renderer::renderSingle
+		 * @param r the Renderer
+		 */
+		virtual void render(Renderer& r);
 		/**
 		 * @brief Node destructor.
 		 * Deletes children.

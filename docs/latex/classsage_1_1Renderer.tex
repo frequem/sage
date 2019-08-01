@@ -17,22 +17,18 @@ Inheritance diagram for sage\+::Renderer\+:\begin{figure}[H]
 \item 
 virtual void \mbox{\hyperlink{classsage_1_1Renderer_af7e5f8f68742f198e315fb4683a605a4}{render}} ()
 \item 
+virtual void \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{render\+Single}} (\mbox{\hyperlink{classsage_1_1TexturedNode}{Textured\+Node}} \&tn)=0
+\item 
+virtual void \mbox{\hyperlink{classsage_1_1Renderer_a8f0af306879420d208abd8a0555055b5}{render\+Single}} (\mbox{\hyperlink{classsage_1_1ColorNode}{Color\+Node}} \&tn)=0
+\item 
 virtual \mbox{\hyperlink{classsage_1_1Renderer_afeee408862d5bd6255a6882d47e6d5cd}{$\sim$\+Renderer}} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classsage_1_1Renderer_a2735ace3b20cd5703c54b0825ce3df85}{try\+Render\+Single}} (\mbox{\hyperlink{classsage_1_1Node}{Node}} \&n)
-\item 
-void \mbox{\hyperlink{classsage_1_1Renderer_a860500c3a330cee6471f384e5a8139c1}{try\+Render\+Singles}} (\mbox{\hyperlink{classsage_1_1Node}{Node}} \&n)
-\item 
 virtual void \mbox{\hyperlink{classsage_1_1Renderer_a213548aab22256923579dcfda01b12ba}{render}} (\mbox{\hyperlink{classsage_1_1Node}{Node}} \&n)
 \item 
 void \mbox{\hyperlink{classsage_1_1Renderer_a26b3671c3df207eaf2620fdc06a2610e}{render}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $>$$>$)
-\item 
-virtual void \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{render\+Single}} (\mbox{\hyperlink{classsage_1_1TexturedNode}{Textured\+Node}} \&tn)=0
-\item 
-virtual void \mbox{\hyperlink{classsage_1_1Renderer_a8f0af306879420d208abd8a0555055b5}{render\+Single}} (\mbox{\hyperlink{classsage_1_1ColorNode}{Color\+Node}} \&tn)=0
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -87,34 +83,21 @@ Reimplemented in \mbox{\hyperlink{classsage_1_1BasicRenderer_a098449e7b2b967968b
 \index{sage::Renderer@{sage::Renderer}!renderSingle@{renderSingle}}
 \index{renderSingle@{renderSingle}!sage::Renderer@{sage::Renderer}}
 \subsubsection{\texorpdfstring{renderSingle()}{renderSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily virtual void sage\+::\+Renderer\+::render\+Single (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1TexturedNode}{Textured\+Node}} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void sage\+::\+Renderer\+::render\+Single (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1TexturedNode}{Textured\+Node}} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{classsage_1_1BasicRenderer_a405afdd4975fb1e8c37d6b3396f3ea18}{sage\+::\+Basic\+Renderer}}, and \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a45528a298ccddd656e0aa377bb4fc646}{sage\+::\+Depth\+Peel\+Renderer}}.
+Implemented in \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_a45528a298ccddd656e0aa377bb4fc646}{sage\+::\+Depth\+Peel\+Renderer}}, and \mbox{\hyperlink{classsage_1_1BasicRenderer_a405afdd4975fb1e8c37d6b3396f3ea18}{sage\+::\+Basic\+Renderer}}.
 
 \mbox{\Hypertarget{classsage_1_1Renderer_a8f0af306879420d208abd8a0555055b5}\label{classsage_1_1Renderer_a8f0af306879420d208abd8a0555055b5}} 
 \index{sage::Renderer@{sage::Renderer}!renderSingle@{renderSingle}}
 \index{renderSingle@{renderSingle}!sage::Renderer@{sage::Renderer}}
 \subsubsection{\texorpdfstring{renderSingle()}{renderSingle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily virtual void sage\+::\+Renderer\+::render\+Single (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1ColorNode}{Color\+Node}} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void sage\+::\+Renderer\+::render\+Single (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1ColorNode}{Color\+Node}} \&}]{tn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{classsage_1_1BasicRenderer_a970280d2d704dea463ba0adbca84835f}{sage\+::\+Basic\+Renderer}}, and \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_af5414d31a754eaf5a91447e5793365a7}{sage\+::\+Depth\+Peel\+Renderer}}.
-
-\mbox{\Hypertarget{classsage_1_1Renderer_a2735ace3b20cd5703c54b0825ce3df85}\label{classsage_1_1Renderer_a2735ace3b20cd5703c54b0825ce3df85}} 
-\index{sage::Renderer@{sage::Renderer}!tryRenderSingle@{tryRenderSingle}}
-\index{tryRenderSingle@{tryRenderSingle}!sage::Renderer@{sage::Renderer}}
-\subsubsection{\texorpdfstring{tryRenderSingle()}{tryRenderSingle()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-bool sage\+::\+Renderer\+::try\+Render\+Single (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Node}{Node}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classsage_1_1Renderer_a860500c3a330cee6471f384e5a8139c1}\label{classsage_1_1Renderer_a860500c3a330cee6471f384e5a8139c1}} 
-\index{sage::Renderer@{sage::Renderer}!tryRenderSingles@{tryRenderSingles}}
-\index{tryRenderSingles@{tryRenderSingles}!sage::Renderer@{sage::Renderer}}
-\subsubsection{\texorpdfstring{tryRenderSingles()}{tryRenderSingles()}}
-{\footnotesize\ttfamily void Renderer\+::try\+Render\+Singles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Node}{Node}} \&}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+Implemented in \mbox{\hyperlink{classsage_1_1DepthPeelRenderer_af5414d31a754eaf5a91447e5793365a7}{sage\+::\+Depth\+Peel\+Renderer}}, and \mbox{\hyperlink{classsage_1_1BasicRenderer_a970280d2d704dea463ba0adbca84835f}{sage\+::\+Basic\+Renderer}}.
 
 
 

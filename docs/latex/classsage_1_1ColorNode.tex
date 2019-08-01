@@ -21,6 +21,8 @@ glm\+::vec3 \mbox{\hyperlink{classsage_1_1ColorNode_ad2ffce290e2cde1697ae609fe0a
 \begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsage_1_1ColorNode_a65747783aeea07d997c54b3ef8d212f8}{set\+Color}} (S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1ColorNode_aad5832e161e608730df9512894725d2d}{color}})
 \item 
+void \mbox{\hyperlink{classsage_1_1ColorNode_ac2cf18feb8ab4e55dd68ca8b0c4faabf}{render}} (\mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \&r) override
+\begin{DoxyCompactList}\small\item\em Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} Implementations of this function need to call \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{Renderer\+::render\+Single}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsage_1_1ColorNode_af1864690840922c8b14340d6991eac3e}{$\sim$\+Color\+Node}} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
@@ -97,6 +99,25 @@ Is called every time the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesin
 
 
 Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab87776adae83149e235e37ed469f4e10}{sage\+::\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1ColorNode_ac2cf18feb8ab4e55dd68ca8b0c4faabf}\label{classsage_1_1ColorNode_ac2cf18feb8ab4e55dd68ca8b0c4faabf}} 
+\index{sage::ColorNode@{sage::ColorNode}!render@{render}}
+\index{render@{render}!sage::ColorNode@{sage::ColorNode}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Color\+Node\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} Implementations of this function need to call \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{Renderer\+::render\+Single}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_a1a5d13b9c959039084843403382f73eb}{sage\+::\+Node}}.
 
 \mbox{\Hypertarget{classsage_1_1ColorNode_a65747783aeea07d997c54b3ef8d212f8}\label{classsage_1_1ColorNode_a65747783aeea07d997c54b3ef8d212f8}} 
 \index{sage::ColorNode@{sage::ColorNode}!setColor@{setColor}}

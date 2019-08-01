@@ -4,48 +4,45 @@
 #include <SDL2/SDL.h>
 
 #include <map>
-#include <any>
 #include <utility>
 #include <functional>
+
+#include <sage/util/Events.h>
 
 namespace sage{
 	class Application;
 	class Scene;
 	class Node;
-	//TODO: KEY_PRESS (delay)
-	enum class Event{ WINDOW_LEAVE, WINDOW_ENTER, KEY_DOWN, KEY_UP, MOUSE_DOWN, MOUSE_UP, MOUSE_CLICK, MOUSE_MOVE, MOUSE_DRAG, MOUSE_SCROLL, QUIT };
-	enum class NodeEvent{ MOUSE_DOWN, MOUSE_UP, MOUSE_CLICK, MOUSE_MOVE, MOUSE_ENTER, MOUSE_LEAVE };
 	
 	class EventDispatcher{
 	public:
 		EventDispatcher(Application&);
 		
-		template<typename... Args>
-		int addEventHandler(Event, Scene&, std::function<void(Args...)>&&);
+		template<typename Function>
+		int addEventHandler(Event, Scene&, Function&&);
 		
-		template<typename... Args>
-		int addEventHandler(Event, std::function<void(Args...)>&&);
+		template<typename Function>
+		int addEventHandler(Event, Function&&);
 		
-		template<typename... Args>
-		int addEventHandler(NodeEvent, Node&, std::function<void(Args...)>&&);
+		template<typename Function>
+		int addEventHandler(NodeEvent, Node&, Function&&);
 		
 		void removeEventHandler(int);
 						
 		void handleEvents();
 		
-		template<typename... Args>
-		void dispatchEvent(Event, Args&&...);
+		void dispatchEvent(Event, void* args);
 		
-		template<typename... Args>
-		void dispatchEvent(NodeEvent, std::function<bool(Node&, Args...)>&&, Args&&...);
+		template<typename CheckFunction>
+		void dispatchEvent(NodeEvent, CheckFunction&&, void* args);
 		
 		~EventDispatcher();
 	private:
 		Application* application;
 		
 		int nextHandlerId = 0;
-		std::map<Event, std::map<int, std::pair<Scene*, std::any>>> handlers;
-		std::map<NodeEvent, std::map<int, std::pair<Node*, std::any>>> node_handlers;
+		std::map<Event, std::map<int, std::pair<Scene*, std::function<void(void*)>>>> handlers;
+		std::map<NodeEvent, std::map<int, std::pair<Node*, std::function<void(void*)>>>> node_handlers;
 		
 		SDL_Event sdlEvent;
 		

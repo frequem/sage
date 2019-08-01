@@ -1,8 +1,20 @@
 var searchData=
 [
   ['event',['Event',['../namespacesage.html#afe706a25026cc74fe69b56d53a265d29',1,'sage']]],
+  ['eventargs_5fkey_5fdown',['EventArgs_KEY_DOWN',['../structsage_1_1EventArgs__KEY__DOWN.html',1,'sage']]],
+  ['eventargs_5fkey_5fup',['EventArgs_KEY_UP',['../structsage_1_1EventArgs__KEY__UP.html',1,'sage']]],
+  ['eventargs_5fmouse_5fclick',['EventArgs_MOUSE_CLICK',['../structsage_1_1EventArgs__MOUSE__CLICK.html',1,'sage']]],
+  ['eventargs_5fmouse_5fdown',['EventArgs_MOUSE_DOWN',['../structsage_1_1EventArgs__MOUSE__DOWN.html',1,'sage']]],
+  ['eventargs_5fmouse_5fdrag',['EventArgs_MOUSE_DRAG',['../structsage_1_1EventArgs__MOUSE__DRAG.html',1,'sage']]],
+  ['eventargs_5fmouse_5fmove',['EventArgs_MOUSE_MOVE',['../structsage_1_1EventArgs__MOUSE__MOVE.html',1,'sage']]],
+  ['eventargs_5fmouse_5fscroll',['EventArgs_MOUSE_SCROLL',['../structsage_1_1EventArgs__MOUSE__SCROLL.html',1,'sage']]],
+  ['eventargs_5fmouse_5fup',['EventArgs_MOUSE_UP',['../structsage_1_1EventArgs__MOUSE__UP.html',1,'sage']]],
+  ['eventargs_5fquit',['EventArgs_QUIT',['../structsage_1_1EventArgs__QUIT.html',1,'sage']]],
+  ['eventargs_5fwindow_5fenter',['EventArgs_WINDOW_ENTER',['../structsage_1_1EventArgs__WINDOW__ENTER.html',1,'sage']]],
+  ['eventargs_5fwindow_5fleave',['EventArgs_WINDOW_LEAVE',['../structsage_1_1EventArgs__WINDOW__LEAVE.html',1,'sage']]],
   ['eventdispatcher',['EventDispatcher',['../classsage_1_1EventDispatcher.html',1,'sage::EventDispatcher'],['../classsage_1_1Application.html#ae7cbe4333c8c285fb78fa6d561090281',1,'sage::Application::eventDispatcher()'],['../classsage_1_1EventDispatcher.html#aa80c440a5ba6379d084f616417ce0958',1,'sage::EventDispatcher::EventDispatcher()']]],
   ['eventdispatcher_2ecpp',['EventDispatcher.cpp',['../EventDispatcher_8cpp.html',1,'']]],
   ['eventdispatcher_2eh',['EventDispatcher.h',['../EventDispatcher_8h.html',1,'']]],
-  ['eventdispatcher_2etpp',['EventDispatcher.tpp',['../EventDispatcher_8tpp.html',1,'']]]
+  ['eventdispatcher_2etpp',['EventDispatcher.tpp',['../EventDispatcher_8tpp.html',1,'']]],
+  ['events_2eh',['Events.h',['../Events_8h.html',1,'']]]
 ];

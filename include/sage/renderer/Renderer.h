@@ -14,21 +14,16 @@ namespace sage{
 	public:
 		Renderer(Application&);
 		virtual void render();
-		virtual ~Renderer();
-	protected:
-		template <typename T>
-		bool tryRenderSingle(Node& n);
-		void tryRenderSingles(Node& n);
-		virtual void render(Node& n);
-		void render(std::vector<std::shared_ptr<Node>>);
 		
 		virtual void renderSingle(TexturedNode& tn) = 0;
 		virtual void renderSingle(ColorNode& tn) = 0;
 		
+		virtual ~Renderer();
+	protected:
+		virtual void render(Node& n);
+		void render(std::vector<std::shared_ptr<Node>>);
 		Application* application;
 	};
-	
-	#include <sage/renderer/Renderer.tpp>
 }
 
 

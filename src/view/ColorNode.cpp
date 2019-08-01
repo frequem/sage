@@ -1,4 +1,5 @@
 #include <sage/view/ColorNode.h>
+#include <sage/renderer/Renderer.h>
 
 using namespace sage;
 
@@ -14,6 +15,9 @@ void ColorNode::setColor(SDL_Color color){
 }
 
 glm::vec3 ColorNode::getSize(){ return glm::vec3(this->size, 0); }
+
+void ColorNode::render(Renderer& r){ r.renderSingle(*this); }
+
 
 ColorNode::~ColorNode(){}
 

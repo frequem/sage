@@ -8,5 +8,5 @@ var searchData=
   ['depthpeelrenderer_2ecpp',['DepthPeelRenderer.cpp',['../DepthPeelRenderer_8cpp.html',1,'']]],
   ['depthpeelrenderer_2eh',['DepthPeelRenderer.h',['../DepthPeelRenderer_8h.html',1,'']]],
   ['depthtextures',['depthTextures',['../classsage_1_1DepthPeelRenderer.html#a053e3c6a03a0038208b30d88848e1a95',1,'sage::DepthPeelRenderer']]],
-  ['dispatchevent',['dispatchEvent',['../classsage_1_1EventDispatcher.html#a096c6d68c684bb49ec1f8055c0e2a2d9',1,'sage::EventDispatcher::dispatchEvent(Event, Args &amp;&amp;...)'],['../classsage_1_1EventDispatcher.html#a80201aec738c2f1aaa5b812f867f28fd',1,'sage::EventDispatcher::dispatchEvent(NodeEvent, std::function&lt; bool(Node &amp;, Args...)&gt; &amp;&amp;, Args &amp;&amp;...)']]]
+  ['dispatchevent',['dispatchEvent',['../classsage_1_1EventDispatcher.html#a6f524699d0a3aaeed1544f634a88d9a1',1,'sage::EventDispatcher::dispatchEvent(Event, void *args)'],['../classsage_1_1EventDispatcher.html#a221273dabb73d06858598cd42db79902',1,'sage::EventDispatcher::dispatchEvent(NodeEvent, CheckFunction &amp;&amp;, void *args)']]]
 ];

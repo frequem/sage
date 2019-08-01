@@ -108,6 +108,8 @@ bool \mbox{\hyperlink{classsage_1_1Node_a5ab70d0b3fc9a167175f7f864549db4d}{conta
 \begin{DoxyCompactList}\small\item\em Checks if the \mbox{\hyperlink{classsage_1_1Node}{Node}} contains a point given in absolute x-\/ and y-\/coordinates. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classsage_1_1Node}{Node}} $>$ $>$ \mbox{\hyperlink{classsage_1_1Node_a13a5d97132d87b57bd68eb8662f1b505}{get\+Children}} ()
 \begin{DoxyCompactList}\small\item\em Fetches the child-\/\+Nodes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classsage_1_1Node_a1a5d13b9c959039084843403382f73eb}{render}} (\mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \&r)
+\begin{DoxyCompactList}\small\item\em Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} Implementations of this function need to call \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{Renderer\+::render\+Single}}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classsage_1_1Node_aa0840c3cb5c7159be6d992adecd2097c}{$\sim$\+Node}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classsage_1_1Node}{Node}} destructor. Deletes children. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
@@ -863,7 +865,7 @@ Is called every time the \mbox{\hyperlink{classsage_1_1Node}{Node}}\textquotesin
 
 
 
-Reimplemented in \mbox{\hyperlink{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}{sage\+::\+Sprite}}, \mbox{\hyperlink{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}{sage\+::\+Text\+Node}}, and \mbox{\hyperlink{classsage_1_1ColorNode_a1a5a055be2cc8d15b38c5c25eb489e94}{sage\+::\+Color\+Node}}.
+Reimplemented in \mbox{\hyperlink{classsage_1_1Sprite_aeaf5c7aa5aeff1b0a4da9e66430f1c42}{sage\+::\+Sprite}}, \mbox{\hyperlink{classsage_1_1ColorNode_a1a5a055be2cc8d15b38c5c25eb489e94}{sage\+::\+Color\+Node}}, and \mbox{\hyperlink{classsage_1_1TextNode_ae389b7b4afae4d068ac29686343f279e}{sage\+::\+Text\+Node}}.
 
 \mbox{\Hypertarget{classsage_1_1Node_a40edd1724c0956ef7794225fba8353c0}\label{classsage_1_1Node_a40edd1724c0956ef7794225fba8353c0}} 
 \index{sage::Node@{sage::Node}!relPoint@{relPoint}}
@@ -883,6 +885,25 @@ Converts a point in absolute (\mbox{\hyperlink{classsage_1_1Application}{Applica
 
 
 Reimplemented in \mbox{\hyperlink{classsage_1_1Scene_ae68e14c0f453db078df4b515fdea83f7}{sage\+::\+Scene}}.
+
+\mbox{\Hypertarget{classsage_1_1Node_a1a5d13b9c959039084843403382f73eb}\label{classsage_1_1Node_a1a5d13b9c959039084843403382f73eb}} 
+\index{sage::Node@{sage::Node}!render@{render}}
+\index{render@{render}!sage::Node@{sage::Node}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Node\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} Implementations of this function need to call \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{Renderer\+::render\+Single}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classsage_1_1ColorNode_ac2cf18feb8ab4e55dd68ca8b0c4faabf}{sage\+::\+Color\+Node}}, and \mbox{\hyperlink{classsage_1_1TexturedNode_a3ced7cf384aac86fb84face2dc62e395}{sage\+::\+Textured\+Node}}.
 
 \mbox{\Hypertarget{classsage_1_1Node_a04d15cec594320725e6ef44756346d2a}\label{classsage_1_1Node_a04d15cec594320725e6ef44756346d2a}} 
 \index{sage::Node@{sage::Node}!setAnchor@{setAnchor}}

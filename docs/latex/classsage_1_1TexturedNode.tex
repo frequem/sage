@@ -15,11 +15,13 @@ Inheritance diagram for sage\+::Textured\+Node\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classsage_1_1TexturedNode_a90aacfe1eb94e56ecf8176d7c7b74388}{Textured\+Node}} ()
 \item 
-\mbox{\hyperlink{classsage_1_1TexturedNode_a2c67c0ec8c8839308a56e0aea6839b3e}{$\sim$\+Textured\+Node}} ()
-\item 
 virtual std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classsage_1_1TexturedNode_ada858d240f8074fd97e8a72e74d18a30}{get\+Tex\+Coords}} ()
 \item 
 virtual G\+Luint \mbox{\hyperlink{classsage_1_1TexturedNode_a079cea0b12a1d0e3ea69459546736c0f}{get\+Texture}} ()=0
+\item 
+void \mbox{\hyperlink{classsage_1_1TexturedNode_a3ced7cf384aac86fb84face2dc62e395}{render}} (\mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \&r) override
+\begin{DoxyCompactList}\small\item\em Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} Implementations of this function need to call \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{Renderer\+::render\+Single}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsage_1_1TexturedNode_a2c67c0ec8c8839308a56e0aea6839b3e}{$\sim$\+Textured\+Node}} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -59,6 +61,25 @@ Reimplemented in \mbox{\hyperlink{classsage_1_1Sprite_a3e5acc98484d2f326fdd1ff62
 
 
 Implemented in \mbox{\hyperlink{classsage_1_1Sprite_aa75f3595b809f99847a9642ce2bf319a}{sage\+::\+Sprite}}, and \mbox{\hyperlink{classsage_1_1TextNode_ae21f17c6cb993692d8da89424b2581d7}{sage\+::\+Text\+Node}}.
+
+\mbox{\Hypertarget{classsage_1_1TexturedNode_a3ced7cf384aac86fb84face2dc62e395}\label{classsage_1_1TexturedNode_a3ced7cf384aac86fb84face2dc62e395}} 
+\index{sage::TexturedNode@{sage::TexturedNode}!render@{render}}
+\index{render@{render}!sage::TexturedNode@{sage::TexturedNode}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Textured\+Node\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} Implementations of this function need to call \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{Renderer\+::render\+Single}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classsage_1_1Node_a1a5d13b9c959039084843403382f73eb}{sage\+::\+Node}}.
 
 
 

@@ -3,21 +3,21 @@
 
 #include <sage/util/macros.h>
 namespace sage{		
-	template<typename... Args>
-	int EventDispatcher::addEventHandler(Event e, Scene& s, std::function<void(Args...)>&& f){
-		this->handlers[e][nextHandlerId] = std::make_pair(&s, f);
+	template<typename Function>
+	int EventDispatcher::addEventHandler(Event e, Scene& s, Function&& f){
+		this->handlers[e][nextHandlerId] = std::make_pair(&s, std::forward<Function>(f));
 		return nextHandlerId++;
 	}
 	
-	template<typename... Args>
-	int EventDispatcher::addEventHandler(Event e, std::function<void(Args...)>&& f){
-		this->handlers[e][nextHandlerId] = std::make_pair(nullptr, f);
+	template<typename Function>
+	int EventDispatcher::addEventHandler(Event e, Function&& f){
+		this->handlers[e][nextHandlerId] = std::make_pair(nullptr, std::forward<Function>(f));
 		return nextHandlerId++;
 	}
 	
-	template<typename... Args>
-	int EventDispatcher::addEventHandler(NodeEvent e, Node& n, std::function<void(Args...)>&& f){
-		this->node_handlers[e][nextHandlerId] = std::make_pair(&n, f);
+	template<typename Function>
+	int EventDispatcher::addEventHandler(NodeEvent e, Node& n, Function&& f){
+		this->node_handlers[e][nextHandlerId] = std::make_pair(&n, std::forward<Function>(f));
 		return nextHandlerId++;
 	}
 	
@@ -29,31 +29,13 @@ namespace sage{
 		}
 		return keys;
 	}
-
-	template<typename... Args>
-	void EventDispatcher::dispatchEvent(Event e, Args&&... a){
-		Scene* activeScene = this->getActiveScene();
-		std::vector<int> ids = get_keys(this->handlers[e]);
-		
-		std::map<int, std::pair<Scene*, std::any>>::iterator it;
-		for(int id : ids){
-			it = this->handlers[e].find(id);
-			if(it == this->handlers[e].end())
-				continue;
-			
-			Scene* s = it->second.first; // pair.scene
-			if(s==activeScene || s==nullptr){
-				std::any_cast<std::function<void(Args...)>>(it->second.second)(a...);
-			}
-		}
-	}
 	
-	template<typename... Args>
-	void EventDispatcher::dispatchEvent(NodeEvent e, std::function<bool(Node&, Args...)>&& checkfunc, Args&&... a){
+	template<typename CheckFunction>
+	void EventDispatcher::dispatchEvent(NodeEvent e, CheckFunction&& checkfunc, void* args){
 		Scene* activeScene = this->getActiveScene();
 		std::vector<int> ids = get_keys(this->node_handlers[e]);
 		
-		std::map<int, std::pair<Node*, std::any>>::iterator it;
+		std::map<int, std::pair<Node*, std::function<void(void*)>>>::iterator it;
 		for(int id : ids){
 			it = this->node_handlers[e].find(id);
 			if(it == this->node_handlers[e].end())
@@ -63,8 +45,8 @@ namespace sage{
 			if(n == nullptr){
 				this->node_handlers[e].erase(it);
 				continue;
-			}else if(this->isSceneMember(activeScene, n) && checkfunc(*n, a...)){
-				std::any_cast<std::function<void(Args...)>>(it->second.second)(a...);
+			}else if(this->isSceneMember(activeScene, n) && checkfunc(*n, args)){
+				it->second.second(args);
 			}
 		}
 	}

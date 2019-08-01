@@ -11,12 +11,13 @@ namespace sage{
 		using Renderer::Renderer;
 		
 		void render() override;
+		void render(Node& n) override;
+		
+		void renderSingle(TexturedNode& tn) override;
+		void renderSingle(ColorNode& tn) override;
 		
 		~BasicRenderer();
 	protected:
-		void render(Node& n) override;
-		void renderSingle(TexturedNode& tn) override;
-		void renderSingle(ColorNode& tn) override;
 	};
 }
 

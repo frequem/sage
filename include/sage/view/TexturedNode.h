@@ -13,10 +13,13 @@ namespace sage{
 	class TexturedNode : public Node{
 	public:
 		TexturedNode();
-		~TexturedNode();
 		
 		virtual std::vector<glm::vec2> getTexCoords();
 		virtual GLuint getTexture() = 0;
+		
+		void render(Renderer& r) override;
+		
+		~TexturedNode();
 	};
 }
 

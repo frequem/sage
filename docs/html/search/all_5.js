@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['filecache',['FileCache',['../classsage_1_1FileCache.html',1,'sage::FileCache'],['../classsage_1_1FileCache.html#af88bef81fc34d1a1576d57c4e0261358',1,'sage::FileCache::FileCache()'],['../classsage_1_1Application.html#adaaeb004710d17aaff977ba58acaa9a5',1,'sage::Application::fileCache()']]],
+  ['filecache',['FileCache',['../classsage_1_1FileCache.html',1,'sage::FileCache'],['../classsage_1_1Application.html#adaaeb004710d17aaff977ba58acaa9a5',1,'sage::Application::fileCache()'],['../classsage_1_1FileCache.html#af88bef81fc34d1a1576d57c4e0261358',1,'sage::FileCache::FileCache()']]],
   ['filecache_2ecpp',['FileCache.cpp',['../FileCache_8cpp.html',1,'']]],
   ['filecache_2eh',['FileCache.h',['../FileCache_8h.html',1,'']]],
-  ['fontcache',['FontCache',['../classsage_1_1FontCache.html',1,'sage::FontCache'],['../classsage_1_1Application.html#a5b1d694037e52b302d32e99ff532277d',1,'sage::Application::fontCache()'],['../classsage_1_1FontCache.html#af000fb145e7692fb178bc8bb334fbf16',1,'sage::FontCache::FontCache()']]],
+  ['fontcache',['FontCache',['../classsage_1_1FontCache.html',1,'sage::FontCache'],['../classsage_1_1FontCache.html#af000fb145e7692fb178bc8bb334fbf16',1,'sage::FontCache::FontCache()'],['../classsage_1_1Application.html#a5b1d694037e52b302d32e99ff532277d',1,'sage::Application::fontCache()']]],
   ['fontcache_2ecpp',['FontCache.cpp',['../FontCache_8cpp.html',1,'']]],
   ['fontcache_2eh',['FontCache.h',['../FontCache_8h.html',1,'']]],
   ['fontfile',['fontFile',['../classsage_1_1TextNode.html#a2e09c9e2e42c0c99ea24239aa09d03c9',1,'sage::TextNode']]],

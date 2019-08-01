@@ -125,6 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad2ffce290e2cde1697ae609fe0a7b68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65747783aeea07d997c54b3ef8d212f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ColorNode.html#a65747783aeea07d997c54b3ef8d212f8">setColor</a> (SDL_Color <a class="el" href="classsage_1_1ColorNode.html#aad5832e161e608730df9512894725d2d">color</a>)</td></tr>
 <tr class="separator:a65747783aeea07d997c54b3ef8d212f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2cf18feb8ab4e55dd68ca8b0c4faabf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ColorNode.html#ac2cf18feb8ab4e55dd68ca8b0c4faabf">render</a> (<a class="el" href="classsage_1_1Renderer.html">Renderer</a> &amp;r) override</td></tr>
+<tr class="memdesc:ac2cf18feb8ab4e55dd68ca8b0c4faabf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the <a class="el" href="classsage_1_1Node.html" title="Abstract class that describes all things drawn by the Scene. The Scene itself, which is also a Node,...">Node</a> by calling the <a class="el" href="classsage_1_1Renderer.html">Renderer</a> Implementations of this function need to call <a class="el" href="classsage_1_1Renderer.html#aa79cfd587fa85ae8ea7ccf465825d212">Renderer::renderSingle</a>.  <a href="#ac2cf18feb8ab4e55dd68ca8b0c4faabf">More...</a><br /></td></tr>
+<tr class="separator:ac2cf18feb8ab4e55dd68ca8b0c4faabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1864690840922c8b14340d6991eac3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsage_1_1ColorNode.html#af1864690840922c8b14340d6991eac3e">~ColorNode</a> ()</td></tr>
 <tr class="separator:af1864690840922c8b14340d6991eac3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classsage_1_1Node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsage_1_1Node')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classsage_1_1Node.html">sage::Node</a></td></tr>
@@ -454,6 +457,42 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ac2cf18feb8ab4e55dd68ca8b0c4faabf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2cf18feb8ab4e55dd68ca8b0c4faabf">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ColorNode::render </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classsage_1_1Renderer.html">Renderer</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders the <a class="el" href="classsage_1_1Node.html" title="Abstract class that describes all things drawn by the Scene. The Scene itself, which is also a Node,...">Node</a> by calling the <a class="el" href="classsage_1_1Renderer.html">Renderer</a> Implementations of this function need to call <a class="el" href="classsage_1_1Renderer.html#aa79cfd587fa85ae8ea7ccf465825d212">Renderer::renderSingle</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>the <a class="el" href="classsage_1_1Renderer.html">Renderer</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classsage_1_1Node.html#a1a5d13b9c959039084843403382f73eb">sage::Node</a>.</p>
+
+</div>
+</div>
 <a id="a65747783aeea07d997c54b3ef8d212f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65747783aeea07d997c54b3ef8d212f8">&#9670;&nbsp;</a></span>setColor()</h2>
 
@@ -524,7 +563,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 31 2019 21:10:12 for sage by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 1 2019 20:35:13 for sage by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

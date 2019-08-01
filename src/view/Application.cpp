@@ -56,20 +56,20 @@ Application::Application(const std::string& title, int width, int height){
 	this->eventDispatcher = std::make_unique<EventDispatcher>(*this);
 	this->renderer = std::make_unique<BasicRenderer>(*this);
 	
-	this->getEventDispatcher().addEventHandler(Event::WINDOW_LEAVE, std::function<void()>([this](){
+	this->getEventDispatcher().addEventHandler(Event::WINDOW_LEAVE, [this](void* args){
 		this->isPaused = true;
 		this->getAudioManager().pauseAll();
-	}));
+	});
 	
-	this->getEventDispatcher().addEventHandler(Event::WINDOW_ENTER, std::function<void()>([this](){
+	this->getEventDispatcher().addEventHandler(Event::WINDOW_ENTER, [this](void* args){
 		this->isPaused = false;
 		this->getAudioManager().resumeAll();
 		this->lastUpdate = SDL_GetTicks();
-	}));
+	});
 	
-	this->getEventDispatcher().addEventHandler(Event::QUIT, std::function<void()>([this](){
+	this->getEventDispatcher().addEventHandler(Event::QUIT, [this](void* args){
 		this->isRunning = false;
-	}));
+	});
 	
 	this->lastUpdate = SDL_GetTicks();
 }
@@ -111,7 +111,6 @@ void Application::run(){
 		delay = 1000/FPS;
 		if(!this->isPaused){			
 			this->getScene()->update((time-this->lastUpdate)/1000.0f);//time since last update in s
-			//this->getScene()->render();
 			this->getRenderer().render();
 			SDL_GL_SwapWindow(this->sdlWindow);
 			

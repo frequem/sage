@@ -16,8 +16,10 @@ namespace sage{
 		ColorNode(glm::vec2 size, SDL_Color color);
 		
 		glm::vec3 getSize() override;
-		
 		void setColor(SDL_Color color);
+		
+		void render(Renderer& r) override;
+		
 		~ColorNode();
 	protected:
 		void init() override;

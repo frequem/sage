@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handlers',['handlers',['../classsage_1_1EventDispatcher.html#a68ed02b0370072fa581e7a9b8b1a68c9',1,'sage::EventDispatcher']]]
+  ['glcontext',['glContext',['../classsage_1_1Application.html#af4b3656acba3ea7f6409885223e49dc2',1,'sage::Application']]]
 ];

@@ -1,4 +1,5 @@
 #include <sage/view/TexturedNode.h>
+#include <sage/renderer/Renderer.h>
 #include <sage/util/macros.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -17,6 +18,8 @@ std::vector<glm::vec2> TexturedNode::getTexCoords(){
 	
 	return temp;
 };
+
+void TexturedNode::render(Renderer& r){ r.renderSingle(*this); }
 
 TexturedNode::~TexturedNode(){}
 

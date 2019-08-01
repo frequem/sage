@@ -17,6 +17,7 @@ namespace sage{
 		
 		void renderSingle(TexturedNode& tn) override;
 		void renderSingle(ColorNode& tn) override;
+		
 		~DepthPeelRenderer();
 	protected:		
 		void initBuffers();

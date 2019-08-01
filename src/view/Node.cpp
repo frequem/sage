@@ -1,6 +1,7 @@
 #include <sage/view/Node.h>
 #include <sage/view/Scene.h>
 #include <sage/util/NodePtrZCompare.h>
+#include <sage/renderer/Renderer.h>
 #include <sage/util/macros.h>
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/transform.hpp>
@@ -165,6 +166,8 @@ bool Node::containsAbs(glm::vec2 point){
 	
 	return (rp.x >= 0 && rp.x <= size.x) && (rp.y >= 0 && rp.y <= size.y);
 }
+
+void Node::render(Renderer& r){}
 
 Node::~Node(){}
 
