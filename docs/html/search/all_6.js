@@ -12,6 +12,7 @@ var searchData=
   ['getaudiomanager',['getAudioManager',['../classsage_1_1Application.html#a717c0e8323d219589975f607ab561462',1,'sage::Application']]],
   ['getchildorderchanged',['getChildOrderChanged',['../classsage_1_1Node.html#a983910d41113519eb25d015eac2b4ad0',1,'sage::Node']]],
   ['getchildren',['getChildren',['../classsage_1_1Node.html#a13a5d97132d87b57bd68eb8662f1b505',1,'sage::Node']]],
+  ['getcolor',['getColor',['../classsage_1_1ColorNode.html#af6d7433a247a53dc58019aeadc042008',1,'sage::ColorNode']]],
   ['getdepth',['getDepth',['../classsage_1_1Node.html#a5c4c28939c7adf7e4a65dbb02c0cbcd3',1,'sage::Node']]],
   ['getdpi',['getDPI',['../classsage_1_1Application.html#a452bc916f132e0997a02de53d49364d3',1,'sage::Application']]],
   ['geteventdispatcher',['getEventDispatcher',['../classsage_1_1Application.html#abdc4b687788236f83fbb879465d80efe',1,'sage::Application']]],

@@ -10,6 +10,7 @@ namespace sage{
 	class TexturedNode;
 	class ColorNode;
 	class Application;
+	
 	class Renderer{
 	public:
 		Renderer(Application&);

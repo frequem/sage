@@ -1,7 +1,7 @@
 var searchData=
 [
   ['text',['text',['../classsage_1_1TextNode.html#a2828e281a4ea3cce151de7cc983ca2c0',1,'sage::TextNode']]],
-  ['textnode',['TextNode',['../classsage_1_1TextNode.html',1,'sage::TextNode'],['../classsage_1_1TextNode.html#a5fbde25db3407b5e5e84ef297821dec6',1,'sage::TextNode::TextNode(const std::string &amp;font, int ptsize)'],['../classsage_1_1TextNode.html#a9988fa03958e378b3fd612ea3a103649',1,'sage::TextNode::TextNode(const std::string &amp;font, int ptsize, const std::string &amp;text)'],['../classsage_1_1TextNode.html#a5677717ec6c2db9e311a40ad1510adb9',1,'sage::TextNode::TextNode(const std::string &amp;font, int ptsize, const std::string &amp;text, SDL_Color color)']]],
+  ['textnode',['TextNode',['../classsage_1_1TextNode.html',1,'sage::TextNode'],['../classsage_1_1TextNode.html#a5fbde25db3407b5e5e84ef297821dec6',1,'sage::TextNode::TextNode(const std::string &amp;font, int ptsize)'],['../classsage_1_1TextNode.html#a9988fa03958e378b3fd612ea3a103649',1,'sage::TextNode::TextNode(const std::string &amp;font, int ptsize, const std::string &amp;text)'],['../classsage_1_1TextNode.html#ae437d57affeda55372f70607bc1c1ebf',1,'sage::TextNode::TextNode(const std::string &amp;font, int ptsize, const std::string &amp;text, glm::vec4 color)']]],
   ['textnode_2ecpp',['TextNode.cpp',['../TextNode_8cpp.html',1,'']]],
   ['textnode_2eh',['TextNode.h',['../TextNode_8h.html',1,'']]],
   ['texture',['texture',['../classsage_1_1TextNode.html#a8ffd1a92389ec216de154ea9a5b211cc',1,'sage::TextNode']]],

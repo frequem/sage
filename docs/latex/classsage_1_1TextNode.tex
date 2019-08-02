@@ -17,13 +17,13 @@ Inheritance diagram for sage\+::Text\+Node\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classsage_1_1TextNode_a9988fa03958e378b3fd612ea3a103649}{Text\+Node}} (const std\+::string \&font, int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}}, const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}})
 \item 
-\mbox{\hyperlink{classsage_1_1TextNode_a5677717ec6c2db9e311a40ad1510adb9}{Text\+Node}} (const std\+::string \&font, int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}}, const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}}, S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}{color}})
+\mbox{\hyperlink{classsage_1_1TextNode_ae437d57affeda55372f70607bc1c1ebf}{Text\+Node}} (const std\+::string \&font, int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{ptsize}}, const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}}, glm\+::vec4 \mbox{\hyperlink{classsage_1_1TextNode_a005f3c7841dc825fb762cb84dc667088}{color}})
 \item 
 glm\+::vec3 \mbox{\hyperlink{classsage_1_1TextNode_acdfcc350ceb004d934ab731ad9d1e176}{get\+Size}} () override
 \begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsage_1_1TextNode_a81f9aa6c3c25d5b2b53904becad654fe}{set\+Text}} (const std\+::string \&\mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}})
 \item 
-void \mbox{\hyperlink{classsage_1_1TextNode_a46a1738c681f158ab1d2468d3ec02a24}{set\+Color}} (S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}{color}})
+void \mbox{\hyperlink{classsage_1_1TextNode_ab08e5884c5a182320d80e53e700e4a5d}{set\+Color}} (glm\+::vec4 \mbox{\hyperlink{classsage_1_1TextNode_a005f3c7841dc825fb762cb84dc667088}{color}})
 \item 
 \mbox{\hyperlink{classsage_1_1TextNode_a3ad8241316536959f2727a0abb8dc3e7}{$\sim$\+Text\+Node}} ()
 \end{DoxyCompactItemize}
@@ -45,7 +45,7 @@ int \mbox{\hyperlink{classsage_1_1TextNode_a1811c136026bea8ba6f27184e2d53c0c}{pt
 \item 
 std\+::string \mbox{\hyperlink{classsage_1_1TextNode_a2828e281a4ea3cce151de7cc983ca2c0}{text}}
 \item 
-S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}{color}}
+glm\+::vec4 \mbox{\hyperlink{classsage_1_1TextNode_a005f3c7841dc825fb762cb84dc667088}{color}}
 \item 
 S\+D\+L\+\_\+\+Surface $\ast$ \mbox{\hyperlink{classsage_1_1TextNode_a6f15575871c6eef0b1a461aaa1b87ca2}{surface}}
 \item 
@@ -67,11 +67,11 @@ G\+Luint \mbox{\hyperlink{classsage_1_1TextNode_a8ffd1a92389ec216de154ea9a5b211c
 \subsubsection{\texorpdfstring{TextNode()}{TextNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Text\+Node\+::\+Text\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font,  }\item[{int}]{ptsize,  }\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classsage_1_1TextNode_a5677717ec6c2db9e311a40ad1510adb9}\label{classsage_1_1TextNode_a5677717ec6c2db9e311a40ad1510adb9}} 
+\mbox{\Hypertarget{classsage_1_1TextNode_ae437d57affeda55372f70607bc1c1ebf}\label{classsage_1_1TextNode_ae437d57affeda55372f70607bc1c1ebf}} 
 \index{sage::TextNode@{sage::TextNode}!TextNode@{TextNode}}
 \index{TextNode@{TextNode}!sage::TextNode@{sage::TextNode}}
 \subsubsection{\texorpdfstring{TextNode()}{TextNode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Text\+Node\+::\+Text\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font,  }\item[{int}]{ptsize,  }\item[{const std\+::string \&}]{text,  }\item[{S\+D\+L\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Text\+Node\+::\+Text\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font,  }\item[{int}]{ptsize,  }\item[{const std\+::string \&}]{text,  }\item[{glm\+::vec4}]{color }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classsage_1_1TextNode_a3ad8241316536959f2727a0abb8dc3e7}\label{classsage_1_1TextNode_a3ad8241316536959f2727a0abb8dc3e7}} 
 \index{sage::TextNode@{sage::TextNode}!````~TextNode@{$\sim$TextNode}}
@@ -136,11 +136,11 @@ Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab87776adae83149e235e37ed4
 \subsubsection{\texorpdfstring{rebuild()}{rebuild()}}
 {\footnotesize\ttfamily void Text\+Node\+::rebuild (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classsage_1_1TextNode_a46a1738c681f158ab1d2468d3ec02a24}\label{classsage_1_1TextNode_a46a1738c681f158ab1d2468d3ec02a24}} 
+\mbox{\Hypertarget{classsage_1_1TextNode_ab08e5884c5a182320d80e53e700e4a5d}\label{classsage_1_1TextNode_ab08e5884c5a182320d80e53e700e4a5d}} 
 \index{sage::TextNode@{sage::TextNode}!setColor@{setColor}}
 \index{setColor@{setColor}!sage::TextNode@{sage::TextNode}}
 \subsubsection{\texorpdfstring{setColor()}{setColor()}}
-{\footnotesize\ttfamily void Text\+Node\+::set\+Color (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Text\+Node\+::set\+Color (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{color }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classsage_1_1TextNode_a81f9aa6c3c25d5b2b53904becad654fe}\label{classsage_1_1TextNode_a81f9aa6c3c25d5b2b53904becad654fe}} 
 \index{sage::TextNode@{sage::TextNode}!setText@{setText}}
@@ -151,11 +151,11 @@ Reimplemented from \mbox{\hyperlink{classsage_1_1Node_ab87776adae83149e235e37ed4
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}\label{classsage_1_1TextNode_a08cbe2019a8aef4f1bd17a3f73a04d27}} 
+\mbox{\Hypertarget{classsage_1_1TextNode_a005f3c7841dc825fb762cb84dc667088}\label{classsage_1_1TextNode_a005f3c7841dc825fb762cb84dc667088}} 
 \index{sage::TextNode@{sage::TextNode}!color@{color}}
 \index{color@{color}!sage::TextNode@{sage::TextNode}}
 \subsubsection{\texorpdfstring{color}{color}}
-{\footnotesize\ttfamily S\+D\+L\+\_\+\+Color sage\+::\+Text\+Node\+::color\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily glm\+::vec4 sage\+::\+Text\+Node\+::color\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classsage_1_1TextNode_a2e09c9e2e42c0c99ea24239aa09d03c9}\label{classsage_1_1TextNode_a2e09c9e2e42c0c99ea24239aa09d03c9}} 
 \index{sage::TextNode@{sage::TextNode}!fontFile@{fontFile}}

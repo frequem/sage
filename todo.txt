@@ -1,9 +1,8 @@
-- color node
 - z aware depth peeling
 - VBOs
 
 
-
+- LUA
 - actions instead of logic inside update function
 
 

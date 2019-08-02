@@ -8,9 +8,9 @@ using namespace sage;
 
 TextNode::TextNode(const std::string& font, int ptsize) : TextNode(font, ptsize, ""){}
 
-TextNode::TextNode(const std::string& font, int ptsize, const std::string& text) : TextNode(font, ptsize, text, {255, 255, 255, 0}){}
+TextNode::TextNode(const std::string& font, int ptsize, const std::string& text) : TextNode(font, ptsize, text, glm::vec4(0, 0, 0, 1)){}
 
-TextNode::TextNode(const std::string& font, int ptsize, const std::string& text, SDL_Color color) : 
+TextNode::TextNode(const std::string& font, int ptsize, const std::string& text, glm::vec4 color) : 
 	TexturedNode(), fontFile(font), ptsize(ptsize), text(text), color(color){
 	glGenTextures(1, &this->texture);
 }
@@ -22,7 +22,13 @@ void TextNode::init(){
 
 void TextNode::rebuild(){
 	TTF_Font* font = this->getApplication().getFontCache().get(this->fontFile, this->ptsize);
-	auto s = TTF_RenderText_Blended(font, this->text.c_str(), this->color);
+	SDL_Color c = { 
+		static_cast<uint8_t>(this->color.x*255),
+		static_cast<uint8_t>(this->color.y*255),
+		static_cast<uint8_t>(this->color.z*255),
+		static_cast<uint8_t>(this->color.w*255)
+	};
+	auto s = TTF_RenderText_Blended(font, this->text.c_str(), c);
 	this->surface = SDL_ConvertSurfaceFormat(s, SDL_PIXELFORMAT_RGBA32, 0);
 	
 	glBindTexture(GL_TEXTURE_2D, this->texture);
@@ -37,7 +43,7 @@ void TextNode::setText(const std::string& text){
 	this->rebuild();
 }
 
-void TextNode::setColor(SDL_Color color){
+void TextNode::setColor(glm::vec4 color){
 	this->color = color;
 	this->rebuild();
 }

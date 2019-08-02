@@ -15,11 +15,13 @@ Inheritance diagram for sage\+::Color\+Node\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classsage_1_1ColorNode_a2a7235f477d542f28f6bbf1bda63176a}{Color\+Node}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1ColorNode_a04b687374b9c171ff820c514f15b0ae0}{size}})
 \item 
-\mbox{\hyperlink{classsage_1_1ColorNode_a104606b1c60c8956f2ab205ce26c9577}{Color\+Node}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1ColorNode_a04b687374b9c171ff820c514f15b0ae0}{size}}, S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1ColorNode_aad5832e161e608730df9512894725d2d}{color}})
+\mbox{\hyperlink{classsage_1_1ColorNode_aa42072fabeb17cc9c3ccd4d769bd8644}{Color\+Node}} (glm\+::vec2 \mbox{\hyperlink{classsage_1_1ColorNode_a04b687374b9c171ff820c514f15b0ae0}{size}}, glm\+::vec4 \mbox{\hyperlink{classsage_1_1ColorNode_a5fc4ee3eac3b56392d7c46a8359ba97c}{color}})
 \item 
 glm\+::vec3 \mbox{\hyperlink{classsage_1_1ColorNode_ad2ffce290e2cde1697ae609fe0a7b68c}{get\+Size}} () override
 \begin{DoxyCompactList}\small\item\em Fetches the size of the \mbox{\hyperlink{classsage_1_1Node}{Node}}. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classsage_1_1ColorNode_a65747783aeea07d997c54b3ef8d212f8}{set\+Color}} (S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1ColorNode_aad5832e161e608730df9512894725d2d}{color}})
+void \mbox{\hyperlink{classsage_1_1ColorNode_ae64cb2f7ba2a12750952047c6fe69cb4}{set\+Color}} (glm\+::vec4 \mbox{\hyperlink{classsage_1_1ColorNode_a5fc4ee3eac3b56392d7c46a8359ba97c}{color}})
+\item 
+glm\+::vec4 \mbox{\hyperlink{classsage_1_1ColorNode_af6d7433a247a53dc58019aeadc042008}{get\+Color}} ()
 \item 
 void \mbox{\hyperlink{classsage_1_1ColorNode_ac2cf18feb8ab4e55dd68ca8b0c4faabf}{render}} (\mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} \&r) override
 \begin{DoxyCompactList}\small\item\em Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyperlink{classsage_1_1Renderer}{Renderer}} Implementations of this function need to call \mbox{\hyperlink{classsage_1_1Renderer_aa79cfd587fa85ae8ea7ccf465825d212}{Renderer\+::render\+Single}}. \end{DoxyCompactList}\item 
@@ -35,7 +37,7 @@ void \mbox{\hyperlink{classsage_1_1ColorNode_a1a5a055be2cc8d15b38c5c25eb489e94}{
 \item 
 glm\+::vec2 \mbox{\hyperlink{classsage_1_1ColorNode_a04b687374b9c171ff820c514f15b0ae0}{size}}
 \item 
-S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1ColorNode_aad5832e161e608730df9512894725d2d}{color}}
+glm\+::vec4 \mbox{\hyperlink{classsage_1_1ColorNode_a5fc4ee3eac3b56392d7c46a8359ba97c}{color}}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -47,11 +49,11 @@ S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1ColorNode_aad5832e161e608730d
 \subsubsection{\texorpdfstring{ColorNode()}{ColorNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Color\+Node\+::\+Color\+Node (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{size }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classsage_1_1ColorNode_a104606b1c60c8956f2ab205ce26c9577}\label{classsage_1_1ColorNode_a104606b1c60c8956f2ab205ce26c9577}} 
+\mbox{\Hypertarget{classsage_1_1ColorNode_aa42072fabeb17cc9c3ccd4d769bd8644}\label{classsage_1_1ColorNode_aa42072fabeb17cc9c3ccd4d769bd8644}} 
 \index{sage::ColorNode@{sage::ColorNode}!ColorNode@{ColorNode}}
 \index{ColorNode@{ColorNode}!sage::ColorNode@{sage::ColorNode}}
 \subsubsection{\texorpdfstring{ColorNode()}{ColorNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Color\+Node\+::\+Color\+Node (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{size,  }\item[{S\+D\+L\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Color\+Node\+::\+Color\+Node (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{size,  }\item[{glm\+::vec4}]{color }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classsage_1_1ColorNode_af1864690840922c8b14340d6991eac3e}\label{classsage_1_1ColorNode_af1864690840922c8b14340d6991eac3e}} 
 \index{sage::ColorNode@{sage::ColorNode}!````~ColorNode@{$\sim$ColorNode}}
@@ -62,6 +64,12 @@ S\+D\+L\+\_\+\+Color \mbox{\hyperlink{classsage_1_1ColorNode_aad5832e161e608730d
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsage_1_1ColorNode_af6d7433a247a53dc58019aeadc042008}\label{classsage_1_1ColorNode_af6d7433a247a53dc58019aeadc042008}} 
+\index{sage::ColorNode@{sage::ColorNode}!getColor@{getColor}}
+\index{getColor@{getColor}!sage::ColorNode@{sage::ColorNode}}
+\subsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily glm\+::vec4 Color\+Node\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classsage_1_1ColorNode_ad2ffce290e2cde1697ae609fe0a7b68c}\label{classsage_1_1ColorNode_ad2ffce290e2cde1697ae609fe0a7b68c}} 
 \index{sage::ColorNode@{sage::ColorNode}!getSize@{getSize}}
 \index{getSize@{getSize}!sage::ColorNode@{sage::ColorNode}}
@@ -119,20 +127,20 @@ Renders the \mbox{\hyperlink{classsage_1_1Node}{Node}} by calling the \mbox{\hyp
 
 Reimplemented from \mbox{\hyperlink{classsage_1_1Node_a1a5d13b9c959039084843403382f73eb}{sage\+::\+Node}}.
 
-\mbox{\Hypertarget{classsage_1_1ColorNode_a65747783aeea07d997c54b3ef8d212f8}\label{classsage_1_1ColorNode_a65747783aeea07d997c54b3ef8d212f8}} 
+\mbox{\Hypertarget{classsage_1_1ColorNode_ae64cb2f7ba2a12750952047c6fe69cb4}\label{classsage_1_1ColorNode_ae64cb2f7ba2a12750952047c6fe69cb4}} 
 \index{sage::ColorNode@{sage::ColorNode}!setColor@{setColor}}
 \index{setColor@{setColor}!sage::ColorNode@{sage::ColorNode}}
 \subsubsection{\texorpdfstring{setColor()}{setColor()}}
-{\footnotesize\ttfamily void Color\+Node\+::set\+Color (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Color\+Node\+::set\+Color (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{color }\end{DoxyParamCaption})}
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classsage_1_1ColorNode_aad5832e161e608730df9512894725d2d}\label{classsage_1_1ColorNode_aad5832e161e608730df9512894725d2d}} 
+\mbox{\Hypertarget{classsage_1_1ColorNode_a5fc4ee3eac3b56392d7c46a8359ba97c}\label{classsage_1_1ColorNode_a5fc4ee3eac3b56392d7c46a8359ba97c}} 
 \index{sage::ColorNode@{sage::ColorNode}!color@{color}}
 \index{color@{color}!sage::ColorNode@{sage::ColorNode}}
 \subsubsection{\texorpdfstring{color}{color}}
-{\footnotesize\ttfamily S\+D\+L\+\_\+\+Color sage\+::\+Color\+Node\+::color\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily glm\+::vec4 sage\+::\+Color\+Node\+::color\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classsage_1_1ColorNode_a04b687374b9c171ff820c514f15b0ae0}\label{classsage_1_1ColorNode_a04b687374b9c171ff820c514f15b0ae0}} 
 \index{sage::ColorNode@{sage::ColorNode}!size@{size}}

@@ -1,6 +1,8 @@
 #include <sage/renderer/BasicRenderer.h>
 #include <sage/util/ogl.h>
 #include <sage/util/NodePtrZCompare.h>
+#include <sage/view/TexturedNode.h>
+#include <sage/view/ColorNode.h>
 #include <algorithm>
 #include <glm/gtc/type_ptr.hpp>
 
@@ -57,6 +59,32 @@ void BasicRenderer::renderSingle(TexturedNode& tn){
 }
 
 void BasicRenderer::renderSingle(ColorNode& cn){
+    GLuint p = this->application->getShaderCache().get("basicColor");
+    glUseProgram(p);
+    	
+	glm::vec2 windowSize = this->application->getWindowSize();
+	glm::vec4 color = cn.getColor();
+	std::vector<glm::vec3> points = cn.getAbsPoints();
+	
+	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
+	glUniform4fv(glGetUniformLocation(p, "color"), 1, glm::value_ptr(color));
+	
+	GLint position = glGetAttribLocation(p, "position");
+	
+	glEnableVertexAttribArray(position);
+	
+	glVertexAttribPointer(position, 3, GL_FLOAT, GL_FALSE, 0, points.data());
+	
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+
+	glDisable(GL_BLEND);
+	
+	glDisableVertexAttribArray(position);
+	
+	glUseProgram(0);
 }
 
 BasicRenderer::~BasicRenderer(){}

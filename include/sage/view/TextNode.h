@@ -14,12 +14,12 @@ namespace sage{
 	public:
 		TextNode(const std::string& font, int ptsize);
 		TextNode(const std::string& font, int ptsize, const std::string& text);
-		TextNode(const std::string& font, int ptsize, const std::string& text, SDL_Color color);
+		TextNode(const std::string& font, int ptsize, const std::string& text, glm::vec4 color);
 		
 		glm::vec3 getSize() override;
 		
 		void setText(const std::string& text);
-		void setColor(SDL_Color color);
+		void setColor(glm::vec4 color);
 		~TextNode();
 	protected:
 		void init() override;
@@ -29,7 +29,7 @@ namespace sage{
 		std::string fontFile;
 		int ptsize;
 		std::string text;
-		SDL_Color color;
+		glm::vec4 color;
 		
 		SDL_Surface* surface;
 		GLuint texture;

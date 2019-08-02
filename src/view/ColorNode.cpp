@@ -3,16 +3,15 @@
 
 using namespace sage;
 
-ColorNode::ColorNode(glm::vec2 size) : ColorNode(size, {0, 0, 0, 255}){}
-ColorNode::ColorNode(glm::vec2 size, SDL_Color color) : size(size), color(color){}
+ColorNode::ColorNode(glm::vec2 size) : ColorNode(size, glm::vec4(0, 0, 0, 1)){}
+ColorNode::ColorNode(glm::vec2 size, glm::vec4 color) : size(size), color(color){}
 
 void ColorNode::init(){
 	Node::init();
 }
 
-void ColorNode::setColor(SDL_Color color){
-	this->color = color;
-}
+void ColorNode::setColor(glm::vec4 color){ this->color = color; }
+glm::vec4 ColorNode::getColor(){ return this->color; }
 
 glm::vec3 ColorNode::getSize(){ return glm::vec3(this->size, 0); }
 

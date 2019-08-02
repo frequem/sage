@@ -1,6 +1,8 @@
 #include <sage/renderer/DepthPeelRenderer.h>
 #include <sage/util/ogl.h>
 #include <sage/util/NodePtrZCompare.h>
+#include <sage/view/TexturedNode.h>
+#include <sage/view/ColorNode.h>
 #include <algorithm>
 #include <glm/gtc/type_ptr.hpp>
 #include <sage/util/config.h>
@@ -98,7 +100,7 @@ void DepthPeelRenderer::render(){
 }
 
 void DepthPeelRenderer::renderSingle(TexturedNode& tn){
-	GLuint p = this->application->getShaderCache().get("depthpeel");
+	GLuint p = this->application->getShaderCache().get("depthpeelTexture");
     glUseProgram(p);
     	
 	glm::vec2 windowSize = this->application->getWindowSize();
@@ -125,9 +127,7 @@ void DepthPeelRenderer::renderSingle(TexturedNode& tn){
 	glVertexAttribPointer(texCoord, 2, GL_FLOAT, GL_FALSE, 0, textureCoordinates.data());
 	
 	glEnable(GL_DEPTH_TEST);
-	//if(this->currentPass == 0){
 	glDepthFunc(GL_LEQUAL);
-	//}
 	
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
@@ -140,6 +140,35 @@ void DepthPeelRenderer::renderSingle(TexturedNode& tn){
 }
 
 void DepthPeelRenderer::renderSingle(ColorNode& cn){
+	GLuint p = this->application->getShaderCache().get("depthpeelColor");
+    glUseProgram(p);
+    	
+	glm::vec2 windowSize = this->application->getWindowSize();
+	glm::vec4 color = cn.getColor();
+	std::vector<glm::vec3> points = cn.getAbsPoints();
+	
+	glUniform2fv(glGetUniformLocation(p, "windowSize"), 1, glm::value_ptr(windowSize));
+	glUniform4fv(glGetUniformLocation(p, "color"), 1, glm::value_ptr(color));
+	    
+    glUniform1i(glGetUniformLocation(p, "peel"), this->currentPass>0);
+	glUniform1i(glGetUniformLocation(p, "depthTex"), 1);
+	
+	GLint position = glGetAttribLocation(p, "position");
+	
+	glEnableVertexAttribArray(position);
+	
+	glVertexAttribPointer(position, 3, GL_FLOAT, GL_FALSE, 0, points.data());
+	
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LEQUAL);
+	
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+
+	glDisable(GL_DEPTH_TEST);
+	
+	glDisableVertexAttribArray(position);
+	
+	glUseProgram(0);
 }
 
 DepthPeelRenderer::~DepthPeelRenderer(){
